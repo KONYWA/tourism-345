@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Safari Day Trips</title>
+  <style>
+    /* Resetting Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+      overflow-x: hidden;
+    }
+
+    header {
+      background-color: #2a3d67;
+      color: #fff;
+      padding: 40px 20px;
+      text-align: center;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    header h1 {
+      font-size: 2.5em;
+      font-weight: bold;
+    }
+
+    /* Trip Grid Container */
+    .trip-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+      padding: 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .trip {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease-in-out;
+      opacity: 0;
+      animation: fadeInUp 0.8s forwards;
+    }
+
+    .trip img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .trip img:hover {
+      transform: scale(1.05);
+    }
+
+    .trip-content {
+      padding-top: 15px;
+    }
+
+    .trip h2 {
+      font-size: 1.8em;
+      color: #2a3d67;
+      font-weight: bold;
+    }
+
+    .trip h3 {
+      color: #555;
+      font-size: 1.2em;
+      margin-top: 15px;
+    }
+
+    p, ul {
+      line-height: 1.6;
+      color: #555;
+    }
+
+    .rates p {
+      font-weight: bold;
+      color: #d84c28;
+      font-size: 1.4em;
+    }
+
+    .button {
+      display: inline-block;
+      background-color: #d84c28;
+      color: #fff;
+      padding: 12px 25px;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-top: 15px;
+      font-weight: bold;
+      text-align: center;
+      transition: background-color 0.3s ease;
+    }
+
+    .button:hover {
+      background-color: #c13a1a;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Hide the extended details by default */
+    .extra-details {
+      display: none;
+    }
+
+    /* Media Queries */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2em;
+      }
+
+      .trip-container {
+        padding: 20px;
+      }
+
+      .trip {
+        padding: 15px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header h1 {
+        font-size: 1.5em;
+      }
+
+      .button {
+        width: 100%;
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Safari Day Trips</h1>
+</header>
+
+<div class="trip-container">
+
+  <!-- Trip 1 -->
+  <div class="trip" style="animation-delay: 0.2s;">
+    <img src="https://via.placeholder.com/500x300?text=Ngorongoro+Crater" alt="Ngorongoro Crater" loading="lazy">
+    <div class="trip-content">
+      <h2>1. NGORONGORO CRATER DAY TRIP</h2>
+      <h3>Overview</h3>
+      <p>Ngorongoro Crater, known as the "Eighth Wonder of the World," is one of the most spectacular wildlife destinations in Africa. It is home to a variety of animals, including lions, rhinos, elephants, zebras, and wildebeests, and offers unparalleled wildlife viewing. The crater floor is also rich in birdlife.</p>
+      
+      <!-- "View More" Button -->
+      <button class="button" onclick="toggleDetails(1)">View More</button>
+
+      <!-- Extended Details (Initially Hidden) -->
+      <div class="extra-details" id="details-1">
+        <h3>Day Description</h3>
+        <ul>
+          <li>A transfer from the airport can be arranged for an extra cost.</li>
+        </ul>
+        <h3>Day 1</h3>
+        <p>After breakfast, our driver will pick you up from the hotel and drive to Ngorongoro Crater. Once inside the crater, enjoy a full-day game drive, where you'll see a rich diversity of wildlife, including the endangered black rhino, lion prides, and large herds of elephants. The area is also a birdwatcher’s paradise. After the game drive, we will drive you back to your accommodation.</p>
+
+        <h3>Accommodation:</h3>
+        <p>No accommodation (End of tour)</p>
+        <h3>Meals & Drinks:</h3>
+        <ul>
+          <li>Lunch (Breakfast & dinner not included)</li>
+          <li>Non-alcoholic drinks</li>
+        </ul>
+
+        <div class="rates">
+          <p>Rates: $600 per person</p>
+        </div>
+
+        <a href="#" class="button">Book Now</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Trip 2 -->
+  <div class="trip" style="animation-delay: 0.4s;">
+    <img src="https://via.placeholder.com/500x300?text=Tarangire+National+Park" alt="Tarangire National Park" loading="lazy">
+    <div class="trip-content">
+      <h2>2. TARANGIRE NATIONAL PARK DAY TRIP</h2>
+      <h3>Overview</h3>
+      <p>Tarangire National Park is known for its large herds of elephants, Baobab trees, and the vast landscape. It offers a quieter alternative to the more popular Serengeti and Ngorongoro Crater with a chance to see lions, leopards, buffalo, zebras, and giraffes.</p>
+      
+      <!-- "View More" Button -->
+      <button class="button" onclick="toggleDetails(2)">View More</button>
+
+      <!-- Extended Details (Initially Hidden) -->
+      <div class="extra-details" id="details-2">
+        <h3>Day Description</h3>
+        <ul>
+          <li>A transfer from the airport can be arranged for an extra cost.</li>
+        </ul>
+        <h3>Day 1</h3>
+        <p>After breakfast, our driver will pick you up and drive you to Tarangire National Park. Spend the day exploring the park's diverse landscapes, from the riverbanks to the open savannahs. Enjoy game drives, where you'll encounter herds of elephants, lions, and other wildlife. After a full day of wildlife encounters, we will drive you back to your accommodation.</p>
+
+        <h3>Accommodation:</h3>
+        <p>No accommodation (End of tour)</p>
+        <h3>Meals & Drinks:</h3>
+        <ul>
+          <li>Lunch (Breakfast & dinner not included)</li>
+          <li>Non-alcoholic drinks</li>
+        </ul>
+
+        <div class="rates">
+          <p>Rates: $530 per person</p>
+        </div>
+
+        <a href="#" class="button">Book Now</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add More Trips Below -->
+
+</div>
+
+<script>
+  // JavaScript to toggle the "View More" details
+  function toggleDetails(tripId) {
+    const details = document.getElementById('details-' + tripId);
+    const button = details.previousElementSibling;
+
+    if (details.style.display === 'none' || details.style.display === '') {
+      details.style.display = 'block';
+      button.textContent = 'View Less';
+    } else {
+      details.style.display = 'none';
+      button.textContent = 'View More';
+    }
+  }
+</script>
+
+</body>
+</html>

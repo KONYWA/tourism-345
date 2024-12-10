@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mafoy africa Safaris | Luxury Safari Experience</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f8f8f8;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header Section */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            color: #ffffff; /* White text */
+            background-color: #007bff; /* Blue background for the header */
+            width: 100%; /* Ensure the blue color covers the entire width */
+            position: relative; /* Positioning for menu button inside header */
+        }
+
+        /* Logo */
+        .logo {
+            display: flex;
+            align-items: center;
+            color: #333; /* Black color for logo text */
+            background-color: #ffffff; /* White background for logo in mobile view */
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+
+        .logo img {
+            width: 50px;
+            margin-right: 10px;
+        }
+
+        .logo span {
+            font-size: 1.4rem;
+            font-weight: bold;
+        }
+
+        /* Mobile Menu Button */
+        .menu-btn {
+            display: flex;
+            cursor: pointer;
+            flex-direction: column;
+            gap: 5px;
+            position: absolute; /* Position absolutely inside the header */
+            right: 20px; /* Align the button to the right inside the header */
+            background-color: transparent; /* No background for the button itself */
+            padding: 10px; /* Add padding to make button area clickable */
+        }
+
+        .menu-btn div {
+            width: 30px;
+            height: 4px;
+            background-color: #ffffff; /* White color for mobile menu lines */
+        }
+
+        /* Menu Text */
+        .menu-text {
+            color: white;
+            font-size: 1.4rem;
+            font-weight: bold;
+            margin-left: 10px; /* Add some space between the button and the text */
+        }
+
+        /* Mobile Navigation */
+        .mobile-nav {
+            display: none;
+            flex-direction: column;
+            background-color: #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .mobile-nav.active {
+            display: flex;
+        }
+
+        .mobile-nav ul {
+            list-style: none;
+            width: 100%;
+        }
+
+        .mobile-nav ul li {
+            width: 100%;
+        }
+
+        .mobile-nav ul li a {
+            display: block;
+            text-align: center;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #333;
+            padding: 15px;
+            border-bottom: 1px solid #ddd;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .mobile-nav ul li a:hover {
+            background-color: #f4f4f4;
+            color: #007bff; /* Blue color on hover */
+        }
+
+        /* New Sections for Contact Form and Popular Tours */
+        .contact-section, .popular-tours-section {
+            padding: 40px 20px;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .contact-form input, 
+        .contact-form textarea, 
+        .contact-form select {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .contact-form button {
+            width: 100%;
+            padding: 12px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-form button:hover {
+            background-color: #0056b3;
+        }
+
+        .contact-list {
+            background-color: white;
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .contact-list ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .contact-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .contact-list li:last-child {
+            border-bottom: none;
+        }
+
+        .popular-tours {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .tour-card {
+            background-color: white;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            width: calc(33.333% - 20px);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .tour-card:hover {
+            transform: scale(1.05);
+        }
+
+        .tour-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .tour-card-content {
+            padding: 15px;
+            text-align: center;
+        }
+
+        .tour-card a {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .tour-card a:hover {
+            background-color: #0056b3;
+        }
+
+        /* Desktop View Media Queries */
+        @media (min-width: 769px) {
+            header {
+                padding: 10px 5%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .menu-btn {
+                display: none;
+            }
+
+            .menu-text {
+                display: none;
+            }
+
+            header nav {
+                margin-left: auto;
+            }
+
+            header nav ul {
+                display: flex;
+                list-style: none;
+                gap: 20px;
+            }
+
+            header nav ul li {
+                position: relative;
+            }
+
+            header nav ul li a {
+                text-decoration: none;
+                color: #ffffff;
+                font-weight: 600;
+                transition: color 0.3s;
+            }
+
+            header nav ul li a:hover {
+                color: #e6a400;
+            }
+
+            .dropdown {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                background-color: white;
+                min-width: 200px;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+                z-index: 1000;
+            }
+
+            header nav ul li:hover .dropdown {
+                display: block;
+            }
+
+            .dropdown li {
+                width: 100%;
+            }
+
+            .dropdown a {
+                display: block;
+                padding: 10px 15px;
+                color: #333;
+            }
+
+            .dropdown a:hover {
+                background-color: #f4f4f4;
+            }
+
+            .logo {
+                background-color: #007bff;
+                color: white;
+            }
+
+            .logo img {
+                width: 50px;
+                margin-right: 10px;
+            }
+
+            .logo span {
+                font-size: 1.6rem;
+                font-weight: bold;
+            }
+        }
+
+        /* Mobile Specific Adjustments */
+        @media (max-width: 768px) {
+            header {
+                display: block;
+                padding: 0;
+                background-color: #007bff;
+                width: 100%;
+            }
+
+            .logo {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                background-color: #ffffff;
+                padding: 30px 0;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            }
+
+            .logo img {
+                width: 60px;
+                margin-right: 10px;
+            }
+
+            .logo span {
+                font-size: 1.6rem;
+                font-weight: bold;
+            }
+
+            header nav {
+                display: none;
+            }
+
+            .mobile-nav.active {
+                display: flex;
+            }
+
+            .menu-text {
+                color: white;
+                font-size: 1.4rem;
+                font-weight: bold;
+                margin-left: 20px;
+            }
+
+            .mobile-nav ul li .dropdown {
+                display: none;
+            }
+
+            .mobile-nav ul li.active .dropdown {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header with Navigation (Existing Code) -->
+    <header>
+        <div class="logo">
+            <img src="mafoy2.jpg.png" alt="Mafoy africa Safaris">
+            <span>Mafoy africa Safaris</span>
+        </div>
+
+        <div class="menu-btn" onclick="toggleMobileMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <span class="menu-text">Menu</span>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="destinations.html">Destinations</a></li>
+                <li class="tour-item">
+                    <a href="tours.html" onclick="toggleDropdown(event)">Tours</a>
+                    <ul class="dropdown">
+                        <li><a href="day-trips.html">Day Trip Packages</a></li>
+                        <li><a href="budget-tours.html">Budget Tour Packages</a></li>
+                        <li><a href="midrange-tours.html">Midrange Tour Packages</a></li>
+                        <li><a href="luxury-tours.html">Luxury Tour Packages</a></li>
+                        <li><a href="hiking.html">Hiking Packages</a></li>
+                        <li><a href="zanzibar-holidays.html">Zanzibar Holidays Packages</a></li>
+                    </ul>
+                </li>
+                <li><a href="testimonials.html">Testimonials</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <nav class="mobile-nav">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="destinations.html">Destinations</a></li>
+            <li class="tour-item">
+                <a href="tours.html" onclick="toggleDropdown(event)">Tours</a>
+                <ul class="dropdown">
+                    <li><a href="day-trips.html">Day Trip Packages</a></li>
+                    <li><a href="budget-tours.html">Budget Tour Packages</a></li>
+                    <li><a href="midrange-tours.html">Midrange Tour Packages</a></li>
+                    <li><a href="luxury-tours.html">Luxury Tour Packages</a></li>
+                    <li><a href="hiking.html">Hiking Packages</a></li>
+                    <li><a href="zanzibar-holidays.html">Zanzibar Holidays Packages</a></li>
+                </ul>
+            </li>
+            <li><a href="testimonials.html">Testimonials</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Contact Form Section -->
+    <section class="contact-section">
+        <h2>Contact Mafoy Africa Safaris</h2>
+        <p>Planning your dream safari? We're here to help! Complete the form below with your details and inquiry.</p>
+        
+        <form class="contact-form">
+            <input type="text" name="full_name" placeholder="Full Name" required>
+            
+            <input type="email" name="email" placeholder="Email Address" required>
+            
+            <input type="tel" name="phone" placeholder="Phone Number (Optional)">
+            
+            <select name="tour_interest" required>
+                <option value="">Select Your Preferred Safari Tour</option>
+                <option value="serengeti">Serengeti Safari</option>
+                <option value="ngorongoro">Ngorongoro Crater</option>
+                <option value="zanzibar">Zanzibar Beach Holiday</option>
+                <option value="custom">Custom Safari Experience</option>
+            </select>
+
+            <select name="group_size" required>
+                <option value="">Number of Travelers</option>
+                <option value="1-2">1-2 Travelers</option>
+                <option value="3-5">3-5 Travelers</option>
+                <option value="6-10">6-10 Travelers</option>
+                <option value="10+">10+ Travelers</option>
+            </select>
+
+            <textarea name="message" placeholder="Tell us about your dream safari experience" rows="5" required></textarea>
+            
+            <button type="submit">Send Inquiry</button>
+        </form>
+
+        <div class="contact-list">
+            <h3>Contact Information</h3>
+            <ul>
+                <li><strong>Phone:</strong> +255 123 456 789</li>
+                <li><strong>Emergency Hotline:</strong> +255 987 654 321</li>
+                <li><strong>Email:</strong> info@mafoysafaris.com</li>
+                <li><strong>Reservations:</strong> bookings@mafoysafaris.com</li>
+                <li><strong>Address:</strong> Serengeti Road, Arusha, Tanzania</li>
+                <li><strong>Business Hours:</strong> Mon-Fri: 8am-5pm, Sat: 9am-1pm</li>
+            </ul>
+        </div>
+    </section>
+
+   <!-- Popular Safari Destinations Section -->
+<section class="popular-destinations-section">
+    <h2>Explore Our Most Popular Safari Destinations</h2>
+    <ul class="popular-destinations">
+        <li>Serengeti National Park</li>
+        <li>Ngorongoro Crater</li>
+        <li>Zanzibar Island</li>
+        <li>Tarangire National Park</li>
+        <li>Lake Manyara National Park</li>
+        <li>Mount Kilimanjaro</li>
+        <li>Selous Game Reserve</li>
+        <li>Ruinsori Mountains</li>
+        <li>Mahale Mountains National Park</li>
+        <li>Arusha National Park</li>
+    </ul>
+</section>
+
+
+    <script>
+        // Toggle Mobile Menu
+        function toggleMobileMenu() {
+            const mobileNav = document.querySelector('.mobile-nav');
+            mobileNav.classList.toggle('active');
+            
+            // Prevent body scrolling when menu is open
+            document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : 'auto';
+        }
+
+        // Toggle Dropdown for "Tours" in Mobile Menu
+        function toggleDropdown(event) {
+            event.preventDefault();
+            const parentLi = event.target.closest('.tour-item');
+            parentLi.classList.toggle('active');
+        }
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const mobileNav = document.querySelector('.mobile-nav');
+            const menuBtn = document.querySelector('.menu-btn');
+
+            // Check if the click is outside mobile nav and menu button
+            if (mobileNav.classList.contains('active') && 
+                !mobileNav.contains(event.target) && 
+                !menuBtn.contains(event.target)) {
+                mobileNav.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mafoy africa Safaris | Luxury Safari Experience</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f8f8f8;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header Section */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            color: #ffffff; /* White text */
+            background-color: #007bff; /* Blue background for the header */
+            width: 100%; /* Ensure the blue color covers the entire width */
+            position: relative; /* Positioning for menu button inside header */
+        }
+
+        /* Logo */
+        .logo {
+            display: flex;
+            align-items: center;
+            color: #333; /* Black color for logo text */
+            background-color: #ffffff; /* White background for logo in mobile view */
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+
+        .logo img {
+            width: 50px;
+            margin-right: 10px;
+        }
+
+        .logo span {
+            font-size: 1.4rem;
+            font-weight: bold;
+        }
+
+        /* Mobile Menu Button */
+        .menu-btn {
+            display: flex;
+            cursor: pointer;
+            flex-direction: column;
+            gap: 5px;
+            position: absolute; /* Position absolutely inside the header */
+            right: 20px; /* Align the button to the right inside the header */
+            background-color: transparent; /* No background for the button itself */
+            padding: 10px; /* Add padding to make button area clickable */
+        }
+
+        .menu-btn div {
+            width: 30px;
+            height: 4px;
+            background-color: #ffffff; /* White color for mobile menu lines */
+        }
+
+        /* Menu Text */
+        .menu-text {
+            color: white;
+            font-size: 1.4rem;
+            font-weight: bold;
+            margin-left: 10px; /* Add some space between the button and the text */
+        }
+
+        /* Mobile Navigation */
+        .mobile-nav {
+            display: none;
+            flex-direction: column;
+            background-color: #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .mobile-nav.active {
+            display: flex;
+        }
+
+        .mobile-nav ul {
+            list-style: none;
+            width: 100%;
+        }
+
+        .mobile-nav ul li {
+            width: 100%;
+        }
+
+        .mobile-nav ul li a {
+            display: block;
+            text-align: center;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #333;
+            padding: 15px;
+            border-bottom: 1px solid #ddd;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .mobile-nav ul li a:hover {
+            background-color: #f4f4f4;
+            color: #007bff; /* Blue color on hover */
+        }
+
+        /* Desktop View */
+        @media (min-width: 769px) {
+            header {
+                padding: 10px 5%;
+                display: flex;
+                justify-content: space-between; /* Align logo and menu at opposite ends */
+                align-items: center;
+            }
+
+            .menu-btn {
+                display: none;
+            }
+
+            /* Hide Menu Text in desktop view */
+            .menu-text {
+                display: none;
+            }
+
+            /* Align the navigation to the right */
+            header nav {
+                margin-left: auto; /* Push navigation to the right */
+            }
+
+            header nav ul {
+                display: flex;
+                list-style: none;
+                gap: 20px;
+            }
+
+            header nav ul li {
+                position: relative;
+            }
+
+            header nav ul li a {
+                text-decoration: none;
+                color: #ffffff; /* White text for navigation items */
+                font-weight: 600;
+                transition: color 0.3s;
+            }
+
+            header nav ul li a:hover {
+                color: #e6a400; /* Gold color on hover */
+            }
+
+            /* Dropdown Styling */
+            .dropdown {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                background-color: white;
+                min-width: 200px;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+                z-index: 1000;
+            }
+
+            /* Show the dropdown when hovering over the parent */
+            header nav ul li:hover .dropdown {
+                display: block;
+            }
+
+            .dropdown li {
+                width: 100%;
+            }
+
+            .dropdown a {
+                display: block;
+                padding: 10px 15px;
+                color: #333;
+            }
+
+            .dropdown a:hover {
+                background-color: #f4f4f4;
+            }
+
+            /* Update logo background to blue for desktop view */
+            .logo {
+                background-color: #007bff; /* Blue background for logo on desktop */
+                color: white; /* White text color for logo text */
+            }
+
+            .logo img {
+                width: 50px; /* Adjust logo size */
+                margin-right: 10px;
+            }
+
+            .logo span {
+                font-size: 1.6rem; /* Increase font size for better visibility */
+                font-weight: bold;
+            }
+        }
+
+        /* Mobile Specific Adjustments */
+        @media (max-width: 768px) {
+            /* Make the entire header section blue on mobile */
+            header {
+                display: block;
+                padding: 0; /* Remove default padding */
+                background-color: #007bff; /* Blue background for the entire header */
+                width: 100%; /* Make the blue background cover the entire width */
+            }
+
+            /* Logo on top of the header in mobile view with full-width blue background */
+            .logo {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%; /* Full-width */
+                background-color: #ffffff; /* White background for logo part */
+                padding: 30px 0; /* Increased padding for larger header */
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow */
+            }
+
+            .logo img {
+                width: 60px; /* Adjust logo size */
+                margin-right: 10px;
+            }
+
+            .logo span {
+                font-size: 1.6rem; /* Increase font size for better visibility */
+                font-weight: bold;
+            }
+
+            /* Header section with mobile menu icon */
+            header nav {
+                display: none; /* Hidden by default */
+            }
+
+            /* Mobile Navigation visible when active */
+            .mobile-nav.active {
+                display: flex;
+            }
+
+            /* "Menu" Text */
+            .menu-text {
+                color: white;
+                font-size: 1.4rem;
+                font-weight: bold;
+                margin-left: 20px;
+            }
+
+            /* Dropdown menu visibility when "Tours" is clicked */
+            .mobile-nav ul li .dropdown {
+                display: none;
+            }
+
+            .mobile-nav ul li.active .dropdown {
+                display: block;
+            }
+        }
+    </style>
+    
+</head>
+<body>
+    <!-- Header with Navigation -->
+    <header>
+        <!-- Logo (Visible in both mobile and desktop but different positioning) -->
+        <div class="logo">
+            <img src="mafoy2.jpg.png" alt="Mafoy africa Safaris">
+            <span>Mafoy africa Safaris</span>
+        </div>
+
+        <!-- Mobile Menu Button and "Menu" Text -->
+        <div class="menu-btn" onclick="toggleMobileMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <span class="menu-text">Menu</span> <!-- Menu Text added here -->
+
+        <!-- Desktop Navigation -->
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="destinations.html">Destinations</a></li>
+                <li class="tour-item">
+                    <a href="tours.html" onclick="toggleDropdown(event)">Tours</a>
+                    <ul class="dropdown">
+                        <li><a href="day-trips.html">Day Trip Packages</a></li>
+                        <li><a href="budget-tours.html">Budget Tour Packages</a></li>
+                        <li><a href="midrange-tours.html">Midrange Tour Packages</a></li>
+                        <li><a href="luxury-tours.html">Luxury Tour Packages</a></li>
+                        <li><a href="hiking.html">Hiking Packages</a></li>
+                        <li><a href="zanzibar-holidays.html">Zanzibar Holidays Packages</a></li>
+                    </ul>
+                </li>
+                <li><a href="testimonials.html">Testimonials</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <nav class="mobile-nav">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="destinations.html">Destinations</a></li>
+            <li class="tour-item">
+                <a href="tours.html" onclick="toggleDropdown(event)">Tours</a>
+                <ul class="dropdown">
+                    <li><a href="day-trips.html">Day Trip Packages</a></li>
+                    <li><a href="budget-tours.html">Budget Tour Packages</a></li>
+                    <li><a href="midrange-tours.html">Midrange Tour Packages</a></li>
+                    <li><a href="luxury-tours.html">Luxury Tour Packages</a></li>
+                    <li><a href="hiking.html">Hiking Packages</a></li>
+                    <li><a href="zanzibar-holidays.html">Zanzibar Holidays Packages</a></li>
+                </ul>
+            </li>
+            <li><a href="testimonials.html">Testimonials</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    
+
+    <script>
+        // Toggle Mobile Menu
+        function toggleMobileMenu() {
+            document.querySelector('.mobile-nav').classList.toggle('active');
+        }
+
+        // Toggle Dropdown for "Tours"
+        function toggleDropdown(event) {
+            event.preventDefault();
+            const parentLi = event.target.parentElement;
+            parentLi.classList.toggle('active');
+        }
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(event) {
+            const dropdowns = document.querySelectorAll('.dropdown');
+            dropdowns.forEach(function(dropdown) {
+                if (dropdown.classList.contains('show') && 
+                    !dropdown.previousElementSibling.contains(event.target)) {
+                    dropdown.classList.remove('show');
+                }
+            });
+        });
+    </script>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tanzania Safari Landing Page</title>
+  <style>
+    /* Global Styles */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #1e3a8a; /* Blue background */
+      color: white;
+    }
+    .container {
+      width: 100%;
+      margin: 0 auto;
+      max-width: 1200px;
+    }
+    .text-center {
+      text-align: center;
+    }
+
+    /* Welcome Section */
+    .welcome-section {
+      padding: 50px 20px;
+      text-align: center;
+    }
+    .welcome-section h1 {
+      font-size: 2.5rem;
+      color: #ffffff;
+      margin-bottom: 20px;
+    }
+    .welcome-section p {
+      font-size: 1.25rem;
+      color: #f1f5f9;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    /* Excellence Promises */
+    .excellence-section {
+      padding: 50px 20px;
+      background-color: #ffffff;
+      color: #000;
+    }
+    .excellence-section h2 {
+      font-size: 2rem;
+      color: #1e40af;
+      margin-bottom: 40px;
+    }
+    .excellence-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .excellence-card {
+      padding: 30px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+    .excellence-card svg {
+      width: 64px;
+      height: 64px;
+      margin-bottom: 20px;
+      color: #1e40af;
+    }
+    .excellence-card h3 {
+      font-size: 1.5rem;
+      color: #1e40af;
+      margin-bottom: 15px;
+    }
+    .excellence-card p {
+      color: #616161;
+    }
+
+    /* Popular Safari Tours */
+    .popular-tours-section {
+      padding: 50px 20px;
+    }
+    .popular-tours-section h2 {
+      font-size: 2rem;
+      color: #ffffff;
+      margin-bottom: 40px;
+    }
+    .tour-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .tour-card {
+      background-color: #ffffff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .tour-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    }
+    .tour-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .tour-card-content {
+      padding: 20px;
+    }
+    .tour-card h3 {
+      font-size: 1.75rem;
+      color: #1e40af;
+      margin-bottom: 10px;
+    }
+    .tour-card p {
+      color: #616161;
+      margin-bottom: 10px;
+    }
+    .tour-card .price {
+      color: #1e40af;
+      font-weight: bold;
+      font-size: 1.25rem;
+      margin-bottom: 15px;
+    }
+    .tour-card button {
+      width: 100%;
+      padding: 12px;
+      background-color: #c6be21;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .tour-card button:hover {
+      background-color: hsl(108, 91%, 60%);
+    }
+
+    /* Footer */
+    .footer {
+      background: #1e40af;
+      color: white;
+      padding: 50px 20px;
+      text-align: center;
+    }
+    .footer h4 {
+      font-size: 1.25rem;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .footer .footer-links {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+      margin-bottom: 40px;
+    }
+    .footer .footer-links a {
+      color: #81c784;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    .footer .footer-links a:hover {
+      color: white;
+    }
+    .footer .footer-contact {
+      margin-top: 40px;
+    }
+    .footer .footer-contact div {
+      margin-bottom: 15px;
+    }
+    .footer .social-icons a {
+      color: #81c784;
+      margin-right: 20px;
+      font-size: 1.5rem;
+    }
+    .footer .social-icons a:hover {
+      color: white;
+    }
+    .footer .copyright {
+      margin-top: 40px;
+      font-size: 0.875rem;
+    }
+
+    /* Mobile responsive */
+    @media (max-width: 768px) {
+      .excellence-cards {
+        grid-template-columns: 1fr;
+      }
+      .tour-cards {
+        grid-template-columns: 1fr;
+      }
+      .welcome-section h1 {
+        font-size: 2rem;
+      }
+      .welcome-section p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Welcome Section -->
+  <section class="welcome-section">
+    <div class="container">
+      <h1>Discover the Magic of Tanzania with Mafoya Africa Safaris</h1>
+      <p>Embark on an extraordinary journey through Tanzania's breathtaking landscapes, where every safari is a unique adventure crafted just for you. From the vast plains of Serengeti to the stunning Ngorongoro Crater, we promise an unforgettable experience that will create memories to last a lifetime.</p>
+    </div>
+  </section>
+
+  <!-- Excellence Promises -->
+  <section class="excellence-section">
+    <div class="container">
+    <center><h2>Our excellence</h2></center>  
+  
+        <div class="excellence-cards">
+        <div class="excellence-card">
+          <svg xmlns="tick.png" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg>
+          <h3>Price Guarantee</h3>
+          <p>Best value for your safari experience</p>
+        </div>
+        <div class="excellence-card">
+          <svg xmlns="https://www.google.com/url?sa=i&url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FFile%3AEo_circle_green_white_checkmark.svg&psig=AOvVaw3Xf9OQSnDQWoPZrrorycqt&ust=1733925119922000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCKDI0_i5nYoDFQAAAAAdAAAAABAT" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg>
+          <h3>100% Customization</h3>
+          <p>Tailored safari packages to your preferences</p>
+        </div>
+        <div class="excellence-card">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg>
+          <h3>Expert Assistance</h3>
+          <p>Professional guidance throughout your journey</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- Popular Safari Tours -->
+<section class="popular-tours-section">
+    <div class="container">
+     <center> <h2>Popular Safari Tours</h2></center>
+      <div class="tour-cards">
+        <!-- Tour Card 1 - Ngorongoro Day Trip -->
+        <div class="tour-card">
+          <img src="https://via.placeholder.com/400x300?text=Ngorongoro+Crater" alt="Ngorongoro Crater">
+          <div class="tour-card-content">
+            <h3>Ngorongoro Day Trip</h3>
+            <p>1 Day</p>
+            <div class="price">$350</div>
+            <p>Experience the breathtaking Ngorongoro Crater, a UNESCO World Heritage site teeming with diverse wildlife.</p>
+          </div>
+        </div>
+  
+        <!-- Tour Card 2 - 5 Days Midrange Safari -->
+        <div class="tour-card">
+          <img src="https://via.placeholder.com/400x300?text=Midrange+Safari" alt="5 Days Midrange Safari">
+          <div class="tour-card-content">
+            <h3>5 Days Midrange Safari</h3>
+            <p>5 Days</p>
+            <div class="price">$1,200</div>
+            <p>A comprehensive safari experience covering Tarangire, Serengeti, and Ngorongoro Conservation Area.</p>
+          </div>
+        </div>
+  
+        <!-- Tour Card 3 - Tarangire Day Trip -->
+        <div class="tour-card">
+          <img src="https://via.placeholder.com/400x300?text=Tarangire+National+Park" alt="Tarangire Day Trip">
+          <div class="tour-card-content">
+            <h3>Tarangire Day Trip</h3>
+            <p>1 Day</p>
+            <div class="price">$250</div>
+            <p>Explore the iconic Tarangire National Park, known for its massive elephant herds and baobab trees.</p>
+          </div>
+        </div>
+  
+        <!-- Tour Card 4 - 2 Days Luxury Safari -->
+        <div class="tour-card">
+          <img src="https://via.placeholder.com/400x300?text=Luxury+Safari" alt="2 Days Luxury Safari">
+          <div class="tour-card-content">
+            <h3>2 Days Luxury Safari</h3>
+            <p>2 Days</p>
+            <div class="price">$850</div>
+            <p>An exclusive short safari with premium lodges and personalized game drives.</p>
+          </div>
+        </div>
+  
+        <!-- Tour Card 5 - 5 Days Luxury Safari -->
+        <div class="tour-card">
+          <img src="https://via.placeholder.com/400x300?text=Luxury+Safari" alt="5 Days Luxury Safari">
+          <div class="tour-card-content">
+            <h3>5 Days Luxury Safari</h3>
+            <p>5 Days</p>
+            <div class="price">$2,500</div>
+            <p>The ultimate Tanzania safari experience with top-tier lodges and comprehensive wildlife viewing.</p>
+          </div>
+        </div>
+  
+        <!-- Tour Card 6 - Marangu Days -->
+        <div class="tour-card">
+          <img src="https://via.placeholder.com/400x300?text=Marangu+Climb" alt="Marangu Days">
+          <div class="tour-card-content">
+            <h3>Marangu Days</h3>
+            <p>5 Days</p>
+            <div class="price">$1,200</div>
+            <p>Explore the Marangu route of Kilimanjaro and experience a scenic climb to the summit.</p>
+          </div>
+        </div>
+  
+        <!-- Tour Card 7 - 4 Days Fly In and Out -->
+        <div class="tour-card">
+          <img src="https://via.placeholder.com/400x300?text=Fly+In+Out" alt="4 Days Fly In and Out">
+          <div class="tour-card-content">
+            <h3>4 Days Fly In and Out</h3>
+            <p>4 Days</p>
+            <div class="price">$2,000</div>
+            <p>Fly in and out of Tanzania, covering key safari destinations in a luxurious, short timeframe.</p>
+          </div>
+        </div>
+  
+        <!-- Tour Card 8 - 4 Days Serengeti Ngorongoro Luxury -->
+        <div class="tour-card">
+          <img src="https://via.placeholder.com/400x300?text=Serengeti+Ngorongoro+Luxury" alt="4 Days Serengeti Ngorongoro Luxury">
+          <div class="tour-card-content">
+            <h3>4 Days Serengeti Ngorongoro Luxury</h3>
+            <p>4 Days</p>
+            <div class="price">$3,000</div>
+            <p>A luxury safari experience with stays in top-tier lodges, covering Serengeti and Ngorongoro Crater.</p>
+          </div>
+        </div>
+  
+        <!-- Tour Card 9 - 4 Days Midrange Safari -->
+        <div class="tour-card">
+          <img src="https://via.placeholder.com/400x300?text=4+Days+Midrange+Safari" alt="4 Days Midrange Safari">
+          <div class="tour-card-content">
+            <h3>4 Days Midrange Safari</h3>
+            <p>4 Days</p>
+            <div class="price">$1,600</div>
+            <p>A balanced safari experience that explores Tarangire, Serengeti, and Ngorongoro with comfortable lodging.</p>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </section><!-- Popular Destinations -->
+  <section class="popular-destinations-section">
+    <div class="container">
+      <h2>Popular Destinations</h2>
+      <div class="tour-cards">
+        <!-- Serengeti National Park -->
+        <div class="tour-card">
+          <img src="https://via.placeholder.com/400x300?text=Serengeti+National+Park" alt="Serengeti National Park">
+          <div class="tour-card-content">
+            <h3>Serengeti National Park</h3>
+            <p>The Serengeti is known for its incredible wildlife and the annual Great Migration.</p>
+            <p><strong>Location:</strong> Serengeti, Tanzania</p>
+            <p><strong>Price:</strong> <span class="price">$300 per day</span></p>
+          </div>
+        </div>
+  
+        <!-- Ngorongoro Crater -->
+        <div class="tour-card">
+          <img src="https://via.placeholder.com/400x300?text=Ngorongoro+Crater" alt="Ngorongoro Crater">
+          <div class="tour-card-content">
+            <h3>Ngorongoro Crater</h3>
+            <p>A UNESCO World Heritage site and home to a wide variety of wildlife, including the endangered black rhino.</p>
+            <p><strong>Location:</strong> Ngorongoro Conservation Area, Tanzania</p>
+            <p><strong>Price:</strong> <span class="price">$350 per day</span></p>
+          </div>
+        </div>
+  
+        <!-- Mount Kilimanjaro -->
+        <div class="tour-card">
+          <img src="https://via.placeholder.com/400x300?text=Mount+Kilimanjaro" alt="Mount Kilimanjaro">
+          <div class="tour-card-content">
+            <h3>Mount Kilimanjaro</h3>
+            <p>The highest mountain in Africa, famous for its trekking routes and spectacular views.</p>
+            <p><strong>Location:</strong> Kilimanjaro Region, Tanzania</p>
+            <p><strong>Price:</strong> <span class="price">$2,500 for the trek</span></p>
+          </div>
+        </div>
+  
+        <!-- Tarangire National Park -->
+        <div class="tour-card">
+          <img src="https://via.placeholder.com/400x300?text=Tarangire+National+Park" alt="Tarangire National Park">
+          <div class="tour-card-content">
+            <h3>Tarangire National Park</h3>
+            <p>Renowned for its large elephant population and unique baobab trees.</p>
+            <p><strong>Location:</strong> Manyara Region, Tanzania</p>
+            <p><strong>Price:</strong> <span class="price">$250 per day</span></p>
+          </div>
+        </div>
+  
+        <!-- Zanzibar -->
+        <div class="tour-card">
+          <img src="https://via.placeholder.com/400x300?text=Zanzibar" alt="Zanzibar">
+          <div class="tour-card-content">
+            <h3>Zanzibar</h3>
+            <p>A tropical paradise known for its stunning beaches and vibrant culture.</p>
+            <p><strong>Location:</strong> Zanzibar Archipelago, Tanzania</p>
+            <p><strong>Price:</strong> <span class="price">$150 per day</span></p>
+          </div>
+        </div>
+  
+        <!-- Lake Manyara National Park -->
+        <div class="tour-card">
+          <img src="https://via.placeholder.com/400x300?text=Lake+Manyara+National+Park" alt="Lake Manyara National Park">
+          <div class="tour-card-content">
+            <h3>Lake Manyara National Park</h3>
+            <p>Famous for its flamingo population and tree-climbing lions.</p>
+            <p><strong>Location:</strong> Manyara Region, Tanzania</p>
+            <p><strong>Price:</strong> <span class="price">$200 per day</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Add custom CSS for price color -->
+  <style>
+    .price {
+      color: #007BFF; /* Blue color */
+      font-weight: bold;
+    }
+  </style>
+  
+  
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-links">
+        <div>
+          <h4>About Mafoya</h4>
+          <a href="#">Company Overview</a>
+          <a href="#">Our Mission</a>
+          <a href="#">Terms & Conditions</a>
+          <a href="#">Privacy Policy</a>
+        </div>
+        <div>
+          <h4>Traveler Info</h4>
+          <a href="#">Tanzania Weather</a>
+          <a href="#">Yellow Fever Requirements</a>
+          <a href="#">Best Time to Visit</a>
+          <a href="#">Travel Insurance</a>
+        </div>
+        <div>
+          <h4>Traveler Guide</h4>
+          <a href="#">FAQ</a>
+          <a href="#">Mountain Packing List</a>
+          <a href="#">Safari Packing List</a>
+          <a href="#">Things to Do</a>
+        </div>
+        <div>
+          <h4>Contact Mafoya</h4>
+          <div class="footer-contact">
+            <div>+225 692 208 654</div>
+            <div>info@mafoyaafricasafaris.com</div>
+            <div>Arusha, Tanzania</div>
+            <div class="social-icons">
+              <a href="#">Facebook</a>
+              <a href="#">Instagram</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">© 2024 Mafoya Africa Safaris. All Rights Reserved.</div>
+    </div>
+  </footer>
+
+</body>
+</html>

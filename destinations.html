@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mafoy africa Safaris | Luxury Safari Experience</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f8f8f8;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header Section */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            color: #ffffff; /* White text */
+            background-color: #007bff; /* Blue background for the header */
+            width: 100%; /* Ensure the blue color covers the entire width */
+            position: relative; /* Positioning for menu button inside header */
+        }
+
+        /* Logo */
+        .logo {
+            display: flex;
+            align-items: center;
+            color: #333; /* Black color for logo text */
+            background-color: #ffffff; /* White background for logo in mobile view */
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+
+        .logo img {
+            width: 50px;
+            margin-right: 10px;
+        }
+
+        .logo span {
+            font-size: 1.4rem;
+            font-weight: bold;
+        }
+
+        /* Mobile Menu Button */
+        .menu-btn {
+            display: flex;
+            cursor: pointer;
+            flex-direction: column;
+            gap: 5px;
+            position: absolute; /* Position absolutely inside the header */
+            right: 20px; /* Align the button to the right inside the header */
+            background-color: transparent; /* No background for the button itself */
+            padding: 10px; /* Add padding to make button area clickable */
+        }
+
+        .menu-btn div {
+            width: 30px;
+            height: 4px;
+            background-color: #ffffff; /* White color for mobile menu lines */
+        }
+
+        /* Menu Text */
+        .menu-text {
+            color: white;
+            font-size: 1.4rem;
+            font-weight: bold;
+            margin-left: 10px; /* Add some space between the button and the text */
+        }
+
+        /* Mobile Navigation */
+        .mobile-nav {
+            display: none;
+            flex-direction: column;
+            background-color: #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .mobile-nav.active {
+            display: flex;
+        }
+
+        .mobile-nav ul {
+            list-style: none;
+            width: 100%;
+        }
+
+        .mobile-nav ul li {
+            width: 100%;
+        }
+
+        .mobile-nav ul li a {
+            display: block;
+            text-align: center;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #333;
+            padding: 15px;
+            border-bottom: 1px solid #ddd;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .mobile-nav ul li a:hover {
+            background-color: #f4f4f4;
+            color: #007bff; /* Blue color on hover */
+        }
+
+        /* Desktop View */
+        @media (min-width: 769px) {
+            header {
+                padding: 10px 5%;
+                display: flex;
+                justify-content: space-between; /* Align logo and menu at opposite ends */
+                align-items: center;
+            }
+
+            .menu-btn {
+                display: none;
+            }
+
+            /* Hide Menu Text in desktop view */
+            .menu-text {
+                display: none;
+            }
+
+            /* Align the navigation to the right */
+            header nav {
+                margin-left: auto; /* Push navigation to the right */
+            }
+
+            header nav ul {
+                display: flex;
+                list-style: none;
+                gap: 20px;
+            }
+
+            header nav ul li {
+                position: relative;
+            }
+
+            header nav ul li a {
+                text-decoration: none;
+                color: #ffffff; /* White text for navigation items */
+                font-weight: 600;
+                transition: color 0.3s;
+            }
+
+            header nav ul li a:hover {
+                color: #e6a400; /* Gold color on hover */
+            }
+
+            /* Dropdown Styling */
+            .dropdown {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                background-color: white;
+                min-width: 200px;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+                z-index: 1000;
+            }
+
+            /* Show the dropdown when hovering over the parent */
+            header nav ul li:hover .dropdown {
+                display: block;
+            }
+
+            .dropdown li {
+                width: 100%;
+            }
+
+            .dropdown a {
+                display: block;
+                padding: 10px 15px;
+                color: #333;
+            }
+
+            .dropdown a:hover {
+                background-color: #f4f4f4;
+            }
+
+            /* Update logo background to blue for desktop view */
+            .logo {
+                background-color: #007bff; /* Blue background for logo on desktop */
+                color: white; /* White text color for logo text */
+            }
+
+            .logo img {
+                width: 50px; /* Adjust logo size */
+                margin-right: 10px;
+            }
+
+            .logo span {
+                font-size: 1.6rem; /* Increase font size for better visibility */
+                font-weight: bold;
+            }
+        }
+
+        /* Mobile Specific Adjustments */
+        @media (max-width: 768px) {
+            /* Make the entire header section blue on mobile */
+            header {
+                display: block;
+                padding: 0; /* Remove default padding */
+                background-color: #007bff; /* Blue background for the entire header */
+                width: 100%; /* Make the blue background cover the entire width */
+            }
+
+            /* Logo on top of the header in mobile view with full-width blue background */
+            .logo {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%; /* Full-width */
+                background-color: #ffffff; /* White background for logo part */
+                padding: 30px 0; /* Increased padding for larger header */
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow */
+            }
+
+            .logo img {
+                width: 60px; /* Adjust logo size */
+                margin-right: 10px;
+            }
+
+            .logo span {
+                font-size: 1.6rem; /* Increase font size for better visibility */
+                font-weight: bold;
+            }
+
+            /* Header section with mobile menu icon */
+            header nav {
+                display: none; /* Hidden by default */
+            }
+
+            /* Mobile Navigation visible when active */
+            .mobile-nav.active {
+                display: flex;
+            }
+
+            /* "Menu" Text */
+            .menu-text {
+                color: white;
+                font-size: 1.4rem;
+                font-weight: bold;
+                margin-left: 20px;
+            }
+
+            /* Dropdown menu visibility when "Tours" is clicked */
+            .mobile-nav ul li .dropdown {
+                display: none;
+            }
+
+            .mobile-nav ul li.active .dropdown {
+                display: block;
+            }
+        }
+    </style>
+    
+</head>
+<body>
+    <!-- Header with Navigation -->
+    <header>
+        <!-- Logo (Visible in both mobile and desktop but different positioning) -->
+        <div class="logo">
+            <img src="mafoy2.jpg.png" alt="Mafoy africa Safaris">
+            <span>Mafoy africa Safaris</span>
+        </div>
+
+        <!-- Mobile Menu Button and "Menu" Text -->
+        <div class="menu-btn" onclick="toggleMobileMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <span class="menu-text">Menu</span> <!-- Menu Text added here -->
+
+        <!-- Desktop Navigation -->
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="destinations.html">Destinations</a></li>
+                <li class="tour-item">
+                    <a href="tours.html" onclick="toggleDropdown(event)">Tours</a>
+                    <ul class="dropdown">
+                        <li><a href="day-trips.html">Day Trip Packages</a></li>
+                        <li><a href="budget-tours.html">Budget Tour Packages</a></li>
+                        <li><a href="midrange-tours.html">Midrange Tour Packages</a></li>
+                        <li><a href="luxury-tours.html">Luxury Tour Packages</a></li>
+                        <li><a href="hiking.html">Hiking Packages</a></li>
+                        <li><a href="zanzibar-holidays.html">Zanzibar Holidays Packages</a></li>
+                    </ul>
+                </li>
+                <li><a href="testimonials.html">Testimonials</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <nav class="mobile-nav">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="destinations.html">Destinations</a></li>
+            <li class="tour-item">
+                <a href="tours.html" onclick="toggleDropdown(event)">Tours</a>
+                <ul class="dropdown">
+                    <li><a href="day-trips.html">Day Trip Packages</a></li>
+                    <li><a href="budget-tours.html">Budget Tour Packages</a></li>
+                    <li><a href="midrange-tours.html">Midrange Tour Packages</a></li>
+                    <li><a href="luxury-tours.html">Luxury Tour Packages</a></li>
+                    <li><a href="hiking.html">Hiking Packages</a></li>
+                    <li><a href="zanzibar-holidays.html">Zanzibar Holidays Packages</a></li>
+                </ul>
+            </li>
+            <li><a href="testimonials.html">Testimonials</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    
+
+    <script>
+        // Toggle Mobile Menu
+        function toggleMobileMenu() {
+            document.querySelector('.mobile-nav').classList.toggle('active');
+        }
+
+        // Toggle Dropdown for "Tours"
+        function toggleDropdown(event) {
+            event.preventDefault();
+            const parentLi = event.target.parentElement;
+            parentLi.classList.toggle('active');
+        }
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(event) {
+            const dropdowns = document.querySelectorAll('.dropdown');
+            dropdowns.forEach(function(dropdown) {
+                if (dropdown.classList.contains('show') && 
+                    !dropdown.previousElementSibling.contains(event.target)) {
+                    dropdown.classList.remove('show');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Roboto', sans-serif;
+        background-color: #f8f9fa;
+        color: #333;
+        line-height: 1.6;
+    }
+
+    .header {
+        background-color: #f0f0f0;
+        color: #333;
+        text-align: center;
+        padding: 30px 20px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .header h1 {
+        font-size: 2.5rem;
+        font-weight: 300;
+    }
+
+    .destinations-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    .destination-categories {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-bottom: 30px;
+        flex-wrap: wrap;
+    }
+
+    .category-button {
+        background-color: #6c757d;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.2s;
+        text-transform: uppercase;
+        font-weight: 300;
+    }
+
+    .category-button:hover {
+        background-color: #495057;
+        transform: scale(1.05);
+    }
+
+    .destinations-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 25px;
+    }
+
+    .destination-card {
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        overflow: hidden;
+        transition: transform 0.3s, box-shadow 0.3s;
+        position: relative;
+    }
+
+    .destination-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+    }
+
+    .destination-card img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        transition: transform 0.3s;
+    }
+
+    .destination-card:hover img {
+        transform: scale(1.1);
+    }
+
+    .destination-card-content {
+        padding: 20px;
+        background-color: white;
+    }
+
+    .destination-card-content h3 {
+        margin-bottom: 10px;
+        color: #343a40;
+        font-weight: 400;
+    }
+
+    .destination-details {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 10px;
+        font-size: 0.9rem;
+    }
+
+    .destination-price {
+        font-weight: bold;
+        color: #28a745;
+    }
+
+    @media (max-width: 768px) {
+        .destination-categories {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .category-button {
+            width: 80%;
+            margin-bottom: 10px;
+        }
+
+        .destinations-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+</head>
+<body>
+<div class="header">
+    <h1>Explore Tanzania's Incredible Destinations</h1>
+</div>
+
+<div class="destinations-container">
+    <div class="destination-categories">
+        <button class="category-button" onclick="filterDestinations('mountains')">Mountains</button>
+        <button class="category-button" onclick="filterDestinations('rivers')">Rivers</button>
+        <button class="category-button" onclick="filterDestinations('national-parks')">National Parks</button>
+        <button class="category-button" onclick="filterDestinations('towns')">Towns</button>
+        <button class="category-button" onclick="filterDestinations('all')">All Destinations</button>
+    </div>
+
+    <div id="destinations-grid" class="destinations-grid">
+        <!-- Destinations will be dynamically populated -->
+    </div>
+</div>
+
+<script>
+    // Destinations Data (Limited to 6 per category)
+    const destinations = [
+        // Mountains (6)
+        {
+            name: 'Mount Kilimanjaro',
+            category: 'mountains',
+            location: 'Northeastern Tanzania',
+            price: '$1,500',
+            days: '5-7 Days',
+            image: 'https://source.unsplash.com/400x300/?kilimanjaro'
+        },
+        {
+            name: 'Mount Meru',
+            category: 'mountains',
+            location: 'Arusha Region',
+            price: '$1,200',
+            days: '4-5 Days',
+            image: 'https://source.unsplash.com/400x300/?mount-meru'
+        },
+        {
+            name: 'Ol Doinyo Lengai',
+            category: 'mountains',
+            location: 'Rift Valley',
+            price: '$1,000',
+            days: '3-4 Days',
+            image: 'https://source.unsplash.com/400x300/?ol-doinyo-lengai'
+        },
+        {
+            name: 'Mount Hanang',
+            category: 'mountains',
+            location: 'Manyara Region',
+            price: '$800',
+            days: '2-3 Days',
+            image: 'https://source.unsplash.com/400x300/?mount-hanang'
+        },
+        {
+            name: 'Usambara Mountains',
+            category: 'mountains',
+            location: 'Northeastern Tanzania',
+            price: '$1,100',
+            days: '4-5 Days',
+            image: 'https://source.unsplash.com/400x300/?usambara-mountains'
+        },
+        {
+            name: 'Mount Livingstone',
+            category: 'mountains',
+            location: 'Western Tanzania',
+            price: '$950',
+            days: '3-4 Days',
+            image: 'https://source.unsplash.com/400x300/?mountain-tanzania'
+        },
+
+        // Rivers (6)
+        {
+            name: 'Rufiji River',
+            category: 'rivers',
+            location: 'Selous Game Reserve',
+            price: '$1,200',
+            days: '3-5 Days',
+            image: 'https://source.unsplash.com/400x300/?rufiji-river'
+        },
+        {
+            name: 'Pangani River',
+            category: 'rivers',
+            location: 'Northeastern Tanzania',
+            price: '$900',
+            days: '2-4 Days',
+            image: 'https://source.unsplash.com/400x300/?pangani-river'
+        },
+        {
+            name: 'Great Ruaha River',
+            category: 'rivers',
+            location: 'Ruaha National Park',
+            price: '$1,300',
+            days: '4-6 Days',
+            image: 'https://source.unsplash.com/400x300/?ruaha-river'
+        },
+        {
+            name: 'Mara River',
+            category: 'rivers',
+            location: 'Serengeti Region',
+            price: '$1,500',
+            days: '5-7 Days',
+            image: 'https://source.unsplash.com/400x300/?mara-river'
+        },
+        {
+            name: 'Wami River',
+            category: 'rivers',
+            location: 'Eastern Tanzania',
+            price: '$800',
+            days: '2-3 Days',
+            image: 'https://source.unsplash.com/400x300/?wami-river'
+        },
+        {
+            name: 'Kagera River',
+            category: 'rivers',
+            location: 'Northern Tanzania',
+            price: '$1,100',
+            days: '3-5 Days',
+            image: 'https://source.unsplash.com/400x300/?kagera-river'
+        },
+
+        // National Parks (6)
+        {
+            name: 'Serengeti National Park',
+            category: 'national-parks',
+            location: 'Northern Tanzania',
+            price: '$2,000',
+            days: '4-6 Days',
+            image: 'https://source.unsplash.com/400x300/?serengeti'
+        },
+        {
+            name: 'Ngorongoro Conservation Area',
+            category: 'national-parks',
+            location: 'Northern Tanzania',
+            price: '$1,800',
+            days: '3-5 Days',
+            image: 'https://source.unsplash.com/400x300/?ngorongoro'
+        },
+        {
+            name: 'Tarangire National Park',
+            category: 'national-parks',
+            location: 'Manyara Region',
+            price: '$1,200',
+            days: '2-4 Days',
+            image: 'https://source.unsplash.com/400x300/?tarangire'
+        },
+        {
+            name: 'Ruaha National Park',
+            category: 'national-parks',
+            location: 'Central Tanzania',
+            price: '$1,500',
+            days: '4-6 Days',
+            image: 'https://source.unsplash.com/400x300/?ruaha'
+        },
+        {
+            name: 'Selous Game Reserve',
+            category: 'national-parks',
+            location: 'Southern Tanzania',
+            price: '$1,700',
+            days: '5-7 Days',
+            image: 'https://source.unsplash.com/400x300/?selous'
+        },
+        {
+            name: 'Mikumi National Park',
+            category: 'national-parks',
+            location: 'Southern Tanzania',
+            price: '$1,300',
+            days: '3-5 Days',
+            image: 'https://source.unsplash.com/400x300/?mikumi'
+        },
+
+        // Towns (6)
+        {
+            name: 'Stone Town, Zanzibar',
+            category: 'towns',
+            location: 'Zanzibar Island',
+            price: '$800',
+            days: '3-4 Days',
+            image: 'https://source.unsplash.com/400x300/?stone-town'
+        },
+        {
+            name: 'Arusha',
+            category: 'towns',
+            location: 'Northern Tanzania',
+            price: '$600',
+            days: '2-3 Days',
+            image: 'https://source.unsplash.com/400x300/?arusha'
+        },
+        {
+            name: 'Dar es Salaam',
+            category: 'towns',
+            location: 'Eastern Tanzania',
+            price: '$500',
+            days: '2-3 Days',
+            image: 'https://source.unsplash.com/400x300/?dar-es-salaam'
+        },
+        {
+            name: 'Moshi',
+            category: 'towns',
+            location: 'Kilimanjaro Region',
+            price: '$550',
+            days: '2-3 Days',
+            image: 'https://source.unsplash.com/400x300/?moshi'
+        },
+        {
+            name: 'Bagamoyo',
+            category: 'towns',
+            location: 'Coastal Tanzania',
+            price: '$700',
+            days: '3-4 Days',
+            image: 'https://source.unsplash.com/400x300/?bagamoyo'
+        },
+        {
+            name: 'Dodoma',
+            category: 'towns',
+            location: 'Central Tanzania',
+            price: '$450',
+            days: '2-3 Days',
+            image: 'https://source.unsplash.com/400x300/?dodoma'
+        }
+    ];
+
+    // Function to render destinations
+    function renderDestinations(filteredDestinations) {
+        const grid = document.getElementById('destinations-grid');
+        grid.innerHTML = '';
+
+        filteredDestinations.forEach(dest => {
+            const card = document.createElement('div');
+            card.classList.add('destination-card');
+            card.innerHTML = `
+                <img src="${dest.image}" alt="${dest.name}">
+                <div class="destination-card-content">
+                    <h3>${dest.name}</h3>
+                    <p>Location: ${dest.location}</p>
+                    <div class="destination-details">
+                        <span class="destination-price">${dest.price}</span>
+                        <span>${dest.days}</span>
+                    </div>
+                </div>
+            `;
+            grid.appendChild(card);
+        });
+    }
+
+    // Filter destinations by category
+    function filterDestinations(category) {
+        const filtered = category === 'all' 
+            ? destinations 
+            : destinations.filter(dest => dest.category === category);
+        renderDestinations(filtered);
+    }
+
+    // Initial render of all destinations
+    renderDestinations(destinations);
+</script>
+</body>
+</html>

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore Tanzania with affordable budget safari tours designed for unforgettable experiences.">
+    <meta name="keywords" content="Tanzania safari, budget tours, Serengeti, Ngorongoro, Mikumi">
+    <title>Budget Tours | Explore Tanzania Safaris</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #007bff;
+            --secondary-color: #28a745;
+            --text-color: #333;
+            --background-color: #f8f9fa;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .hero {
+            background-color: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .hero a {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: var(--white);
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .hero a:hover {
+            background-color: #1c7430;
+        }
+
+        .tour-packages {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            padding: 40px 0;
+        }
+
+        .tour-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .tour-card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .tour-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .tour-card-content {
+            padding: 20px;
+        }
+
+        .tour-card-content h2 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-size: 1.5rem;
+        }
+
+        .tour-card-content .price {
+            color: var(--secondary-color);
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        .why-budget-tours {
+            background-color: var(--background-color);
+            padding: 40px 0;
+        }
+
+        .why-budget-tours h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .benefits {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .benefit {
+            text-align: center;
+            padding: 20px;
+            background-color: #f1f1f1;
+            border-radius: 8px;
+        }
+
+        .benefit img {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 15px;
+        }
+
+        @media (min-width: 768px) {
+            .tour-packages {
+                flex-direction: row;
+            }
+
+            .benefits {
+                flex-direction: row;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="container">
+            <h1>Budget-Friendly Safari Tours</h1>
+            <p>Unforgettable Tanzanian adventures that don't break the bank.</p>
+            <a href="#tours">Explore Tours</a>
+        </div>
+    </div>
+
+    <!-- Tour Packages Section -->
+    <div id="tours" class="container tour-packages">
+        <div class="tour-card">
+            <img src="/api/placeholder/400/250" alt="3-Day Serengeti Budget Safari">
+            <div class="tour-card-content">
+                <h2>3-Day Serengeti Budget Safari</h2>
+                <p>Experience the incredible wildlife of Serengeti National Park with comfortable, affordable accommodations.</p>
+                <div class="price">From $550 per person</div>
+                <a href="#" class="btn">View Details</a>
+            </div>
+        </div>
+
+        <div class="tour-card">
+            <img src="/api/placeholder/400/250" alt="4-Day Northern Circuit Budget Tour">
+            <div class="tour-card-content">
+                <h2>4-Day Northern Circuit Budget Tour</h2>
+                <p>Visit Tarangire, Lake Manyara, and Ngorongoro Crater on a budget-friendly adventure.</p>
+                <div class="price">From $750 per person</div>
+                <a href="#" class="btn">View Details</a>
+            </div>
+        </div>
+
+        <div class="tour-card">
+            <img src="/api/placeholder/400/250" alt="2-Day Mikumi National Park Safari">
+            <div class="tour-card-content">
+                <h2>2-Day Mikumi National Park Safari</h2>
+                <p>A short but exciting safari exploring the diverse wildlife of Mikumi National Park.</p>
+                <div class="price">From $350 per person</div>
+                <a href="#" class="btn">View Details</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Why Budget Tours Section -->
+    <div class="why-budget-tours">
+        <div class="container">
+            <h2>Why Choose Our Budget Tours?</h2>
+            <div class="benefits">
+                <div class="benefit">
+                    <img src="/api/placeholder/80/80" alt="Cost-Effective">
+                    <h3>Cost-Effective</h3>
+                    <p>Affordable pricing without compromising on experience</p>
+                </div>
+                <div class="benefit">
+                    <img src="/api/placeholder/80/80" alt="Comfortable Accommodations">
+                    <h3>Comfortable Accommodations</h3>
+                    <p>Clean, safe, and budget-friendly lodging options</p>
+                </div>
+                <div class="benefit">
+                    <img src="/api/placeholder/80/80" alt="Expert Guides">
+                    <h3>Expert Guides</h3>
+                    <p>Knowledgeable local guides to enhance your safari</p>
+                </div>
+                <div class="benefit">
+                    <img src="/api/placeholder/80/80" alt="Flexible Itineraries">
+                    <h3>Flexible Itineraries</h3>
+                    <p>Customizable tours to suit your budget and preferences</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -331,7 +331,403 @@
         </ul>
     </nav>
     
-
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Explore top destinations in Tanzania by category, featuring mountains, wildlife safaris, and more. Plan your adventure now!">
+      <center> <title>Explore Tanzania: Destinations by Category</title></center> 
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+    
+            body {
+                font-family: 'Roboto', sans-serif;
+                background-color: #9dacb3;
+                color: #333;
+                line-height: 1.6;
+                overflow: hidden;
+            }
+    
+           
+    h1{
+        align-items: center;
+        align-content: space-around;
+    }
+            .header h1 {
+                font-size: 2rem;
+                font-weight: 300;
+                color-interpolation-filters: auto;
+                align-content: center;
+            }
+    
+            .back-button {
+                position: absolute;
+                left: 20px;
+                top: 50%;
+                transform: translateY(-50%);
+                background: none;
+                border: none;
+                color: hwb(0 2% 92%);
+                font-size: 1.5rem;
+                cursor: pointer;
+            }
+    
+            .destination-categories,
+            .category-destinations {
+                max-width: 1200px;
+                margin: 80px auto 20px;
+                padding: 20px;
+                animation: fadeIn 1s ease-in-out;
+            }
+    
+            .categories-grid,
+            .destinations-grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 20px;
+            }
+    
+            .destination-card {
+                background-color: white;
+                border-radius: 10px;
+                overflow: hidden;
+                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+                transition: transform 0.3s ease;
+                cursor: pointer;
+                animation: fadeInCard 0.5s ease-in-out;
+            }
+    
+            .destination-card:hover {
+                transform: translateY(-10px);
+            }
+    
+            .destination-card img {
+                width: 100%;
+                height: 250px;
+                object-fit: cover;
+            }
+    
+            .destination-card-content {
+                padding: 15px;
+            }
+    
+            .destination-card-content h3 {
+                margin-bottom: 10px;
+                color: #333;
+            }
+    
+            .destination-card-content p {
+                font-size: 0.9rem;
+                margin-bottom: 10px;
+            }
+    
+            .destination-card-content .view-more {
+                display: inline-block;
+                padding: 8px 15px;
+                background-color: #3498db;
+                color: white;
+                text-align: center;
+                text-decoration: none;
+                border-radius: 5px;
+                font-size: 0.9rem;
+                transition: background-color 0.3s ease;
+            }
+    
+            .destination-card-content .view-more:hover {
+                background-color: #2980b9;
+            }
+    
+            .modal {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.8);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                z-index: 200;
+                opacity: 0;
+                pointer-events: none;
+                transition: opacity 0.3s ease;
+            }
+    
+            .modal.active {
+                opacity: 1;
+                pointer-events: all;
+            }
+    
+            .modal-content {
+                background: white;
+                border-radius: 10px;
+                max-width: 800px;
+                width: 90%;
+                padding: 20px;
+                position: relative;
+                animation: fadeIn 0.5s ease;
+            }
+    
+            .modal-close {
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                font-size: 1.5rem;
+                background: none;
+                border: none;
+                cursor: pointer;
+                color: hsla(0, 67%, 2%, 0.884);
+            }
+    
+            @keyframes fadeIn {
+                from {
+                    opacity: 0;
+                }
+                to {
+                    opacity: 1;
+                }
+            }
+    
+            @keyframes fadeInCard {
+                from {
+                    opacity: 0;
+                }
+                to {
+                    opacity: 1;
+                }
+            }
+    
+            @media (max-width: 1024px) {
+                .categories-grid,
+                .destinations-grid {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+            }
+    
+            @media (max-width: 768px) {
+                .categories-grid,
+                .destinations-grid {
+                    grid-template-columns: 1fr;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="header">
+            <button class="back-button" id="back-button" style="display:none;" aria-label="Go Back">&#8592;</button>
+           <center><h1 id="page-title">Explore Tanzania's Destinations</h1></center> 
+        </div>
+    
+        <div id="initial-view" class="destination-categories">
+            <div id="categories-grid" class="categories-grid" aria-label="Categories">
+                <!-- Categories will be dynamically populated -->
+            </div>
+        </div>
+    
+        <div id="category-view" class="category-destinations" style="display:none;">
+            <div id="category-destinations-grid" class="destinations-grid" aria-label="Destinations">
+                <!-- Category destinations will be dynamically populated -->
+            </div>
+        </div>
+    
+        <div id="destination-modal" class="modal" role="dialog" aria-labelledby="modal-title" aria-hidden="true">
+            <div class="modal-content">
+                <button class="modal-close" onclick="closeModal()" aria-label="Close">&times;</button>
+                <div id="modal-details">
+                    <!-- Modal details will be dynamically populated -->
+                </div>
+            </div>
+        </div>
+    
+        <script>
+            const destinations = {
+                'Mountains': [
+                    { name: 'Mount Kilimanjaro', location: 'Northeastern Tanzania', price: '$1,500', days: '5-7 Days', image: 'https://source.unsplash.com/400x300/?kilimanjaro', details: { bestTime: 'June to October', climate: 'Cool and dry', thingsToDo: ['Hiking', 'Photography', 'Camping'], budget: '$1,500 - $2,000', whyVisit: 'Africa’s highest peak with stunning views.', stay: '5-7 Days' }},
+                    { name: 'Mount Meru', location: 'Arusha', price: '$1,200', days: '4-6 Days', image: 'https://source.unsplash.com/400x300/?mount-meru', details: { bestTime: 'April to October', climate: 'Mild and cool', thingsToDo: ['Mountain Climbing', 'Photography', 'Camping'], budget: '$1,200 - $1,500', whyVisit: 'Second tallest mountain in Tanzania with breathtaking views.', stay: '4-6 Days' }},
+                    { name: 'Oldonyo Lengai', location: 'Ngorongoro', price: '$900', days: '3-5 Days', image: 'https://source.unsplash.com/400x300/?volcano', details: { bestTime: 'January to March', climate: 'Dry and warm', thingsToDo: ['Volcano trekking', 'Wildlife spotting', 'Camping'], budget: '$900 - $1,300', whyVisit: 'Active volcano with a unique landscape.', stay: '3-5 Days' }},
+                    { name: 'Lemosho Route', location: 'Mount Kilimanjaro', price: '$1,700', days: '7-9 Days', image: 'https://source.unsplash.com/400x300/?mountain', details: { bestTime: 'June to October', climate: 'Cold and dry', thingsToDo: ['Trekking', 'Photography', 'Camping'], budget: '$1,700 - $2,200', whyVisit: 'One of the most scenic routes to Kilimanjaro.', stay: '7-9 Days' }},
+                    { name: 'Mawenzi Peak', location: 'Kilimanjaro National Park', price: '$1,600', days: '6-8 Days', image: 'https://source.unsplash.com/400x300/?mawenzi-peak', details: { bestTime: 'June to October', climate: 'Chilly and dry', thingsToDo: ['Mountain climbing', 'Trekking', 'Photography'], budget: '$1,600 - $2,100', whyVisit: 'Spectacular views of the Mawenzi peak.', stay: '6-8 Days' }},
+                    { name: 'Rongai Route', location: 'Kilimanjaro', price: '$1,400', days: '5-7 Days', image: 'https://source.unsplash.com/400x300/?rongai-route', details: { bestTime: 'June to September', climate: 'Cool and dry', thingsToDo: ['Climbing', 'Wildlife watching', 'Photography'], budget: '$1,400 - $1,900', whyVisit: 'A quieter route up Kilimanjaro.', stay: '5-7 Days' }},
+                    { name: 'Crater Camp', location: 'Mount Kilimanjaro', price: '$1,500', days: '4-6 Days', image: 'https://source.unsplash.com/400x300/?crater', details: { bestTime: 'June to October', climate: 'Cold', thingsToDo: ['Trekking', 'Photography', 'Camping'], budget: '$1,500 - $2,000', whyVisit: 'A unique experience camping in the crater.', stay: '4-6 Days' }},
+                    { name: 'Kilimanjaro Umbwe Route', location: 'Mount Kilimanjaro', price: '$1,800', days: '6-8 Days', image: 'https://source.unsplash.com/400x300/?kilimanjaro-umbrella', details: { bestTime: 'June to September', climate: 'Cool and dry', thingsToDo: ['Mountain climbing', 'Photography', 'Camping'], budget: '$1,800 - $2,400', whyVisit: 'One of the most challenging Kilimanjaro routes.', stay: '6-8 Days' }},
+                    { name: 'Mombasa', location: 'Kenya Coast', price: '$700', days: '2-4 Days', image: 'https://source.unsplash.com/400x300/?mombasa', details: { bestTime: 'May to October', climate: 'Tropical', thingsToDo: ['Beach sports', 'Safari', 'Snorkeling'], budget: '$700 - $900', whyVisit: 'Beach resorts with vibrant culture.', stay: '2-4 Days' }},
+                    { name: 'Serengeti', location: 'Central Tanzania', price: '$2,000', days: '3-5 Days', image: 'https://source.unsplash.com/400x300/?serengeti', details: { bestTime: 'June to October', climate: 'Warm and dry', thingsToDo: ['Safari', 'Wildlife watching', 'Photography'], budget: '$2,000 - $2,500', whyVisit: 'One of the best wildlife viewing spots in the world.', stay: '3-5 Days' }},
+                ],
+                
+                'Rivers': [
+                { name: 'Rufiji River', location: 'Coastal Tanzania', price: '$300', days: '2-3 Days', image: 'jozani 2.jpg', details: { bestTime: 'June to November', climate: 'Tropical', thingsToDo: ['River Safari', 'Birdwatching'], budget: '$300 - $500', whyVisit: 'Explore Tanzania’s largest river with a variety of wildlife.', stay: '2-3 Days' }},
+                { name: 'Mara River', location: 'Serengeti', price: '$500', days: '2-4 Days', image: 'https://source.unsplash.com/400x300/?mara-river', details: { bestTime: 'July to October', climate: 'Dry and warm', thingsToDo: ['Safari', 'Photography'], budget: '$500 - $700', whyVisit: 'Witness the Great Migration in action.', stay: '2-4 Days' }},
+                { name: 'Ruinsori River', location: 'Western Tanzania', price: '$400', days: '3-5 Days', image: 'https://source.unsplash.com/400x300/?ruinsori-river', details: { bestTime: 'April to October', climate: 'Mild', thingsToDo: ['River exploration', 'Photography'], budget: '$400 - $600', whyVisit: 'Remote and pristine river setting perfect for exploration.', stay: '3-5 Days' }},
+                { name: 'Lake Tanganyika', location: 'Western Tanzania', price: '$600', days: '5-7 Days', image: 'https://source.unsplash.com/400x300/?lake-tanganyika', details: { bestTime: 'April to November', climate: 'Tropical', thingsToDo: ['Snorkeling', 'Fishing', 'Boat tours'], budget: '$600 - $800', whyVisit: 'Africa’s second-largest freshwater lake with unique wildlife.', stay: '5-7 Days' }},
+                { name: 'Zambezi River', location: 'Southern Tanzania', price: '$800', days: '6-8 Days', image: 'https://source.unsplash.com/400x300/?zambezi-river', details: { bestTime: 'May to September', climate: 'Warm', thingsToDo: ['Wildlife watching', 'Boat rides', 'Fishing'], budget: '$800 - $1,000', whyVisit: 'A thrilling river experience with diverse wildlife and adventure.', stay: '6-8 Days' }},
+                // Add 5 more rivers to complete the list
+            ],
+            'National Parks': [
+                { name: 'Serengeti National Park', location: 'Northern Tanzania', price: '$1,200', days: '3-5 Days', image: 'https://source.unsplash.com/400x300/?serengeti', details: { bestTime: 'June to October', climate: 'Warm and dry', thingsToDo: ['Safari', 'Wildlife watching', 'Photography'], budget: '$1,200 - $1,500', whyVisit: 'World-renowned for the Great Migration and exceptional wildlife.', stay: '3-5 Days' }},
+                { name: 'Ngorongoro Crater', location: 'Northern Tanzania', price: '$1,000', days: '2-4 Days', image: 'https://source.unsplash.com/400x300/?ngorongoro-crater', details: { bestTime: 'May to October', climate: 'Moderate', thingsToDo: ['Safari', 'Crater tours'], budget: '$1,000 - $1,300', whyVisit: 'A UNESCO World Heritage site home to a variety of wildlife.', stay: '2-4 Days' }},
+                { name: 'Tarangire National Park', location: 'Northern Tanzania', price: '$800', days: '3-4 Days', image: 'https://source.unsplash.com/400x300/?tarangire', details: { bestTime: 'June to October', climate: 'Dry', thingsToDo: ['Safari', 'Wildlife watching'], budget: '$800 - $1,000', whyVisit: 'Known for large elephant herds and baobab trees.', stay: '3-4 Days' }},
+                { name: 'Ruinsori National Park', location: 'Western Tanzania', price: '$900', days: '4-6 Days', image: 'https://source.unsplash.com/400x300/?ruinsori-park', details: { bestTime: 'April to October', climate: 'Cool', thingsToDo: ['Hiking', 'Wildlife tours'], budget: '$900 - $1,100', whyVisit: 'Home to the unique Ruinsori Mountains and diverse ecosystems.', stay: '4-6 Days' }},
+                { name: 'Selous Game Reserve', location: 'Southern Tanzania', price: '$1,100', days: '5-7 Days', image: 'https://source.unsplash.com/400x300/?selous', details: { bestTime: 'May to October', climate: 'Tropical', thingsToDo: ['Boat safari', 'Game viewing'], budget: '$1,100 - $1,500', whyVisit: 'A remote and scenic reserve with diverse wildlife and rivers.', stay: '5-7 Days' }},
+                { name: 'Lake Manyara National Park', location: 'Northern Tanzania', price: '$700', days: '2-3 Days', image: 'https://source.unsplash.com/400x300/?lake-manyara', details: { bestTime: 'June to October', climate: 'Warm and dry', thingsToDo: ['Safari', 'Birdwatching'], budget: '$700 - $900', whyVisit: 'Famous for its tree-climbing lions and flamingos.', stay: '2-3 Days' }},
+                { name: 'Ruinsori Mountains', location: 'Western Tanzania', price: '$1,500', days: '5-7 Days', image: 'https://source.unsplash.com/400x300/?ruinsori-mountains', details: { bestTime: 'April to October', climate: 'Mild', thingsToDo: ['Mountain trekking', 'Wildlife exploration'], budget: '$1,500 - $1,800', whyVisit: 'Climbing the iconic mountains offers a unique adventure.', stay: '5-7 Days' }},
+                { name: 'Mkomazi National Park', location: 'Tanzania - Kenya Border', price: '$950', days: '3-5 Days', image: 'https://source.unsplash.com/400x300/?mkomazi-national-park', details: { bestTime: 'June to October', climate: 'Dry and warm', thingsToDo: ['Safari', 'Birdwatching'], budget: '$950 - $1,200', whyVisit: 'A hidden gem known for its rhino sanctuary and landscapes.', stay: '3-5 Days' }},
+                { name: 'Gombe Stream National Park', location: 'Western Tanzania', price: '$1,000', days: '3-5 Days', image: 'https://source.unsplash.com/400x300/?gombe', details: { bestTime: 'May to October', climate: 'Tropical', thingsToDo: ['Chimpanzee tracking', 'Hiking'], budget: '$1,000 - $1,300', whyVisit: 'Famous for its chimpanzee population and forest treks.', stay: '3-5 Days' }},
+                { name: 'Katavi National Park', location: 'Western Tanzania', price: '$1,300', days: '4-6 Days', image: 'https://source.unsplash.com/400x300/?katavi', details: { bestTime: 'June to October', climate: 'Dry', thingsToDo: ['Safari', 'Wildlife viewing'], budget: '$1,300 - $1,500', whyVisit: 'A pristine park with incredible wildlife viewing opportunities.', stay: '4-6 Days' }}
+            ]
+            ,
+            'Culture Tours': [
+                { name: 'Zanzibar Spice Tour', location: 'Zanzibar', price: '$350', days: '1-2 Days', image: 'https://source.unsplash.com/400x300/?zanzibar-spice', details: { bestTime: 'April to December', climate: 'Tropical', thingsToDo: ['Spice farm visit', 'Cultural tours', 'Cooking classes'], budget: '$350 - $450', whyVisit: 'Experience the spice heritage of Zanzibar and its rich cultural history.', stay: '1-2 Days' }},
+                { name: 'Maasai Cultural Tour', location: 'Northern Tanzania', price: '$300', days: '2-3 Days', image: 'https://source.unsplash.com/400x300/?maasai-village', details: { bestTime: 'March to October', climate: 'Warm', thingsToDo: ['Maasai village visit', 'Traditional dance', 'Cultural immersion'], budget: '$300 - $400', whyVisit: 'Immerse yourself in the traditional Maasai lifestyle and learn about their customs.', stay: '2-3 Days' }},
+                { name: 'Hadzabe Tribe Experience', location: 'Lake Eyasi, Northern Tanzania', price: '$250', days: '1-2 Days', image: 'https://source.unsplash.com/400x300/?hadzabe-tribe', details: { bestTime: 'June to October', climate: 'Hot and dry', thingsToDo: ['Tribal hunting', 'Cultural exchange', 'Traditional food'], budget: '$250 - $350', whyVisit: 'Experience the ancient lifestyle of the Hadzabe hunter-gatherer tribe.', stay: '1-2 Days' }},
+                { name: 'Ngorongoro Crater Cultural Tour', location: 'Northern Tanzania', price: '$450', days: '2-3 Days', image: 'https://source.unsplash.com/400x300/?ngorongoro-crater-cultural', details: { bestTime: 'May to October', climate: 'Moderate', thingsToDo: ['Cultural village visits', 'Traditional food tasting'], budget: '$450 - $550', whyVisit: 'Explore the cultural heritage around the Ngorongoro Crater, including local communities.', stay: '2-3 Days' }},
+                { name: 'Liwale Village Cultural Experience', location: 'Southern Tanzania', price: '$400', days: '2-3 Days', image: 'https://source.unsplash.com/400x300/?liwale-village', details: { bestTime: 'June to October', climate: 'Tropical', thingsToDo: ['Cultural immersion', 'Tribal dance'], budget: '$400 - $500', whyVisit: 'Discover the rural life and rich traditions of the people in Southern Tanzania.', stay: '2-3 Days' }},
+                { name: 'Iringa Cultural Heritage Tour', location: 'Southern Highlands, Tanzania', price: '$350', days: '2-3 Days', image: 'https://source.unsplash.com/400x300/?iringa-cultural', details: { bestTime: 'May to October', climate: 'Cool', thingsToDo: ['Cultural visits', 'Traditional art exhibitions'], budget: '$350 - $450', whyVisit: 'Experience the traditions, crafts, and food of the Southern Highlands communities.', stay: '2-3 Days' }},
+                { name: 'Chagga Tribe Cultural Tour', location: 'Mount Kilimanjaro Region', price: '$500', days: '3-4 Days', image: 'https://source.unsplash.com/400x300/?chagga-tribe', details: { bestTime: 'March to November', climate: 'Mild', thingsToDo: ['Cultural exploration', 'Coffee plantation visit'], budget: '$500 - $600', whyVisit: 'Learn about the unique Chagga tribe’s lifestyle and their agricultural practices.', stay: '3-4 Days' }},
+                { name: 'Bagamoyo Historical Tour', location: 'Bagamoyo, Tanzania', price: '$300', days: '1-2 Days', image: 'https://source.unsplash.com/400x300/?bagamoyo', details: { bestTime: 'April to December', climate: 'Coastal', thingsToDo: ['Historical site visit', 'Slave trade history'], budget: '$300 - $400', whyVisit: 'Explore the historical coastal town that was once a major center of the East African slave trade.', stay: '1-2 Days' }},
+                { name: 'Moshi Cultural Experience', location: 'Moshi, Tanzania', price: '$350', days: '2-3 Days', image: 'https://source.unsplash.com/400x300/?moshi-cultural', details: { bestTime: 'June to October', climate: 'Mild', thingsToDo: ['Cultural village visits', 'Hiking to local attractions'], budget: '$350 - $450', whyVisit: 'Get a feel of the local culture in Moshi, including traditional crafts and food.', stay: '2-3 Days' }},
+                { name: 'Zigua Tribe Cultural Tour', location: 'Tanga Region, Tanzania', price: '$400', days: '3-4 Days', image: 'https://source.unsplash.com/400x300/?zigua-tribe', details: { bestTime: 'March to October', climate: 'Tropical', thingsToDo: ['Traditional village visits', 'Cultural exchange'], budget: '$400 - $500', whyVisit: 'Learn about the Zigua people and their fascinating cultural practices in Tanga.', stay: '3-4 Days' }}
+            ],
+            'Sea Beaches': [
+                { name: 'Zanzibar Beach', location: 'Zanzibar', price: '$500', days: '4-5 Days', image: 'https://source.unsplash.com/400x300/?zanzibar-beach', details: { bestTime: 'June to October', climate: 'Tropical', thingsToDo: ['Snorkeling', 'Sunbathing', 'Water sports'], budget: '$500 - $700', whyVisit: 'Famous for pristine white-sand beaches and crystal-clear waters.', stay: '4-5 Days' }},
+                { name: 'Pemba Island', location: 'Zanzibar Archipelago', price: '$450', days: '3-4 Days', image: 'https://source.unsplash.com/400x300/?pemba-island', details: { bestTime: 'April to December', climate: 'Tropical', thingsToDo: ['Diving', 'Beach relaxation', 'Fishing'], budget: '$450 - $600', whyVisit: 'A peaceful and less touristy beach destination, perfect for relaxation.', stay: '3-4 Days' }},
+                { name: 'Mafia Island', location: 'Off the Coast of Tanzania', price: '$600', days: '4-5 Days', image: 'https://source.unsplash.com/400x300/?mafia-island', details: { bestTime: 'May to October', climate: 'Tropical', thingsToDo: ['Diving', 'Swimming with whale sharks', 'Fishing'], budget: '$600 - $800', whyVisit: 'Famous for its marine life, including whale sharks and pristine coral reefs.', stay: '4-5 Days' }},
+                { name: 'Bagamoyo Beach', location: 'Tanzania Coast', price: '$350', days: '2-3 Days', image: 'https://source.unsplash.com/400x300/?bagamoyo-beach', details: { bestTime: 'June to October', climate: 'Coastal', thingsToDo: ['Swimming', 'Cultural exploration', 'Beach walks'], budget: '$350 - $500', whyVisit: 'A historic coastal town with a relaxing beach perfect for a peaceful getaway.', stay: '2-3 Days' }},
+                { name: 'Dar es Salaam Beaches', location: 'Dar es Salaam', price: '$400', days: '2-3 Days', image: 'https://source.unsplash.com/400x300/?dar-es-salaam-beach', details: { bestTime: 'May to October', climate: 'Tropical', thingsToDo: ['Snorkeling', 'Sunbathing', 'Boat tours'], budget: '$400 - $550', whyVisit: 'Located near the bustling city, it offers a mix of urban culture and tropical relaxation.', stay: '2-3 Days' }},
+                { name: 'Saadani Beach', location: 'Saadani National Park', price: '$450', days: '3-4 Days', image: 'https://source.unsplash.com/400x300/?saadani-beach', details: { bestTime: 'June to October', climate: 'Tropical', thingsToDo: ['Wildlife viewing', 'Beach relaxation', 'Boating'], budget: '$450 - $600', whyVisit: 'A unique destination where the beach meets the wildlife of Saadani National Park.', stay: '3-4 Days' }},
+                { name: 'Kilwa Kisiwani Beach', location: 'Kilwa, Tanzania', price: '$350', days: '2-3 Days', image: 'https://source.unsplash.com/400x300/?kilwa-kisiwani-beach', details: { bestTime: 'April to December', climate: 'Coastal', thingsToDo: ['Historical exploration', 'Beach walks', 'Swimming'], budget: '$350 - $450', whyVisit: 'Explore the ancient ruins of Kilwa Kisiwani while enjoying beautiful beaches.', stay: '2-3 Days' }},
+                { name: 'Tanga Beaches', location: 'Tanga Region', price: '$300', days: '2-3 Days', image: 'https://source.unsplash.com/400x300/?tanga-beach', details: { bestTime: 'March to October', climate: 'Tropical', thingsToDo: ['Snorkeling', 'Sunbathing', 'Fishing'], budget: '$300 - $400', whyVisit: 'Less crowded beaches perfect for an authentic, tranquil coastal experience.', stay: '2-3 Days' }},
+                { name: 'Mtwara Beach', location: 'Mtwara, Southern Tanzania', price: '$350', days: '3-4 Days', image: 'https://source.unsplash.com/400x300/?mtwara-beach', details: { bestTime: 'June to October', climate: 'Tropical', thingsToDo: ['Swimming', 'Beach walks', 'Sunbathing'], budget: '$350 - $500', whyVisit: 'Explore one of Tanzania’s quieter coastal regions with beautiful sandy shores.', stay: '3-4 Days' }},
+                { name: 'Songo Songo Islands', location: 'Coastal Tanzania', price: '$500', days: '4-5 Days', image: 'https://source.unsplash.com/400x300/?songo-songo-islands', details: { bestTime: 'May to October', climate: 'Tropical', thingsToDo: ['Diving', 'Fishing', 'Island hopping'], budget: '$500 - $700', whyVisit: 'A remote island destination perfect for diving enthusiasts and beach lovers.', stay: '4-5 Days' }}
+            ],
+    
+            'Cities': [
+                { name: 'Dar es Salaam', location: 'Coastal Tanzania', price: '$600', days: '3-4 Days', image: 'https://source.unsplash.com/400x300/?dar-es-salaam', details: { bestTime: 'May to October', climate: 'Tropical', thingsToDo: ['City tours', 'Museum visits', 'Beach relaxation'], budget: '$600 - $800', whyVisit: 'Tanzania’s largest city and economic hub, offering a mix of culture and beach life.', stay: '3-4 Days' }},
+                { name: 'Arusha', location: 'Northern Tanzania', price: '$500', days: '2-3 Days', image: 'https://source.unsplash.com/400x300/?arusha', details: { bestTime: 'June to October', climate: 'Moderate', thingsToDo: ['Safari planning', 'Cultural tours', 'Mount Meru hikes'], budget: '$500 - $650', whyVisit: 'Known as the gateway to Tanzania’s national parks and Mount Meru.', stay: '2-3 Days' }},
+                { name: 'Moshi', location: 'Northern Tanzania', price: '$450', days: '3-4 Days', image: 'https://source.unsplash.com/400x300/?moshi', details: { bestTime: 'June to October', climate: 'Moderate', thingsToDo: ['Mount Kilimanjaro treks', 'Waterfalls', 'Cultural tours'], budget: '$450 - $600', whyVisit: 'The perfect base for hiking Mount Kilimanjaro and exploring Tanzanian culture.', stay: '3-4 Days' }},
+                { name: 'Mbeya', location: 'Southern Tanzania', price: '$400', days: '2-3 Days', image: 'https://source.unsplash.com/400x300/?mbeya', details: { bestTime: 'May to October', climate: 'Cool', thingsToDo: ['Mountain tours', 'Cultural exploration'], budget: '$400 - $500', whyVisit: 'Known for its stunning landscapes, mountains, and local cultural experiences.', stay: '2-3 Days' }},
+                { name: 'Dodoma', location: 'Central Tanzania', price: '$350', days: '2-3 Days', image: 'https://source.unsplash.com/400x300/?dodoma', details: { bestTime: 'June to October', climate: 'Hot', thingsToDo: ['Historical tours', 'Cultural tours'], budget: '$350 - $450', whyVisit: 'Tanzania’s political capital, with rich cultural and historical significance.', stay: '2-3 Days' }},
+                { name: 'Tanga', location: 'Tanga Region', price: '$450', days: '3-4 Days', image: 'https://source.unsplash.com/400x300/?tanga-city', details: { bestTime: 'April to December', climate: 'Coastal', thingsToDo: ['Beaches', 'Cultural tours', 'Historical exploration'], budget: '$450 - $600', whyVisit: 'A beautiful coastal city with beaches and rich historical heritage.', stay: '3-4 Days' }},
+                { name: 'Zanzibar City', location: 'Zanzibar Archipelago', price: '$550', days: '3-4 Days', image: 'https://source.unsplash.com/400x300/?zanzibar-city', details: { bestTime: 'April to December', climate: 'Tropical', thingsToDo: ['Stone Town exploration', 'Beach visits', 'Cultural experiences'], budget: '$550 - $700', whyVisit: 'A blend of rich history, culture, and beaches, especially in the iconic Stone Town.', stay: '3-4 Days' }},
+                { name: 'Mtwara', location: 'Southern Tanzania', price: '$400', days: '3-4 Days', image: 'https://source.unsplash.com/400x300/?mtwara-city', details: { bestTime: 'May to October', climate: 'Tropical', thingsToDo: ['Coastal exploration', 'Cultural visits', 'Historical sites'], budget: '$400 - $550', whyVisit: 'A peaceful city by the coast with local history and culture to explore.', stay: '3-4 Days' }},
+                { name: 'Shinyanga', location: 'Western Tanzania', price: '$300', days: '2-3 Days', image: 'https://source.unsplash.com/400x300/?shinyanga', details: { bestTime: 'May to October', climate: 'Warm', thingsToDo: ['Cultural exploration', 'Local market visits'], budget: '$300 - $450', whyVisit: 'A less-known destination with a great local cultural experience.', stay: '2-3 Days' }},
+                { name: 'Bukoba', location: 'Lake Victoria Region', price: '$350', days: '2-3 Days', image: 'https://source.unsplash.com/400x300/?bukoba', details: { bestTime: 'April to December', climate: 'Tropical', thingsToDo: ['Lake Victoria tours', 'Cultural visits', 'Fishing'], budget: '$350 - $500', whyVisit: 'A serene city located along the shores of Lake Victoria, offering a peaceful escape.', stay: '2-3 Days' }}
+            ]
+                // Add more categories (Rivers, Cities, National Parks, etc.) with at least 10 items each
+            };
+    
+            const categories = [
+                { name: 'Mountains', image: 'https://source.unsplash.com/400x300/?mountain' },
+                { name: 'Rivers', image: 'https://source.unsplash.com/400x300/?river' },
+                { name: 'Cities', image: 'https://source.unsplash.com/400x300/?city' },
+                { name: 'Sea Beaches', image: 'https://source.unsplash.com/400x300/?beach' },
+                { name: 'Culture Tours', image: 'https://source.unsplash.com/400x300/?culture' },
+                { name: 'National Parks', image: 'https://source.unsplash.com/400x300/?national-park' }
+            ];
+    
+            const categoriesGrid = document.getElementById('categories-grid');
+            const categoryDestinationsGrid = document.getElementById('category-destinations-grid');
+            const pageTitle = document.getElementById('page-title');
+            const backButton = document.getElementById('back-button');
+            const initialView = document.getElementById('initial-view');
+            const categoryView = document.getElementById('category-view');
+            const destinationModal = document.getElementById('destination-modal');
+            const modalDetails = document.getElementById('modal-details');
+    
+            function renderCategories() {
+                categoriesGrid.innerHTML = '';
+                categories.forEach(category => {
+                    const card = document.createElement('div');
+                    card.classList.add('destination-card');
+                    card.innerHTML = `
+                        <img src="${category.image}" alt="${category.name}">
+                        <div class="destination-card-content">
+                            <h3>${category.name}</h3>
+                            <p>Explore the best of Tanzania's ${category.name.toLowerCase()}.</p>
+                            <a href="#" class="view-more" data-category="${category.name}">View Destinations</a>
+                        </div>
+                    `;
+                    categoriesGrid.appendChild(card);
+                });
+    
+                const viewMoreButtons = document.querySelectorAll('.view-more');
+                viewMoreButtons.forEach(button => {
+                    button.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        const categoryName = button.getAttribute('data-category');
+                        renderCategoryDestinations(categoryName);
+                    });
+                });
+            }
+    
+            function renderCategoryDestinations(categoryName) {
+                pageTitle.textContent = `${categoryName} Destinations`;
+                backButton.style.display = 'block';
+                initialView.style.display = 'none';
+                categoryView.style.display = 'block';
+    
+                const categoryDestinations = destinations[categoryName];
+                categoryDestinationsGrid.innerHTML = '';
+    
+                categoryDestinations.forEach(destination => {
+                    const card = document.createElement('div');
+                    card.classList.add('destination-card');
+                    card.innerHTML = `
+                        <img src="${destination.image}" alt="${destination.name}">
+                        <div class="destination-card-content">
+                            <h3>${destination.name}</h3>
+                            <p>${destination.location}</p>
+                            <p>Price: ${destination.price} | Days: ${destination.days}</p>
+                            <a href="#" class="view-more" data-destination="${destination.name}">View More</a>
+                        </div>
+                    `;
+                    categoryDestinationsGrid.appendChild(card);
+                });
+    
+                const viewMoreButtons = document.querySelectorAll('.view-more');
+                viewMoreButtons.forEach(button => {
+                    button.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        const destinationName = button.getAttribute('data-destination');
+                        const destinationDetails = categoryDestinations.find(dest => dest.name === destinationName);
+                        openModal(destinationDetails);
+                    });
+                });
+            }
+    
+            function openModal(destination) {
+                modalDetails.innerHTML = `
+                    <h2 id="modal-title">${destination.name}</h2>
+                    <p><strong>Best Time:</strong> ${destination.details.bestTime}</p>
+                    <p><strong>Climate:</strong> ${destination.details.climate}</p>
+                    <p><strong>Things To Do:</strong> ${destination.details.thingsToDo.join(', ')}</p>
+                    <p><strong>Budget:</strong> ${destination.details.budget}</p>
+                    <p><strong>Why Visit:</strong> ${destination.details.whyVisit}</p>
+                    <p><strong>Stay Duration:</strong> ${destination.details.stay}</p>
+                `;
+                destinationModal.classList.add('active');
+            }
+    
+            function closeModal() {
+                destinationModal.classList.remove('active');
+            }
+    
+            backButton.addEventListener('click', () => {
+                initialView.style.display = 'block';
+                categoryView.style.display = 'none';
+                backButton.style.display = 'none';
+            });
+    
+            renderCategories();
+        </script>
+    </body>
+    </html>
+    
     <script>
         // Toggle Mobile Menu
         function toggleMobileMenu() {
@@ -356,5 +752,119 @@
             });
         });
     </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Information and Guide</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #ececec; /* Light gray background */
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        main {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .section {
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            color: white; /* Set text color to white for contrast */
+            background-color: #2c3e50; /* Footer color applied to all sections */
+        }
+
+        .section h2 {
+            font-size: 1.5rem;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        .section ul {
+            list-style: none;
+            padding-left: 20px;
+        }
+
+        .section ul li {
+            margin-bottom: 8px;
+        }
+
+        footer {
+            text-align: center;
+            background-color: #2c3e50;
+            color: white;
+            padding: 10px;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+            main {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section class="section">
+            <h2>About Us</h2>
+            <ul>
+                <li>Terms and Conditions</li>
+                <li>Privacy</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>Travel Information</h2>
+            <ul>
+                <li>Tanzania Weather</li>
+                <li>Yellow Fever Requirement</li>
+                <li>When to Visit</li>
+                <li>Travel Resources</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>Travel Guide</h2>
+            <ul>
+                <li>Frequently Asked Questions</li>
+                <li>Mountain Packing List</li>
+                <li>Packing List for Safaris</li>
+                <li>Safari Coding</li>
+                <li>Things to Do</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>Contact Us</h2>
+            <ul>
+                <li>Call and WhatsApp: +255 692 208 654</li>
+                <li>Email: info@mafoyafricasafaris.com</li>
+                <li>Address: Arusha, Tanzania</li>
+                <li>Facebook</li>
+                <li>Instagram</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Mafoy Africa Safaris. All Rights Reserved.</p>
+    </footer>
 </body>
 </html>

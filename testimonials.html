@@ -330,63 +330,65 @@
             <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
-    
     <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Explore top destinations in Tanzania by category, featuring mountains, wildlife safaris, and more. Plan your adventure now!">
-      <center> <title>Explore Tanzania: Destinations by Category</title></center> 
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-        <style>
-            * {
-                margin: 0;
-                padding: 0;
-                box-sizing: border-box;
-            }
-    
-            body {
-                font-family: 'Roboto', sans-serif;
-                background-color: #9dacb3;
-                color: #333;
-                line-height: 1.6;
-                overflow: hidden;
-            }
-    
-           
-    h1{
-        align-items: center;
-        align-content: space-around;
-    }
-            .header h1 {
-                font-size: 2rem;
-                font-weight: 300;
-                color-interpolation-filters: auto;
-                align-content: center;
-            }
-    
-            .back-button {
-                position: absolute;
-                left: 20px;
-                top: 50%;
-                transform: translateY(-50%);
-                background: none;
-                border: none;
-                color: white;
-                font-size: 1.5rem;
-                cursor: pointer;
-            }
-    
-            .destination-categories,
-            .category-destinations {
-                max-width: 1200px;
-                margin: 80px auto 20px;
-                padding: 20px;
-                animation: fadeIn 1s ease-in-out;
-            }
-    
-            .categories-grid,
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore top destinations in Tanzania by category, featuring mountains, wildlife safaris, and more. Plan your adventure now!">
+  <center> <title>Explore Tanzania: Destinations by Category</title></center> 
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #9dacb3;
+            color: #333;
+            line-height: 1.6;
+            overflow: hidden;
+        }
+
+       
+h1{
+    align-items: center;
+    align-content: space-around;
+}
+        .header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #071c2a;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .back-button {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: hsl(0, 88%, 3%);
+            font-size: 2.5rem;
+            cursor: pointer;
+        }
+
+        .destination-categories,
+        .category-destinations {
+            max-width: 1200px;
+            margin: 80px auto 20px;
+            padding: 20px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .categories-grid,
 .destinations-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* Default: 3 cards per row */
@@ -436,17 +438,18 @@
 .destination-card-content .view-more {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #3498db;
+    background-color: #2980b9;
     color: white;
     text-align: center;
     text-decoration: none;
     border-radius: 5px;
     font-size: 1rem; /* Increased font size */
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .destination-card-content .view-more:hover {
-    background-color: #2980b9;
+    background-color: #071c2a;
+    transform: scale(1.1);
 }
 
 .modal {
@@ -524,6 +527,51 @@
     }
 }
 
+/* Enhancements */
+.destination-card {
+    border: 5px solid #071c2a;
+    border-radius: 20px;
+    background: linear-gradient(to bottom right, #ffffff, #e6f3ff);
+    padding: 10px;
+}
+
+.destination-card img {
+    border-bottom: 3px solid #2980b9;
+}
+
+.destination-card-content h3 {
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.destination-card-content .view-more {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.destination-card-content .view-more:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    transform: scale(1.05);
+}
+    </style>
+</head>
+<body>
+    <!-- Add your HTML content here -->
+</body>
+</html>
+
+    </head>
+    <body>
+        <!-- Add your HTML content here -->
+    </body>
+    </html>
+    
+    </head>
+    <body>
+        <!-- Add your HTML content here -->
+    </body>
+    </html>
+    
         </style>
     </head>
     <body>

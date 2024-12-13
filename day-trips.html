@@ -356,8 +356,7 @@
             });
         });
     </script>
-
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -365,25 +364,26 @@
     <title>Day Trips - Explore Tanzania</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f9f9f9;
+            color: #333;
         }
         .container {
-            width: 80%;
-            margin: 40px auto;
+            width: 90%;
+            margin: 20px auto;
         }
         h1 {
             text-align: center;
             font-size: 2.5rem;
             color: #e67e22;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
         }
         .trip-card {
             display: flex;
             flex-wrap: wrap;
-            gap: 30px; /* Increased gap for more space between cards */
+            gap: 20px;
             justify-content: space-between;
         }
         .trip-item {
@@ -393,28 +393,33 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             overflow: hidden;
             transition: transform 0.3s ease;
-            padding: 15px;
+            padding: 10px;
         }
         .trip-item:hover {
             transform: scale(1.05);
         }
         .trip-image {
             width: 100%;
-            height: 250px;
+            height: 200px;
             object-fit: cover;
             border-radius: 10px;
         }
         .trip-details {
-            padding: 15px;
+            padding: 10px;
         }
         .trip-details h2 {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             color: #333;
         }
         .trip-details p {
-            font-size: 1.1rem;
+            font-size: 1rem;
             color: #555;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
+        }
+        .additional-info {
+            font-size: 0.9rem;
+            color: #777;
+            margin-top: 10px;
         }
         .price-location {
             display: flex;
@@ -422,23 +427,23 @@
             align-items: center;
         }
         .price {
-            font-size: 1.4rem;
+            font-size: 1.2rem;
             color: #e67e22;
         }
         .location {
-            font-size: 1.1rem;
+            font-size: 1rem;
             color: #3498db;
         }
         .view-more {
             text-align: center;
-            margin-top: 20px;
+            margin-top: 10px;
         }
         .view-more a {
             text-decoration: none;
             color: #3498db;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             border: 2px solid #3498db;
-            padding: 10px 20px;
+            padding: 8px 16px;
             border-radius: 5px;
             transition: all 0.3s;
         }
@@ -449,49 +454,64 @@
 
         /* Full Description Section */
         .full-description {
-            margin-top: 40px;
+            margin-top: 20px;
             background-color: #fff;
-            padding: 30px;
+            padding: 20px;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            display: none; /* Hidden by default */
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            display: none;
         }
+
+        .full-description img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
         .full-description h2 {
             font-size: 2rem;
             color: #e67e22;
-            margin-bottom: 20px;
-        }
-        .full-description ul {
-            font-size: 1.1rem;
-            margin-top: 10px;
-        }
-        .full-description ul li {
             margin-bottom: 10px;
         }
 
-        /* Frame Style */
-        .frame {
-            border: 2px solid #3498db;
-            padding: 20px;
+        .details-card {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
             border-radius: 10px;
-            background-color: #f1f1f1;
-            margin-top: 20px;
+            padding: 15px;
+            margin-bottom: 15px;
         }
 
-        /* Back Button */
+        .details-card h3 {
+            font-size: 1.5rem;
+            color: #3498db;
+            margin-bottom: 10px;
+        }
+
+        .details-card p {
+            font-size: 1rem;
+            color: #555;
+        }
+
         .back-button {
             text-align: center;
             margin-top: 20px;
         }
+
         .back-button a {
             text-decoration: none;
             color: #fff;
             background-color: #3498db;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             padding: 10px 20px;
             border-radius: 5px;
             transition: all 0.3s;
         }
+
         .back-button a:hover {
             background-color: #2980b9;
         }
@@ -500,17 +520,13 @@
         @media (max-width: 768px) {
             .trip-item {
                 width: 100%;
-                margin-bottom: 30px; /* Added margin-bottom for spacing */
-            }
-            h1 {
-                font-size: 2rem;
+                margin-bottom: 20px;
             }
             .trip-card {
                 display: block;
             }
-            .view-more a {
-                font-size: 1rem;
-                padding: 8px 16px;
+            .trip-image {
+                height: 250px;
             }
         }
     </style>
@@ -518,10 +534,8 @@
 <body>
 
     <div class="container">
-        <!-- Title Section -->
         <h1>Day Trips - Explore Tanzania</h1>
 
-        <!-- Day Trip Cards -->
         <div class="trip-card" id="day-trips">
             <!-- Trip 1 -->
             <div class="trip-item" id="trip1">
@@ -529,179 +543,182 @@
                 <div class="trip-details">
                     <h2>Arusha National Park Day Trip</h2>
                     <p>Explore the stunning Arusha National Park, home to a variety of wildlife including giraffes, zebras, and flamingos.</p>
-                    <div class="price-location">
-                        <div class="price">$495 per person</div>
-                        <div class="location">Arusha, Tanzania</div>
+                   <div class="additional-info">
+                        <p><strong>🌞 location:</strong> Arusha Tanzania</p>
+                        <p><strong>💰 Rate:</strong> $495 per person</p>
+                        <p><strong>🌞 Best Time:</strong> June to October</p>
+                        <p><strong>🌍 High Season:</strong> July to March</p>
                     </div>
-                    <div class="view-more">
-                        <a href="javascript:void(0);" onclick="showDetails('arusha-more')">View More</a>
-                    </div>
+             <div class="view-more">
+    <a href="javascript:void(0);" onclick="showDetails('arusha-national-park-more')">View More</a>
+</div>
+
                 </div>
             </div>
 
-            <!-- Trip 2 -->
+            <!-- Trip 2: New Trip -->
             <div class="trip-item" id="trip2">
-                <img src="https://example.com/safari-park.jpg" alt="Safari Park" class="trip-image">
+                <img src="mountain 2.jpg" alt="Materuni Waterfall and Hot Springs" class="trip-image">
                 <div class="trip-details">
-                    <h2>Safari Adventure</h2>
-                    <p>Experience the wild beauty of Tanzania with a day safari trip, including a chance to see the Big Five and more.</p>
-                    <div class="price-location">
-                        <div class="price">$650 per person</div>
-                        <div class="location">Serengeti National Park, Tanzania</div>
+                    <h2>Materuni Waterfall with Coffee Tour and Kikulelwa Hot Spring</h2>
+                    <p>Experience the beauty of Materuni Waterfalls, coffee tour, and Kikulelwa Hot Springs in a single day!</p>
+                    <div class="additional-info">
+                        <p><strong>🌞 location:</strong> Materuni Village, Tanzania</p>
+                        <p><strong>💰 Rate:</strong> $150 per person</p>
+                        <p><strong>🌞 Best Time:</strong> All year round</p>
                     </div>
                     <div class="view-more">
-                        <a href="javascript:void(0);" onclick="showDetails('safari-more')">View More</a>
+                        <a href="javascript:void(0);" onclick="showDetails('materuni-more')">View More</a>
                     </div>
                 </div>
             </div>
 
-            <!-- Trip 3 -->
-            <div class="trip-item" id="trip3">
-                <img src="https://example.com/ngorongoro.jpg" alt="Ngorongoro Crater" class="trip-image">
-                <div class="trip-details">
-                    <h2>Ngorongoro Crater Day Trip</h2>
-                    <p>Visit the world-famous Ngorongoro Crater, a UNESCO World Heritage site teeming with wildlife.</p>
-                    <div class="price-location">
-                        <div class="price">$600 per person</div>
-                        <div class="location">Ngorongoro Crater, Tanzania</div>
-                    </div>
-                    <div class="view-more">
-                        <a href="javascript:void(0);" onclick="showDetails('ngorongoro-more')">View More</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Trip 4 -->
-            <div class="trip-item" id="trip4">
-                <img src="https://example.com/mount-kilimanjaro.jpg" alt="Mount Kilimanjaro" class="trip-image">
-                <div class="trip-details">
-                    <h2>Mount Kilimanjaro Trek</h2>
-                    <p>Climb the majestic Mount Kilimanjaro and experience breathtaking views from the summit.</p>
-                    <div class="price-location">
-                        <div class="price">$1200 per person</div>
-                        <div class="location">Mount Kilimanjaro, Tanzania</div>
-                    </div>
-                    <div class="view-more">
-                        <a href="javascript:void(0);" onclick="showDetails('kilimanjaro-more')">View More</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Trip 5 -->
-            <div class="trip-item" id="trip5">
-                <img src="https://example.com/selous.jpg" alt="Selous Game Reserve" class="trip-image">
-                <div class="trip-details">
-                    <h2>Selous Game Reserve Day Trip</h2>
-                    <p>Discover the wonders of Selous Game Reserve, home to elephants, lions, and other wildlife.</p>
-                    <div class="price-location">
-                        <div class="price">$750 per person</div>
-                        <div class="location">Selous, Tanzania</div>
-                    </div>
-                    <div class="view-more">
-                        <a href="javascript:void(0);" onclick="showDetails('selous-more')">View More</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Trip 6 -->
-            <div class="trip-item" id="trip6">
-                <img src="https://example.com/zanzibar.jpg" alt="Zanzibar Beach" class="trip-image">
-                <div class="trip-details">
-                    <h2>Zanzibar Beach Escape</h2>
-                    <p>Relax on the pristine beaches of Zanzibar, with crystal-clear waters and breathtaking coral reefs.</p>
-                    <div class="price-location">
-                        <div class="price">$500 per person</div>
-                        <div class="location">Zanzibar, Tanzania</div>
-                    </div>
-                    <div class="view-more">
-                        <a href="javascript:void(0);" onclick="showDetails('zanzibar-more')">View More</a>
-                    </div>
-                </div>
-            </div>
         </div>
 
-        <!-- Full Description Section (View More) -->
-        <div class="full-description" id="arusha-more">
-            <h2>Arusha National Park Day Trip</h2>
-            <div class="frame">
+        <!-- Full Description for Materuni Waterfall -->
+        <div class="full-description" id="materuni-more">
+            <img src="mountain 2.jpg" alt="Materuni Waterfall">
+            <h2>Materuni Waterfall with Coffee Tour and Kikulelwa Hot Spring</h2>
+
+            <div class="details-card">
                 <h3>Overview:</h3>
-                <p>Arusha National Park is a great choice for a day trip, offering diverse wildlife and breathtaking views. Located at the base of Mount Meru, it’s a haven for nature lovers and wildlife enthusiasts.</p>
+                <p>This 1-day tour is designed to offer visitors an additional day of activities in the Arusha area. It is perfect for those who have hiked Mount Kilimanjaro or are waiting for their planned safari. Enjoy a hike with a view of Mount Kilimanjaro, explore the 80m high Materuni Waterfall, taste locally brewed banana beer, and learn about coffee cultivation and processing.</p>
             </div>
-            <div class="frame">
-                <h3>Location:</h3>
-                <p>Arusha, Tanzania. Easily accessible from Arusha city.</p>
-            </div>
-            <div class="frame">
+
+            <div class="details-card">
                 <h3>Day Description:</h3>
-                <p>After breakfast, you will be picked up and driven to Arusha National Park for a full-day game drive. The park is home to giraffes, zebras, buffaloes, flamingos, and the elusive leopards and elephants. You will also have a chance to explore Mount Meru's base and enjoy a walking safari.</p>
+                <p>• A transfer from the airport can be arranged for an extra cost.</p>
+                <p>Day 1: Our guide will pick you up from the hotel and drive you to Materuni Village, home of the Chagga tribe. After registering at the village, enjoy the scenic view of Mount Kilimanjaro and the Materuni Waterfall. Then, experience a traditional Chagga lunch and a coffee tour. Learn how coffee is cultivated, roasted, and processed, and participate in grinding the beans while enjoying Chagga songs and dances. The tour ends with a drive back to your hotel.</p>
             </div>
-            <div class="frame">
-                <h3>Activities:</h3>
-                <ul>
-                    <li>Game drive through Arusha National Park</li>
-                    <li>Bird watching (many species are visible in the park)</li>
-                    <li>Optional walking safari at the base of Mount Meru</li>
-                </ul>
+
+            <div class="details-card">
+                <h3>Accommodation:</h3>
+                <p>No accommodation (End of tour)</p>
             </div>
-            <div class="frame">
+
+            <div class="details-card">
                 <h3>Meals & Drinks:</h3>
-                <ul>
-                    <li>Lunch included</li>
-                    <li>Non-alcoholic drinks included</li>
-                    <li>Breakfast and dinner not included</li>
-                </ul>
+                <p>• Lunch (Breakfast & dinner not included)</p>
+                <p>• Non-alcoholic drinks</p>
             </div>
-            <div class="frame">
+
+            <div class="details-card">
                 <h3>Rates:</h3>
-                <p><strong>$495 per person</strong></p>
+                <p>$150 Per person</p>
             </div>
-            <div class="frame">
-                <h3>Included in the Price:</h3>
+
+            <div class="details-card">
+                <h3>Included:</h3>
                 <ul>
-                    <li>Park fees (for non-residents)</li>
-                    <li>All activities as per itinerary</li>
-                    <li>Transport in a 4x4 vehicle</li>
-                    <li>Lunch</li>
-                    <li>Drinks (non-alcoholic)</li>
+                    <li>Porterage</li>
+                    <li>Rescue fee</li>
+                    <li>Park fees (For non-residents)</li>
+                    <li>All activities (Unless labeled as optional)</li>
+                    <li>A professional driver/guide</li>
+                    <li>All transportation (Unless labeled as optional)</li>
+                    <li>All Taxes/VAT</li>
+                    <li>Meals (As specified in the day-by-day section)</li>
+                    <li>Drinks (As specified in the day-by-day section)</li>
                 </ul>
             </div>
-            <div class="frame">
-                <h3>Excluded from the Price:</h3>
+
+            <div class="details-card">
+                <h3>Excluded:</h3>
                 <ul>
-                    <li>International flights</li>
+                    <li>Climbing gear</li>
+                    <li>International flights (From/to home)</li>
                     <li>Roundtrip airport transfer</li>
-                    <li>Additional accommodation</li>
-                    <li>Tips (recommended $10.00 per day)</li>
-                    <li>Personal items (souvenirs, insurance, visa fees)</li>
+                    <li>Additional accommodation before and at the end of the tour</li>
+                    <li>Tips (Tipping guideline US$10.00 pp per day)</li>
+                    <li>Personal items (Souvenirs, travel insurance, visa fees, etc.)</li>
+                    <li>Government imposed increase of taxes and/or park fees</li>
                 </ul>
             </div>
+
             <div class="back-button">
                 <a href="javascript:void(0);" onclick="goBackToTrips()">Back to Day Trips</a>
             </div>
         </div>
-
-        <!-- Full Description for Other Trips -->
-        <!-- Add similar blocks for 'safari-more', 'ngorongoro-more', etc. -->
-
     </div>
+<!-- Full Description for Arusha National Park Day Trip -->
+<div class="full-description" id="arusha-national-park-more">
+    <img src="mountain 2.jpg" alt="Arusha National Park">
+    <h2>Arusha National Park Day Trip</h2>
+
+    <div class="details-card">
+        <h3>Overview:</h3>
+        <p>Despite the small size of Arusha National Park, common animals include giraffe, buffalo, zebra, warthog, the black-and-white colobus monkey, the blue monkey, flamingos, and more. African elephants and leopards are present, but rarely seen. The park is at the base of Mount Meru, which is good for climbing. Bird-life in the forest is prolific, with many forest species more easily seen here.</p>
+    </div>
+
+    <div class="details-card">
+        <h3>Day Description:</h3>
+        <p>• A transfer from the airport can be arranged for an extra cost.</p>
+        <p>Day 1: The morning after breakfast, our driver will pick you up from the hotel and drive to Arusha National Park to start the game drive. Despite the small size of the park, common animals include giraffes, buffalo, zebra, warthog, the black-and-white colobus monkey, blue monkey, flamingos, and more. African elephants and leopards are present but rarely seen. The park is at the base of Mount Meru, which is good for climbing, and walking safari is possible here. Birdlife in the forest is prolific, with many forest species more easily seen here. Although very accessible, Arusha National Park isn't on many safari itineraries due to the absence of the Big 5. The park has a range of habitats including forest, home to the black-and-white colobus monkey, and is excellent for birding. After a whole day of game drive, we will drive you back to your accommodation in Arusha.</p>
+    </div>
+
+    <div class="details-card">
+        <h3>Accommodation:</h3>
+        <p>No accommodation (End of tour)</p>
+    </div>
+
+    <div class="details-card">
+        <h3>Meals & Drinks:</h3>
+        <p>• Lunch (Breakfast & dinner not included)</p>
+        <p>• Non-alcoholic drinks</p>
+    </div>
+
+    <div class="details-card">
+        <h3>Rates:</h3>
+        <p>$495 Per person</p>
+    </div>
+
+    <div class="details-card">
+        <h3>Included:</h3>
+        <ul>
+            <li>Park fees (For non-residents)</li>
+            <li>All activities (Unless labeled as optional)</li>
+            <li>A professional driver/guide</li>
+            <li>All transportation (Unless labeled as optional)</li>
+            <li>All Taxes/VAT</li>
+            <li>Meals (As specified in the day-by-day section)</li>
+            <li>Drinks (As specified in the day-by-day section)</li>
+        </ul>
+    </div>
+
+    <div class="details-card">
+        <h3>Excluded:</h3>
+        <ul>
+            <li>International flights (From/to home)</li>
+            <li>Roundtrip airport transfer</li>
+            <li>Additional accommodation before and at the end of the tour</li>
+            <li>Tips (Tipping guideline US$10.00 pp per day)</li>
+            <li>Personal items (Souvenirs, travel insurance, visa fees, etc.)</li>
+            <li>Government imposed increase of taxes and/or park fees</li>
+        </ul>
+    </div>
+
+    <div class="back-button">
+        <a href="javascript:void(0);" onclick="goBackToTrips()">Back to Day Trips</a>
+    </div>
+</div>
 
     <script>
         function showDetails(id) {
-            // Hide all trip cards
-            document.getElementById('day-trips').style.display = 'none';
-            
-            // Show the selected trip details
-            var currentDescription = document.getElementById(id);
-            currentDescription.style.display = 'block';
+            document.querySelector('.trip-card').style.display = 'none';
+            document.getElementById(id).style.display = 'block';
         }
 
         function goBackToTrips() {
-            // Hide the full description and show the list of trips again
-            document.getElementById('arusha-more').style.display = 'none';
-            document.getElementById('day-trips').style.display = 'flex';
-        }
-    </script>
+    // Hide all full description sections
+    const fullDescriptions = document.querySelectorAll('.full-description');
+    fullDescriptions.forEach(description => {
+        description.style.display = 'none';
+    });
 
+    // Show the main trip list again
+    document.querySelector('.trip-card').style.display = 'flex';
+}
+
+    </script>
 </body>
 </html>
-

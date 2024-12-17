@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mafoy africa Safaris | Luxury Safari Experience</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f8f8f8;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header Section */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            color: #ffffff; /* White text */
+            background-color: #007bff; /* Blue background for the header */
+            width: 100%; /* Ensure the blue color covers the entire width */
+            position: relative; /* Positioning for menu button inside header */
+        }
+
+        /* Logo */
+        .logo {
+            display: flex;
+            align-items: center;
+            color: #333; /* Black color for logo text */
+            background-color: #ffffff; /* White background for logo in mobile view */
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+
+        .logo img {
+            width: 50px;
+            margin-right: 10px;
+        }
+
+        .logo span {
+            font-size: 1.4rem;
+            font-weight: bold;
+        }
+
+        /* Mobile Menu Button */
+        .menu-btn {
+            display: flex;
+            cursor: pointer;
+            flex-direction: column;
+            gap: 5px;
+            position: absolute; /* Position absolutely inside the header */
+            right: 20px; /* Align the button to the right inside the header */
+            background-color: transparent; /* No background for the button itself */
+            padding: 10px; /* Add padding to make button area clickable */
+        }
+
+        .menu-btn div {
+            width: 30px;
+            height: 4px;
+            background-color: #ffffff; /* White color for mobile menu lines */
+        }
+
+        /* Menu Text */
+        .menu-text {
+            color: white;
+            font-size: 1.4rem;
+            font-weight: bold;
+            margin-left: 10px; /* Add some space between the button and the text */
+        }
+
+        /* Mobile Navigation */
+        .mobile-nav {
+            display: none;
+            flex-direction: column;
+            background-color: #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .mobile-nav.active {
+            display: flex;
+        }
+
+        .mobile-nav ul {
+            list-style: none;
+            width: 100%;
+        }
+
+        .mobile-nav ul li {
+            width: 100%;
+        }
+
+        .mobile-nav ul li a {
+            display: block;
+            text-align: center;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #333;
+            padding: 15px;
+            border-bottom: 1px solid #ddd;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .mobile-nav ul li a:hover {
+            background-color: #f4f4f4;
+            color: #007bff; /* Blue color on hover */
+        }
+
+        /* Desktop View */
+        @media (min-width: 769px) {
+            header {
+                padding: 10px 5%;
+                display: flex;
+                justify-content: space-between; /* Align logo and menu at opposite ends */
+                align-items: center;
+            }
+
+            .menu-btn {
+                display: none;
+            }
+
+            /* Hide Menu Text in desktop view */
+            .menu-text {
+                display: none;
+            }
+
+            /* Align the navigation to the right */
+            header nav {
+                margin-left: auto; /* Push navigation to the right */
+            }
+
+            header nav ul {
+                display: flex;
+                list-style: none;
+                gap: 20px;
+            }
+
+            header nav ul li {
+                position: relative;
+            }
+
+            header nav ul li a {
+                text-decoration: none;
+                color: #ffffff; /* White text for navigation items */
+                font-weight: 600;
+                transition: color 0.3s;
+            }
+
+            header nav ul li a:hover {
+                color: #e6a400; /* Gold color on hover */
+            }
+
+            /* Dropdown Styling */
+            .dropdown {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                background-color: white;
+                min-width: 200px;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+                z-index: 1000;
+            }
+
+            /* Show the dropdown when hovering over the parent */
+            header nav ul li:hover .dropdown {
+                display: block;
+            }
+
+            .dropdown li {
+                width: 100%;
+            }
+
+            .dropdown a {
+                display: block;
+                padding: 10px 15px;
+                color: #333;
+            }
+
+            .dropdown a:hover {
+                background-color: #f4f4f4;
+            }
+
+            /* Update logo background to blue for desktop view */
+            .logo {
+                background-color: #007bff; /* Blue background for logo on desktop */
+                color: white; /* White text color for logo text */
+            }
+
+            .logo img {
+                width: 50px; /* Adjust logo size */
+                margin-right: 10px;
+            }
+
+            .logo span {
+                font-size: 1.6rem; /* Increase font size for better visibility */
+                font-weight: bold;
+            }
+        }
+
+        /* Mobile Specific Adjustments */
+        @media (max-width: 768px) {
+            /* Make the entire header section blue on mobile */
+            header {
+                display: block;
+                padding: 0; /* Remove default padding */
+                background-color: #007bff; /* Blue background for the entire header */
+                width: 100%; /* Make the blue background cover the entire width */
+            }
+
+            /* Logo on top of the header in mobile view with full-width blue background */
+            .logo {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%; /* Full-width */
+                background-color: #ffffff; /* White background for logo part */
+                padding: 30px 0; /* Increased padding for larger header */
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow */
+            }
+
+            .logo img {
+                width: 60px; /* Adjust logo size */
+                margin-right: 10px;
+            }
+
+            .logo span {
+                font-size: 1.6rem; /* Increase font size for better visibility */
+                font-weight: bold;
+            }
+
+            /* Header section with mobile menu icon */
+            header nav {
+                display: none; /* Hidden by default */
+            }
+
+            /* Mobile Navigation visible when active */
+            .mobile-nav.active {
+                display: flex;
+            }
+
+            /* "Menu" Text */
+            .menu-text {
+                color: white;
+                font-size: 1.4rem;
+                font-weight: bold;
+                margin-left: 20px;
+            }
+
+            /* Dropdown menu visibility when "Tours" is clicked */
+            .mobile-nav ul li .dropdown {
+                display: none;
+            }
+
+            .mobile-nav ul li.active .dropdown {
+                display: block;
+            }
+        }
+    </style>
+    
+</head>
+<body>
+    <!-- Header with Navigation -->
+    <header>
+        <!-- Logo (Visible in both mobile and desktop but different positioning) -->
+        <div class="logo">
+            <img src="mafoy2.jpg.png" alt="Mafoy africa Safaris">
+            <span>Mafoy africa Safaris</span>
+        </div>
+
+        <!-- Mobile Menu Button and "Menu" Text -->
+        <div class="menu-btn" onclick="toggleMobileMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <span class="menu-text">Menu</span> <!-- Menu Text added here -->
+
+        <!-- Desktop Navigation -->
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="destinations.html">Destinations</a></li>
+                <li class="tour-item">
+                    <a href="tours.html" onclick="toggleDropdown(event)">Tours</a>
+                    <ul class="dropdown">
+                        <li><a href="day-trips.html">Day Trip Packages</a></li>
+                        <li><a href="budget-tours.html">Budget Tour Packages</a></li>
+                        <li><a href="midrange-tours.html">Midrange Tour Packages</a></li>
+                        <li><a href="luxury-tours.html">Luxury Tour Packages</a></li>
+                        <li><a href="hiking.html">Hiking Packages</a></li>
+                        <li><a href="zanzibar-holidays.html">Zanzibar Holidays Packages</a></li>
+                    </ul>
+                </li>
+                <li><a href="testimonials.html">Testimonials</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <nav class="mobile-nav">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="destinations.html">Destinations</a></li>
+            <li class="tour-item">
+                <a href="tours.html" onclick="toggleDropdown(event)">Tours</a>
+                <ul class="dropdown">
+                    <li><a href="day-trips.html">Day Trip Packages</a></li>
+                    <li><a href="budget-tours.html">Budget Tour Packages</a></li>
+                    <li><a href="midrange-tours.html">Midrange Tour Packages</a></li>
+                    <li><a href="luxury-tours.html">Luxury Tour Packages</a></li>
+                    <li><a href="hiking.html">Hiking Packages</a></li>
+                    <li><a href="zanzibar-holidays.html">Zanzibar Holidays Packages</a></li>
+                </ul>
+            </li>
+            <li><a href="testimonials.html">Testimonials</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    
+
+    <script>
+        // Toggle Mobile Menu
+        function toggleMobileMenu() {
+            document.querySelector('.mobile-nav').classList.toggle('active');
+        }
+
+        // Toggle Dropdown for "Tours"
+        function toggleDropdown(event) {
+            event.preventDefault();
+            const parentLi = event.target.parentElement;
+            parentLi.classList.toggle('active');
+        }
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(event) {
+            const dropdowns = document.querySelectorAll('.dropdown');
+            dropdowns.forEach(function(dropdown) {
+                if (dropdown.classList.contains('show') && 
+                    !dropdown.previousElementSibling.contains(event.target)) {
+                    dropdown.classList.remove('show');
+                }
+            });
+        });
+    </script>
+    
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Midrange Tours</title>
+    <style>
+        /* General Body Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('mountain.jpg') no-repeat center center/cover; /* Background image */
+            color: #333;
+            background-attachment: fixed;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 3rem;
+            color: #fff;
+            margin: 20px 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Main Container */
+        .container {
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.9); /* White overlay for content visibility */
+            border-radius: 10px;
+            margin: 20px auto;
+            width: 95%;
+            max-width: 1200px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Tour Cards Section */
+        .tour-cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 20px; /* Increased gap for spacing */
+        }
+
+        .tour-card {
+            background: #fff;
+            width: calc(33.33% - 20px); /* Adjusted width to ensure 3 cards per row */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .tour-card:hover {
+            transform: scale(1.05); /* Slightly more prominent on hover */
+        }
+
+        .image-frame {
+            position: relative;
+            overflow: hidden;
+            height: 400px; /* Increased height for larger images */
+        }
+
+        .image-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .image-frame img:hover {
+            transform: scale(1.1);
+        }
+
+        .short-description {
+            padding: 15px;
+            font-size: 1rem;
+            color: #555;
+        }
+
+        .overlay h2 {
+            font-size: 1.6rem;
+            color: #1574d2;
+            margin: 10px 0;
+        }
+
+        .overlay p {
+            margin: 5px 0;
+            font-size: 1rem;
+        }
+
+        /* Location, Rate, Best Month */
+        .tour-info {
+            padding: 10px;
+            background-color: #f4f4f4;
+            margin-top: 10px;
+        }
+
+        .tour-info div {
+            margin-bottom: 5px;
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        .tour-info .location {
+            font-weight: bold;
+            color: #3498db;
+        }
+
+        .tour-info .rate {
+            font-weight: bold;
+            color: #e67e22;
+        }
+
+        .tour-info .best-month {
+            font-weight: bold;
+            color: #2ecc71;
+        }
+
+        .view-more {
+            margin: 10px 0;
+        }
+
+        .view-more a {
+            text-decoration: none;
+            color: #3498db;
+            font-size: 1rem;
+            border: 2px solid #3498db;
+            padding: 8px 16px;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+
+        .view-more a:hover {
+            background-color: #3498db;
+            color: #fff;
+        }
+
+        /* Full Description Section */
+        .full-description {
+            display: none;
+            background: #fff;
+            padding: 20px;
+            margin: 20px auto;
+            border-radius: 10px;
+            width: 80%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            max-width: 1200px;
+        }
+
+        .full-description img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .full-description h2 {
+            font-size: 2rem;
+            color: #1574d2;
+            margin-bottom: 10px;
+        }
+
+        .full-description p {
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .back-button a {
+            text-decoration: none;
+            background-color: #1574d2;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .back-button a:hover {
+            background-color: #135a9d;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .tour-card {
+                width: 100%; /* Full width on smaller screens */
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Page Title -->
+    <h1>Midrange Tours</h1>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Tour Cards Section -->
+        <div class="tour-cards">
+            <!-- Card 1 -->
+            <div class="tour-card" onclick="viewMore(1)">
+                <div class="image-frame">
+                    <img src="mountain 2.jpg" alt="Serengeti National Park">
+                </div>
+                <div class="overlay">
+                    <h2>Serengeti National Park</h2>
+                </div>
+                <div class="short-description">
+                    Experience the vast plains and witness the Great Migration.
+                </div>
+                <div class="tour-info">
+                    <div class="location">Location: Serengeti, Tanzania</div>
+                    <div class="rate">Rate: $300/day</div>
+                    <div class="best-month">Best Month: June</div>
+                </div>
+                <div class="view-more">
+                    <a href="javascript:void(0)">View More</a>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="tour-card" onclick="viewMore(2)">
+                <div class="image-frame">
+                    <img src="mountain.JPG" alt="Ngorongoro Crater">
+                </div>
+                <div class="overlay">
+                    <h2>Ngorongoro Crater</h2>
+                </div>
+                <div class="short-description">
+                    Explore the world’s largest intact volcanic caldera.
+                </div>
+                <div class="tour-info">
+                    <div class="location">Location: Ngorongoro, Tanzania</div>
+                    <div class="rate">Rate: $250/day</div>
+                    <div class="best-month">Best Month: July</div>
+                </div>
+                <div class="view-more">
+                    <a href="javascript:void(0)">View More</a>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="tour-card" onclick="viewMore(3)">
+                <div class="image-frame">
+                    <img src="mountain 2.jpg" alt="Zanzibar Beach">
+                </div>
+                <div class="overlay">
+                    <h2>Zanzibar Beach</h2>
+                </div>
+                <div class="short-description">
+                    Relax on pristine white sand beaches and turquoise waters.
+                </div>
+                <div class="tour-info">
+                    <div class="location">Location: Zanzibar, Tanzania</div>
+                    <div class="rate">Rate: $200/day</div>
+                    <div class="best-month">Best Month: December</div>
+                </div>
+                <div class="view-more">
+                    <a href="javascript:void(0)">View More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Expanded Tour Section -->
+    <div class="full-description" id="full-description">
+        <img src="" alt="Full Tour Image" id="full-image">
+        <h2 id="full-title">Tour Title</h2>
+        <p id="full-desc">Full tour description goes here...</p>
+        <div class="back-button">
+            <a href="javascript:void(0)" onclick="goBack()">Back</a>
+        </div>
+    </div>
+
+    <!-- JavaScript for View More Functionality -->
+    <script>
+        function viewMore(tourNumber) {
+            const fullDescription = document.getElementById('full-description');
+            const fullImage = document.getElementById('full-image');
+            const fullTitle = document.getElementById('full-title');
+            const fullDesc = document.getElementById('full-desc');
+
+            const tours = [
+                { title: "Serengeti National Park", desc: "Witness the Great Migration and the Big Five in Serengeti's vast plains.", img: "tour1.jpg" },
+                { title: "Ngorongoro Crater", desc: "Visit the stunning volcanic caldera with diverse wildlife.", img: "tour2.jpg" },
+                { title: "Zanzibar Beach", desc: "Enjoy turquoise waters and relaxing beach activities.", img: "tour3.jpg" }
+            ];
+
+            fullImage.src = tours[tourNumber - 1].img;
+            fullTitle.textContent = tours[tourNumber - 1].title;
+            fullDesc.textContent = tours[tourNumber - 1].desc;
+
+            fullDescription.style.display = 'block';
+            document.querySelector('.container').style.display = 'none';
+        }
+
+        function goBack() {
+            document.getElementById('full-description').style.display = 'none';
+            document.querySelector('.container').style.display = 'block';
+        }
+    </script>
+</body>
+</html>

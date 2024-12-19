@@ -3,19 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Explore Tanzania with affordable budget safari tours designed for unforgettable experiences.">
-    <meta name="keywords" content="Tanzania safari, budget tours, Serengeti, Ngorongoro, Mikumi">
-    <title>Budget Tours | Explore Tanzania Safaris</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>Mafoy africa Safaris | Luxury Safari Experience</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary-color: #007bff;
-            --secondary-color: #28a745;
-            --text-color: #333;
-            --background-color: #f8f9fa;
-            --white: #ffffff;
-        }
-
+        /* Reset */
         * {
             margin: 0;
             padding: 0;
@@ -24,217 +15,887 @@
 
         body {
             font-family: 'Roboto', sans-serif;
+            background-color: #f8f8f8;
+            color: #333;
             line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--background-color);
+        }
+
+        /* Header Section */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            color: #ffffff; /* White text */
+            background-color: #007bff; /* Blue background for the header */
+            width: 100%; /* Ensure the blue color covers the entire width */
+            position: relative; /* Positioning for menu button inside header */
+        }
+
+        /* Logo */
+        .logo {
+            display: flex;
+            align-items: center;
+            color: #333; /* Black color for logo text */
+            background-color: #ffffff; /* White background for logo in mobile view */
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+
+        .logo img {
+            width: 50px;
+            margin-right: 10px;
+        }
+
+        .logo span {
+            font-size: 1.4rem;
+            font-weight: bold;
+        }
+
+        /* Mobile Menu Button */
+        .menu-btn {
+            display: flex;
+            cursor: pointer;
+            flex-direction: column;
+            gap: 5px;
+            position: absolute; /* Position absolutely inside the header */
+            right: 20px; /* Align the button to the right inside the header */
+            background-color: transparent; /* No background for the button itself */
+            padding: 10px; /* Add padding to make button area clickable */
+        }
+
+        .menu-btn div {
+            width: 30px;
+            height: 4px;
+            background-color: #ffffff; /* White color for mobile menu lines */
+        }
+
+        /* Menu Text */
+        .menu-text {
+            color: white;
+            font-size: 1.4rem;
+            font-weight: bold;
+            margin-left: 10px; /* Add some space between the button and the text */
+        }
+
+        /* Mobile Navigation */
+        .mobile-nav {
+            display: none;
+            flex-direction: column;
+            background-color: #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .mobile-nav.active {
+            display: flex;
+        }
+
+        .mobile-nav ul {
+            list-style: none;
+            width: 100%;
+        }
+
+        .mobile-nav ul li {
+            width: 100%;
+        }
+
+        .mobile-nav ul li a {
+            display: block;
+            text-align: center;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #333;
+            padding: 15px;
+            border-bottom: 1px solid #ddd;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .mobile-nav ul li a:hover {
+            background-color: #f4f4f4;
+            color: #007bff; /* Blue color on hover */
+        }
+
+        /* Desktop View */
+        @media (min-width: 769px) {
+            header {
+                padding: 10px 5%;
+                display: flex;
+                justify-content: space-between; /* Align logo and menu at opposite ends */
+                align-items: center;
+            }
+
+            .menu-btn {
+                display: none;
+            }
+
+            /* Hide Menu Text in desktop view */
+            .menu-text {
+                display: none;
+            }
+
+            /* Align the navigation to the right */
+            header nav {
+                margin-left: auto; /* Push navigation to the right */
+            }
+
+            header nav ul {
+                display: flex;
+                list-style: none;
+                gap: 20px;
+            }
+
+            header nav ul li {
+                position: relative;
+            }
+
+            header nav ul li a {
+                text-decoration: none;
+                color: #ffffff; /* White text for navigation items */
+                font-weight: 600;
+                transition: color 0.3s;
+            }
+
+            header nav ul li a:hover {
+                color: #e6a400; /* Gold color on hover */
+            }
+
+            /* Dropdown Styling */
+            .dropdown {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                background-color: white;
+                min-width: 200px;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+                z-index: 1000;
+            }
+
+            /* Show the dropdown when hovering over the parent */
+            header nav ul li:hover .dropdown {
+                display: block;
+            }
+
+            .dropdown li {
+                width: 100%;
+            }
+
+            .dropdown a {
+                display: block;
+                padding: 10px 15px;
+                color: #333;
+            }
+
+            .dropdown a:hover {
+                background-color: #f4f4f4;
+            }
+
+            /* Update logo background to blue for desktop view */
+            .logo {
+                background-color: #007bff; /* Blue background for logo on desktop */
+                color: white; /* White text color for logo text */
+            }
+
+            .logo img {
+                width: 50px; /* Adjust logo size */
+                margin-right: 10px;
+            }
+
+            .logo span {
+                font-size: 1.6rem; /* Increase font size for better visibility */
+                font-weight: bold;
+            }
+        }
+
+        /* Mobile Specific Adjustments */
+        @media (max-width: 768px) {
+            /* Make the entire header section blue on mobile */
+            header {
+                display: block;
+                padding: 0; /* Remove default padding */
+                background-color: #007bff; /* Blue background for the entire header */
+                width: 100%; /* Make the blue background cover the entire width */
+            }
+
+            /* Logo on top of the header in mobile view with full-width blue background */
+            .logo {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%; /* Full-width */
+                background-color: #ffffff; /* White background for logo part */
+                padding: 30px 0; /* Increased padding for larger header */
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow */
+            }
+
+            .logo img {
+                width: 60px; /* Adjust logo size */
+                margin-right: 10px;
+            }
+
+            .logo span {
+                font-size: 1.6rem; /* Increase font size for better visibility */
+                font-weight: bold;
+            }
+
+            /* Header section with mobile menu icon */
+            header nav {
+                display: none; /* Hidden by default */
+            }
+
+            /* Mobile Navigation visible when active */
+            .mobile-nav.active {
+                display: flex;
+            }
+
+            /* "Menu" Text */
+            .menu-text {
+                color: white;
+                font-size: 1.4rem;
+                font-weight: bold;
+                margin-left: 20px;
+            }
+
+            /* Dropdown menu visibility when "Tours" is clicked */
+            .mobile-nav ul li .dropdown {
+                display: none;
+            }
+
+            .mobile-nav ul li.active .dropdown {
+                display: block;
+            }
+        }
+    </style>
+    
+</head>
+<body>
+    <!-- Header with Navigation -->
+    <header>
+        <!-- Logo (Visible in both mobile and desktop but different positioning) -->
+        <div class="logo">
+            <img src="mafoy2.jpg.png" alt="Mafoy africa Safaris">
+            <span>Mafoy africa Safaris</span>
+        </div>
+
+        <!-- Mobile Menu Button and "Menu" Text -->
+        <div class="menu-btn" onclick="toggleMobileMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <span class="menu-text">Menu</span> <!-- Menu Text added here -->
+
+        <!-- Desktop Navigation -->
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="destinations.html">Destinations</a></li>
+                <li class="tour-item">
+                    <a href="tours.html" onclick="toggleDropdown(event)">Tours</a>
+                    <ul class="dropdown">
+                        <li><a href="day-trips.html">Day Trip Packages</a></li>
+                        <li><a href="budget-tours.html">Budget Tour Packages</a></li>
+                        <li><a href="midrange-tours.html">Midrange Tour Packages</a></li>
+                        <li><a href="luxury-tours.html">Luxury Tour Packages</a></li>
+                        <li><a href="hiking.html">Hiking Packages</a></li>
+                        <li><a href="zanzibar-holidays.html">Zanzibar Holidays Packages</a></li>
+                    </ul>
+                </li>
+                <li><a href="testimonials.html">Testimonials</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <nav class="mobile-nav">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="destinations.html">Destinations</a></li>
+            <li class="tour-item">
+                <a href="tours.html" onclick="toggleDropdown(event)">Tours</a>
+                <ul class="dropdown">
+                    <li><a href="day-trips.html">Day Trip Packages</a></li>
+                    <li><a href="budget-tours.html">Budget Tour Packages</a></li>
+                    <li><a href="midrange-tours.html">Midrange Tour Packages</a></li>
+                    <li><a href="luxury-tours.html">Luxury Tour Packages</a></li>
+                    <li><a href="hiking.html">Hiking Packages</a></li>
+                    <li><a href="zanzibar-holidays.html">Zanzibar Holidays Packages</a></li>
+                </ul>
+            </li>
+            <li><a href="testimonials.html">Testimonials</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    
+
+    <script>
+        // Toggle Mobile Menu
+        function toggleMobileMenu() {
+            document.querySelector('.mobile-nav').classList.toggle('active');
+        }
+
+        // Toggle Dropdown for "Tours"
+        function toggleDropdown(event) {
+            event.preventDefault();
+            const parentLi = event.target.parentElement;
+            parentLi.classList.toggle('active');
+        }
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(event) {
+            const dropdowns = document.querySelectorAll('.dropdown');
+            dropdowns.forEach(function(dropdown) {
+                if (dropdown.classList.contains('show') && 
+                    !dropdown.previousElementSibling.contains(event.target)) {
+                    dropdown.classList.remove('show');
+                }
+            });
+        });
+    </script>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day Trips</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
         }
 
         .container {
             width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px 0;
+            margin: 20px auto;
+        }
+
+        h1 {
+            font-family: 'Arial', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: #1574d2;
             text-align: center;
-        }
-
-        .hero {
-            background-color: var(--primary-color);
-            color: var(--white);
-            text-align: center;
-            padding: 60px 20px;
-        }
-
-        .hero h1 {
-            font-size: 2.8rem;
+            letter-spacing: 1px;
+            margin-top: 50px;
             margin-bottom: 20px;
+            text-transform: capitalize;
+            line-height: 1.4;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 10px;
         }
 
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 20px;
-        }
-
-        .hero a {
-            display: inline-block;
-            background-color: var(--secondary-color);
-            color: var(--white);
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-
-        .hero a:hover {
-            background-color: #1c7430;
-        }
-
-        .tour-packages {
+        .trip-card {
             display: flex;
-            flex-direction: column;
+            flex-wrap: wrap;
             gap: 20px;
-            padding: 40px 0;
+            justify-content: space-between;
         }
 
-        .tour-card {
-            background-color: var(--white);
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        .trip-item {
+            background-color: #fff;
+            width: 30%; /* 3 items per row on desktop */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: transform 0.3s ease;
+            padding: 10px;
+            margin-bottom: 20px;
         }
 
-        .tour-card:hover {
-            transform: scale(1.03);
-            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        .trip-item:hover {
+            transform: scale(1.05);
         }
 
-        .tour-card img {
+        .trip-image {
             width: 100%;
-            height: 250px;
+            height: 200px;
             object-fit: cover;
+            border-radius: 10px;
         }
 
-        .tour-card-content {
-            padding: 20px;
+        .trip-details {
+            padding: 10px;
         }
 
-        .tour-card-content h2 {
-            color: var(--primary-color);
-            margin-bottom: 10px;
+        .trip-details h2 {
             font-size: 1.5rem;
+            color: #333;
         }
 
-        .tour-card-content .price {
-            color: var(--secondary-color);
-            font-weight: bold;
-            font-size: 1.2rem;
-            margin-bottom: 15px;
+        .trip-details p {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 10px;
         }
 
-        .btn {
-            display: inline-block;
-            background-color: var(--primary-color);
-            color: var(--white);
-            padding: 10px 20px;
+        .additional-info {
+            font-size: 0.9rem;
+            color: #777;
+            margin-top: 10px;
+        }
+
+        .view-more {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .view-more a {
             text-decoration: none;
+            color: #3498db;
+            font-size: 1.1rem;
+            border: 2px solid #3498db;
+            padding: 8px 16px;
             border-radius: 5px;
-            transition: background-color 0.3s ease;
+            transition: all 0.3s;
         }
 
-        .btn:hover {
-            background-color: #0056b3;
+        .view-more a:hover {
+            background-color: #3498db;
+            color: #fff;
         }
 
-        .why-budget-tours {
-            background-color: var(--background-color);
-            padding: 40px 0;
-        }
-
-        .why-budget-tours h2 {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        .benefits {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .benefit {
-            text-align: center;
+        /* Full Description Section */
+        .full-description {
+            margin-top: 20px;
+            background-color: #fff;
             padding: 20px;
-            background-color: #f1f1f1;
-            border-radius: 8px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            display: none;
         }
 
-        .benefit img {
-            width: 80px;
-            height: 80px;
+        .full-description img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .full-description h2 {
+            font-size: 2rem;
+            color: #e67e22;
+            margin-bottom: 10px;
+        }
+
+        .details-card {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 15px;
             margin-bottom: 15px;
         }
 
-        @media (min-width: 768px) {
-            .tour-packages {
-                flex-direction: row;
+        .details-card h3 {
+            font-size: 1.5rem;
+            color: #3498db;
+            margin-bottom: 10px;
+        }
+
+        .details-card p {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        .back-button {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .back-button a {
+            text-decoration: none;
+            color: #fff;
+            background-color: #3498db;
+            font-size: 1.1rem;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+
+        .back-button a:hover {
+            background-color: #2980b9;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .trip-card {
+                display: block;
+                gap: 10px;
             }
 
-            .benefits {
-                flex-direction: row;
+            .trip-item {
+                width: 100%;
+                margin-bottom: 30px;
+            }
+
+            .trip-image {
+                height: 220px;
+            }
+
+            .trip-details h2 {
+                font-size: 1.3rem;
+            }
+
+            .trip-details p {
+                font-size: 0.95rem;
+            }
+
+            .view-more a {
+                font-size: 1rem;
+                padding: 6px 12px;
             }
         }
-    </style>
-</head>
+
+        /* Tablet and larger desktop devices */
+        @media (min-width: 769px) {
+            .trip-item {
+                width: 30%; /* Ensures 3 items per row on desktop */
+            }
+        }
+    </style></head>
 <body>
-    <!-- Hero Section -->
-    <div class="hero">
-        <div class="container">
-            <h1>Budget-Friendly Safari Tours</h1>
-            <p>Unforgettable Tanzanian adventures that don't break the bank.</p>
-            <a href="#tours">Explore Tours</a>
+
+    <div class="container">
+        <h1>Day Trips</h1>
+
+        <div class="trip-card" id="day-trips">
+            <!-- Trip 1: Arusha National Park Day Trip -->
+            <div class="trip-item" id="trip1">
+                <img src="kilimanjaro park.jpg" alt="Arusha National Park" class="trip-image">
+                <div class="trip-details">
+                    <h2>Arusha National Park Day Trip</h2>
+                    <p>Explore the stunning Arusha National Park, home to a variety of wildlife including giraffes, zebras, and flamingos.</p>
+                    <div class="additional-info">
+                        <p><strong>🌞 Location:</strong> Arusha, Tanzania</p>
+                        <p><strong>💰 Rate:</strong> $495 per person</p>
+                        <p><strong>🌞 Best Time:</strong> June to October</p>
+                        <p><strong>🌍 High Season:</strong> July to March</p>
+                    </div>
+                    <div class="view-more">
+                        <a href="javascript:void(0);" onclick="showDetails('arusha-national-park-more')">View More</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Trip 2: Materuni Waterfall and Hot Springs -->
+            <div class="trip-item" id="trip2">
+                <img src="materuni.jpg" alt="Materuni Waterfall and Hot Springs" class="trip-image">
+                <div class="trip-details">
+                    <h2>Materuni Waterfall with Coffee Tour and Kikulelwa Hot Spring</h2>
+                    <p>Experience the beauty of Materuni Waterfalls, coffee tour, and Kikulelwa Hot Springs in a single day!</p>
+                    <div class="additional-info">
+                        <p><strong>🌞 Location:</strong> Materuni Village, Tanzania</p>
+                        <p><strong>💰 Rate:</strong> $150 per person</p>
+                        <p><strong>🌞 Best Time:</strong> All year round</p>
+                    </div>
+                    <div class="view-more">
+                        <a href="javascript:void(0);" onclick="showDetails('materuni-more')">View More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="trip-item" id="trip3">
+                <img src="ngorongoro.jpg" alt="Ngorongoro Crater" class="trip-image">
+                <div class="trip-details">
+                    <h2>1 Day Short Tour to Ngorongoro Crater</h2>
+                    <p>Discover the breathtaking Ngorongoro Crater, a natural wonder home to the Big Five and over 30,000 animals.</p>
+                    <div class="additional-info">
+                        <p><strong>🌞 Location:</strong> Ngorongoro Conservation Area, Tanzania</p>
+                        <p><strong>💰 Rate:</strong> $275 per person (Group) | $450 per person (Private, starting from 2 pax)</p>
+                        <p><strong>🌞 Best Time:</strong> All year round</p>
+                    </div>
+                    <div class="view-more">
+                        <a href="javascript:void(0);" onclick="showDetails('ngorongoro-more')">View More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="trip-item" id="trip4">
+                <img src="tarangire.jpg" alt="Tarangire National Park" class="trip-image">
+                <div class="trip-details">
+                    <h2>1 Day Short Tour to Tarangire National Park</h2>
+                    <p>Experience the iconic Baobab trees, large elephant herds, and diverse wildlife in one of Tanzania's most picturesque parks.</p>
+                    <div class="additional-info">
+                        <p><strong>🌞 Location:</strong> Tarangire National Park, Tanzania</p>
+                        <p><strong>💰 Rate:</strong> $230 per person (Group) | $330 per person (Private, starting from 2 pax)</p>
+                        <p><strong>🌞 Best Time:</strong> July - October (Dry Season)</p>
+                    </div>
+                    <div class="view-more">
+                        <a href="javascript:void(0);" onclick="showDetails('tarangire-more')">View More</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Trip 3: Mount Kilimanjaro Hike -->
+            <div class="trip-item" id="trip3">
+                <img src="kilimanjaro park.jpg" alt="Mount Kilimanjaro" class="trip-image">
+                <div class="trip-details">
+                    <h2>1 Day Mount Kilimanjaro Hike via Marangu Route</h2>
+                    <p>This day hike is designed for those who want to experience the magic of Mount Kilimanjaro without climbing to the summit. The hike takes you from Marangu Gate to Mandara Hut.</p>
+                    <div class="additional-info">
+                        <p><strong>🌞 Location:</strong> Marangu, Tanzania</p>
+                        <p><strong>💰 Rate:</strong> $330 per person (starting from 2 pax)</p>
+                        <p><strong>🌞 Best Time:</strong> All year round</p>
+                        <p><strong>🌍 High Season:</strong> June to October</p>
+                    </div>
+                    <div class="view-more">
+                        <a href="javascript:void(0);" onclick="showDetails('kilimanjaro-more')">View More</a>
+                    </div>
+                </div>
+            </div>
         </div>
+
+        <!-- Full Description for Materuni Waterfall -->
+        <div class="full-description" id="materuni-more">
+            <img src="materuni.jpg" alt="Materuni Waterfall">
+            <h2>Materuni Waterfall with Coffee Tour and Kikulelwa Hot Spring</h2>
+            <div class="details-card">
+                <h3>Overview:</h3>
+                <p>This 1-day tour offers visitors an additional day of activities in the Arusha area, perfect for those who have hiked Mount Kilimanjaro or are waiting for their planned safari. Enjoy a hike with a view of Mount Kilimanjaro, explore the 80m high Materuni Waterfall, taste locally brewed banana beer, and learn about coffee cultivation and processing.</p>
+            </div>
+            <div class="details-card">
+                <h3>Day Description:</h3>
+                <p>• A transfer from the airport can be arranged for an extra cost.</p>
+                <p>Day 1: Our guide will pick you up from the hotel and drive you to Materuni Village, home of the Chagga tribe. After registering at the village, enjoy the scenic view of Mount Kilimanjaro and the Materuni Waterfall. Then, experience a traditional Chagga lunch and a coffee tour. Learn how coffee is cultivated, roasted, and processed, and participate in grinding the beans while enjoying Chagga songs and dances. The tour ends with a drive back to your hotel.</p>
+            </div>
+            <div class="details-card">
+                <h3>Accommodation:</h3>
+                <p>No accommodation (End of tour)</p>
+            </div>
+            <div class="details-card">
+                <h3>Meals & Drinks:</h3>
+                <p>• Lunch (Breakfast & dinner not included)</p>
+                <p>• Non-alcoholic drinks</p>
+            </div>
+            <div class="details-card">
+                <h3>Rates:</h3>
+                <p>$150 Per person</p>
+            </div>
+            <div class="details-card">
+                <h3>Included:</h3>
+                <ul>
+                    <li>Porterage</li>
+                    <li>Rescue fee</li>
+                    <li>Park fees (For non-residents)</li>
+                    <li>All activities (Unless labeled as optional)</li>
+                    <li>A professional driver/guide</li>
+                    <li>All transportation (Unless labeled as optional)</li>
+                    <li>All Taxes/VAT</li>
+                    <li>Meals (As specified in the day-by-day section)</li>
+                    <li>Drinks (As specified in the day-by-day section)</li>
+                </ul>
+            </div>
+            <div class="details-card">
+                <h3>Excluded:</h3>
+                <ul>
+                    <li>Climbing gear</li>
+                    <li>International flights (From/to home)</li>
+                    <li>Roundtrip airport transfer</li>
+                    <li>Additional accommodation before and at the end of the tour</li>
+                    <li>Tips (Tipping guideline US$10.00 pp per day)</li>
+                    <li>Personal items (Souvenirs, travel insurance, visa fees, etc.)</li>
+                    <li>Government imposed increase of taxes and/or park fees</li>
+                </ul>
+            </div>
+            <div class="back-button">
+                <a href="javascript:void(0);" onclick="goBackToTrips()">Back to Day Trips</a>
+            </div>
+        </div>
+
+        <!-- Full Description for 1 Day Mount Kilimanjaro Hike -->
+        <div class="full-description" id="kilimanjaro-more">
+            <img src="kilimanjaro park.jpg" alt="Mount Kilimanjaro">
+            <h2>1 Day Mount Kilimanjaro Hike via Marangu Route</h2>
+            <div class="details-card">
+                <h3>Overview:</h3>
+                <p>This 1-day hike offers a great opportunity to experience Mount Kilimanjaro without summiting. The hike takes you from Marangu Gate (1,800m) to Mandara Hut (2,743m) through the beautiful rainforests of the mountain.</p>
+            </div>
+            <div class="details-card">
+                <h3>Day Description:</h3>
+                <p>• After breakfast at your hotel in Arusha, you will be driven to Marangu Gate (1,800m) for registration. Then, the hike begins with a 4-5 hour trek through the rainforests of Kilimanjaro to Mandara Hut (2,743m). After a picnic lunch, you will descend back to the gate and return to Arusha.</p>
+            </div>
+            <div class="details-card">
+                <h3>Accommodation:</h3>
+                <p>No accommodation (End of tour)</p>
+            </div>
+            <div class="details-card">
+                <h3>Meals & Drinks:</h3>
+                <p>• Picnic Lunch at Mandara Hut</p>
+                <p>• Non-alcoholic drinks</p>
+            </div>
+            <div class="details-card">
+                <h3>Rates:</h3>
+                <p>$330 Per person (starting from 2 pax)</p>
+            </div>
+            <div class="details-card">
+                <h3>Included:</h3>
+                <ul>
+                    <li>Park fees (For non-residents)</li>
+                    <li>All activities (Unless labeled as optional)</li>
+                    <li>A professional driver/guide</li>
+                    <li>All transportation (Unless labeled as optional)</li>
+                    <li>All Taxes/VAT</li>
+                    <li>Meals (As specified in the day-by-day section)</li>
+                    <li>Drinks (As specified in the day-by-day section)</li>
+                </ul>
+            </div>
+            <div class="details-card">
+                <h3>Excluded:</h3>
+                <ul>
+                    <li>Climbing gear</li>
+                    <li>International flights (From/to home)</li>
+                    <li>Roundtrip airport transfer</li>
+                    <li>Additional accommodation before and at the end of the tour</li>
+                    <li>Tips (Tipping guideline: US$10.00 per person per day)</li>
+                    <li>Personal items (Souvenirs, travel insurance, visa fees, etc.)</li>
+                    <li>Government imposed increase of taxes and/or park fees</li>
+                </ul>
+            </div>
+            <div class="back-button">
+                <a href="javascript:void(0);" onclick="goBackToTrips()">Back to Day Trips</a>
+            </div>
+        </div>
+<!-- Full Description for Ngorongoro Crater Tour -->
+<div class="full-description" id="ngorongoro-more">
+    <img src="ngorongoro.jpg" alt="Ngorongoro Crater">
+    <h2>1 Day Short Tour to Ngorongoro Crater</h2>
+
+    <div class="details-card">
+        <h3>Overview:</h3>
+        <p>The Ngorongoro Crater is a breathtaking natural wonder of the world. This incredible volcanic landscape was formed over 2 million years ago and is home to a diverse array of wildlife, including lions, elephants, zebras, and hippos. Spend a full day exploring this unique ecosystem, one of the best places in Africa to spot the Big Five. A day in the crater is an experience that will leave you in awe of its natural beauty and wildlife.</p>
     </div>
 
-    <!-- Tour Packages Section -->
-    <div id="tours" class="container tour-packages">
-        <div class="tour-card">
-            <img src="/api/placeholder/400/250" alt="3-Day Serengeti Budget Safari">
-            <div class="tour-card-content">
-                <h2>3-Day Serengeti Budget Safari</h2>
-                <p>Experience the incredible wildlife of Serengeti National Park with comfortable, affordable accommodations.</p>
-                <div class="price">From $550 per person</div>
-                <a href="#" class="btn">View Details</a>
-            </div>
-        </div>
-
-        <div class="tour-card">
-            <img src="/api/placeholder/400/250" alt="4-Day Northern Circuit Budget Tour">
-            <div class="tour-card-content">
-                <h2>4-Day Northern Circuit Budget Tour</h2>
-                <p>Visit Tarangire, Lake Manyara, and Ngorongoro Crater on a budget-friendly adventure.</p>
-                <div class="price">From $750 per person</div>
-                <a href="#" class="btn">View Details</a>
-            </div>
-        </div>
-
-        <div class="tour-card">
-            <img src="/api/placeholder/400/250" alt="2-Day Mikumi National Park Safari">
-            <div class="tour-card-content">
-                <h2>2-Day Mikumi National Park Safari</h2>
-                <p>A short but exciting safari exploring the diverse wildlife of Mikumi National Park.</p>
-                <div class="price">From $350 per person</div>
-                <a href="#" class="btn">View Details</a>
-            </div>
-        </div>
+    <div class="details-card">
+        <h3>Day Description:</h3>
+        <p>• You will be picked up from your hotel in Arusha between 6AM to 7AM and start your drive to the Ngorongoro Crater.</p>
+        <p>• Pass through the crater viewpoint, where you will descend into the crater for a game drive.</p>
+        <p>• The Ngorongoro Crater is the largest intact crater in the world, formed over 2 million years ago. It is home to a diverse range of habitats, including acacia forests, swamps filled with hippos, and open grasslands. The crater offers a rich wildlife viewing experience with over 30,000 animals, including elephants, warthogs, flamingoes, and the rare black rhinoceros.</p>
+        <p>• After the game drive, you will be dropped off at your hotel or airport.</p>
     </div>
 
-    <!-- Why Budget Tours Section -->
-    <div class="why-budget-tours">
-        <div class="container">
-            <h2>Why Choose Our Budget Tours?</h2>
-            <div class="benefits">
-                <div class="benefit">
-                    <img src="/api/placeholder/80/80" alt="Cost-Effective">
-                    <h3>Cost-Effective</h3>
-                    <p>Affordable pricing without compromising on experience</p>
-                </div>
-                <div class="benefit">
-                    <img src="/api/placeholder/80/80" alt="Comfortable Accommodations">
-                    <h3>Comfortable Accommodations</h3>
-                    <p>Clean, safe, and budget-friendly lodging options</p>
-                </div>
-                <div class="benefit">
-                    <img src="/api/placeholder/80/80" alt="Expert Guides">
-                    <h3>Expert Guides</h3>
-                    <p>Knowledgeable local guides to enhance your safari</p>
-                </div>
-                <div class="benefit">
-                    <img src="/api/placeholder/80/80" alt="Flexible Itineraries">
-                    <h3>Flexible Itineraries</h3>
-                    <p>Customizable tours to suit your budget and preferences</p>
-                </div>
+    <div class="details-card">
+        <h3>Meals & Drinks:</h3>
+        <p>• Lunch (Breakfast & dinner not included)</p>
+        <p>• Non-alcoholic drinks</p>
+    </div>
+
+    <div class="details-card">
+        <h3>Rates:</h3>
+        <p><strong>Group Option:</strong> $275 per person</p>
+        <p><strong>Private Option:</strong> $450 per person (starting from 2 pax)</p>
+    </div>
+
+    <div class="details-card">
+        <h3>Included:</h3>
+        <ul>
+            <li>Park fees (For non-residents)</li>
+            <li>All activities (Unless labeled as optional)</li>
+            <li>A professional driver/guide</li>
+            <li>All transportation (Unless labeled as optional)</li>
+            <li>All Taxes/VAT</li>
+            <li>Meals (As specified in the day-by-day section)</li>
+            <li>Drinks (As specified in the day-by-day section)</li>
+        </ul>
+    </div>
+
+    <div class="details-card">
+        <h3>Excluded:</h3>
+        <ul>
+            <li>International flights (From/to home)</li>
+            <li>Roundtrip airport transfer</li>
+            <li>Additional accommodation before and at the end of the tour</li>
+            <li>Tips (Tipping guideline: US$10.00 per person per day)</li>
+            <li>Personal items (Souvenirs, travel insurance, visa fees, etc.)</li>
+            <li>Government imposed increase of taxes and/or park fees</li>
+        </ul>
+    </div>
+
+    <div class="back-button">
+        <a href="javascript:void(0);" onclick="goBackToTrips()">Back to Day Trips</a>
+    </div>
+</div>
+
+        <!-- Full Description for Arusha National Park Day Trip -->
+        <div class="full-description" id="arusha-national-park-more">
+            <img src="kilimanjaro park.jpg" alt="Arusha National Park">
+            <h2>Arusha National Park Day Trip</h2>
+            <div class="details-card">
+                <h3>Overview:</h3>
+                <p>Despite the small size of Arusha National Park, common animals include giraffe, buffalo, zebra, warthog, the black-and-white colobus monkey, the blue monkey, flamingos, and more. African elephants and leopards are present, but rarely seen. The park is at the base of Mount Meru, which is good for climbing. Bird-life in the forest is prolific, with many forest species more easily seen here.</p>
+            </div>
+            <div class="details-card">
+                <h3>Day Description:</h3>
+                <p>• A transfer from the airport can be arranged for an extra cost.</p>
+                <p>Day 1: The morning after breakfast, our driver will pick you up from the hotel and drive to Arusha National Park to start the game drive. Despite the small size of the park, common animals include giraffes, buffalo, zebra, warthog, the black-and-white colobus monkey, blue monkey, flamingos, and more. African elephants and leopards are present but rarely seen. The park is at the base of Mount Meru, which is good for climbing, and walking safari is possible here. Birdlife in the forest is prolific, with many forest species more easily seen here. After a whole day of game drive, we will drive you back to your accommodation in Arusha.</p>
+            </div>
+            <div class="details-card">
+                <h3>Accommodation:</h3>
+                <p>No accommodation (End of tour)</p>
+            </div>
+            <div class="details-card">
+                <h3>Meals & Drinks:</h3>
+                <p>• Lunch (Breakfast & dinner not included)</p>
+                <p>• Non-alcoholic drinks</p>
+            </div>
+            <div class="details-card">
+                <h3>Rates:</h3>
+                <p>$495 Per person</p>
+            </div>
+            <div class="details-card">
+                <h3>Included:</h3>
+                <ul>
+                    <li>Park fees (For non-residents)</li>
+                    <li>All activities (Unless labeled as optional)</li>
+                    <li>A professional driver/guide</li>
+                    <li>All transportation (Unless labeled as optional)</li>
+                    <li>All Taxes/VAT</li>
+                    <li>Meals (As specified in the day-by-day section)</li>
+                    <li>Drinks (As specified in the day-by-day section)</li>
+                </ul>
+            </div>
+            <div class="details-card">
+                <h3>Excluded:</h3>
+                <ul>
+                    <li>International flights (From/to home)</li>
+                    <li>Roundtrip airport transfer</li>
+                    <li>Additional accommodation before and at the end of the tour</li>
+                    <li>Tips (Tipping guideline US$10.00 pp per day)</li>
+                    <li>Personal items (Souvenirs, travel insurance, visa fees, etc.)</li>
+                    <li>Government imposed increase of taxes and/or park fees</li>
+                </ul>
+            </div>
+            <div class="back-button">
+                <a href="javascript:void(0);" onclick="goBackToTrips()">Back to Day Trips</a>
             </div>
         </div>
+
     </div>
+
+    <script>
+        function showDetails(id) {
+            document.querySelector('.trip-card').style.display = 'none';
+            document.getElementById(id).style.display = 'block';
+        }
+
+        function goBackToTrips() {
+            // Hide all full description sections
+            const fullDescriptions = document.querySelectorAll('.full-description');
+            fullDescriptions.forEach(description => {
+                description.style.display = 'none';
+            });
+
+            // Show the main trip list again
+            document.querySelector('.trip-card').style.display = 'flex';
+        }
+    </script>
+
 </body>
 </html>

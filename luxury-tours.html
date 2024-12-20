@@ -356,3 +356,953 @@
             });
         });
     </script>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Midrange Tours</title>
+    <style>
+        /* Existing CSS from the previous code - keeping all the original styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('mountain.jpg') no-repeat center center/cover;
+            background-attachment: fixed;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 3rem;
+            color: #fff;
+            margin: 20px 0;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+        }
+
+        .container {
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            margin: 40px auto;
+            width: 100%;
+            max-width: 100%;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .tour-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center the items */
+    gap: 30px;
+}
+
+
+        .tour-card {
+            background: #fff;
+            width: calc(25% - 30px);
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            text-align: center;
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .tour-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .image-frame {
+            position: relative;
+            overflow: hidden;
+            height: 350px;
+            width: 100%;
+            margin: 0;
+        }
+
+        .image-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .image-frame img:hover {
+            transform: scale(1.1);
+        }
+
+        .tour-info {
+            padding: 20px;
+            background-color: #f4f4f4;
+            border-top: 1px solid #ddd;
+        }
+
+        .tour-info h3 {
+            font-size: 1.2rem;
+            color: #3498db;
+            margin: 10px 0;
+        }
+
+        .tour-info p {
+            font-size: 1rem;
+            color: #555;
+            margin: 5px 0;
+        }
+
+        .tour-info .location {
+            font-weight: bold;
+        }
+
+        .tour-info .rate {
+            font-weight: bold;
+            color: #e67e22;
+        }
+
+        .tour-info .best-month {
+            font-weight: bold;
+            color: #2ecc71;
+        }
+
+        .tour-info .short-desc {
+            font-size: 0.9rem;
+            color: #777;
+            margin: 10px 0;
+        }
+
+        .tour-info .view-more a {
+            text-decoration: none;
+            color: #fff;
+            background-color: #3498db;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: all 0.3s;
+            font-size: 1rem;
+        }
+
+        .tour-info .view-more a:hover {
+            background-color: #2980b9;
+        }
+        .full-description {
+    background-color: #f4f4f4;  /* Light background color for the full description */
+    padding: 30px;
+    border-radius: 15px;
+    max-width: 1000px;
+    margin: 40px auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);  /* Enhanced shadow */
+    text-align: center;  /* Center content */
+    border: 2px solid #ddd;  /* Light border around the section */
+}
+
+#full-image {
+    width: 100%;
+    max-width: 900px;
+    height: auto;
+    margin: 20px 0;  /* Center horizontally */
+    display: block;
+    border-radius: 15px;  /* Rounded corners */
+    border: 4px solid #1e90ff;  /* Blue border around image */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);  /* Subtle shadow */
+    margin-left: auto;  /* Ensures horizontal centering */
+    margin-right: auto; /* Ensures horizontal centering */
+}
+
+#full-title {
+    font-size: 32px;
+    font-weight: bold;
+    color: #2f4f4f;
+    text-align: center;  /* Center the title */
+    margin-bottom: 25px;
+    letter-spacing: 1px;  /* Slight letter spacing for better readability */
+    text-transform: uppercase;  /* Title in uppercase */
+    padding: 10px;
+    background-color: #1e90ff;  /* Blue background for title */
+    color: #fff;  /* White text color */
+    border-radius: 10px;  /* Rounded corners */
+}
+
+#full-desc {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #333;
+    text-align: left;  /* Left align text for better readability */
+    margin-top: 20px;
+}
+
+.tour-section {
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #ffffff;  /* White background for each section */
+    border: 1px solid #ddd;  /* Border around each section */
+    border-radius: 10px;  /* Rounded corners for sections */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);  /* Light shadow for sections */
+}
+
+.section-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #1e90ff;  /* Blue color for section titles */
+    text-transform: uppercase;  /* Section titles in uppercase */
+}
+
+.park-image {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    border-radius: 10px;
+    margin: 20px auto;  /* Center horizontally */
+    border: 3px solid #ddd;  /* Light border around images */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);  /* Shadow around images */
+}
+
+ul {
+    list-style-type: square;
+    padding-left: 25px;  /* Adds more indentation to list items */
+    color: #555;  /* Darker text for list items */
+    text-align: left;  /* Ensures the list is left-aligned */
+}
+
+ul li {
+    margin-bottom: 8px;  /* Space between list items */
+}
+
+ul li::marker {
+    color: #1e90ff;  /* Blue color for bullet points */
+}
+
+.back-button a {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 12px 25px;
+    background-color: #1e90ff;  /* Blue background for back button */
+    color: #fff;  /* White text color */
+    text-decoration: none;
+    border-radius: 10px;  /* Rounded corners for the button */
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.back-button a:hover {
+    background-color: #0056b3;  /* Darker blue on hover */
+}
+
+/* Media Query for Desktop */
+@media (min-width: 768px) {
+    .full-description {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .park-image, #full-image {
+        max-width: 80%;  /* Limit image width on larger screens */
+        margin: 20px auto;  /* Center images on desktop as well */
+    }
+
+    .tour-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    ul {
+        text-align: left;  /* Keep list left-aligned on desktop */
+    }
+}
+
+/* Mobile view */
+@media (max-width: 767px) {
+    .full-description {
+        padding: 20px;
+    }
+
+    #full-image {
+        max-width: 100%;
+    }
+
+    ul {
+        text-align: left;  /* Keep list left-aligned on mobile */
+    }
+}
+
+
+ul li {
+    margin-bottom: 10px;
+}
+
+.back-button a {
+    color: #007bff;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.back-button a:hover {
+    text-decoration: underline;
+}
+
+
+.tour-section {
+    margin-bottom: 20px;
+}
+
+.section-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.park-image {
+    width: 100%;
+    max-width: 700px;
+    height: auto;
+    border-radius: 8px;
+    margin: 10px 0;
+}
+
+.back-button a {
+    color: #1e90ff;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.back-button a:hover {
+    text-decoration: underline;
+}
+
+
+
+        .full-description img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .full-description h2 {
+            font-size: 2rem;
+            color: #3498db;
+            margin-bottom: 10px;
+        }
+
+        .full-description p {
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            white-space: pre-wrap;
+        }
+
+        .back-button {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .back-button a {
+            text-decoration: none;
+            background-color: #3498db;
+            color: #fff;
+            padding: 12px 25px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .back-button a:hover {
+            background-color: #2980b9;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .tour-card {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .full-description {
+                width: 95%;
+                padding: 20px;
+            }
+        }
+    </style>
+    <head>
+        <title>Budget Tours</title>
+        <style>
+            /* Add your styles here */
+        </style>
+        </head>
+        <body>
+            <h1>Luxury Tours</h1>
+        
+            <div class="container">
+                <div class="tour-cards">
+                    <!-- Tour Card 1: 2 Days Luxury Safari -->
+                    <div class="tour-card" onclick="viewMore(1)">
+                        <div class="image-frame">
+                            <img src="tarangire.jpg" alt="2 Days Luxury Safari">
+                        </div>
+                        <div class="tour-info">
+                            <h3>2 Days Luxury Safari to Tarangire and Ngorongoro Crater</h3>
+                            <p class="location">Location: Tarangire, Ngorongoro Crater</p>
+                            <p class="rate">Rate: $600/day</p>
+                            <p class="best-month">Best Month: June</p>
+                            <p class="short-desc">Experience unmatched luxury in two iconic locations.</p>
+                            <div class="view-more">
+                                <a href="javascript:void(0)">View More</a>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <!-- Tour Card 2: 4 Day Serengeti Fly-In, Fly-Out Premium Luxury Safari -->
+                    <div class="tour-card" onclick="viewMore(2)">
+                        <div class="image-frame">
+                            <img src="serengeti.jpg" alt="4 Day Serengeti Fly-In, Fly-Out Premium Luxury Safari">
+                        </div>
+                        <div class="tour-info">
+                            <h3>4 Day Serengeti Fly-In, Fly-Out Premium Luxury Safari</h3>
+                            <p class="location">Location: Serengeti National Park</p>
+                            <p class="rate">Rate: $800/day</p>
+                            <p class="best-month">Best Month: July</p>
+                            <p class="short-desc">A seamless luxury experience in the heart of Serengeti.</p>
+                            <div class="view-more">
+                                <a href="javascript:void(0)">View More</a>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <!-- Tour Card 3: 5-Day Mid-Luxury Best of Tanzania -->
+                    <div class="tour-card" onclick="viewMore(3)">
+                        <div class="image-frame">
+                            <img src="ngorongoro2.jpg" alt="5-Day Mid-Luxury Best of Tanzania">
+                        </div>
+                        <div class="tour-info">
+                            <h3>5-Day Mid-Luxury Best of Tanzania</h3>
+                            <p class="location">Location: Serengeti, Ngorongoro, Tarangire</p>
+                            <p class="rate">Rate: $700/day</p>
+                            <p class="best-month">Best Month: August</p>
+                            <p class="short-desc">Discover Tanzania's beauty with a blend of comfort and adventure.</p>
+                            <div class="view-more">
+                                <a href="javascript:void(0)">View More</a>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <!-- Tour Card 4: 5 Days Premium Luxury Safari -->
+                    <div class="tour-card" onclick="viewMore(4)">
+                        <div class="image-frame">
+                            <img src="tarangire.jpg" alt="5 Days Premium Luxury Safari">
+                        </div>
+                        <div class="tour-info">
+                            <h3>5 Days Premium Luxury Safari</h3>
+                            <p class="location">Location: Serengeti, Ngorongoro, Tarangire</p>
+                            <p class="rate">Rate: $900/day</p>
+                            <p class="best-month">Best Month: September</p>
+                            <p class="short-desc">Indulge in premium luxury across Tanzania's best parks.</p>
+                            <div class="view-more">
+                                <a href="javascript:void(0)">View More</a>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <!-- Tour Card 5: 6-Day Luxury Highlights of Tanzania Stay in the Crater -->
+                    <div class="tour-card" onclick="viewMore(5)">
+                        <div class="image-frame">
+                            <img src="crator.jpg" alt="6-Day Luxury Highlights of Tanzania Stay in the Crater">
+                        </div>
+                        <div class="tour-info">
+                            <h3>6-Day Luxury Highlights of Tanzania Stay in the Crater</h3>
+                            <p class="location">Location: Serengeti, Ngorongoro Crater, Tarangire</p>
+                            <p class="rate">Rate: $1000/day</p>
+                            <p class="best-month">Best Month: October</p>
+                            <p class="short-desc">A luxurious journey with a stay inside the Ngorongoro Crater.</p>
+                            <div class="view-more">
+                                <a href="javascript:void(0)">View More</a>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <!-- Tour Card 6: 12-Day Premium Luxury Safari & Beach Holidays All-Inclusive -->
+                    <div class="tour-card" onclick="viewMore(6)">
+                        <div class="image-frame">
+                            <img src="claude.jpg" alt="12-Day Premium Luxury Safari & Beach Holidays All-Inclusive">
+                        </div>
+                        <div class="tour-info">
+                            <h3>12-Day Premium Luxury Safari & Beach Holidays All-Inclusive</h3>
+                            <p class="location">Location: Serengeti, Zanzibar, Ngorongoro</p>
+                            <p class="rate">Rate: $1200/day</p>
+                            <p class="best-month">Best Month: December</p>
+                            <p class="short-desc">An all-inclusive luxury safari and beach getaway.</p>
+                            <div class="view-more">
+                                <a href="javascript:void(0)">View More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+          <!-- Full Description Section -->
+<div class="full-description" id="full-description">
+    <img src="" alt="Tour Image" id="full-image">
+    <h2 id="full-title">Choose the tour you like above</h2>
+    <div id="full-desc">
+        <!-- Content will be inserted dynamically -->
+    </div>
+    <div class="back-button">
+        <a href="javascript:void(0)" onclick="goBack()">Back to Tours</a>
+    </div>
+</div>
+
+<script>
+  // Hide the entire Full Description Section on page load
+  document.getElementById('full-description').style.display = 'none';
+</script>
+
+            <script>
+                function viewMore(tourNumber) {
+                    const fullDescription = document.getElementById('full-description');
+                    const fullImage = document.getElementById('full-image');
+                    const fullTitle = document.getElementById('full-title');
+                    const fullDesc = document.getElementById('full-desc');
+                    const tours = [
+    {
+        title: "2 DAYS LUXURY SAFARI TO TARANGIRE AND NGORONGORO CRATER",
+        img: "tarangire.jpg",
+        desc: `
+<div class="tour-section">
+    <h3 class="section-title">Overview</h3>
+    <p>This 2-day Tanzanian luxury safari enables you to experience the two major parks on the northern circuit of Tanzania. You will visit Tarangire National Park, famous for its giant baobab trees as well as the largest African elephants, and you will also visit Ngorongoro Crater, a World Heritage Site as well as a geo-park. You will stay at luxury lodges.</p>
+    
+    <h3 class="section-title">Day 1: Tarangire National Park</h3>
+    <img src="crator.jpg" alt="Tarangire National Park" class="park-image">
+    <p>After breakfast at the hotel, depart for Tarangire, Tanzania's third-largest national park and a sanctuary for an unusually large elephant population. Majestic baobab trees are an interesting feature of the park, dwarfing the animals that feed beneath them. Animals concentrate along the Tarangire River, which provides the only permanent water supply in the area. There is a great diversity of wildlife including lion, leopard, cheetah, and up to 6 thousand elephants. Enjoy a game drive with a picnic lunch. After another game drive, you will head to your accommodation in Karatu for dinner and overnight.</p>
+    <p><strong>Accommodation:</strong> Lake Manyara Kilimamoja Lodge</p>
+    <p><strong>Meals & Drinks:</strong> All meals included, All drinks (Except for spirits/liquor)</p>
+    
+    <h3 class="section-title">Day 2: Ngorongoro Crater to Arusha</h3>
+    <img src="ngorongoro.jpg" alt="Ngorongoro Crater" class="park-image">
+    <p>After breakfast, drive to the Ngorongoro Conservation Area and descend into the Ngorongoro Crater for game viewing. The Ngorongoro Crater is one of the largest unbroken calderas on the planet with over 25,000 wild creatures in the caldera. There are more prides per capita than anywhere on earth. The Ngorongoro Crater is a breathtakingly beautiful setting and the best place in East Africa to see the Big Five: lion, leopard, black rhinos, elephant, and buffalo. It is one of the world’s most astonishing places and among the 8th wonders of the world.</p>
+    <p>A packed lunch will be served at a picnic site. In the late afternoon, ascend the crater and drive back to Arusha, which marks the end of your adventures with us.</p>
+    <p><strong>Accommodation:</strong> No accommodation (End of tour)</p>
+    <p><strong>Meals & Drinks:</strong> Breakfast & lunch (Dinner not included), Non-alcoholic drinks</p>
+    
+    <h3 class="section-title">Rates</h3>
+    <p><strong>Rate:</strong> $1,300 Per Person (starting from 2 pax)</p>
+
+    <h3 class="section-title">Inclusions</h3>
+    <ul>
+        <li>Park fees (For non-residents)</li>
+        <li>All activities (Unless labeled as optional)</li>
+        <li>A professional driver/guide</li>
+        <li>All transportation (Unless labeled as optional)</li>
+        <li>All Taxes/VAT</li>
+        <li>Meals (As specified in the day-by-day section)</li>
+        <li>Drinks (As specified in the day-by-day section)</li>
+    </ul>
+
+    <h3 class="section-title">Exclusions</h3>
+    <ul>
+        <li>International flights (From/to home)</li>
+        <li>Roundtrip airport transfer</li>
+        <li>Additional accommodation before and at the end of the tour</li>
+        <li>Tips (Tipping guideline US$10.00 pp per day)</li>
+        <li>Personal items (Souvenirs, travel insurance, visa fees, etc.)</li>
+        <li>Government imposed increase of taxes and/or park fees</li>
+    </ul>
+</div>
+        `
+    }, 
+    {
+  "title": "4 DAY SERENGETI FLY INN, FLY OUT PREMIUM LUXURY SAFARI",
+  "img": "serengeti.jpg",
+  "desc": `
+    <div class="tour-section">
+        <h3 class="section-title">Overview</h3>
+        <p>This is a four-day Luxury Safari accompanied by a guide in the Serengeti, which is essential as it's a large national park and famous for the great migration and big cats. This tour gives you adequate time in the parks to view wild animals and relax while avoiding long drives.</p>
+
+        <h3 class="section-title">Day 1: Zanzibar to Serengeti</h3>
+        <img src="zanzibar3.jpg" alt="Serengeti" class="park-image">
+        <p>You will be picked up from the hotel and driven to the Zanzibar airport, where you will board a small plane that flies into the Serengeti airstrip. Upon arrival in Serengeti, you will begin your game drives. In the afternoon, you'll head to the camp for lunch, then enjoy an evening game drive, followed by a surreal sunset in the Serengeti. Afterward, you will head to your accommodation for dinner and overnight stay.</p>
+        <p><strong>Accommodation:</strong> Four Season Safari Lodge</p>
+        <p><strong>Meals & Drinks:</strong> All meals included, All drinks (Premium wines & liquors might be excluded)</p>
+
+        <h3 class="section-title">Day 2: Serengeti National Park</h3>
+        <img src="baobab2.jpg" alt="Serengeti National Park" class="park-image">
+        <p>After breakfast, you will continue with your game drive. You have the option of doing a full-day game drive or dividing the day into two sessions: early morning and evening. For those wishing to relax in the afternoon, the morning and evening sessions are ideal. However, for those looking to see more, a full-day game drive is recommended.</p>
+        <p><strong>Accommodation:</strong> Four Season Safari Lodge</p>
+        <p><strong>Meals & Drinks:</strong> All meals included, All drinks (Premium wines & liquors might be excluded)</p>
+
+        <h3 class="section-title">Day 3: Serengeti National Park</h3>
+        <img src="cheeter.jpg" alt="Serengeti National Park" class="park-image">
+        <p>You’ll have a full day in Serengeti National Park, where the schedule will be flexible according to your preferences. You can do a morning game drive, return for lunch and relaxation, then finish with an afternoon game drive. Alternatively, you can opt for a full-day game drive with a picnic lunch.</p>
+        <p><strong>Accommodation:</strong> Four Season Safari Lodge</p>
+        <p><strong>Meals & Drinks:</strong> All meals included, All drinks (Premium wines & liquors might be excluded)</p>
+
+        <h3 class="section-title">Day 4: Flying Out of the Serengeti</h3>
+        <img src="elephant.jpg" alt="Serengeti" class="park-image">
+        <p>On this day, we recommend an early wake-up for a morning game drive when the animals are more active, followed by one of the best sunrises you'll ever witness. After the game drive, return to the camp for brunch before proceeding to the airstrip for your flight back to Zanzibar. Alternatively, you can stay at the camp and relax in the morning.</p>
+        <p><strong>Accommodation:</strong> No accommodation</p>
+        <p><strong>Meals & Drinks:</strong> Half board, All drinks (Premium wines & liquors might be excluded)</p>
+
+        <h3 class="section-title">End of Tour</h3>
+        <p>Additional accommodation can be arranged for an extra cost. A transfer back to the airport can be arranged for an extra cost.</p>
+
+        <h3 class="section-title">Rates</h3>
+        <p><strong>Rate:</strong> $4,700 per person (starting from 2 pax)</p>
+
+        <h3 class="section-title">Inclusions</h3>
+        <ul>
+            <li>Park fees (For non-residents)</li>
+            <li>All activities (Unless labeled as optional)</li>
+            <li>A professional driver/guide</li>
+            <li>All transportation (Unless labeled as optional)</li>
+            <li>All Taxes/VAT</li>
+            <li>Meals (As specified in the day-by-day section)</li>
+            <li>Drinks (As specified in the day-by-day section)</li>
+            <li>Domestic flights</li>
+            <li>Roundtrip airport transfer</li>
+        </ul>
+
+        <h3 class="section-title">Exclusions</h3>
+        <ul>
+            <li>International flights (From/to home)</li>
+            <li>Additional accommodation before and at the end of the tour</li>
+            <li>Tips (Tipping guideline US$10.00 pp per day)</li>
+            <li>Personal items (Souvenirs, travel insurance, visa fees, etc.)</li>
+            <li>Government imposed increase of taxes and/or park fees</li>
+            <li>Climbing gears</li>
+        </ul>
+    </div>`
+}
+,
+{
+    "title": "5-DAY MID-LUXURY BEST OF TANZANIA",
+    "img": "monkey3.jpg",
+    "desc": `
+    <div class="tour-section">
+        <h3 class="section-title">Overview</h3>
+        <p>On this 5-day safari, you will experience the best Tanzania has to offer. The accommodation is between mid-range and luxury. You will experience breathtaking wildlife including monkeys in the forest, lions in trees, elephants travelling through the bush, and a huge variety of animals inside a collapsed volcano. You will visit the iconic Serengeti National Park which is home to 3 million animals. You will have countless awe and with a bit of luck, you will see the Big Five.</p>
+        <p><strong>You'll be collected from the airport.</strong></p>
+        <p><strong>Accommodation before the tour starts can be arranged for an extra cost.</strong></p>
+
+        <h3 class="section-title">Day 1: Arrival in Arusha</h3>
+        <img src="airport.jpg" alt="Arusha" class="park-image">
+        <p>You will be picked up from the airport by our representative and driven to your accommodation in Arusha. Depending on your arrival time, you will hopefully have time to relax and prepare for the adventure of a lifetime! Busy Arusha is an essential part of safari life here in northern Tanzania and most travelers pass through at some stage.</p>
+        <p><strong>Accommodation:</strong> Luxury lodge located in Arusha (City)</p>
+        <p><strong>Meals & Drinks:</strong> Meals at own expense, Drinks not included</p>
+
+        <h3 class="section-title">Day 2: Arusha to Tarangire National Park</h3>
+        <img src="baobab.jpg" alt="Tarangire National Park" class="park-image">
+        <p>Your Safari guide will collect you from your accommodation after breakfast. You will then drive to Tarangire National Park, known for its elephant families and ancient baobab trees. The park is a paradise for birdwatchers and offers excellent wildlife sightings.</p>
+        <p><strong>Accommodation:</strong> Suricata Boma Lodge</p>
+        <p><strong>Meals & Drinks:</strong> All meals included, Drinking water (Other drinks not included)</p>
+
+        <h3 class="section-title">Day 3: Ngorongoro Crater to Serengeti National Park</h3>
+        <img src="ngorongoro.jpg" alt="Ngorongoro Crater" class="park-image">
+        <p>After breakfast, you will head to the Ngorongoro Crater, a pristine wilderness and home to the densest large mammal populations in Africa. You will descend into the Crater to witness wildlife including wildebeests, zebras, and the endangered black rhino. Afterward, you will continue to the Serengeti.</p>
+        <p><strong>Accommodation:</strong> Nyota Luxury Camp</p>
+        <p><strong>Meals & Drinks:</strong> All meals included, All drinks (Except for spirits/liquor)</p>
+
+        <h3 class="section-title">Day 4: Serengeti National Park to Karatu</h3>
+        <img src="leopard.jpg" alt="Serengeti National Park" class="park-image">
+        <p>The Serengeti is famous for its vast grasslands and wildlife. On this day, you will explore the park and may witness the Great Migration or predators like lions, cheetahs, and leopards. In the afternoon, you will start your journey back to Karatu.</p>
+        <p><strong>Accommodation:</strong> Suricata Boma Lodge</p>
+        <p><strong>Meals & Drinks:</strong> All meals included, Drinking water (Other drinks not included)</p>
+
+        <h3 class="section-title">Day 5: Lake Manyara National Park to Arusha</h3>
+        <img src="zebra2.jpg" alt="Lake Manyara National Park" class="park-image">
+        <p>You will drive to Lake Manyara National Park, famous for its tree-climbing lions and large flocks of flamingos. After your game drive, you will be dropped off at your chosen location in Arusha, Kilimanjaro Airport, or Arusha Airport.</p>
+        <p><strong>Accommodation:</strong> No accommodation (End of tour)</p>
+        <p><strong>Meals & Drinks:</strong> Breakfast & lunch (Dinner not included), Drinking water (Other drinks not included)</p>
+
+        <h3 class="section-title">End of Tour</h3>
+        <p>Additional accommodation can be arranged for an extra cost. You'll be dropped off at the airport.</p>
+
+        <h3 class="section-title">Rates</h3>
+        <p><strong>Rate:</strong> $3500 per person (starting from 2 pax)</p>
+
+        <h3 class="section-title">Inclusions</h3>
+        <ul>
+            <li>Park fees (For non-residents)</li>
+            <li>All activities (Unless labeled as optional)</li>
+            <li>All accommodation (Unless listed as upgrade)</li>
+            <li>A professional driver/guide</li>
+            <li>All transportation (Unless labeled as optional)</li>
+            <li>All Taxes/VAT</li>
+            <li>Roundtrip airport transfer</li>
+            <li>Meals (As specified in the day-by-day section)</li>
+            <li>Drinks (As specified in the day-by-day section)</li>
+        </ul>
+
+        <h3 class="section-title">Exclusions</h3>
+        <ul>
+            <li>International flights (From/to home)</li>
+            <li>Additional accommodation before and at the end of the tour</li>
+            <li>Tips (Tipping guideline US$10.00 pp per day)</li>
+            <li>Personal items (Souvenirs, travel insurance, visa fees, etc.)</li>
+            <li>Government imposed increase of taxes and/or park fees</li>
+            <li>Some meals (As specified in the day-by-day section)</li>
+        </ul>
+    </div>`
+}
+,
+{
+    "title": "5-DAYS PREMIUM LUXURY SAFARI",
+    "img": "zebra2.jpg",
+    "desc": `
+    <div class="tour-section">
+        <h3 class="section-title">Overview</h3>
+        <p>This 5-day Tanzania luxury + premium safari allows you to experience the highlights of the Northern Safari Circuit. You will experience breathtaking wildlife in the midst of some of the most diverse landscapes. See monkeys in the forest, lions in trees, elephants amongst acacias, and a huge variety of animals inside a collapsed volcano. You will also visit the world-famous Serengeti. The landscapes are breathtaking and the variety and volume of wildlife you will see are unforgettable.</p>
+
+        <h3 class="section-title">Day 1: Tarangire National Park</h3>
+        <img src="tarangire.jpg" alt="Tarangire National Park" class="park-image">
+        <p>In the morning, you will be collected from your lodgings in Arusha by our personal safari guide. You'll head to Tarangire National Park, known for its large elephant herds. From the open roof of our state-of-the-art safari jeep, we will experience seasonal swamps, savanna, and the Tarangire River. Expect sightings of zebras, wildebeests, giraffes, and possibly lions or leopards.</p>
+        <p><strong>Accommodation:</strong> Lake Manyara Kilimamoja Lodge</p>
+        <p><strong>Meals & Drinks:</strong> All meals included, All drinks (Except for spirits/liquor)</p>
+
+        <h3 class="section-title">Day 2: Serengeti National Park</h3>
+        <img src="serengeti.jpg" alt="Serengeti National Park" class="park-image">
+        <p>After breakfast, continue towards the Ngorongoro Conservation Area, passing through mist-shrouded rainforests. You will then travel to Serengeti National Park, where you'll explore the diverse landscapes of the park, from grassy plains to swamps and lakes. Enjoy an extensive game drive and then head to your luxurious lodge for dinner and overnight stay.</p>
+        <p><strong>Accommodation:</strong> Four Seasons Safari Lodge</p>
+        <p><strong>Meals & Drinks:</strong> All meals included, All drinks (Except for spirits/liquor)</p>
+
+        <h3 class="section-title">Day 3: Serengeti National Park</h3>
+        <img src="lion.jpg" alt="Serengeti Migration" class="park-image">
+        <p>Spend a full day in the Serengeti, exploring its wildlife and stunning landscapes. Known for its Great Migration, you will witness the herds of zebras and wildebeests. Predators such as lions, leopards, and cheetahs may also be spotted.</p>
+        <p><strong>Accommodation:</strong> Four Seasons Safari Lodge</p>
+        <p><strong>Meals & Drinks:</strong> All meals included, All drinks (Premium wines & liquors might be excluded)</p>
+
+        <h3 class="section-title">Day 4: Serengeti to Ngorongoro Highlands</h3>
+        <img src="cheeter.jpg" alt="Ngorongoro Highlands" class="park-image">
+        <p>After breakfast, embark on a final game drive in Serengeti before heading to the Ngorongoro Crater. Upon arrival at the crater's edge, you'll get your first glimpse of the breathtaking landscapes and wildlife. Overnight stay will be at a lodge on the crater rim.</p>
+        <p><strong>Accommodation:</strong> Ngorongoro Lodge Member of Melia Collection</p>
+        <p><strong>Meals & Drinks:</strong> All meals included, All drinks (Premium wines & liquors might be excluded)</p>
+
+        <h3 class="section-title">Day 5: Ngorongoro Crater to Arusha</h3>
+        <img src="zebra.jpg" alt="Ngorongoro Crater" class="park-image">
+        <p>After breakfast, drive into the Ngorongoro Crater, the world's largest volcanic caldera. Known for its rich biodiversity, the crater is home to the Big Five and other species. After lunch at a picnic site, you will enjoy some final game viewing before heading back to Arusha, marking the end of your safari.</p>
+        <p><strong>Accommodation:</strong> No accommodation (End of tour)</p>
+        <p><strong>Meals & Drinks:</strong> Breakfast & lunch (Dinner not included), Non-alcoholic drinks</p>
+
+        <h3 class="section-title">End of Tour</h3>
+        <p>Additional accommodation can be arranged for an extra cost. A transfer back to the airport can be arranged for an extra cost.</p>
+
+        <h3 class="section-title">Rates</h3>
+        <p><strong>Rate:</strong> $4,500 Per Person (starting from 2 pax)</p>
+
+        <h3 class="section-title">Inclusions</h3>
+        <ul>
+            <li>Park fees (For non-residents)</li>
+            <li>All activities (Unless labeled as optional)</li>
+            <li>A professional driver/guide</li>
+            <li>All transportation (Unless labeled as optional)</li>
+            <li>All Taxes/VAT</li>
+            <li>Meals (As specified in the day-by-day section)</li>
+            <li>Drinks (As specified in the day-by-day section)</li>
+        </ul>
+
+        <h3 class="section-title">Exclusions</h3>
+        <ul>
+            <li>International flights (From/to home)</li>
+            <li>Roundtrip airport transfer</li>
+            <li>Additional accommodation before and at the end of the tour</li>
+            <li>Tips (Tipping guideline US$10.00 pp per day)</li>
+            <li>Personal items (Souvenirs, travel insurance, visa fees, etc.)</li>
+            <li>Government imposed increase of taxes and/or park fees</li>
+        </ul>
+    </div>`
+},
+{
+    "title": "6-DAY LUXURY HIGHLIGHTS OF TANZANIA STAY IN THE CRATER",
+    "img": "serengeti.jpg",
+    "desc": `
+    <div class="tour-section">
+        <h3 class="section-title">Overview</h3>
+        <p>On this 6-day safari, you will experience the best Tanzania has to offer, including 2 nights in the Serengeti. Accommodations are of a very high standard and will provide you with plenty of 'aahhhh' moments after your day's exploring. You will experience breathtaking wildlife with opportunities to see lions in trees, elephants traveling through the bush, and a huge variety of animals inside a collapsed volcano. Wow moments will be countless and with a bit of luck, you will see the Big 5!</p>
+        <p><strong>Accommodation before the tour starts can be arranged for an extra cost.</strong></p>
+
+        <h3 class="section-title">Day 1: Arrival in Arusha</h3>
+        <img src="airport.jpg" alt="Arrival in Arusha" class="park-image">
+        <p>You will be picked up from the airport and driven to your accommodation in Arusha. Relax and prepare for the adventure of a lifetime!</p>
+        <p><strong>Accommodation:</strong> Gran Melia Arusha</p>
+        <p><strong>Meals & Drinks:</strong> Meals at own expense, Drinks not included</p>
+
+        <h3 class="section-title">Day 2: Tarangire National Park</h3>
+        <img src="tarangire.jpg" alt="Tarangire National Park" class="park-image">
+        <p>After breakfast, head to Tarangire National Park, known for its large elephant herds. Enjoy a game drive and a picnic lunch in the park.</p>
+        <p><strong>Accommodation:</strong> Lake Manyara Kilimamoja Lodge</p>
+        <p><strong>Meals & Drinks:</strong> All meals included, All drinks (Except for spirits/liquor)</p>
+
+        <h3 class="section-title">Day 3: Karatu to Serengeti National Park</h3>
+        <img src="serengeti.jpg" alt="Serengeti National Park" class="park-image">
+        <p>After breakfast, drive to Serengeti National Park, entering from the south. You will enjoy a game drive in this iconic park and stay at a luxury tented camp.</p>
+        <p><strong>Accommodation:</strong> Nyota Luxury Camp</p>
+        <p><strong>Meals & Drinks:</strong> All meals included, All drinks (Except for spirits/liquor)</p>
+
+        <h3 class="section-title">Day 4: Serengeti</h3>
+        <img src="hyena.jpg" alt="Serengeti Game Drive" class="park-image">
+        <p>Enjoy a full day of game drives in the Serengeti, home to lions, cheetahs, leopards, and large herds of wildebeest. A full-day game drive with a picnic lunch is also possible.</p>
+        <p><strong>Accommodation:</strong> Nyota Luxury Camp</p>
+        <p><strong>Meals & Drinks:</strong> All meals included, All drinks (Except for spirits/liquor)</p>
+
+        <h3 class="section-title">Day 5: Serengeti to Ngorongoro Crater</h3>
+        <img src="ngorongoro.jpg" alt="Ngorongoro Crater" class="park-image">
+        <p>After breakfast, drive to Ngorongoro Crater, home to an array of wildlife. After a game drive inside the crater, enjoy the beautiful scenery.</p>
+        <p><strong>Accommodation:</strong> Ngorongoro Lions Paw</p>
+        <p><strong>Meals & Drinks:</strong> All meals included, All drinks (Except for spirits/liquor)</p>
+
+        <h3 class="section-title">Day 6: Crater to Arusha</h3>
+        <img src="manyara.jpg" alt="Lake Manyara National Park" class="park-image">
+        <p>Visit Lake Manyara National Park, famous for its tree-climbing lions and flamingos. After a picnic lunch, you will be dropped off at your preferred location.</p>
+        <p><strong>Accommodation:</strong> No accommodation (End of tour)</p>
+        <p><strong>Meals & Drinks:</strong> Breakfast & lunch (Dinner not included), Drinking water (Other drinks not included)</p>
+
+        <h3 class="section-title">Rates</h3>
+        <p><strong>Rate:</strong> $4400 Per Person (starting from 2 pax)</p>
+
+        <h3 class="section-title">Inclusions</h3>
+        <ul>
+            <li>🌍 Park fees (For non-residents)</li>
+            <li>🎯 All activities (Unless labeled as optional)</li>
+            <li>🏨 All accommodation (Unless listed as upgrade)</li>
+            <li>🧑‍💼 A professional driver/guide</li>
+            <li>🚗 All transportation (Unless labeled as optional)</li>
+            <li>💰 All Taxes/VAT</li>
+            <li>🚖 Roundtrip airport transfer</li>
+            <li>🍽️ Meals (As specified in the day-by-day section)</li>
+            <li>🍹 Drinks (As specified in the day-by-day section)</li>
+        </ul>
+
+        <h3 class="section-title">Exclusions</h3>
+        <ul>
+            <li>✈️ International flights (From/to home)</li>
+            <li>🏨 Additional accommodation before and at the end of the tour</li>
+            <li>💵 Tips (Tipping guideline US$15.00 pp per day)</li>
+            <li>🎁 Personal items (Souvenirs, travel insurance, visa fees, etc.)</li>
+            <li>📈 Government imposed increase of taxes and/or park fees</li>
+            <li>🍽️ Some meals (As specified in the day-by-day section)</li>
+        </ul>
+    </div>`
+}
+
+,
+{
+    "title": "12-DAY PREMIUM LUXURY SAFARI & BEACH HOLIDAYS ALL INCLUSIVE",
+    "img": "beach.jpg",
+    "desc": `
+    <div class="tour-section">
+        <h3 class="section-title">Overview</h3>
+        <p>On this 12-day premium luxury safari all-inclusive, you will enjoy the best that Tanzania has to offer. We will visit Tarangire National Park, well-known for its elephant families, Serengeti, Lake Manyara, and Ngorongoro Crater, the best place to see the Big Five. After your safari, you will relax in Zanzibar with its beautiful beaches and turquoise waters.</p>
+
+        <h3 class="section-title">Day 1: Arrival in Arusha</h3>
+        <img src="12a.jpg" alt="Arrival in Arusha" class="park-image">
+        <p>You will be picked up from the airport and transferred to Gran Melia Arusha for your overnight stay. Relax and prepare for the adventures ahead.</p>
+        <p><strong>Accommodation:</strong> Gran Melia Arusha</p>
+        <p><strong>Meals & Drinks:</strong> Breakfast (Lunch & Dinner not included), Drinking water (Other drinks not included)</p>
+
+        <h3 class="section-title">Day 2: Arusha to Tarangire National Park</h3>
+        <img src="12b.jpg" alt="Tarangire National Park" class="park-image">
+        <p>After breakfast, head to Tarangire National Park. Known for its large elephant herds, you will also encounter giraffes, zebras, and lions. Enjoy an extensive game drive and stay at a luxury lodge for dinner and overnight.</p>
+        <p><strong>Accommodation:</strong> Lake Manyara Kilimamoja Lodge</p>
+        <p><strong>Meals & Drinks:</strong> All meals included, All drinks (Premium wines & liquors might be excluded)</p>
+
+        <h3 class="section-title">Day 3: Lake Manyara National Park</h3>
+        <img src="manyara2.jpg" alt="Lake Manyara National Park" class="park-image">
+        <p>Explore Lake Manyara National Park, known for its flamingos and diverse landscapes. You will see monkeys, giraffes, zebras, wildebeest, and possibly lions lounging in the trees.</p>
+        <p><strong>Accommodation:</strong> Lake Manyara Kilimamoja Lodge</p>
+        <p><strong>Meals & Drinks:</strong> All meals included, All drinks (Premium wines & liquors might be excluded)</p>
+
+        <h3 class="section-title">Day 4: Serengeti National Park</h3>
+        <img src="serengeti.jpg" alt="Serengeti National Park" class="park-image">
+        <p>After breakfast, head to Serengeti National Park. Enjoy a game drive and spot wildlife such as lions, leopards, cheetahs, and herds of zebras and wildebeests.</p>
+        <p><strong>Accommodation:</strong> Nyota Luxury Camp</p>
+        <p><strong>Meals & Drinks:</strong> All meals included, All drinks (Premium wines & liquors might be excluded)</p>
+
+        <h3 class="section-title">Day 5: Serengeti National Park</h3>
+        <img src="12d.jpg" alt="Serengeti Migration" class="park-image">
+        <p>Spend the day exploring the Serengeti. Witness the Great Migration, and enjoy game drives to spot predators like lions and cheetahs.</p>
+        <p><strong>Accommodation:</strong> Nyota Luxury Camp</p>
+        <p><strong>Meals & Drinks:</strong> All meals included, All drinks (Premium wines & liquors might be excluded)</p>
+
+        <h3 class="section-title">Day 6: Serengeti to Ngorongoro Crater</h3>
+        <img src="ngorongoro.jpg" alt="Ngorongoro Crater" class="park-image">
+        <p>After breakfast, enjoy an en-route game drive to Ngorongoro Crater. This UNESCO World Heritage Site offers incredible wildlife sightings. After lunch, explore the crater and its rich biodiversity.</p>
+        <p><strong>Accommodation:</strong> Lake Manyara Kilimamoja Lodge</p>
+        <p><strong>Meals & Drinks:</strong> All meals included, All drinks (Premium wines & liquors might be excluded)</p>
+
+        <h3 class="section-title">Day 7: Arusha to Zanzibar</h3>
+        <img src="12c.jpg" alt="Zanzibar" class="park-image">
+        <p>After breakfast, transfer to the airport for your flight to Zanzibar. Spend the night in Stone Town and explore the city’s rich history and culture.</p>
+        <p><strong>Accommodation:</strong> Zanzibar Serena</p>
+        <p><strong>Meals & Drinks:</strong> All meals included, All drinks (Premium wines & liquors might be excluded)</p>
+
+        <h3 class="section-title">Day 8-11: Stone Town to North Coast (Nungwi)</h3>
+        <img src="beach3.jpg" alt="Nungwi Zanzibar" class="park-image">
+        <p>Relax on the beautiful beaches of Nungwi, known for its white sands and turquoise waters. You can also enjoy activities like snorkeling, diving, and boat tours.</p>
+        <p><strong>Accommodation:</strong> Melia Zanzibar</p>
+        <p><strong>Meals & Drinks:</strong> All meals included, All drinks (Premium wines & liquors might be excluded)</p>
+
+        <h3 class="section-title">Day 12: Departure</h3>
+        <img src="airport.jpg" alt="Departure" class="park-image">
+        <p>Spend the final hours of your tour relaxing before transferring to the airport for your departure.</p>
+        <p><strong>Accommodation:</strong> No accommodation (End of tour)</p>
+        <p><strong>Meals & Drinks:</strong> All meals included, All drinks (Premium wines & liquors might be excluded)</p>
+
+        <h3 class="section-title">End of Tour</h3>
+        <p>Additional accommodation can be arranged for an extra cost. A transfer back to the airport can be arranged for an extra cost.</p>
+
+        <h3 class="section-title">Rates</h3>
+        <p><strong>Rate:</strong> $6800 Per Person (starting from 2 pax)</p>
+
+        <h3 class="section-title">Inclusions</h3>
+        <ul>
+            <li>Park fees (For non-residents)</li>
+            <li>All activities (Unless labeled as optional)</li>
+            <li>A professional driver/guide</li>
+            <li>All transportation (Unless labeled as optional)</li>
+            <li>All Taxes/VAT</li>
+            <li>Meals (As specified in the day-by-day section)</li>
+            <li>Drinks (As specified in the day-by-day section)</li>
+        </ul>
+
+        <h3 class="section-title">Exclusions</h3>
+        <ul>
+            <li>International flights (From/to home)</li>
+            <li>Roundtrip airport transfer</li>
+            <li>Additional accommodation before and at the end of the tour</li>
+            <li>Tips (Tipping guideline US$10.00 pp per day)</li>
+            <li>Personal items (Souvenirs, travel insurance, visa fees, etc.)</li>
+            <li>Government imposed increase of taxes and/or park fees</li>
+        </ul>
+    </div>`
+}
+
+
+];
+
+        const selectedTour = tours[tourNumber - 1];
+
+        fullImage.src = selectedTour.img;
+        fullTitle.textContent = selectedTour.title;
+        fullDesc.innerHTML = selectedTour.desc;
+
+        fullDescription.style.display = 'block';
+        document.querySelector('.container').style.display = 'none';
+    }
+
+    function goBack() {
+        document.getElementById('full-description').style.display = 'none';
+        document.querySelector('.container').style.display = 'block';
+    }
+</script>
+
+
+
+</body>
+</html>

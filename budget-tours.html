@@ -356,8 +356,7 @@
             });
         });
     </script>
-
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -412,36 +411,36 @@
             position: relative;
             margin-bottom: 30px;
         }
+
         .tour-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-}
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
 
-.image-frame {
-    position: relative;
-    overflow: hidden;
-    height: 350px;
-    width: 100%;
-    margin: 0;
-}
+        .image-frame {
+            position: relative;
+            overflow: hidden;
+            height: 350px;
+            width: 100%;
+            margin: 0;
+        }
 
-.image-frame img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-}
+        .image-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
 
-.image-frame img:hover {
-    transform: scale(1.1);
-}
+        .image-frame img:hover {
+            transform: scale(1.1);
+        }
 
-/* Adjust image height for mobile devices */
-@media (max-width: 768px) {
-    .image-frame {
-        height: 250px; /* Adjust height for smaller screens */
-    }
-}
+        .tour-info {
+            padding: 20px;
+            background-color: #f4f4f4;
+            border-top: 1px solid #ddd;
+        }
 
         .tour-info h3 {
             font-size: 1.2rem;
@@ -828,11 +827,10 @@ ul li {
                 </div>
             </div>
         </div>
-
-    <!-- Full Description Section --><!-- Full Description Section -->
+<!-- Full Description Section -->
 <div class="full-description" id="full-description">
-    <img src="mountain 2.jpg" alt="Tour Image" id="full-image">
-    <h2 id="full-title">choose the tour you like above </h2>
+    <img src="" alt="Tour Image" id="full-image">
+    <h2 id="full-title">Choose the tour you like above</h2>
     <div id="full-desc">
         <!-- Content will be inserted dynamically -->
     </div>
@@ -840,6 +838,11 @@ ul li {
         <a href="javascript:void(0)" onclick="goBack()">Back to Tours</a>
     </div>
 </div>
+
+<script>
+  // Hide the entire Full Description Section on page load
+  document.getElementById('full-description').style.display = 'none';
+</script>
 
 <script>
     function viewMore(tourNumber) {

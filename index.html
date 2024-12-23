@@ -355,8 +355,7 @@
                 }
             });
         });
-    </script>
-    <!DOCTYPE html>
+    </script><!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -374,66 +373,66 @@
             font-family: 'Montserrat', sans-serif;
             line-height: 1.6;
             color: #2c3e50;
-            background-image: mountain 2.jpg;
+            background-image: url('mountain 2.jpg');
+            background-size: cover;
+            background-position: center;
         }
 
         /* WhatsApp Fixed Button */
-        .whatsapp-float {
+        .whatsapp-container {
             position: fixed;
-            width: 60px;
-            height: 60px;
-            bottom: 40px;
-            right: 40px;
-            background-color: #25D366;
-            color: white;
-            border-radius: 50px;
-            text-align: center;
-            font-size: 30px;
-            box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
-            z-index: 100;
+            bottom: 30px;
+            right: 30px;
             display: flex;
             align-items: center;
-            justify-content: center;
+            background-color: #25D366;
+            color: white;
+            padding: 14px 25px;
+            border-radius: 50px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            z-index: 100;
             transition: all 0.3s ease;
+            font-size: 1.1rem;
+            text-decoration: none;
+            font-weight: bold;
         }
 
-        .whatsapp-float:hover {
+        .whatsapp-container:hover {
             background-color: #128C7E;
-            transform: scale(1.1);
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+        }
+
+        .whatsapp-container .whatsapp-icon {
+            font-size: 2.5rem;
+            color: white;
+            margin-left: 10px;
         }
 
         /* Hero Section */
         .hero {
-    height: 70vh;
-    background: url('mountain 2.jpg');
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: white;
-    position: relative;
-}
+            height: 60vh;
+            background: url('mountain 2.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
 
-.hero-content h1 {
-    font-size: 3rem;
-    margin-bottom: 10px;
-}
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
 
-.hero-content p {
-    font-size: 1.5rem;
-}
-
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 139, 0.3); /* Dark blue overlay */
+        .hero-content p {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
         }
 
         .hero-content {
@@ -444,37 +443,31 @@
             border-radius: 15px;
             max-width: 800px;
             width: 90%;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            color: #FFD700; /* Gold color */
-            margin-bottom: 1rem;
-            text-transform: uppercase;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
         }
 
         .cta-button {
             display: inline-block;
             background: #1E90FF;
             color: white;
-            padding: 12px 24px;
+            padding: 15px 25px;
             text-decoration: none;
             border-radius: 5px;
-            margin-top: 1rem;
+            margin-top: 1.5rem;
             transition: all 0.3s ease;
+            font-size: 1.2rem;
         }
 
         .cta-button:hover {
             background: #0066CC;
             transform: translateY(-3px);
-            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.3);
         }
 
+        /* Section Styles */
         .section {
-            padding: 3rem 2rem;
-            margin-bottom: 2rem;
+            padding: 2rem 1rem;
+            margin-bottom: 1rem;
             background: rgba(255,255,255,0.9);
         }
 
@@ -486,22 +479,11 @@
             position: relative;
         }
 
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 4px;
-            background: linear-gradient(to right, #1E90FF, #00BFFF);
-        }
-
         .grid-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 1.5rem;
-            max-width: 1300px;
+            max-width: 1200px;
             margin: 0 auto;
         }
 
@@ -513,6 +495,7 @@
             text-align: center;
             transition: transform 0.3s ease;
             border: 2px solid transparent;
+            height: 100%;
         }
 
         .grid-item:hover {
@@ -528,10 +511,10 @@
 
         .destination-image {
             width: 100%;
-            height: 250px;
+            height: 220px;
             object-fit: cover;
             border-radius: 15px;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
         }
 
         .package-price {
@@ -542,9 +525,26 @@
 
         @media (max-width: 768px) {
             .hero h1 {
-                font-size: 2.5rem;
+                font-size: 2rem;
+            }
+
+            .hero-content {
+                padding: 1.5rem;
+            }
+
+            .cta-button {
+                padding: 10px 20px;
+            }
+
+            .grid-container {
+                grid-template-columns: 1fr;
+            }
+
+            .grid-item {
+                margin-bottom: 1rem;
             }
         }
+
     </style>
 </head>
 <body>
@@ -556,6 +556,12 @@
             <a href="#packages" class="cta-button">Explore Safari Packages</a>
         </div>
     </section>
+
+    <!-- WhatsApp Contact Button -->
+    <a href="https://wa.me/+255123456789" target="_blank" class="whatsapp-container">
+        <span>Book Us</span>
+        <i class="fab fa-whatsapp whatsapp-icon"></i>
+    </a>
 
     <!-- Our Excellence Section -->
     <section class="section">
@@ -581,16 +587,6 @@
                 <h3>Safety Guarantee</h3>
                 <p>Comprehensive safety measures and travel support</p>
             </div>
-            <div class="grid-item">
-                <div class="grid-item-icon">📞</div>
-                <h3>24/7 Support</h3>
-                <p>Round-the-clock customer service and assistance</p>
-            </div>
-            <div class="grid-item">
-                <div class="grid-item-icon">🌟</div>
-                <h3>Premium Experience</h3>
-                <p>Unmatched quality and memorable safari adventures</p>
-            </div>
         </div>
     </section>
 
@@ -613,81 +609,21 @@
                 <p class="package-price">From $1,200 per person</p>
             </div>
             <div class="grid-item">
-                <img src="jozani 2.jpg" alt="Tara Day Trip" class="destination-image">
+                <img src="airport.jpg" alt="Tara Day Trip" class="destination-image">
                 <h3>Tara Day Trip</h3>
                 <p>A perfect day trip to discover Tanzania's hidden gems</p>
                 <p class="package-price">Location: Tarangire National Park</p>
                 <p class="package-price">From $250 per person</p>
             </div>
             <div class="grid-item">
-                <img src="jozani 2.jpg" alt="2 Days Luxury Safari" class="destination-image">
-                <h3>2 Days Luxury Safari</h3>
-                <p>Short but luxurious safari experience</p>
-                <p class="package-price">Location: Lake Manyara</p>
-                <p class="package-price">From $750 per person</p>
-            </div>
-            <div class="grid-item">
-                <img src="https://images.unsplash.com/photo-1547720074-e7a6b091e378?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt="5 Days Luxury Safari" class="destination-image">
+                <img src="manyara.jpg" alt="5 Days Luxury Safari" class="destination-image">
                 <h3>5 Days Luxury Safari</h3>
                 <p>Ultimate luxury safari across multiple parks</p>
                 <p class="package-price">Locations: Serengeti, Ngorongoro, Lake Manyara</p>
                 <p class="package-price">From $2,500 per person</p>
             </div>
-            <div class="grid-item">
-                <img src="https://images.unsplash.com/photo-1547720074-e7a6b091e378?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt="Customized Safari" class="destination-image">
-                <h3>Customized Safari</h3>
-                <p>Fully personalized safari experience designed just for you</p>
-                <p class="package-price">Location: Your Choice in Tanzania</p>
-                <p class="package-price">Prices Vary</p>
-            </div>
         </div>
     </section>
-    
-
-    <!-- WhatsApp Contact Button -->
-    <a href="https://wa.me/+255123456789" target="_blank" class="whatsapp-float">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-    <!-- Popular Destinations -->
-<section id="destinations" class="section">
-    <h2 class="section-title">Popular Destinations</h2>
-    <div class="grid-container">
-        <!-- Serengeti National Park -->
-        <div class="grid-item">
-            <img src="https://images.unsplash.com/photo-1547720074-e7a6b091e378?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt="Serengeti National Park" class="destination-image">
-            <h3>Serengeti National Park</h3>
-            <p>Witness the great wildebeest migration and vast wildlife plains</p>
-            <p><strong>Location:</strong> Serengeti Region, Tanzania</p>
-            <p><strong>Starting Price:</strong> $1,200 per person</p>
-        </div>
-        <!-- Ngorongoro Crater -->
-        <div class="grid-item">
-            <img src="https://images.unsplash.com/photo-1547720074-e7a6b091e378?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt="Ngorongoro Crater" class="destination-image">
-            <h3>Ngorongoro Crater</h3>
-            <p>Unique ecosystem and UNESCO World Heritage Site</p>
-            <p><strong>Location:</strong> Ngorongoro Conservation Area, Tanzania</p>
-            <p><strong>Starting Price:</strong> $900 per person</p>
-        </div>
-        <!-- Mount Kilimanjaro -->
-        <div class="grid-item">
-            <img src="https://images.unsplash.com/photo-1553773076-9225a080c4ce?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt="Mount Kilimanjaro" class="destination-image">
-            <h3>Mount Kilimanjaro</h3>
-            <p>Challenge yourself to conquer Africa's highest peak</p>
-            <p><strong>Location:</strong> Kilimanjaro Region, Tanzania</p>
-            <p><strong>Starting Price:</strong> $1,800 per person</p>
-        </div>
-        <!-- Zanzibar Beaches -->
-        <div class="grid-item">
-            <img src="https://images.unsplash.com/photo-1529855739383-eacf6aabecfb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt="Zanzibar Beaches" class="destination-image">
-            <h3>Zanzibar Beaches</h3>
-            <p>Relax on pristine white sand beaches with turquoise waters</p>
-            <p><strong>Location:</strong> Zanzibar Archipelago, Tanzania</p>
-            <p><strong>Starting Price:</strong> $600 per person</p>
-        </div>
-    </div>
-</section>
-
 
 </body>
-
 </html>

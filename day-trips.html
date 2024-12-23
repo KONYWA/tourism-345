@@ -377,19 +377,19 @@
         }
 
         h1 {
-    font-family: 'Arial', sans-serif;
-    font-size: 3rem;
-    font-weight: 700;
-    color: #1574d2;
-    text-align: center;
-    letter-spacing: 1px;
-    margin-top: 10px; /* Reduced from 50px */
-    margin-bottom: 20px;
-    text-transform: capitalize;
-    line-height: 1.4;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 10px;
-}
+            font-family: 'Arial', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: #1574d2;
+            text-align: center;
+            letter-spacing: 1px;
+            margin-top: 10px; /* Reduced from 50px */
+            margin-bottom: 20px;
+            text-transform: capitalize;
+            line-height: 1.4;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+        }
 
         .trip-card {
             display: flex;
@@ -555,7 +555,7 @@
             }
 
             h1 {
-                margin-top: 0; /* Reduced margin-top to 0 for mobile */
+                margin-top: -10px; /* Reduced further to bring the heading closer to the header */
                 font-size: 2.5rem; /* Optional: reduce font size for mobile */
             }
         }
@@ -571,14 +571,12 @@
 
     <div class="container">
         <h1>Day Trips</h1>
-
         <div class="trip-card" id="day-trips">
             <!-- Trip 1: Arusha National Park Day Trip -->
             <div class="trip-item" id="trip1">
                 <img src="kilimanjaro park.jpg" alt="Arusha National Park" class="trip-image">
                 <div class="trip-details">
                     <h2>Arusha National Park Day Trip</h2>
-                    <p>Explore the stunning Arusha National Park, home to a variety of wildlife including giraffes, zebras, and flamingos.</p>
                     <div class="additional-info">
                         <p><strong>🌞 Location:</strong> Arusha, Tanzania</p>
                         <p><strong>💰 Rate:</strong> $495 per person</p>
@@ -590,13 +588,12 @@
                     </div>
                 </div>
             </div>
-
+        
             <!-- Trip 2: Materuni Waterfall and Hot Springs -->
             <div class="trip-item" id="trip2">
                 <img src="materuni.jpg" alt="Materuni Waterfall and Hot Springs" class="trip-image">
                 <div class="trip-details">
                     <h2>Materuni Waterfall with Coffee Tour and Kikulelwa Hot Spring</h2>
-                    <p>Experience the beauty of Materuni Waterfalls, coffee tour, and Kikulelwa Hot Springs in a single day!</p>
                     <div class="additional-info">
                         <p><strong>🌞 Location:</strong> Materuni Village, Tanzania</p>
                         <p><strong>💰 Rate:</strong> $150 per person</p>
@@ -607,11 +604,12 @@
                     </div>
                 </div>
             </div>
+        
+            <!-- Trip 3: Ngorongoro Crater -->
             <div class="trip-item" id="trip3">
                 <img src="ngorongoro.jpg" alt="Ngorongoro Crater" class="trip-image">
                 <div class="trip-details">
                     <h2>1 Day Short Tour to Ngorongoro Crater</h2>
-                    <p>Discover the breathtaking Ngorongoro Crater, a natural wonder home to the Big Five and over 30,000 animals.</p>
                     <div class="additional-info">
                         <p><strong>🌞 Location:</strong> Ngorongoro Conservation Area, Tanzania</p>
                         <p><strong>💰 Rate:</strong> $275 per person (Group) | $450 per person (Private, starting from 2 pax)</p>
@@ -622,11 +620,12 @@
                     </div>
                 </div>
             </div>
+        
+            <!-- Trip 4: Tarangire National Park -->
             <div class="trip-item" id="trip4">
                 <img src="tarangire.jpg" alt="Tarangire National Park" class="trip-image">
                 <div class="trip-details">
                     <h2>1 Day Short Tour to Tarangire National Park</h2>
-                    <p>Experience the iconic Baobab trees, large elephant herds, and diverse wildlife in one of Tanzania's most picturesque parks.</p>
                     <div class="additional-info">
                         <p><strong>🌞 Location:</strong> Tarangire National Park, Tanzania</p>
                         <p><strong>💰 Rate:</strong> $230 per person (Group) | $330 per person (Private, starting from 2 pax)</p>
@@ -637,13 +636,12 @@
                     </div>
                 </div>
             </div>
-            
-            <!-- Trip 3: Mount Kilimanjaro Hike -->
-            <div class="trip-item" id="trip3">
+        
+            <!-- Trip 5: Mount Kilimanjaro Hike -->
+            <div class="trip-item" id="trip5">
                 <img src="kilimanjaro park.jpg" alt="Mount Kilimanjaro" class="trip-image">
                 <div class="trip-details">
                     <h2>1 Day Mount Kilimanjaro Hike via Marangu Route</h2>
-                    <p>This day hike is designed for those who want to experience the magic of Mount Kilimanjaro without climbing to the summit. The hike takes you from Marangu Gate to Mandara Hut.</p>
                     <div class="additional-info">
                         <p><strong>🌞 Location:</strong> Marangu, Tanzania</p>
                         <p><strong>💰 Rate:</strong> $330 per person (starting from 2 pax)</p>
@@ -656,6 +654,7 @@
                 </div>
             </div>
         </div>
+        
 
         <!-- Full Description for Materuni Waterfall -->
         <div class="full-description" id="materuni-more">

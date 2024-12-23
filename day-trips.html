@@ -384,11 +384,13 @@
             text-align: center;
             letter-spacing: 1px;
             margin-top: 10px; /* Reduced from 50px */
-            margin-bottom: 20px;
+            margin-bottom: 30px;
             text-transform: capitalize;
             line-height: 1.4;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             padding: 10px;
+            background-color: #f0f0f0;
+            border-radius: 10px;
         }
 
         .trip-card {
@@ -396,6 +398,7 @@
             flex-wrap: wrap;
             gap: 20px;
             justify-content: space-between;
+            margin-bottom: 40px;
         }
 
         .trip-item {
@@ -405,7 +408,7 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             overflow: hidden;
             transition: transform 0.3s ease;
-            padding: 10px;
+            padding: 15px;
             margin-bottom: 20px;
         }
 
@@ -415,7 +418,7 @@
 
         .trip-image {
             width: 100%;
-            height: 200px;
+            height: 220px;
             object-fit: cover;
             border-radius: 10px;
         }
@@ -427,6 +430,7 @@
         .trip-details h2 {
             font-size: 1.5rem;
             color: #333;
+            margin-bottom: 10px;
         }
 
         .trip-details p {
@@ -443,7 +447,7 @@
 
         .view-more {
             text-align: center;
-            margin-top: 10px;
+            margin-top: 15px;
         }
 
         .view-more a {
@@ -555,7 +559,7 @@
             }
 
             h1 {
-                margin-top: -10px; /* Reduced further to bring the heading closer to the header */
+                margin-top: 0; /* Reduced margin-top to 0 for mobile */
                 font-size: 2.5rem; /* Optional: reduce font size for mobile */
             }
         }

@@ -355,7 +355,8 @@
                 }
             });
         });
-    </script><!DOCTYPE html>
+    </script>
+    <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -804,11 +805,10 @@ ul li {
             </div>
         </div>
     </div>
-
-    <!-- Full Description Section --><!-- Full Description Section -->
+<!-- Full Description Section -->
 <div class="full-description" id="full-description">
-    <img src="mountain 2.jpg" alt="Tour Image" id="full-image">
-    <h2 id="full-title">choose the tour you like above </h2>
+    <img src="" alt="Tour Image" id="full-image">
+    <h2 id="full-title">Choose the tour you like above</h2>
     <div id="full-desc">
         <!-- Content will be inserted dynamically -->
     </div>
@@ -816,6 +816,11 @@ ul li {
         <a href="javascript:void(0)" onclick="goBack()">Back to Tours</a>
     </div>
 </div>
+
+<script>
+  // Hide the entire Full Description Section on page load
+  document.getElementById('full-description').style.display = 'none';
+</script>
 
 <script>
     function viewMore(tourNumber) {

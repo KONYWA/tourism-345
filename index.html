@@ -643,487 +643,574 @@
            </div>
        </section>
    
-       <!-- Popular Safari Packages -->
-       <section class="section" id="packages">
-           <h2 class="section-title">Popular Safari Packages</h2>
-           <div class="grid-container">
-               <div class="grid-item">
-                   <img src="jozani 2.jpg" alt="Ngorongoro Day Trip" class="destination-image">
-                   <h3>Ngorongoro Day Trip</h3>
-                   <p>Explore the breathtaking Ngorongoro Crater</p>
-                   <p class="package-price">Location: Ngorongoro Conservation Area</p>
-                   <p class="package-price">From $350 per person</p>
-               </div>
-               <div class="grid-item">
-                   <img src="jozani 2.jpg" alt="5 Days Midrange Safari" class="destination-image">
-                   <h3>5 Days Midrange Safari</h3>
-                   <p>Comprehensive safari across Tanzania's best parks</p>
-                   <p class="package-price">Locations: Serengeti, Tarangire, Lake Manyara</p>
-                   <p class="package-price">From $1,200 per person</p>
-               </div>
-               <div class="grid-item">
-                   <img src="jozani 2.jpg" alt="Tara Day Trip" class="destination-image">
-                   <h3>Tara Day Trip</h3>
-                   <p>A perfect day trip to discover Tanzania's hidden gems</p>
-                   <p class="package-price">Location: Tarangire National Park</p>
-                   <p class="package-price">From $250 per person</p>
-               </div>
-               <div class="grid-item">
-                   <img src="https://images.unsplash.com/photo-1547720074-e7a6b091e378?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt="5 Days Luxury Safari" class="destination-image">
-                   <h3>5 Days Luxury Safari</h3>
-                   <p>Ultimate luxury safari across multiple parks</p>
-                   <p class="package-price">Locations: Serengeti, Ngorongoro, Lake Manyara</p>
-                   <p class="package-price">From $2,500 per person</p>
-               </div>
-           </div>
-       </section>
    
+
    </body>
    </html>
+
    <!DOCTYPE html>
    <html lang="en">
    <head>
        <meta charset="UTF-8">
        <meta name="viewport" content="width=device-width, initial-scale=1.0">
        <title>Safari Packages | Tanzania Adventures</title>
-       <style>
-           /* Reset and base styles */
-           * {
-               margin: 0;
-               padding: 0;
-               box-sizing: border-box;
-           }
-   
-           body {
-               font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-               line-height: 1.6;
-               color: #333;
-               background-color: #f4f4f9; /* Light background color for the body */
-           }
-   
-           /* Main Content */
-           .main-content {
-               margin-top: 80px;
-               padding: 2rem;
-               max-width: 1200px;
-               margin-left: auto;
-               margin-right: auto;
-           }
-   
-           /* Safari Packages Grid */
-           .packages-grid {
-               display: grid;
-               grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-               gap: 2rem;
-               margin-top: 2rem;
-           }
-   
-           .package-card {
-               background: #fff;
-               border-radius: 12px;
-               overflow: hidden;
-               box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-               transition: transform 0.3s ease;
-           }
-   
-           .package-card:hover {
-               transform: translateY(-5px);
-           }
-   
-           .package-image {
-               width: 100%;
-               height: 250px;
-               object-fit: cover;
-           }
-   
-           .package-content {
-               padding: 1.5rem;
-           }
-   
-           .package-title {
-               font-size: 1.5rem;
-               color: #2c3e50;
-               margin-bottom: 0.5rem;
-           }
-   
-           .package-details {
-               margin-bottom: 1rem;
-               color: #666;
-           }
-   
-           .package-price {
-               font-weight: bold;
-               color: #2c3e50;
-               font-size: 1.2rem;
-               margin-bottom: 1rem;
-           }
-   
-           .view-details-btn {
-               display: inline-block;
-               padding: 0.8rem 1.5rem;
-               background-color: #3498db;
-               color: #fff;
-               text-decoration: none;
-               border-radius: 6px;
-               transition: background-color 0.3s ease;
-               font-weight: 500;
-           }
-   
-           .view-details-btn:hover {
-               background-color: #2980b9;
-           }
-   
-           /* Modal Styles */
-           .modal {
-               display: none;
-               position: fixed;
-               top: 0;
-               left: 0;
-               width: 100%;
-               height: 100%;
-               background-color: rgba(0, 0, 0, 0.8);
-               z-index: 2000;
-           }
-   
-           .modal.active {
-               display: block;
-           }
-   
-           .modal-content {
-               position: relative;
-               background-color: #fff;
-               width: 90%;
-               max-width: 1000px;
-               margin: 2rem auto;
-               border-radius: 12px;
-               max-height: 90vh;
-               overflow: hidden;
-               display: flex;
-               flex-direction: column;
-               background: #fff;
-           }
-   
-           .modal-header {
-               padding: 1.5rem;
-               background-color: #3498db;
-               border-bottom: 1px solid #dee2e6;
-               display: flex;
-               justify-content: space-between;
-               align-items: center;
-           }
-   
-           .modal-title {
-               font-size: 1.5rem;
-               color: #fff;
-           }
-   
-           .close-modal {
-               background: none;
-               border: none;
-               font-size: 1.5rem;
-               cursor: pointer;
-               color: #fff;
-               padding: 0.5rem;
-           }
-   
-           .close-modal:hover {
-               color: #f8f9fa;
-           }
-   
-           .modal-body {
-               display: flex;
-               height: calc(90vh - 130px);
-           }
-   
-           .modal-sidebar {
-               width: 250px;
-               background-color: #f8f9fa;
-               border-right: 1px solid #dee2e6;
-               padding: 1rem;
-               overflow-y: auto;
-           }
-   
-           .modal-nav {
-               list-style: none;
-           }
-   
-           .modal-nav-item {
-               margin-bottom: 0.5rem;
-           }
-   
-           .modal-nav-link {
-               display: block;
-               padding: 0.8rem 1rem;
-               color: #666;
-               text-decoration: none;
-               border-radius: 6px;
-               transition: all 0.3s ease;
-           }
-   
-           .modal-nav-link:hover,
-           .modal-nav-link.active {
-               background-color: #3498db;
-               color: #fff;
-           }
-   
-           .modal-main {
-               flex: 1;
-               padding: 1.5rem;
-               overflow-y: auto;
-           }
-   
-           .tab-content {
-               display: none;
-           }
-   
-           .tab-content.active {
-               display: block;
-           }
-   
-           /* Adjusting the image height to 50px specifically inside the tab content */
-           .tab-content img {
-               width: 100% !important;
-               height: 50px !important; /* Force height to 50px */
-               object-fit: cover !important; /* Ensures the image doesn't distort */
-               border-radius: 8px;
-               margin-bottom: 1.5rem;
-           }
-   
-           .back-to-packages {
-               display: inline-block;
-               padding: 0.8rem 1.5rem;
-               background-color: #2c3e50;
-               color: #fff;
-               text-decoration: none;
-               border-radius: 6px;
-               margin-top: 1.5rem;
-               transition: background-color 0.3s ease;
-           }
-   
-           .back-to-packages:hover {
-               background-color: #34495e;
-           }
-   
-           /* Responsive Design */
-           @media (max-width: 768px) {
-               .modal-body {
-                   flex-direction: column;
-               }
-   
-               .modal-sidebar {
-                   width: 100%;
-                   height: auto;
-                   border-right: none;
-                   border-bottom: 1px solid #dee2e6;
-               }
-   
-               .modal-nav {
-                   display: flex;
-                   overflow-x: auto;
-                   padding-bottom: 0.5rem;
-                   gap: 0.5rem;
-               }
-   
-               .modal-nav-item {
-                   flex: 0 0 auto;
-                   margin-bottom: 0;
-               }
-   
-               .modal-nav-link {
-                   white-space: nowrap;
-                   padding: 0.5rem 1rem;
-               }
-   
-               .modal-main {
-                   height: calc(90vh - 250px);
-               }
-   
-               .nav-menu {
-                   display: none;
-               }
-           }
-   
-           @media (max-width: 480px) {
-               .package-card {
-                   margin-bottom: 1.5rem;
-               }
-   
-               .modal-content {
-                   width: 95%;
-                   margin: 1rem auto;
-               }
-   
-               .modal-header {
-                   padding: 1rem;
-               }
-   
-               .modal-title {
-                   font-size: 1.2rem;
-               }
-           }
+       <style>/* Reset and base styles */
+        /* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f9; /* Light background color for the body */
+}
+
+/* Main Content */
+.main-content {
+    margin-top: 80px;
+    padding: 2rem;
+    max-width: 1200px; /* Limit content width */
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the content */
+}
+
+/* Safari Packages Grid */
+.packages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); /* Increased width of each card */
+    gap: 2rem; /* Increased gap for spacing between cards */
+    width: 100%; /* Make grid fill the width of the container */
+    margin-top: 2rem;
+    justify-items: center; /* Center each card within its grid cell */
+}
+
+/* Package Card */
+.package-card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    width: 100%; /* Make each card fill its grid cell */
+}
+
+.package-card:hover {
+    transform: translateY(-5px);
+}
+
+.package-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.package-content {
+    padding: 1.5rem;
+}
+
+.package-title {
+    font-size: 1.5rem;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+
+.package-details {
+    margin-bottom: 1rem;
+    color: #666;
+}
+
+.package-price {
+    font-weight: bold;
+    color: #2c3e50;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.view-details-btn {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background-color: #3498db;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+    font-weight: 500;
+}
+
+.view-details-btn:hover {
+    background-color: #2980b9;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 2000;
+}
+
+.modal.active {
+    display: block;
+}
+
+.modal-content {
+    position: relative;
+    background-color: #fff;
+    width: 90%;
+    max-width: 1000px;
+    margin: 2rem auto;
+    border-radius: 12px;
+    max-height: 90vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+}
+
+.modal-header {
+    padding: 1.5rem;
+    background-color: #3498db;
+    border-bottom: 1px solid #dee2e6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-title {
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+.close-modal {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #fff;
+    padding: 0.5rem;
+}
+
+.close-modal:hover {
+    color: #f8f9fa;
+}
+
+.modal-body {
+    display: flex;
+    height: calc(90vh - 130px);
+}
+
+.modal-sidebar {
+    width: 250px;
+    background-color: #f8f9fa;
+    border-right: 1px solid #dee2e6;
+    padding: 1rem;
+    overflow-y: auto;
+}
+
+.modal-nav {
+    list-style: none;
+}
+
+.modal-nav-item {
+    margin-bottom: 0.5rem;
+}
+
+.modal-nav-link {
+    display: block;
+    padding: 0.8rem 1rem;
+    color: #666;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.modal-nav-link:hover,
+.modal-nav-link.active {
+    background-color: #3498db;
+    color: #fff;
+}
+
+.modal-main {
+    flex: 1;
+    padding: 1.5rem;
+    overflow-y: auto;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Adjusting the image height to 50px specifically inside the tab content */
+.tab-content img {
+    width: 100% !important;
+    height: 50px !important; /* Force height to 50px */
+    object-fit: cover !important; /* Ensures the image doesn't distort */
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+}
+
+.back-to-packages {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background-color: #2c3e50;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    margin-top: 1.5rem;
+    transition: background-color 0.3s ease;
+}
+
+.back-to-packages:hover {
+    background-color: #34495e;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .modal-body {
+        flex-direction: column;
+    }
+
+    .modal-sidebar {
+        width: 100%;
+        height: auto;
+        border-right: none;
+        border-bottom: 1px solid #dee2e6;
+    }
+
+    .modal-nav {
+        display: flex;
+        overflow-x: auto;
+        padding-bottom: 0.5rem;
+        gap: 0.5rem;
+    }
+
+    .modal-nav-item {
+        flex: 0 0 auto;
+        margin-bottom: 0;
+    }
+
+    .modal-nav-link {
+        white-space: nowrap;
+        padding: 0.5rem 1rem;
+    }
+
+    .modal-main {
+        height: calc(90vh - 250px);
+    }
+
+    .nav-menu {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .package-card {
+        margin-bottom: 1.5rem;
+    }
+
+    .modal-content {
+        width: 95%;
+        margin: 1rem auto;
+    }
+
+    .modal-header {
+        padding: 1rem;
+    }
+
+    .modal-title {
+        font-size: 1.2rem;
+    }
+}
+
        </style>
-   </head>
-   <body>
-       <!-- Main Content -->
-       <main class="main-content">
-           <h1>Popular Safari Packages</h1>
-           <div class="packages-grid">
-               <!-- Package Card 1 -->
-               <div class="package-card">
-                   <img src="jozani 2.jpg" alt="Ngorongoro Safari" class="package-image">
-                   <div class="package-content">
-                       <h2 class="package-title">Ngorongoro Day Trip</h2>
-                       <div class="package-details">
-                           <p>Location: Ngorongoro Conservation Area</p>
-                           <p>Duration: 1 Day</p>
-                           <p>Best Season: June - October</p>
-                       </div>
-                       <p class="package-price">From $350 per person</p>
-                       <a href="#" class="view-details-btn" data-package="ngorongoro">View Details</a>
-                   </div>
-               </div>
-   
-               <!-- Package Card 2 -->
-               <div class="package-card">
-                   <img src="https://images.unsplash.com/photo-1547720074-e7a6b091e378" alt="Luxury Safari" class="package-image">
-                   <div class="package-content">
-                       <h2 class="package-title">5 Days Luxury Safari</h2>
-                       <div class="package-details">
-                           <p>Locations: Serengeti, Ngorongoro, Lake Manyara</p>
-                           <p>Duration: 5 Days</p>
-                           <p>Best Season: June - October</p>
-                       </div>
-                       <p class="package-price">From $2,500 per person</p>
-                       <a href="#" class="view-details-btn" data-package="luxury">View Details</a>
-                   </div>
-               </div>
-           </div>
-       </main>
-   
-       <!-- Package Details Modal -->
-       <div class="modal" id="package-modal">
-           <div class="modal-content">
-               <div class="modal-header">
-                   <h2 class="modal-title">Package Details</h2>
-                   <button class="close-modal">&times;</button>
-               </div>
-               <div class="modal-body">
-                   <div class="modal-sidebar">
-                       <ul class="modal-nav">
-                           <li class="modal-nav-item">
-                               <a href="#overview" class="modal-nav-link active">Overview</a>
-                           </li>
-                           <li class="modal-nav-item">
-                               <a href="#rates" class="modal-nav-link">Rates</a>
-                           </li>
-                           <li class="modal-nav-item">
-                               <a href="#inclusion" class="modal-nav-link">Inclusion</a>
-                           </li>
-                           <li class="modal-nav-item">
-                               <a href="#exclusion" class="modal-nav-link">Exclusion</a>
-                           </li>
-                           <li class="modal-nav-item">
-                               <a href="#end-of-tours" class="modal-nav-link">End of Tours</a>
-                           </li>
-                           <li class="modal-nav-item">
-                               <a href="#weather" class="modal-nav-link">Weather</a>
-                           </li>
-                           <li class="modal-nav-item">
-                               <a href="#day1" class="modal-nav-link">Day 1</a>
-                           </li>
-                           <li class="modal-nav-item">
-                               <a href="#contact" class="modal-nav-link">Contact</a>
-                           </li>
-                       </ul>
-                   </div>
-                   <div class="modal-main">
-                    <img src="airport.jpg" alt="Safari Image" class="tab-image" style="width: 100%; height: 250px; object-fit: cover; border-radius: 8px; margin-bottom: 1.5rem;">
 
+    <!-- Main Content -->
+<main class="main-content">
+    <h1>Popular Safari Packages</h1>
+    <div class="packages-grid">
+        <!-- Package Card 1 -->
+        <div class="package-card">
+            <img src="jozani 2.jpg" alt="Ngorongoro Safari" class="package-image">
+            <div class="package-content">
+                <h2 class="package-title">Ngorongoro Day Trip</h2>
+                <div class="package-details">
+                    <p>Location: Ngorongoro Conservation Area</p>
+                    <p>Duration: 1 Day</p>
+                    <p>Best Season: June - October</p>
+                </div>
+                <p class="package-price">From $350 per person</p>
+                <a href="#" class="view-details-btn" data-package="ngorongoro">View Details</a>
+            </div>
+        </div>
 
-                       <div id="overview" class="tab-content active">
-                           <h3>Overview</h3>
-                           <p>You will be picked up from your hotel in Arusha between 6AM to 7AM and starting drive to Ngorongoro Crater and pass through the crater viewpoint, where you will descend into the crater for a game drive. The Ngorongoro Crater is often referred to as the Eighth Natural Wonder of the World and is the largest intact crater in the world. Formed over 2 million years ago when the Ngorongoro volcano erupted, the crater walls collapsed to create a natural enclosure. The crater, now over 19 kilometers wide, is home to a diverse range of habitats including acacia forests, swamps filled with hippos, and open grasslands. With over 30,000 animals, including elephants, warthogs, flamingoes, and the rare black rhinoceros, as well as a variety of birdlife and predatory cats, the crater offers a rich wildlife viewing experience. Later after the game drive, you will be dropped off at your hotel or airport.
-                            Meals
-                            </p>
-                       </div>
-                       <div id="rates" class="tab-content">
-                           <h3>Rates</h3>
-                           <p>Starting at $350 per person.</p>
-                       </div>
-                       <div id="inclusion" class="tab-content">
-                        <h3>Inclusion</h3>
-                        <p>🌍 Park fees (For non-residents)</p>
-                        <p>🛶 All activities (Unless labeled as optional)</p>
-                        <p>👨‍💼 A professional driver/guide</p>
-                        <p>🚗 All transportation (Unless labeled as optional)</p>
-                        <p>💰 All Taxes/VAT</p>
-                        <p>🍽️ Meals (As specified in the day-by-day section)</p>
-                        <p>🥤 Drinks (As specified in the day-by-day section)</p>
-                    </div>
-                    
-                       <div id="exclusion" class="tab-content">
-                           <h3>Exclusion</h3>
-                           <p>Flights, personal expenses, travel insurance.</p>
-                       </div>
-                       <div id="end-of-tours" class="tab-content">
-                           <h3>End of Tours</h3>
-                           <p>The tour ends with a drop-off at your accommodation or the airport.</p>
-                       </div>
-                       <div id="weather" class="tab-content">
-                           <h3>Weather</h3>
-                           <p>The best time for safari is during the dry season, from June to October.</p>
-                       </div>
-                       <div id="day1" class="tab-content">
-                           <h3>Day 1</h3>
-                           <p>Arrive at Ngorongoro and enjoy a full-day safari.</p>
-                       </div>
-                       <div id="contact" class="tab-content">
-                           <h3>Contact</h3>
-                           <p>For more details, contact us at <strong>info@example.com</strong>.</p>
-                       </div>
-                       <a href="#" class="back-to-packages">Back to Packages</a>
-                   </div>
-               </div>
-           </div>
-       </div>
-   
-       <script>
-           // Show Modal with Package Details
-           const viewDetailsBtns = document.querySelectorAll('.view-details-btn');
-           const modal = document.getElementById('package-modal');
-           const closeModal = document.querySelector('.close-modal');
-           const modalNavLinks = document.querySelectorAll('.modal-nav-link');
-           const tabContents = document.querySelectorAll('.tab-content');
-           const backToPackagesBtn = document.querySelector('.back-to-packages');
-   
-           viewDetailsBtns.forEach(button => {
-               button.addEventListener('click', function (e) {
-                   e.preventDefault();
-                   const packageType = this.getAttribute('data-package');
-                   modal.classList.add('active');
-               });
-           });
-   
-           closeModal.addEventListener('click', () => {
-               modal.classList.remove('active');
-           });
-   
-           backToPackagesBtn.addEventListener('click', (e) => {
-               e.preventDefault();
-               modal.classList.remove('active');
-           });
-   
-           modalNavLinks.forEach(link => {
-               link.addEventListener('click', (e) => {
-                   e.preventDefault();
-                   modalNavLinks.forEach(navLink => navLink.classList.remove('active'));
-                   link.classList.add('active');
-   
-                   tabContents.forEach(tab => tab.classList.remove('active'));
-                   document.querySelector(link.getAttribute('href')).classList.add('active');
-               });
-           });
-       </script>
-   </body>
-   </html>
-   
+        <!-- Package Card 2 -->
+        <div class="package-card">
+            <img src="mountain.JPG" alt="Luxury Safari" class="package-image">
+            <div class="package-content">
+                <h2 class="package-title">5 Days Luxury Safari</h2>
+                <div class="package-details">
+                    <p>Locations: Serengeti, Ngorongoro, Lake Manyara</p>
+                    <p>Duration: 5 Days</p>
+                    <p>Best Season: June - October</p>
+                </div>
+                <p class="package-price">From $2,500 per person</p>
+                <a href="#" class="view-details-btn" data-package="luxury">View Details</a>
+            </div>
+        </div>
+
+        <!-- Package Card 3 -->
+        <div class="package-card">
+            <img src="kilimanjaro park.jpg" alt="Serengeti Safari" class="package-image">
+            <div class="package-content">
+                <h2 class="package-title">Serengeti & Ngorongoro 4 Days</h2>
+                <div class="package-details">
+                    <p>Locations: Serengeti, Ngorongoro</p>
+                    <p>Duration: 4 Days</p>
+                    <p>Best Season: June - October</p>
+                </div>
+                <p class="package-price">From $1,800 per person</p>
+                <a href="#" class="view-details-btn" data-package="serengeti-ngorongoro">View Details</a>
+            </div>
+        </div>
+
+        <!-- Package Card 4 -->
+        <div class="package-card">
+            <img src="masai.jpg" alt="Lake Manyara Safari" class="package-image">
+            <div class="package-content">
+                <h2 class="package-title">Lake Manyara 3 Days</h2>
+                <div class="package-details">
+                    <p>Locations: Lake Manyara, Ngorongoro</p>
+                    <p>Duration: 3 Days</p>
+                    <p>Best Season: June - October</p>
+                </div>
+                <p class="package-price">From $1,200 per person</p>
+                <a href="#" class="view-details-btn" data-package="lake-manyara">View Details</a>
+            </div>
+        </div>
+
+        <!-- Package Card 5 -->
+        <div class="package-card">
+            <img src="meru2.jpg" alt="Tarangire Safari" class="package-image">
+            <div class="package-content">
+                <h2 class="package-title">Tarangire & Ngorongoro 4 Days</h2>
+                <div class="package-details">
+                    <p>Locations: Tarangire, Ngorongoro</p>
+                    <p>Duration: 4 Days</p>
+                    <p>Best Season: June - October</p>
+                </div>
+                <p class="package-price">From $1,500 per person</p>
+                <a href="#" class="view-details-btn" data-package="tarangire-ngorongoro">View Details</a>
+            </div>
+        </div>
+
+        <!-- Package Card 6 -->
+        <div class="package-card">
+            <img src="lion.jpg" alt="5 Days Tanzania Safari" class="package-image">
+            <div class="package-content">
+                <h2 class="package-title">5 Days Tanzania Safari</h2>
+                <div class="package-details">
+                    <p>Locations: Serengeti, Ngorongoro, Lake Manyara, Tarangire</p>
+                    <p>Duration: 5 Days</p>
+                    <p>Best Season: June - October</p>
+                </div>
+                <p class="package-price">From $2,200 per person</p>
+                <a href="#" class="view-details-btn" data-package="tanzania-5days">View Details</a>
+            </div>
+        </div>
+    </div>
+</main>
+
+<!-- Package Details Modal -->
+<div class="modal" id="package-modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2 class="modal-title">Package Details</h2>
+            <button class="close-modal">&times;</button>
+        </div>
+        <div class="modal-body">
+            <div class="modal-sidebar">
+                <ul class="modal-nav">
+                    <li class="modal-nav-item"><a href="#overview" class="modal-nav-link active">Overview</a></li>
+                    <li class="modal-nav-item"><a href="#rates" class="modal-nav-link">Rates</a></li>
+                    <li class="modal-nav-item"><a href="#inclusion" class="modal-nav-link">Inclusion</a></li>
+                    <li class="modal-nav-item"><a href="#exclusion" class="modal-nav-link">Exclusion</a></li>
+                    <li class="modal-nav-item"><a href="#end-of-tours" class="modal-nav-link">End of Tours</a></li>
+                    <li class="modal-nav-item"><a href="#weather" class="modal-nav-link">Weather</a></li>
+                    <li class="modal-nav-item"><a href="#day1" class="modal-nav-link">Day 1</a></li>
+                    <li class="modal-nav-item"><a href="#contact" class="modal-nav-link">Contact</a></li>
+                </ul>
+            </div>
+            <div class="modal-main">
+                <img src="airport.jpg" alt="Safari Image" class="tab-image" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 1.5rem;">
+                <div id="overview" class="tab-content active">
+                    <h3>Overview</h3>
+                    <p id="overview-text">Details will be shown here based on the selected package.</p>
+                </div>
+                <div id="rates" class="tab-content">
+                    <h3>Rates</h3>
+                    <p id="rates-text">Rates will be shown here.</p>
+                </div>
+                <div id="inclusion" class="tab-content">
+                    <h3>Inclusion</h3>
+                    <p id="inclusion-text">Inclusion details will be shown here.</p>
+                </div>
+                <div id="exclusion" class="tab-content">
+                    <h3>Exclusion</h3>
+                    <p id="exclusion-text">Exclusion details will be shown here.</p>
+                </div>
+                <div id="end-of-tours" class="tab-content">
+                    <h3>End of Tours</h3>
+                    <p id="end-of-tours-text">End of tour details will be shown here.</p>
+                </div>
+                <div id="weather" class="tab-content">
+                    <h3>Weather</h3>
+                    <p id="weather-text">Weather details will be shown here.</p>
+                </div>
+                <div id="day1" class="tab-content">
+                    <h3>Day 1</h3>
+                    <p id="day1-text">Day 1 itinerary details will be shown here.</p>
+                </div>
+                <div id="contact" class="tab-content">
+                    <h3>Contact</h3>
+                    <p>For more details, contact us at <strong>info@example.com</strong>.</p>
+                </div>
+                <a href="#" class="back-to-packages">Back to Packages</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+    // Package details data
+    const packageDetails = {
+        ngorongoro: {
+            overview: "The Ngorongoro Crater is a breathtaking natural wonder of the world. This incredible volcanic landscape was formed over 2 million years ago and is home to a diverse array of wildlife i.e. lions, elephants, zebras and hippos. When visiting the Ngorongoro Crater, you'll spend a full day exploring this unique ecosystem, the best place in Africa to spot the Big Five, spending a day in the crater is an experience that will leave you in awe of the natural beauty and wildlife that call this place home.",
+            rates: "Starting at $350 per person.",
+            inclusion: "All meals, park fees, transportation, accommodation.",
+            exclusion: "Flights, personal expenses, travel insurance.",
+            endOfTours: "The tour ends with a drop-off at your accommodation or the airport.",
+            weather: "The best time for safari is during the dry season, from June to October.",
+            day1: "Arrive at Ngorongoro and enjoy a full-day safari.",
+        },
+        luxury: {
+            overview: "The park’s large elephant population, iconic Baobab trees, and diversity of wildlife make it one of the best parks in the country for taking breathtaking photos or simply basking in the beautiful elephants. Game drives through Tarangire are particularly thrilling during the dry season when the animals of the park must cluster closer and closer to the Tarangire River. This offers a great opportunity to see plenty of animals in one place and to witness the predator-prey relationship in action.",
+            rates: "Starting at $2,500 per person.",
+            inclusion: "All meals, luxury accommodation, park fees, and transportation.",
+            exclusion: "Flights, personal expenses, travel insurance.",
+            endOfTours: "The tour ends with a luxury drop-off at your accommodation or the airport.",
+            weather: "Best during the dry season, from June to October.",
+            day1: "Arrive at Serengeti and enjoy a luxurious game drive.",
+        },
+        serengeti_ngorongoro: {
+            overview: "Explore the famous Serengeti and Ngorongoro Crater on a 4-day adventure...",
+            rates: "Starting at $1,800 per person.",
+            inclusion: "All meals, park fees, accommodation, and transportation.",
+            exclusion: "Flights, personal expenses, travel insurance.",
+            endOfTours: "End of the tour at your accommodation or the airport.",
+            weather: "Best during the dry season.",
+            day1: "Arrival at Serengeti and game drive.",
+        },
+        lake_manyara: {
+            overview: "Explore Lake Manyara and Ngorongoro Crater in 3 days...",
+            rates: "Starting at $1,200 per person.",
+            inclusion: "Meals, park fees, accommodation, and transportation.",
+            exclusion: "Flights, personal expenses, travel insurance.",
+            endOfTours: "End of the tour at your accommodation or the airport.",
+            weather: "Best during the dry season.",
+            day1: "Arrival at Lake Manyara for a game drive.",
+        },
+        tarangire_ngorongoro: {
+            overview: "Visit Tarangire and Ngorongoro for a 4-day safari...",
+            rates: "Starting at $1,500 per person.",
+            inclusion: "Meals, park fees, accommodation, and transportation.",
+            exclusion: "Flights, personal expenses, travel insurance.",
+            endOfTours: "End of the tour at your accommodation or the airport.",
+            weather: "Best during the dry season.",
+            day1: "Arrival at Tarangire for a game drive.",
+        },
+        tanzania_5days: {
+            overview: "A 5-day safari covering Serengeti, Ngorongoro, Lake Manyara, and Tarangire...",
+            rates: "Starting at $2,200 per person.",
+            inclusion: "Meals, park fees, accommodation, and transportation.",
+            exclusion: "Flights, personal expenses, travel insurance.",
+            endOfTours: "End of the tour at your accommodation or the airport.",
+            weather: "Best during the dry season.",
+            day1: "Arrival at Serengeti for a full-day game drive.",
+        }
+    };
+
+    // Handle package click to show details
+    const viewButtons = document.querySelectorAll('.view-details-btn');
+    const modal = document.getElementById('package-modal');
+    const closeModalButton = document.querySelector('.close-modal');
+
+    viewButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+            e.preventDefault();
+            const packageKey = button.getAttribute('data-package');
+            console.log("Package selected:", packageKey);  // Debugging line
+            showPackageDetails(packageKey);
+            modal.style.display = 'block';
+        });
+    });
+
+    // Show package details in modal
+    function showPackageDetails(packageKey) {
+        const details = packageDetails[packageKey];
+        console.log("Package details:", details);  // Debugging line
+
+        if (details) {
+            // Fill the modal with correct package data
+            document.getElementById('overview-text').innerText = details.overview || "No details available.";
+            document.getElementById('rates-text').innerText = details.rates || "No rates available.";
+            document.getElementById('inclusion-text').innerText = details.inclusion || "No inclusion details available.";
+            document.getElementById('exclusion-text').innerText = details.exclusion || "No exclusion details available.";
+            document.getElementById('end-of-tours-text').innerText = details.endOfTours || "No end of tour details available.";
+            document.getElementById('weather-text').innerText = details.weather || "No weather details available.";
+            document.getElementById('day1-text').innerText = details.day1 || "No Day 1 details available.";
+        } else {
+            console.error("Package details not found for: " + packageKey);
+        }
+    }
+
+    // Close modal
+    closeModalButton.addEventListener('click', () => {
+        modal.style.display = 'none';
+    });
+
+    // Modal navigation (Tab system)
+    const navLinks = document.querySelectorAll('.modal-nav-link');
+    navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            navLinks.forEach(nav => nav.classList.remove('active'));
+            link.classList.add('active');
+            const tabContentId = link.getAttribute('href').substring(1);
+            document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+            document.getElementById(tabContentId).classList.add('active');
+        });
+    });
+
+    // Back to packages button
+    document.querySelector('.back-to-packages').addEventListener('click', () => {
+        modal.style.display = 'none';
+    });
+});
+
+</script>

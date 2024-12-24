@@ -656,6 +656,7 @@
        <title>Safari Packages | Tanzania Adventures</title>
        <style>/* Reset and base styles */
         /* Reset and base styles */
+/* Reset and base styles */
 * {
     margin: 0;
     padding: 0;
@@ -919,8 +920,18 @@ body {
 }
 
 @media (max-width: 480px) {
+    .packages-grid {
+        grid-template-columns: 1fr; /* Stack cards vertically */
+        gap: 1rem; /* Smaller gap between cards */
+    }
+
     .package-card {
         margin-bottom: 1.5rem;
+        width: 100%; /* Ensure each card fills the container */
+    }
+
+    .package-title {
+        font-size: 1.3rem; /* Adjust font size for better readability */
     }
 
     .modal-content {

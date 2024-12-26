@@ -655,391 +655,248 @@
        <meta name="viewport" content="width=device-width, initial-scale=1.0">
        <title>Safari Packages | Tanzania Adventures</title>
        <style>
-     /* Reset and base styles */
-     * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    /* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f4f4f9;
-        }
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
+}
 
-        /* Main Content */
-        .main-content {
-            margin-top: 80px;
-            padding: 2rem;
-            max-width: 100%;
-            margin-left: 0;
-            margin-right: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            opacity: 0;
-            animation: fadeIn 1s forwards;
-        }
+/* Main Content */
+.main-content {
+    margin-top: 80px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
-        /* Safari Packages Grid */
-        .packages-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr); /* Exactly 4 columns on desktop */
-            gap: 2rem;
-            width: 100%;
-            margin-top: 2rem;
-            justify-items: stretch;
-        }
+/* Safari Packages Grid */
+.packages-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns on large screens */
+    gap: 1rem; /* Decreased gap between cards */
+    width: 100%;
+    margin-top: 2rem;
+}
 
-        /* Package Card */
-        .package-card {
-            background: #fff;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            width: 100%;
-            opacity: 0;
-            animation: fadeInUp 0.8s forwards;
-        }
+/* Package Card */
+.package-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 1rem; /* Reduced bottom margin */
+}
 
-        .package-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-        }
+.package-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
 
-        /* Package Image */
-        .package-image {
-            width: 100%;
-            height: 200px; /* Adjust height for mobile */
-            object-fit: cover; /* Ensure the image covers the container without stretching */
-            transition: transform 0.3s ease, opacity 0.3s ease;
-        }
+/* Package Image */
+.package-image {
+    width: 100%;
+    height: 180px; /* Adjusted height */
+    object-fit: cover;
+}
 
-        .package-card:hover .package-image {
-            transform: scale(1.05);
-            opacity: 0.8;
-        }
+/* Package Content */
+.package-content {
+    padding: 1rem;
+}
 
-        .package-content {
-            padding: 1.5rem;
-        }
+.package-title {
+    font-size: 1.3rem; /* Increased title size */
+    font-weight: 600;
+    color: #3498db; /* Attractive blue */
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
 
-        .package-title {
-            font-size: 1.5rem;
-            color: #2c3e50;
-            margin-bottom: 0.5rem;
-            opacity: 0;
-            animation: fadeInUp 1s 0.2s forwards;
-        }
+.package-details {
+    color: #666;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+}
 
-        .package-details {
-            margin-bottom: 1rem;
-            color: #666;
-            opacity: 0;
-            animation: fadeInUp 1s 0.4s forwards;
-        }
+.package-price {
+    font-weight: bold;
+    color: #2c3e50;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
 
-        .package-price {
-            font-weight: bold;
-            color: #2c3e50;
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-            opacity: 0;
-            animation: fadeInUp 1s 0.6s forwards;
-        }
+/* Location, Rates, and Duration Styling */
+.package-location, .package-rates, .package-duration {
+    font-size: 0.9rem; /* Smaller font size for these details */
+    color: #7f8c8d; /* Slightly lighter color */
+    margin-bottom: 0.5rem; /* Reduced bottom margin */
+    line-height: 1.4; /* Reduced line height */
+}
 
-        .view-details-btn {
-            display: inline-block;
-            padding: 1rem 2rem;
-            background-color: #3498db;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 6px;
-            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-            font-weight: 500;
-            text-align: center;
-            width: 100%;
-            box-sizing: border-box;
-            margin-top: 1rem;
-            font-size: 1.1rem;
-        }
+/* View Details Button */
+.view-details-btn {
+    display: inline-block;
+    padding: 0.6rem 1.2rem; /* Adjusted padding for a smaller button */
+    background-color: #3498db;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    text-align: center;
+    width: auto; /* Auto width for button */
+    margin-top: 1rem;
+    font-size: 0.9rem; /* Adjusted font size for mobile */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
 
-        .view-details-btn:hover {
-            background-color: #2980b9;
-            transform: scale(1.05);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-        }
+.view-details-btn:hover {
+    background-color: #2980b9;
+}
 
-        /* Modal Styles */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
-            z-index: 2000;
-        }
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 2000;
+}
 
-        .modal.active {
-            display: block;
-            animation: fadeInModal 0.5s forwards;
-        }
+.modal.active {
+    display: block;
+    animation: fadeInModal 0.5s forwards;
+}
 
-        .modal-content {
-            position: relative;
-            background-color: #fff;
-            width: 100%;
-            max-width: 1000px;
-            margin: 2rem auto;
-            border-radius: 12px;
-            max-height: 90vh;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            opacity: 0;
-            animation: fadeInUp 1s forwards;
-        }
+.modal-content {
+    position: relative;
+    background-color: #fff;
+    width: 100%;
+    max-width: 1000px;
+    margin: 2rem auto;
+    border-radius: 12px;
+    max-height: 90vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    animation: fadeInUp 1s forwards;
+}
 
-        .modal-header {
-            padding: 1.5rem;
-            background-color: #3498db;
-            border-bottom: 1px solid #dee2e6;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+/* Modal Animations */
+@keyframes fadeInModal {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
-        .modal-title {
-            font-size: 1.5rem;
-            color: #fff;
-        }
+/* Mobile and Tablet Adjustments */
+@media (max-width: 1200px) {
+    .packages-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns on medium screens */
+    }
+}
 
-        .close-modal {
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: #fff;
-            padding: 0.5rem;
-        }
+@media (max-width: 992px) {
+    .packages-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
+    }
+}
 
-        .close-modal:hover {
-            color: #f8f9fa;
-        }
+@media (max-width: 768px) {
+    .main-content {
+        padding: 1rem;
+    }
 
-        .modal-body {
-            display: flex;
-            height: calc(90vh - 130px);
-            opacity: 0;
-            animation: fadeInUp 1s 0.3s forwards;
-        }
+    .packages-grid {
+        grid-template-columns: 1fr; /* 1 column on mobile */
+        gap: 1rem;
+    }
 
-        .modal-sidebar {
-            width: 250px;
-            background-color: #f8f9fa;
-            border-right: 1px solid #dee2e6;
-            padding: 1rem;
-            overflow-y: auto;
-        }
+    .package-card {
+        margin-bottom: 1rem;
+        height: auto;
+    }
 
-        .modal-nav {
-            list-style: none;
-        }
+    .package-image {
+        height: 120px; /* Resize image for mobile */
+    }
 
-        .modal-nav-item {
-            margin-bottom: 0.5rem;
-        }
+    .package-title {
+        font-size: 1.2rem; /* Adjusted title size for mobile */
+    }
 
-        .modal-nav-link {
-            display: block;
-            padding: 0.8rem 1rem;
-            color: #666;
-            text-decoration: none;
-            border-radius: 6px;
-            transition: all 0.3s ease;
-        }
+    .package-details {
+        font-size: 0.9rem;
+    }
 
-        .modal-nav-link:hover,
-        .modal-nav-link.active {
-            background-color: #3498db;
-            color: #fff;
-        }
+    .package-price {
+        font-size: 1rem;
+    }
 
-        .modal-main {
-            flex: 1;
-            padding: 1.5rem;
-            overflow-y: auto;
-        }
+    /* Adjust Location, Rates, Duration for Mobile */
+    .package-location, .package-rates, .package-duration {
+        font-size: 0.8rem; /* Even smaller font size for mobile */
+        margin-bottom: 0.3rem; /* Reduced bottom margin */
+        line-height: 1.3; /* Slightly reduced line height */
+    }
 
-        .tab-content {
-            display: none;
-        }
+    .view-details-btn {
+        padding: 0.5rem 1rem; /* Smaller button padding */
+        font-size: 0.85rem; /* Smaller button text */
+        width: auto;
+    }
+}
 
-        .tab-content.active {
-            display: block;
-        }
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
 
-        .tab-content img {
-            width: 100% !important;
-            height: 50px !important;
-            object-fit: cover !important;
-            border-radius: 8px;
-            margin-bottom: 1.5rem;
-            animation: fadeInImage 1s ease-in-out;
-        }
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
-        .back-to-packages {
-            display: inline-block;
-            padding: 0.8rem 1.5rem;
-            background-color: #2c3e50;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 6px;
-            margin-top: 1.5rem;
-            transition: background-color 0.3s ease;
-        }
+@keyframes fadeInImage {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
 
-        .back-to-packages:hover {
-            background-color: #34495e;
-        }
-
-        /* Animations */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeInModal {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeInImage {
-            from {
-                opacity: 0;
-                transform: scale(0.95);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-
-        /* Responsive Design */
-        @media (max-width: 1200px) {
-            .packages-grid {
-                grid-template-columns: repeat(3, 1fr); /* 3 columns for medium screens */
-            }
-        }
-
-        @media (max-width: 992px) {
-            .packages-grid {
-                grid-template-columns: repeat(2, 1fr); /* 2 columns for tablet */
-            }
-        }
-
-        @media (max-width: 768px) {
-            .main-content {
-                padding: 1rem;
-            }
-
-            .packages-grid {
-                grid-template-columns: 1fr; /* Single column for mobile */
-            }
-
-            .package-card {
-                margin-bottom: 1.5rem;
-            }
-
-            .package-image {
-                height: 150px; /* Resize image for mobile */
-            }
-
-            .modal-body {
-                flex-direction: column;
-            }
-
-            .modal-sidebar {
-                width: 100%;
-                height: auto;
-                border-right: none;
-                border-bottom: 1px solid #dee2e6;
-            }
-
-            .modal-nav {
-                display: flex;
-                overflow-x: auto;
-                padding-bottom: 0.5rem;
-                gap: 0.5rem;
-            }
-
-            .modal-nav-item {
-                flex: 0 0 auto;
-                margin-bottom: 0;
-            }
-
-            .modal-nav-link {
-                white-space: nowrap;
-                padding: 0.5rem 1rem;
-            }
-
-            .modal-main {
-                height: calc(90vh - 250px);
-            }
-
-            .nav-menu {
-                display: none;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .package-card {
-                margin-bottom: 1rem;
-            }
-
-            .modal-content {
-                width: 95%;
-                margin: 1rem auto;
-            }
-
-            .modal-header {
-                padding: 1rem;
-            }
-
-            .modal-title {
-                font-size: 1.2rem;
-            }
-
-            h1 {
-                font-size: 1.5rem;
-            }
-        }
     </style>
     
        <!-- Main Content -->

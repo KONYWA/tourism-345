@@ -1967,6 +1967,7 @@
 </div>
 
  </div>
+ 
 </main>
 
 <!-- Package Details Modal -->
@@ -2166,4 +2167,184 @@
          });
      });
  });
+ 
 </script>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Information and Guide</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        /* General reset for all elements */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Scoped styles for the main content area */
+        .travel-guide {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 50vh;
+        }
+
+        .travel-guide main {
+            display: flex;
+            justify-content: space-between; /* Distribute the sections in one row */
+            width: 100%;
+            flex: 1;
+            padding: 0; /* No padding */
+            margin: 0; /* Remove margin */
+        }
+
+        /* Section styling */
+        .travel-guide .section {
+            padding: 10px; /* Reduced padding */
+            background-color: #fdfdfd;
+            border-left: 5px solid #2c3e50;
+            transition: background-color 0.3s ease;
+            margin-right: 10px; /* Reduced space between sections */
+            flex: 1; /* Ensure sections take equal space */
+            margin-bottom: 0; /* No margin at the bottom */
+            min-height: auto; /* Adjust height based on content */
+        }
+
+        .travel-guide .section:nth-child(even) {
+            background-color: #f3f3f3;
+        }
+
+        .travel-guide .section:hover {
+            background-color: #e8f4f8;
+        }
+
+        .travel-guide .section h2 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: #2c3e50;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 2px solid #2c3e50;
+            padding-bottom: 5px;
+        }
+
+        .travel-guide .section ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .travel-guide .section ul li {
+            margin-bottom: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .travel-guide .section ul li:hover {
+            color: #2c3e50;
+        }
+
+        /* Footer styling */
+        .travel-guide footer {
+            text-align: center;
+            background-color: #2c3e50;
+            color: white;
+            padding: 10px;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+            margin-top: 0; /* No margin above the footer */
+        }
+
+        .travel-guide footer p {
+            margin: 5px 0;
+        }
+
+        .travel-guide footer a {
+            color: #f3f3f3;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .travel-guide footer a:hover {
+            color: #ffffff;
+        }
+
+        /* Mobile Layout */
+        @media (max-width: 768px) {
+            .travel-guide main {
+                flex-direction: column; /* Stack sections vertically on mobile */
+            }
+
+            .travel-guide .section {
+                padding: 10px;
+                margin-right: 0; /* Remove right margin on mobile */
+                margin-bottom: 0; /* No bottom margin */
+            }
+
+            .travel-guide .section h2 {
+                font-size: 1.3rem;
+            }
+
+            .travel-guide .section ul li {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="travel-guide">
+        <main>
+            <section class="section">
+                <h2>About Us</h2>
+                <ul>
+                    <li>Terms and Conditions</li>
+                    <li>Privacy</li>
+                </ul>
+            </section>
+
+            <section class="section">
+                <h2>Travel Information</h2>
+                <ul>
+                    <li>Tanzania Weather</li>
+                    <li>Yellow Fever Requirement</li>
+                    <li>When to Visit</li>
+                    <li>Travel Resources</li>
+                </ul>
+            </section>
+
+            <section class="section">
+                <h2>Travel Guide</h2>
+                <ul>
+                    <li>Frequently Asked Questions</li>
+                    <li>Mountain Packing List</li>
+                    <li>Packing List for Safaris</li>
+                    <li>Safari Coding</li>
+                    <li>Things to Do</li>
+                </ul>
+            </section>
+
+            <section class="section">
+                <h2>Contact Us</h2>
+                <ul>
+                    <li>Call and WhatsApp: +255 692 208 654</li>
+                    <li>Email: info@mafoyafricasafaris.com</li>
+                    <li>Address: Arusha, Tanzania</li>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Instagram</a></li>
+                </ul>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 Mafoy Africa Safaris. All Rights Reserved.</p>
+            <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+        </footer>
+    </div>
+</body>
+</html>

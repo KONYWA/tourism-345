@@ -508,29 +508,74 @@
             transform: translateY(-3px);
             box-shadow: 0 6px 12px rgba(0,0,0,0.3);
         }
+/* Background Slider */
+.background-slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1; /* Keeps the slider behind other content */
+    background: url('leopard.jpg') no-repeat center/cover; /* Initial background */
+    animation: backgroundCycle 30s infinite; /* Background cycle animation */
+}
 
-        /* Background Image Slider */
-        .background-slider {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            animation: slideBackground 15s infinite;
-        }
+/* Keyframes for Background Cycle */
+@keyframes backgroundCycle {
+    0% {
+        background: url('leopard.jpg') no-repeat center/cover;
+    }
+    25% {
+        background: url('tanzania2.jpg') no-repeat center/cover;
+    }
+    50% {
+        background: url('lion.jpg') no-repeat center/cover;
+    }
+    75% {
+        background: url('dorphine 2.jpg') no-repeat center/cover;
+    }
+    100% {
+        background: url('woow.jpg') no-repeat center/cover;
+    }
+}
 
-        .background-slider img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+/* Moving Clouds Layer */
+.clouds {
+    position: absolute;
+    top: 20%;
+    left: -200px;
+    width: 200%;
+    height: 200px;
+    background: url('clouds.png') repeat-x; /* Use a transparent cloud PNG */
+    animation: moveClouds 60s linear infinite; /* Smooth cloud movement */
+    opacity: 0.5; /* Subtle visibility for the clouds */
+    z-index: -1; /* Keeps clouds behind content but above the slider */
+}
 
-        @keyframes slideBackground {
-            0% { background-image: url('karatu2.jpg.jpg'); }
-            33% { background-image: url('masai.jpg'); }
-            66% { background-image: url('mbogo.jpg'); }
-            100% { background-image: url('kilimanjaro.jpg'); }
-        }
+/* Keyframes for Cloud Movement */
+@keyframes moveClouds {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Styling for a Subtle Overlay Effect */
+.background-slider::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)); /* Gradient overlay */
+    z-index: -1; /* Overlay is above the background but below content */
+    pointer-events: none; /* Prevents interaction with the overlay */
+}
+
 
         /* Section Styles */
         .section {
@@ -667,7 +712,6 @@
        <!-- Hero Section -->
        <section class="hero">
            <div class="background-slider">
-               <img src="mountain 2.jpg" alt="Safari Background">
            </div>
            <div class="hero-content">
                <h1>Discover Tanzania's Wild Beauty</h1>
@@ -2222,6 +2266,7 @@ body {
  
 </script>
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -2278,8 +2323,8 @@ body {
         }
 
         .travel-guide .section h2 {
-            font-size: 1.4rem;
-            margin-bottom: 15px;
+            font-size: 1.2rem; /* Smaller heading size */
+            margin-bottom: 10px; /* Reduced margin */
             color: #0078d7; /* Vibrant blue for headings */
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -2293,7 +2338,7 @@ body {
         }
 
         .travel-guide .section ul li {
-            margin-bottom: 10px;
+            margin-bottom: 8px; /* Reduced margin */
             font-size: 1rem;
             cursor: pointer;
             transition: color 0.3s ease;
@@ -2301,6 +2346,30 @@ body {
 
         .travel-guide .section ul li:hover {
             color: #0056a3; /* Darker blue on hover */
+        }
+
+        /* View More button styling */
+        .view-more {
+            text-align: center;
+            margin-top: 15px;
+            width: 100%; /* Ensure it covers the full width */
+        }
+
+        .view-more a {
+            display: block; /* Makes the link behave like a block element */
+            text-decoration: none;
+            color: #fff;
+            background-color: #3498db;
+            font-size: 1.1rem;
+            padding: 12px 0; /* Added padding for vertical spacing */
+            border-radius: 5px;
+            transition: all 0.3s;
+            width: 100%; /* Make the button span the full width */
+            text-align: center; /* Center the text inside the button */
+        }
+
+        .view-more a:hover {
+            background-color: #2980b9;
         }
 
         /* Footer styling */
@@ -2348,6 +2417,11 @@ body {
 
             .travel-guide .section ul li {
                 font-size: 0.9rem;
+            }
+
+            .view-more a {
+                font-size: 1rem; /* Adjusted font size */
+                padding: 8px 0; /* Adjusted padding */
             }
         }
     </style>

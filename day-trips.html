@@ -356,6 +356,7 @@
             });
         });
     </script>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -363,7 +364,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Day Trips</title>
     <style>
-        body {
+            body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
@@ -383,7 +384,7 @@
             color: #1574d2;
             text-align: center;
             letter-spacing: 1px;
-            margin-top: 10px; /* Reduced from 50px */
+            margin-top: 10px; /* Reduced for all devices */
             margin-bottom: 30px;
             text-transform: capitalize;
             line-height: 1.4;
@@ -559,8 +560,13 @@
             }
 
             h1 {
-                margin-top: 0; /* Reduced margin-top to 0 for mobile */
-                font-size: 2.5rem; /* Optional: reduce font size for mobile */
+                margin-top: 5px; /* Close to header on mobile */
+                font-size: 2.2rem; /* Reduced font size for better fit */
+            }
+
+            .container {
+                width: 100%; /* Full width for mobile */
+                padding: 0 10px; /* Slight padding for aesthetics */
             }
         }
 

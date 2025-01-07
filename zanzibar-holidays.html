@@ -801,22 +801,41 @@
             padding: 2rem;
             box-sizing: border-box;
         }
+/* General Style for .modal */
+.modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8); /* Dark overlay */
+    overflow: hidden; /* Prevent scrolling */
+}
+
 /* General Style for .modal-content */
 .modal-content {
-    margin: auto;
     background-color: #fff;
     border-radius: 10px;
     width: 100%;
     max-width: 1600px; /* Larger maximum width for desktops */
-    height: 100%; /* Default height */
+    height: auto; /* Default height */
     display: flex;
     flex-direction: column;
+    box-sizing: border-box; /* Ensures padding/border are included in dimensions */
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7); /* Shadow for prominence */
 }
 
 /* Mobile View (Small Screens) */
 @media (max-width: 768px) {
+    .modal {
+        padding: 0; /* Remove any internal padding */
+    }
+
     .modal-content {
         width: 100vw;      /* Full viewport width */
         height: 100vh;     /* Full viewport height */
@@ -825,6 +844,11 @@
         padding: 0;        /* Remove padding */
         box-shadow: none;  /* Remove shadow for fullscreen */
     }
+}
+
+/* Disable body scrolling when modal is open */
+body.modal-open {
+    overflow: hidden;
 }
 
 

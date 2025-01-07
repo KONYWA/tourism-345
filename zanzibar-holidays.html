@@ -801,22 +801,32 @@
             padding: 2rem;
             box-sizing: border-box;
         }
+/* General Style for .modal-content */
+.modal-content {
+    margin: auto;
+    background-color: #fff;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 1600px; /* Larger maximum width for desktops */
+    height: 100%; /* Default height */
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7); /* Shadow for prominence */
+}
 
-        .modal-content {
-            margin: auto;
-            background-color: #fff;
-            border-radius: 10px;
-            width: 100%;
-            max-width: 1600px;
-            /* Larger maximum width */
-            height: 100%;
-            /* Take up more screen height */
-            display: flex;
-            flex-direction: column;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
-            /* Deeper shadow for more prominence */
-        }
+/* Mobile View (Small Screens) */
+@media (max-width: 768px) {
+    .modal-content {
+        width: 100vw;      /* Full viewport width */
+        height: 100vh;     /* Full viewport height */
+        border-radius: 0;  /* Remove rounded corners */
+        margin: 0;         /* Remove margins */
+        padding: 0;        /* Remove padding */
+        box-shadow: none;  /* Remove shadow for fullscreen */
+    }
+}
+
 
         .modal-header {
             display: flex;
@@ -831,11 +841,36 @@
             font-weight: bold;
         }
 
-        .modal-body {
-            display: flex;
-            flex: 1;
-            overflow: hidden;
-        }
+       /* General Style for .modal-body */
+.modal-body {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+}
+
+/* Desktop View (Large Screens) */
+@media (min-width: 992px) {
+    .modal-body {
+        display: flex;
+        flex: 1;
+        overflow: hidden;
+        padding: 2rem; /* Add padding or any desktop-specific styling */
+    }
+}
+
+/* Mobile View (Small Screens) */
+@media (max-width: 768px) {
+    .modal-body {
+        display: flex;
+        flex-direction: column; /* Stack content vertically */
+        flex: 1;
+        width: 100%;           /* Cover full width of the screen */
+        height: 100vh;         /* Cover full height of the screen */
+        padding: 0;            /* Remove padding for full-screen coverage */
+        overflow: hidden;      /* Ensure no overflow */
+    }
+}
+
 
         .modal-sidebar {
             flex: 0 0 30%;

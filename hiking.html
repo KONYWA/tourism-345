@@ -980,17 +980,33 @@ body.modal-open {
             margin-bottom: 0.5rem;
         }
 
-        .modal-nav-link {
-            display: block;
-            padding: 1rem 1.5rem;
-            text-decoration: none;
-            color: #333;
-            background-color: #e9ecef;
-            border-radius: 4px;
-            font-size: 1.2rem;
-            /* Larger font size */
-            transition: background-color 0.3s;
-        }
+        /* Base styles (applies to all screen sizes) */
+.modal-nav-link {
+    display: block;
+    padding: 1rem 1.5rem;
+    text-decoration: none;
+    color: #333;
+    background-color: #e9ecef;
+    border-radius: 10px;
+    font-size: 1rem; /* Larger font size */
+    transition: background-color 0.3s;
+}
+
+/* Mobile-specific styles (screen width up to 768px) */
+@media (max-width: 768px) {
+    .modal-nav-link {
+        font-size: 0.9rem; /* Slightly smaller font size */
+        padding: 0.8rem 1.2rem; /* Adjusted padding for smaller screens */
+    }
+}
+
+/* Desktop-specific styles (screen width 769px and above) */
+@media (min-width: 769px) {
+    .modal-nav-link {
+        font-size: 1.2rem; /* Larger font size for desktop */
+        padding: 1.2rem 2rem; /* More spacious padding */
+    }
+}
 
         .modal-nav-link.active {
             background-color: #0e7eef;

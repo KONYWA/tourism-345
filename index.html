@@ -71,20 +71,13 @@
             background-color: #ffffff; /* White color for mobile menu lines */
         }
 
-        /* Menu Text */
-        .menu-text {
-            color: white;
-            font-size: 1.4rem;
-            font-weight: bold;
-            margin-left: 10px; /* Add some space between the button and the text */
-        }
-
         /* Mobile Navigation */
         .mobile-nav {
             display: none;
             flex-direction: column;
             background-color: #fff;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
         }
 
         .mobile-nav.active {
@@ -94,6 +87,7 @@
         .mobile-nav ul {
             list-style: none;
             width: 100%;
+            padding: 0;
         }
 
         .mobile-nav ul li {
@@ -269,7 +263,6 @@
             }
         }
     </style>
-    
 </head>
 <body>
     <!-- Header with Navigation -->
@@ -330,7 +323,6 @@
             <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
-    
 
     <script>
         // Toggle Mobile Menu
@@ -344,19 +336,10 @@
             const parentLi = event.target.parentElement;
             parentLi.classList.toggle('active');
         }
-
-        // Close dropdown when clicking outside
-        document.addEventListener('click', function(event) {
-            const dropdowns = document.querySelectorAll('.dropdown');
-            dropdowns.forEach(function(dropdown) {
-                if (dropdown.classList.contains('show') && 
-                    !dropdown.previousElementSibling.contains(event.target)) {
-                    dropdown.classList.remove('show');
-                }
-            });
-        });
     </script>
-    
+</body>
+</html>
+
    
 <!DOCTYPE html>
 <html lang="en">
@@ -517,23 +500,24 @@
     height: 100%;
     overflow: hidden;
     z-index: -1; /* Keeps the slider behind other content */
-    background: url('leopard.jpg') no-repeat center/cover; /* Initial background */
+    background: url('beach3.jpg') no-repeat center/cover; /* Initial background */
     animation: backgroundCycle 30s infinite; /* Background cycle animation */
+    
 }
 
 /* Keyframes for Background Cycle */
 @keyframes backgroundCycle {
     0% {
-        background: url('leopard.jpg') no-repeat center/cover;
+        background: url('dorphine 2.jpg') no-repeat center/cover;
     }
     25% {
         background: url('tanzania2.jpg') no-repeat center/cover;
     }
     50% {
-        background: url('lion.jpg') no-repeat center/cover;
+        background: url('meru2.jpg') no-repeat center/cover;
     }
     75% {
-        background: url('dorphine 2.jpg') no-repeat center/cover;
+        background: url('beach3.jpg') no-repeat center/cover;
     }
     100% {
         background: url('woow.jpg') no-repeat center/cover;
@@ -546,7 +530,7 @@
     top: 20%;
     left: -200px;
     width: 200%;
-    height: 200px;
+    height: 100px;
     background: url('clouds.png') repeat-x; /* Use a transparent cloud PNG */
     animation: moveClouds 60s linear infinite; /* Smooth cloud movement */
     opacity: 0.5; /* Subtle visibility for the clouds */
@@ -728,7 +712,8 @@
    
        <!-- Our Excellence Section -->
        <section class="section">
-           <h2 class="section-title">Our Excellence</h2>
+        <h2 class="section-title" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 32px; color: #003366; text-align: center; text-transform: uppercase; font-weight: 600; letter-spacing: 1.5px; margin-bottom: 20px; border-bottom: 2px solid #003366; padding-bottom: 10px;">Our Excellence</h2>
+
            <div class="grid-container">
                <div class="grid-item">
                    <div class="grid-item-icon">💰</div>
@@ -1203,7 +1188,7 @@ body {
             <div class="package-content">
                 <h2 class="package-title">1 DAY SHORT TOUR TO TARANGIRE NATIONAL PARK</h2>
                 <div class="package-details">
-                    <p><span role="img" aria-label="Location">🦁</span> <strong>Locations:</strong> Serengeti, Ngorongoro, Lake Manyara</p>
+                    <p><span role="img" aria-label="Location">🦁</span> <strong>Locations:</strong> T</p>
                     <p><span role="img" aria-label="Duration">📅</span> <strong>Duration:</strong> 5 Days</p>
                     <p><span role="img" aria-label="Best Season">🌞</span> <strong>Best Season:</strong> June - October</p>
                 </div>
@@ -1512,760 +1497,1083 @@ body {
 </script>
 
 
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Safari Packages | Tanzania Adventures</title>
     <style>
- /* Reset and base styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    color: #333;
-    background-color: #f4f4f9;
-}
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f9;
+        }
 
-/* Main Content */
-.main-content {
-    margin-top: 60px; /* Reduced top margin */
-    padding: 1rem; /* Reduced padding */
-    max-width: 100%;
-    margin-left: 0;
-    margin-right: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    opacity: 0;
-    animation: fadeIn 1s forwards;
-}
+        /* Main Content */
+        .main-content {
+            margin-top: 60px;
+            /* Reduced top margin */
+            padding: 1rem;
+            /* Reduced padding */
+            max-width: 100%;
+            margin-left: 0;
+            margin-right: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
 
-/* Safari Packages Grid */
-.packages-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /* Exactly 4 columns on desktop */
-    gap: 1.5rem; /* Reduced gap between items */
-    width: 100%;
-    margin-top: 1.5rem; /* Reduced margin-top */
-    justify-items: stretch;
-}
+        /* Safari Packages Grid */
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            /* Exactly 4 columns on desktop */
+            gap: 1.5rem;
+            /* Reduced gap between items */
+            width: 100%;
+            margin-top: 1.5rem;
+            /* Reduced margin-top */
+            justify-items: stretch;
+        }
 
-/* Package Card */
-.package-card {
-    background: #fff;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    width: 100%;
-    opacity: 0;
-    animation: fadeInUp 0.8s forwards;
-}
+        /* Package Card */
+        .package-card {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            width: 100%;
+            opacity: 0;
+            animation: fadeInUp 0.8s forwards;
+        }
 
-.package-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-}
+        .package-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
 
-/* Package Image */
-.package-image {
-    width: 100%;
-    height: 180px; /* Adjusted height for better spacing */
-    object-fit: cover; /* Ensure the image covers the container without stretching */
-    transition: transform 0.3s ease, opacity 0.3s ease;
-}
+        /* Package Image */
+        .package-image {
+            width: 100%;
+            height: 180px;
+            /* Adjusted height for better spacing */
+            object-fit: cover;
+            /* Ensure the image covers the container without stretching */
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
 
-.package-card:hover .package-image {
-    transform: scale(1.05);
-    opacity: 0.8;
-}
+        .package-card:hover .package-image {
+            transform: scale(1.05);
+            opacity: 0.8;
+        }
 
-.package-content {
-    padding: 1rem; /* Reduced padding */
-}
+        .package-content {
+            padding: 1rem;
+            /* Reduced padding */
+        }
 
-.package-title {
-    font-size: 1.4rem; /* Slightly smaller font size */
-    color: #2c3e50;
-    margin-bottom: 0.3rem; /* Reduced bottom margin */
-    opacity: 0;
-    animation: fadeInUp 1s 0.2s forwards;
-}
+        .package-title {
+            font-size: 1.4rem;
+            /* Slightly smaller font size */
+            color: #2c3e50;
+            margin-bottom: 0.3rem;
+            /* Reduced bottom margin */
+            opacity: 0;
+            animation: fadeInUp 1s 0.2s forwards;
+        }
 
-/* Responsive Font Size Adjustments */
-@media (max-width: 1200px) {
-    .package-title {
-        font-size: 1.3rem;
-    }
-}
+        /* Responsive Font Size Adjustments */
+        @media (max-width: 1200px) {
+            .package-title {
+                font-size: 1.3rem;
+            }
+        }
 
-@media (max-width: 992px) {
-    .package-title {
-        font-size: 1.2rem;
-    }
-}
+        @media (max-width: 992px) {
+            .package-title {
+                font-size: 1.2rem;
+            }
+        }
 
-@media (max-width: 768px) {
-    .package-title {
-        font-size: 1.1rem;
-    }
-}
+        @media (max-width: 768px) {
+            .package-title {
+                font-size: 1.1rem;
+            }
+        }
 
-@media (max-width: 480px) {
-    .package-title {
-        font-size: 1rem;
-    }
-}
+        @media (max-width: 480px) {
+            .package-title {
+                font-size: 1rem;
+            }
+        }
 
-.package-details {
-    margin-bottom: 0.5rem; /* Reduced margin-bottom */
-    color: #666;
-    opacity: 0;
-    animation: fadeInUp 1s 0.4s forwards;
-}
+        .package-details {
+            margin-bottom: 0.5rem;
+            /* Reduced margin-bottom */
+            color: #666;
+            opacity: 0;
+            animation: fadeInUp 1s 0.4s forwards;
+        }
 
-.package-price {
-    font-weight: bold;
-    color: #2c3e50;
-    font-size: 1.1rem; /* Reduced font size */
-    margin-bottom: 0.8rem; /* Reduced margin-bottom */
-    opacity: 0;
-    animation: fadeInUp 1s 0.6s forwards;
-}
+        .package-price {
+            font-weight: bold;
+            color: #2c3e50;
+            font-size: 1.1rem;
+            /* Reduced font size */
+            margin-bottom: 0.8rem;
+            /* Reduced margin-bottom */
+            opacity: 0;
+            animation: fadeInUp 1s 0.6s forwards;
+        }
 
-.view-details-btn {
-    display: inline-block;
-    padding: 0.8rem 1.5rem; /* Adjusted padding */
-    background-color: #3498db;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 6px;
-    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-    font-weight: 500;
-    text-align: center;
-    width: 100%;
-    box-sizing: border-box;
-    margin-top: 1rem;
-    font-size: 1.1rem;
-}
+        .view-details-btn {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            /* Adjusted padding */
+            background-color: #3498db;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            font-weight: 500;
+            text-align: center;
+            width: 100%;
+            box-sizing: border-box;
+            margin-top: 1rem;
+            font-size: 1.1rem;
+        }
 
-.view-details-btn:hover {
-    background-color: #2980b9;
-    transform: scale(1.05);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
+        .view-details-btn:hover {
+            background-color: #2980b9;
+            transform: scale(1.05);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
 
-/* Modal Styles */
-.modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    z-index: 2000;
-}
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 2000;
+        }
 
-.modal.active {
-    display: block;
-    animation: fadeInModal 0.5s forwards;
-}
+        .modal.active {
+            display: block;
+            animation: fadeInModal 0.5s forwards;
+        }
 
-.modal-content {
-    position: relative;
-    background-color: #fff;
-    width: 100%;
-    max-width: 1000px;
-    margin: 2rem auto;
-    border-radius: 12px;
-    max-height: 90vh;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    opacity: 0;
-    animation: fadeInUp 1s forwards;
-}
+        .modal-content {
+            position: relative;
+            background-color: #fff;
+            width: 100%;
+            max-width: 1000px;
+            margin: 2rem auto;
+            border-radius: 12px;
+            max-height: 90vh;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            opacity: 0;
+            animation: fadeInUp 1s forwards;
+        }
 
-.modal-header {
-    padding: 1rem; /* Reduced padding */
-    background-color: #3498db;
-    border-bottom: 1px solid #dee2e6;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+        .modal-header {
+            padding: 1rem;
+            /* Reduced padding */
+            background-color: #3498db;
+            border-bottom: 1px solid #dee2e6;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-.modal-title {
-    font-size: 1.4rem; /* Slightly smaller font size */
-    color: #fff;
-}
+        .modal-title {
+            font-size: 1.4rem;
+            /* Slightly smaller font size */
+            color: #fff;
+        }
 
-.close-modal {
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-    color: #fff;
-    padding: 0.5rem;
-}
+        .close-modal {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #fff;
+            padding: 0.5rem;
+        }
 
-.close-modal:hover {
-    color: #f8f9fa;
-}
+        .close-modal:hover {
+            color: #f8f9fa;
+        }
 
-.modal-body {
-    display: flex;
-    height: calc(90vh - 130px);
-    opacity: 0;
-    animation: fadeInUp 1s 0.3s forwards;
-}
+        .modal-body {
+            display: flex;
+            height: calc(90vh - 130px);
+            opacity: 0;
+            animation: fadeInUp 1s 0.3s forwards;
+        }
 
-.modal-sidebar {
-    width: 250px;
-    background-color: #f8f9fa;
-    border-right: 1px solid #dee2e6;
-    padding: 1rem;
-    overflow-y: auto;
-}
+        .modal-sidebar {
+            width: 250px;
+            background-color: #f8f9fa;
+            border-right: 1px solid #dee2e6;
+            padding: 1rem;
+            overflow-y: auto;
+        }
 
-.modal-nav {
-    list-style: none;
-}
+        .modal-nav {
+            list-style: none;
+        }
 
-.modal-nav-item {
-    margin-bottom: 0.5rem;
-}
+        .modal-nav-item {
+            margin-bottom: 0.5rem;
+        }
 
-.modal-nav-link {
-    display: block;
-    padding: 0.8rem 1rem;
-    color: #666;
-    text-decoration: none;
-    border-radius: 6px;
-    transition: all 0.3s ease;
-}
+        .modal-nav-link {
+            display: block;
+            padding: 0.8rem 1rem;
+            color: #666;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
 
-.modal-nav-link:hover,
-.modal-nav-link.active {
-    background-color: #3498db;
-    color: #fff;
-}
+        .modal-nav-link:hover,
+        .modal-nav-link.active {
+            background-color: #3498db;
+            color: #fff;
+        }
 
-.modal-main {
-    flex: 1;
-    padding: 1rem; /* Reduced padding */
-    overflow-y: auto;
-}
+        .modal-main {
+            flex: 1;
+            padding: 1rem;
+            /* Reduced padding */
+            overflow-y: auto;
+        }
 
-.tab-content {
-    display: none;
-}
+        .tab-content {
+            display: none;
+        }
 
-.tab-content.active {
-    display: block;
-}
+        .tab-content.active {
+            display: block;
+        }
 
-.tab-content img {
-    width: 100% !important;
-    height: 50px !important;
-    object-fit: cover !important;
-    border-radius: 8px;
-    margin-bottom: 1.5rem;
-    animation: fadeInImage 1s ease-in-out;
-}
+        .tab-content img {
+            width: 100% !important;
+            height: 50px !important;
+            object-fit: cover !important;
+            border-radius: 0px;
+            margin-bottom: 0rem;
+            animation: fadeInImage 1s ease-in-out;
+            height: fit-content;
+        }
 
-.back-to-packages {
-    display: inline-block;
-    padding: 0.8rem 1.5rem;
-    background-color: #2c3e50;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 6px;
-    margin-top: 1.5rem;
-    transition: background-color 0.3s ease;
-}
+        .back-to-packages {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background-color: #1471cd;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 6px;
+            margin-top: 1.5rem;
+            transition: background-color 0.3s ease;
+            height: fit-content;
+        }
 
-.back-to-packages:hover {
-    background-color: #34495e;
-}
+        .back-to-packages:hover {
+            background-color: #34495e;
+        }
 
-/* Animations */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
 
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+            to {
+                opacity: 1;
+            }
+        }
 
-@keyframes fadeInModal {
-    from {
-        opacity: 0;
-        transform: translateY(50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
 
-@keyframes fadeInImage {
-    from {
-        opacity: 0;
-        transform: scale(0.95);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-/* Responsive Design */
-@media (max-width: 1200px) {
-    .packages-grid {
-        grid-template-columns: repeat(3, 1fr); /* 3 columns for medium screens */
-    }
-}
+        @keyframes fadeInModal {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
 
-@media (max-width: 992px) {
-    .packages-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 columns for tablet */
-    }
-}
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-@media (max-width: 768px) {
-    .main-content {
-        padding: 1rem;
-    }
+        @keyframes fadeInImage {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
 
-    .packages-grid {
-        grid-template-columns: 1fr; /* Single column for mobile */
-    }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
 
-    .package-card {
-        margin-bottom: 1rem;
-    }
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .packages-grid {
+                grid-template-columns: repeat(3, 1fr);
+                /* 3 columns for medium screens */
+            }
+        }
 
-    .package-image {
-        height: 150px; /* Resize image for mobile */
-    }
+        @media (max-width: 992px) {
+            .packages-grid {
+                grid-template-columns: repeat(2, 1fr);
+                /* 2 columns for tablet */
+            }
+        }
 
-    .modal-body {
-        flex-direction: column;
-    }
+        @media (max-width: 768px) {
+            .main-content {
+                padding: 1rem;
+            }
 
-    .modal-sidebar {
-        width: 100%;
-        height: auto;
-        border-right: none;
-        border-bottom: 1px solid #dee2e6;
-    }
+            .packages-grid {
+                grid-template-columns: 1fr;
+                /* Single column for mobile */
+            }
 
-    .modal-nav {
-        display: flex;
-        overflow-x: auto;
-        padding-bottom: 0.5rem;
-        gap: 0.5rem;
-    }
+            .package-card {
+                margin-bottom: 1rem;
+            }
 
-    .modal-nav-item {
-        flex: 0 0 auto;
-        margin-bottom: 0;
-    }
+            .package-image {
+                height: 150px;
+                /* Resize image for mobile */
+            }
 
-    .modal-nav-link {
-        white-space: nowrap;
-        padding: 0.5rem 1rem;
-    }
+            .modal-body {
+                flex-direction: column;
+            }
 
-    .modal-main {
-        height: calc(90vh - 250px);
-    }
+            .modal-sidebar {
+                width: 100%;
+                max-height: fit-content;
+                border-right: none;
+                border-bottom: 1px solid #dee2e6;
+            }
 
-    .nav-menu {
-        display: none;
-    }
-}
+            .modal-nav {
+                display: flex;
+                overflow-x: auto;
+                padding-bottom: 0.5rem;
+                gap: 0rem;
+            }
 
-@media (max-width: 480px) {
-    .package-card {
-        margin-bottom: 1rem;
-    }
+            .modal-nav-item {
+                flex: 0 0 auto;
+                margin-bottom: 0;
+            }
 
-    .modal-content {
-        width: 95%;
-        margin: 1rem auto;
-    }
+            .modal-nav-link {
+                white-space: nowrap;
+                padding: 0.5rem 1rem;
+            }
 
-    .modal-header {
-        padding: 1rem;
-    }
+            .modal-main {
+                height: calc(90vh - 250px);
+            }
 
-    .modal-title {
-        font-size: 1.2rem;
-    }
+            .nav-menu {
+                display: none;
+            }
+        }
 
-    h1 {
-        font-size: 1.0rem;
-    }
-}
+        @media (max-width: 480px) {
+            .package-card {
+                margin-bottom: 1rem;
+            }
 
- </style>
- 
+            .modal-content {
+                width: 100%;
+                margin: 1rem auto;
+            }
+
+            .modal-header {
+                padding: 1rem;
+            }
+
+            .modal-title {
+                font-size: 1.2rem;
+            }
+
+            h1 {
+                font-size: 1.0rem;
+            }
+        }
+
+        /* Modal Full-Screen View */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            /* Slightly darker overlay for emphasis */
+            overflow: auto;
+            padding: 2rem;
+            box-sizing: border-box;
+        }
+
+        .modal-content {
+            margin: auto;
+            background-color: #fff;
+            border-radius: 10px;
+            width: 100%;
+            max-width: 1600px;
+            /* Larger maximum width */
+            height: 100%;
+            /* Take up more screen height */
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+            /* Deeper shadow for more prominence */
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 2rem;
+            background-color: #004080;
+            /* Darker blue for contrast */
+            color: #fff;
+            font-size: 4rem;
+            /* Larger font size */
+            font-weight: bold;
+        }
+
+        .modal-body {
+            display: flex;
+            flex: 1;
+            overflow: hidden;
+        }
+
+        .modal-sidebar {
+            flex: 0 0 30%;
+            /* Wider sidebar */
+            background-color: #f0f0f0;
+            padding: 1rem;
+            overflow-y: auto;
+            border-right: 2px solid #ddd;
+        }
+
+        .modal-main {
+            flex: 1;
+            padding: 0.5rem;
+            overflow-y: auto;
+            font-size: 1.2rem;
+            /* Slightly larger text for better readability */
+        }
+
+        .modal-nav {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .modal-nav-item {
+            margin-bottom: 1rem;
+        }
+
+        .modal-nav-link {
+            display: block;
+            padding: 1rem 1.5rem;
+            text-decoration: none;
+            color: #333;
+            background-color: #e9ecef;
+            border-radius: 4px;
+            font-size: 1.2rem;
+            /* Larger font size */
+            transition: background-color 0.3s;
+        }
+
+        .modal-nav-link.active {
+            background-color: #004080;
+            color: #fff;
+        }
+
+        .modal-nav-link:hover {
+            background-color: #0066cc;
+            color: #fff;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .tab-image {
+            border-radius: 5px;
+            margin-bottom: 2rem;
+            max-height: 500px;
+            /* Adjusted image size for large view */
+            object-fit: cover;
+        }
+
+        .close-modal {
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 2rem;
+            /* Larger close button */
+            cursor: pointer;
+        }
+
+        .itinerary-day {
+            margin-bottom: 2rem;
+        }
+
+        .itinerary-day h4 {
+            font-size: 1.8rem;
+            /* Larger day title */
+            color: #004080;
+            margin-bottom: 0.5rem;
+        }
+
+        .itinerary-day p {
+            font-size: 1.4rem;
+            /* Larger description text */
+        }
+
+        .itinerary-image {
+            max-width: 100%;
+            height: auto;
+            margin-top: 1rem;
+            border-radius: 10px;
+        }
+
+        /* Adjust Back to Packages Button */
+        .back-to-packages {
+            display: inline-block;
+            margin-top: 2rem;
+            text-decoration: none;
+            color: #074480;
+            font-weight: bold;
+            font-size: 1.5rem;
+            height: auto;
+            /* Larger font size */
+        }
+
+        .back-to-packages:hover {
+            color: #ced5dc;
+        }
+    </style>
     <!-- Main Content -->
-<main class="main-content">
-    <h1 style="color: hsl(196, 100%, 50%) !important;">POPULAR DESTINATIONS</h1>
+    <main class="main-content">
+        <h1 style="color: hsl(196, 100%, 50%) !important;">POPULAR DESTINATIONS</h1>
+
+        <div class="packages-grid">
+            <!-- Package Card 1 -->
+            <div class="package-card" id="package-1">
+                <img src="jozani 2.jpg" alt="Zanzibar" class="package-image">
+                <div class="package-content">
+                    <h2 class="package-title">ZANZIBAR</h2>
+                    <div class="package-details">
+                        <p><span role="img" aria-label="Location">🏞️</span> <strong>Location:</strong> Zanzibar</p>
+                        <p><span role="img" aria-label="Duration">🕒</span> <strong>Duration:</strong> 1 Day</p>
+                        <p><span role="img" aria-label="Best Season">☀️</span> <strong>Best Season:</strong> June -
+                            October</p>
+                    </div>
+                    <p class="package-price"><span role="img" aria-label="Price">💵</span> <strong>From:</strong> $350
+                        per person</p>
+                    <a href="#" class="view-details-btn" data-package="package-1">View Details</a>
+                </div>
+            </div>
+
+            <!-- Package Card 2 -->
+            <div class="package-card" id="package-2">
+                <img src="mountain.JPG" alt="Serengeti National Park" class="package-image">
+                <div class="package-content">
+                    <h2 class="package-title">SERENGETI NATIONAL PARK</h2>
+                    <div class="package-details">
+                        <p><span role="img" aria-label="Location">🦁</span> <strong>Location:</strong> Serengeti,
+                            Ngorongoro, Lake Manyara</p>
+                        <p><span role="img" aria-label="Duration">📅</span> <strong>Duration:</strong> 5 Days</p>
+                        <p><span role="img" aria-label="Best Season">🌞</span> <strong>Best Season:</strong> January -
+                            February</p>
+                    </div>
+                    <p class="package-price"><span role="img" aria-label="Price">💰</span> <strong>From:</strong> $2,500
+                        per person</p>
+                    <a href="#" class="view-details-btn" data-package="package-2">View Details</a>
+                </div>
+            </div>
+
+            <!-- Package Card 3 -->
+            <div class="package-card" id="package-3">
+                <img src="zanzibar-beach.jpg" alt="Zanzibar Beach" class="package-image">
+                <div class="package-content">
+                    <h2 class="package-title">ZANZIBAR BEACH</h2>
+                    <div class="package-details">
+                        <p><span role="img" aria-label="Location">🏖️</span> <strong>Location:</strong> Zanzibar</p>
+                        <p><span role="img" aria-label="Duration">🕒</span> <strong>Duration:</strong> 2 Days</p>
+                        <p><span role="img" aria-label="Best Season">🌞</span> <strong>Best Season:</strong> June -
+                            October</p>
+                    </div>
+                    <p class="package-price"><span role="img" aria-label="Price">💵</span> <strong>From:</strong> $400
+                        per person</p>
+                    <a href="#" class="view-details-btn" data-package="package-3">View Details</a>
+                </div>
+            </div>
+
+            <!-- Package Card 4 -->
+            <div class="package-card" id="package-4">
+                <img src="serengeti.jpg" alt="Serengeti Safari" class="package-image">
+                <div class="package-content">
+                    <h2 class="package-title">SERENGETI SAFARI</h2>
+                    <div class="package-details">
+                        <p><span role="img" aria-label="Location">🦁</span> <strong>Location:</strong> Serengeti</p>
+                        <p><span role="img" aria-label="Duration">📅</span> <strong>Duration:</strong> 3 Days</p>
+                        <p><span role="img" aria-label="Best Season">🌞</span> <strong>Best Season:</strong> June -
+                            October</p>
+                    </div>
+                    <p class="package-price"><span role="img" aria-label="Price">💰</span> <strong>From:</strong> $1,200
+                        per person</p>
+                    <a href="#" class="view-details-btn" data-package="package-4">View Details</a>
+                </div>
+            </div>
+
+            <!-- Package Card 5 -->
+            <div class="package-card" id="package-5">
+                <img src="luxury-safari.jpg" alt="Luxury Safari" class="package-image">
+                <div class="package-content">
+                    <h2 class="package-title">LUXURY SAFARI</h2>
+                    <div class="package-details">
+                        <p><span role="img" aria-label="Location">🏞️</span> <strong>Location:</strong> Serengeti,
+                            Ngorongoro</p>
+                        <p><span role="img" aria-label="Duration">🕒</span> <strong>Duration:</strong> 5 Days</p>
+                        <p><span role="img" aria-label="Best Season">🌞</span> <strong>Best Season:</strong> June -
+                            October</p>
+                    </div>
+                    <p class="package-price"><span role="img" aria-label="Price">💵</span> <strong>From:</strong> $2,500
+                        per person</p>
+                    <a href="#" class="view-details-btn" data-package="package-5">View Details</a>
+                </div>
+            </div>
+
+            <!-- Package Card 6 -->
+            <div class="package-card" id="package-6">
+                <img src="ngorongoro-crater.jpg" alt="Ngorongoro Crater Safari" class="package-image">
+                <div class="package-content">
+                    <h2 class="package-title">NGORONGORO CRATER</h2>
+                    <div class="package-details">
+                        <p><span role="img" aria-label="Location">🌋</span> <strong>Location:</strong> Ngorongoro Crater
+                        </p>
+                        <p><span role="img" aria-label="Duration">🕒</span> <strong>Duration:</strong> 2 Days</p>
+                        <p><span role="img" aria-label="Best Season">☀️</span> <strong>Best Season:</strong> June -
+                            October</p>
+                    </div>
+                    <p class="package-price"><span role="img" aria-label="Price">💰</span> <strong>From:</strong> $1,800
+                        per person</p>
+                    <a href="#" class="view-details-btn" data-package="package-6">View Details</a>
+                </div>
+            </div>
+
+            <!-- Package Card 7 -->
+            <div class="package-card" id="package-7">
+                <img src="serengeti-safari.jpg" alt="Serengeti Safari" class="package-image">
+                <div class="package-content">
+                    <h2 class="package-title">SERENGETI & NGORONGORO</h2>
+                    <div class="package-details">
+                        <p><span role="img" aria-label="Location">🦁</span> <strong>Location:</strong> Serengeti,
+                            Ngorongoro</p>
+                        <p><span role="img" aria-label="Duration">📅</span> <strong>Duration:</strong> 4 Days</p>
+                        <p><span role="img" aria-label="Best Season">🌞</span> <strong>Best Season:</strong> June -
+                            October</p>
+                    </div>
+                    <p class="package-price"><span role="img" aria-label="Price">💵</span> <strong>From:</strong> $2,200
+                        per person</p>
+                    <a href="#" class="view-details-btn" data-package="package-7">View Details</a>
+                </div>
+            </div>
+
+            <!-- Package Card 8 -->
+            <div class="package-card" id="package-8">
+                <img src="luxury-safari.jpg" alt="Luxury Safari Tour" class="package-image">
+                <div class="package-content">
+                    <h2 class="package-title">LUXURY SAFARI TOUR</h2>
+                    <div class="package-details">
+                        <p><span role="img" aria-label="Location">🏞️</span> <strong>Location:</strong> Serengeti,
+                            Ngorongoro, Tarangire</p>
+                        <p><span role="img" aria-label="Duration">🕒</span> <strong>Duration:</strong> 7 Days</p>
+                        <p><span role="img" aria-label="Best Season">☀️</span> <strong>Best Season:</strong> June -
+                            October</p>
+                    </div>
+                    <p class="package-price"><span role="img" aria-label="Price">💰</span> <strong>From:</strong> $3,500
+                        per person</p>
+                    <a href="#" class="view-details-btn" data-package="package-8">View Details</a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+    <!-- Package Details Modal -->
+    <div class="modal" id="package-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Package Details</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-sidebar">
+                    <ul class="modal-nav">
+                        <li class="modal-nav-item"><a href="#overview" class="modal-nav-link active">Overview</a></li>
+                        <li class="modal-nav-item"><a href="#itinerary" class="modal-nav-link">Itinerary</a></li>
+                        <li class="modal-nav-item"><a href="#rates" class="modal-nav-link">Rates</a></li>
+                        <li class="modal-nav-item"><a href="#inclusion" class="modal-nav-link">Inclusion</a></li>
+                        <li class="modal-nav-item"><a href="#exclusion" class="modal-nav-link">Exclusion</a></li>
+                        <li class="modal-nav-item"><a href="#end-of-tours" class="modal-nav-link">End of Tours</a></li>
+                        <li class="modal-nav-item"><a href="#weather" class="modal-nav-link">Weather</a></li>
+                        <li class="modal-nav-item"><a href="#contact" class="modal-nav-link">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="modal-main">
+                    <!-- Image Section -->
+                    <img src="zanzibar-overview.jpg" alt="Zanzibar Overview" class="tab-image"
+                        style="width: 100%; height: 600px; object-fit: cover; border-radius: 8px; margin-bottom: 4rem;">
+
+                    <div id="overview" class="tab-content active">
+                        <h3>Overview</h3>
+                        <p id="overview-text">Details will be shown here based on the selected package.</p>
+                    </div>
+                    <div id="itinerary" class="tab-content">
+                        <h3>Itinerary</h3>
+                        <div id="itinerary-content">
+                            <!-- Itinerary days will be inserted dynamically here -->
+                        </div>
+                    </div>
+                    <div id="rates" class="tab-content">
+                        <h3>Rates</h3>
+                        <p id="rates-text">Rates will be shown here.</p>
+                    </div>
+                    <div id="inclusion" class="tab-content">
+                        <h3>Inclusion</h3>
+                        <p id="inclusion-text">Inclusion details will be shown here.</p>
+                    </div>
+                    <div id="exclusion" class="tab-content">
+                        <h3>Exclusion</h3>
+                        <p id="exclusion-text">Exclusion details will be shown here.</p>
+                    </div>
+                    <div id="end-of-tours" class="tab-content">
+                        <h3>End of Tours</h3>
+                        <p id="end-of-tours-text">End of tour details will be shown here.</p>
+                    </div>
+                    <div id="weather" class="tab-content">
+                        <h3>Weather</h3>
+                        <p id="weather-text">Weather details will be shown here.</p>
+                    </div>
+                    <div id="contact" class="tab-content">
+                        <h3>Contact</h3>
+                        <p>For more details, contact us at <strong>info@example.com</strong>.</p>
+                    </div>
+                    <a href="#" class="back-to-packages">Back to Packages</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const packageDetails = {
+                'package-1': {
+                    overview: "Zanzibar is a Tanzanian archipelago located on the eastern coast of Tanzania, Africa, in the middle of the Indian Ocean. It is a semi-autonomous region of Tanzania, bursting with culture and history, offering much more than just white sand beaches, clear warm waters, and coral reefs perfect for snorkeling. Zanzibar consists of many small islands and two major islands: Unguja (the main island, informally referred to as Zanzibar) and Pemba. After the union of Zanzibar and Tanganyika, Tanzania was born, with Zanzibar remaining a semi-autonomous region. The Zanzibar archipelago is situated 25-50 km off the coast of mainland Tanzania. The capital, Zanzibar City, is located on Unguja Island, with its historic center, Stone Town, being a UNESCO World Heritage site. Like mainland Tanzania, the official languages are Swahili and English, but many Zanzibaris are also fluent in Arabic. The official currency is the Tanzanian shilling, and Islam is the dominant religion, with over 90% of the population adhering to it. The population is over 1.3 million, according to the 2012 census. The main industries in Zanzibar are spices, raffia, and tourism.",
 
 
- <div class="packages-grid">
-     <!-- Package Card 1 -->
-     <div class="package-card" id="package-1">
-         <img src="jozani 2.jpg" alt="Ngorongoro Safari" class="package-image">
-         <div class="package-content">
-             <h2 class="package-title">ZANZIBAR</h2>
-             <div class="package-details">
-                 <p><span role="img" aria-label="Location">🏞️</span> <strong>Location:</strong> ZANZIBAR</p>
-                 <p><span role="img" aria-label="Duration">🕒</span> <strong>Duration:</strong> 1 Day</p>
-                 <p><span role="img" aria-label="Best Season">☀️</span> <strong>Best Season:</strong> June - October</p>
-             </div>
-             <p class="package-price"><span role="img" aria-label="Price">💵</span> <strong>From:</strong> $350 per person</p>
-             <a href="#" class="view-details-btn" data-package="package-1">View Details</a>
-         </div>
-     </div>
+                    rates: "Starting at $350 per person.",
+                    inclusion: "All meals, park fees, transportation, accommodation.",
+                    exclusion: "Flights, personal expenses, travel insurance.",
+                    endOfTours: "The tour ends with a drop-off at your accommodation or the airport.",
+                    weather: "The best time for safari is during the dry season, from June to October.",
+                    itinerary: [
+                        { day: "Day 1", title: "Arrival in Zanzibar", description: "Explore Stone Town and learn about its history." },
+                        { day: "Day 2", title: "Beach and Culture", description: "Enjoy the serene beaches and local markets." },
+                        { day: "Day 2", title: "Beach and Culture", description: "Enjoy the serene beaches and local markets." },
+                        { day: "Day 2", title: "Beach and Culture", description: "Enjoy the serene beaches and local markets." },
+                    ],
+                    images: {
+                        overview: "karatu.jpg",
+                        itinerary: "jozani 2.jpg",
+                        rates: "zanzibar-rates.jpg",
+                        inclusion: "zanzibar-inclusion.jpg",
+                        exclusion: "zanzibar-exclusion.jpg",
+                        endOfTours: "zanzibar-end-of-tours.jpg",
+                        weather: "zanzibar-weather.jpg",
+                        contact: "zanzibar-contact.jpg"
+                    }
+                },
+                'package-2': {
+                    overview: "Serengeti means endless plains in the Maa language Maasai, referring to the vast grassland plains that dominate the landscape of Serengeti National Park. The park, surrounded by the Maasai people, offers breathtaking views of distant plains, providing an authentic African wilderness experience. Serengeti is an award-winning, top national park for an African safari. Originally a game reserve, a big game hunting ground, it was upgraded to a national park in 1951, becoming the first national park in Tanzania. Located in northern Tanzania, it extends into southwestern Kenya. Serengeti National Park covers an area of 5,700 square miles, 14,763 square kilometers, and is often referred to as the great grassland range of Africa, as well as for its Vachellia woodlands. The park stretches 100 miles, 160 km, southeast from the shores of Lake Victoria and, in its eastern part, extends 100 miles, 160 km, south of the Kenya-Tanzania border. The Serengeti-Mara ecosystem includes several protected areas, such as Serengeti National Park, Mara National Reserve in Kenya, and a number of game reserves and conservation areas, including Ngorongoro, that surround the region.",
 
-     <!-- Package Card 2 -->
-     <div class="package-card" id="package-2">
-         <img src="mountain.JPG" alt="Luxury Safari" class="package-image">
-         <div class="package-content">
-             <h2 class="package-title">SERENGETI NATIONAL PARK</h2>
-             <div class="package-details">
-                 <p><span role="img" aria-label="Location">🦁</span> <strong>Locations:</strong> Serengeti, Ngorongoro, Lake Manyara</p>
-                 <p><span role="img" aria-label="Duration">📅</span> <strong>Duration:</strong> 5 Days</p>
-                 <p><span role="img" aria-label="Best Season">🌞</span> <strong>Best Season:</strong> January - February</p>
-             </div>
-             <p class="package-price"><span role="img" aria-label="Price">💰</span> <strong>From:</strong> $2,500 per person</p>
-             <a href="#" class="view-details-btn" data-package="package-2">View Details</a>
-         </div>
-     </div>
+                    rates: "Starting at $450 per person.",
+                    inclusion: "Park fees, meals, accommodation, and guided tours.",
+                    exclusion: "Flights, personal expenses, and travel insurance.",
+                    endOfTours: "The tour ends with a drop-off at your accommodation or the airport.",
+                    weather: "The best time to visit is from December to March and June to October.",
+                    itinerary: [
+                        { day: "Day 1", title: "Arrival in Arusha", description: "Relax and prepare for the adventure ahead." },
+                        { day: "Day 2", title: "Serengeti Safari", description: "Game drive in Serengeti National Park." },
+                        { day: "Day 3", title: "Ngorongoro Crater", description: "Descend into the crater for a full-day safari." },
+                    ],
+                    images: {
+                        overview: "beach.jpg",
+                        itinerary: "serengeti-itinerary.jpg",
+                        rates: "serengeti-rates.jpg",
+                        inclusion: "serengeti-inclusion.jpg",
+                        exclusion: "serengeti-exclusion.jpg",
+                        endOfTours: "serengeti-end-of-tours.jpg",
+                        weather: "serengeti-weather.jpg",
+                        contact: "serengeti-contact.jpg"
+                    }
+                },
+                'package-3': {
+                             overview: "Kilimanjaro is a dormant volcano in northern Tanzania that covers a total area of 1,688 square kilometers (652 sq. mi). It stands at 5,896 meters and is the highest peak on the African continent. It is also the highest free-standing mountain in the world and one of the world’s highest volcanoes. The mountain has three volcanic peaks: Kibo, Shira, and Mawenzi. The park was established as a national park in 1977. Mount Kilimanjaro National Park is one of Tanzania’s most visited parks. Unlike the other northern parks, this isn’t a place for wildlife viewing, although it is present. Instead, people visit to trek the amazing snow-capped mountain on the equator and to climb to the top of Africa. Mount Kilimanjaro is more popular than the country it’s in, Tanzania. Nearly every kind of ecological system is found on the mountain, including cultivated land, rain forest, heath, moorland, alpine desert, and an arctic summit (Uhuru). Kilimanjaro is also one of the few places in Africa with permanent snow.Kilimanjaro is a dormant volcano in northern Tanzania that covers a total area of 1,688 square kilometers (652 sq. mi). It stands at 5,896 meters and is the highest peak on the African continent. It is also the highest free-standing mountain in the world and one of the world’s highest volcanoes. The mountain has three volcanic peaks: Kibo, Shira, and Mawenzi. The park was established as a national park in 1977. Mount Kilimanjaro National Park is one of Tanzania’s most visited parks. Unlike the other northern parks, this isn’t a place for wildlife viewing, although it is present. Instead, people visit to trek the amazing snow-capped mountain on the equator and to climb to the top of Africa. Mount Kilimanjaro is more popular than the country it’s in, Tanzania. Nearly every kind of ecological system is found on the mountain, including cultivated land, rain forest, heath, moorland, alpine desert, and an arctic summit (Uhuru). Kilimanjaro is also one of the few places in Africa with permanent snow.n this classic safari tour.",
 
-     <!-- Package Card 3 -->
-     <div class="package-card" id="package-3">
-         <img src="kilimanjaro park.jpg" alt="Serengeti Safari" class="package-image">
-         <div class="package-content">
-             <h6 class="package-title">
-                MOUNT KILIMANJARO NATIONAL PARK
-                </h6>
-             <div class="package-details">
-                 <p><span role="img" aria-label="Location">🌄</span> <strong>Locations:</strong> Serengeti, Ngorongoro</p>
-                 <p><span role="img" aria-label="Duration">🕒</span> <strong>Duration:</strong> 4 Days</p>
-                 <p><span role="img" aria-label="Best Season">☀️</span> <strong>Best Season:</strong> June - October</p>
-             </div>
-             <p class="package-price"><span role="img" aria-label="Price">💸</span> <strong>From:</strong> $1,800 per person</p>
-             <a href="#" class="view-details-btn" data-package="package-3">View Details</a>
-         </div>
-     </div>
+                    rates: "Starting at $300 per person.",
+                    inclusion: "Accommodation, guided tours, all meals, and park fees.",
+                    exclusion: "Flights, personal expenses, and travel insurance.",
+                    endOfTours: "The tour ends with a drop-off at your accommodation or the airport.",
+                    weather: "The best time to visit Zanzibar is during the dry season from June to October.",
+                    itinerary: [
+                        { day: "Day 1", title: "Arrival in mwanza", description: "Tour Stone Town and enjoy local cuisine." },
+                        { day: "Day 2", title: "Beach and Relaxation", description: "Enjoy the white sandy beaches and clear waters." },
+                    ],
+                    images: {
+                        overview: "kilimanjaro.jpg",
+                        itinerary: "zanzibar-culture.jpg",
+                        rates: "zanzibar-rates.jpg",
+                        inclusion: "zanzibar-inclusion.jpg",
+                        exclusion: "zanzibar-exclusion.jpg",
+                        endOfTours: "zanzibar-end-of-tours.jpg",
+                        weather: "zanzibar-weather.jpg",
+                        contact: "zanzibar-contact.jpg"
+                    }
+                },
+                'package-4': {
+                    overview: "The Ngorongoro Crater was formed when a large volcano erupted and collapsed on itself, creating a caldera (often mistakenly referred to as a crater) approximately two and a half million years ago. Within the Ngorongoro Conservation Area, there are several stunning attractions, including the shifting sands, Ngorongoro Crater, and the Empakaai Crater. The Ngorongoro Conservation Area covers 8,292 square kilometers. The caldera, or Ngorongoro Crater, measures between 10 and 12 miles (16 and 19 km) across, with the crater walls rising 610 meters above the floor. The crater has an area of 102 square miles (264 square kilometers)..",
 
-     <!-- Package Card 4 -->
-     <div class="package-card" id="package-4">
-         <img src="masai.jpg" alt="Lake Manyara Safari" class="package-image">
-         <div class="package-content">
-             <h2 class="package-title">NGORONGORO</h2>
-             <div class="package-details">
-                 <p><span role="img" aria-label="Location">🌊</span> <strong>Locations:</strong> Lake Manyara, Ngorongoro</p>
-                 <p><span role="img" aria-label="Duration">📅</span> <strong>Duration:</strong> 3 Days</p>
-                 <p><span role="img" aria-label="Best Season">🌞</span> <strong>Best Season:</strong> June - October</p>
-             </div>
-             <p class="package-price"><span role="img" aria-label="Price">💵</span> <strong>From:</strong> $1,200 per person</p>
-             <a href="#" class="view-details-btn" data-package="package-4">View Details</a>
-         </div>
-     </div>
+                    rates: "Starting at $500 per person.",
+                    inclusion: "All meals, park fees, accommodation, and guided tours.",
+                    exclusion: "Flights, personal expenses, and travel insurance.",
+                    endOfTours: "The tour ends with a drop-off at your accommodation or the airport.",
+                    weather: "The best time to visit is from June to October.",
+                    itinerary: [
+                        { day: "Day 1", title: "Arrival in Arusha", description: "Settle in and prepare for your safari." },
+                        { day: "Day 2", title: "Serengeti Safari", description: "Enjoy a full day of game drives." },
+                        { day: "Day 3", title: "Ngorongoro Crater", description: "Visit the Ngorongoro Crater for more wildlife viewing." },
+                    ],
+                    images: {
+                        overview: "serengeti.jpg",
+                        itinerary: "serengeti-safari.jpg",
+                        rates: "serengeti-rates.jpg",
+                        inclusion: "serengeti-inclusion.jpg",
+                        exclusion: "serengeti-exclusion.jpg",
+                        endOfTours: "serengeti-end-of-tours.jpg",
+                        weather: "serengeti-weather.jpg",
+                        contact: "serengeti-contact.jpg"
+                    }
+                },
+                'package-5': {
+                    overview: "Lake Manyara National Park is a protected area in Tanzania's Arusha and Manyara Regions, situated between Lake Manyara and the Great Rift Valley. Administered by the Tanzania National Parks Authority, it covers an area of 325 km², including about 230 km² of the lake's surface. More than 350 bird species have been observed in the park. The park also hosts populations of large migratory mammals, primarily concentrated in Tarangire National Park, but also moving through Lake Manyara. These include wildebeest, zebra, Thomson's gazelle, and Grant's gazelle. Large herds of wildebeest and other plains game from the Mto wa Mbu Game Controlled Area enter the park from the north for short periods.",
 
-<!-- Package Card 5 -->
-<div class="package-card" id="package-5">
- <img src="meru2.jpg" alt="Tarangire Safari" class="package-image">
- <div class="package-content">
-     <h2 class="package-title">
-        LAKE MANYARA NATIONAL PARK
-        </h2>
-     <div class="package-details">
-         <p><span role="img" aria-label="Location">🌿</span> <strong>Locations:</strong> Tarangire, Ngorongoro</p>
-         <p><span role="img" aria-label="Duration">📅</span> <strong>Duration:</strong> 4 Days</p>
-         <p><span role="img" aria-label="Best Season">☀️</span> <strong>Best Season:</strong> June - October</p>
-     </div>
-     <p class="package-price"><span role="img" aria-label="Price">💰</span> <strong>From:</strong> $1,500 per person</p>
-     <a href="#" class="view-details-btn" data-package="package-5">View Details</a>
- </div>
-</div>
+                    rates: "Starting at $800 per person.",
+                    inclusion: "Luxury accommodation, private guided tours, all meals, and park fees.",
+                    exclusion: "Flights, personal expenses, and travel insurance.",
+                    endOfTours: "The tour ends with a drop-off at your accommodation or the airport.",
+                    weather: "The best time to visit is from June to October.",
+                    itinerary: [
+                        { day: "Day 1", title: "Arrival in Serengeti", description: "Private transfer to luxury lodge." },
+                        { day: "Day 2", title: "Serengeti Safari", description: "Enjoy a private game drive in the Serengeti." },
+                        { day: "Day 3", title: "Ngorongoro Crater", description: "Explore Ngorongoro Crater on a private safari." },
+                    ],
+                    images: {
+                        overview: "luxury-safari.jpg",
+                        itinerary: "luxury-safari-itinerary.jpg",
+                        rates: "luxury-safari-rates.jpg",
+                        inclusion: "luxury-safari-inclusion.jpg",
+                        exclusion: "luxury-safari-exclusion.jpg",
+                        endOfTours: "luxury-safari-end-of-tours.jpg",
+                        weather: "luxury-safari-weather.jpg",
+                        contact: "luxury-safari-contact.jpg"
+                    }
+                },
+                'package-6': {
+                    overview: "Ruaha National Park is the second-largest national park in Tanzania, after Nyerere National Park, covering an area of about 20,000 square kilometers. Located in the heart of southern Tanzania, approximately 130 kilometers from Iringa, the park boasts a broad ecosystem that includes Rungwa Game Reserve, Usangu Game Reserve, and several other protected areas. The name Ruaha is derived from the Great Ruaha River, which flows along the southeastern margin of the park and serves as a focal point for game viewing. Ruaha is famous for being a bird paradise, home to more than 571 species, many of which are migratory birds from both within and outside Africa. The park is also known for its high concentration of elephants, more than any other national park in East Africa. Additionally, it is home to magnificent mammals like kudu, sable, and roan antelopes, and it serves as a habitat for endangered wild dogs. Other animals in the park include lions, leopards, cheetahs, giraffes, zebras, elands, impalas, bat-eared foxes, and jackals. Beyond the large mammals, Ruaha also harbors various reptiles and amphibians, such as crocodiles, poisonous and non-poisonous snakes, monitor lizards, agama lizards, and frogs.",
 
-<!-- Package Card 6 -->
-<div class="package-card" id="package-6">
- <img src="lion.jpg" alt="5 Days Tanzania Safari" class="package-image">
- <div class="package-content">
-     <h2 class="package-title">RUAHA NATIONAL PARK</h2>
-     <div class="package-details">
-         <p><span role="img" aria-label="Location">🦁</span> <strong>Locations:</strong> Serengeti, Ngorongoro, Lake Manyara, Tarangire</p>
-         <p><span role="img" aria-label="Duration">📅</span> <strong>Duration:</strong> 5 Days</p>
-         <p><span role="img" aria-label="Best Season">🌞</span> <strong>Best Season:</strong> June - October</p>
-     </div>
-     <p class="package-price"><span role="img" aria-label="Price">💵</span> <strong>From:</strong> $2,200 per person</p>
-     <a href="#" class="view-details-btn" data-package="package-6">View Details</a>
- </div>
-</div>
+                    rates: "Starting at $400 per person.",
+                    inclusion: "Accommodation, meals, park fees, and guided tours.",
+                    exclusion: "Flights, personal expenses, and travel insurance.",
+                    endOfTours: "The tour ends with a drop-off at your accommodation or the airport.",
+                    weather: "The best time to visit is from June to October.",
+                    itinerary: [
+                        { day: "Day 1", title: "Arrival in Arusha", description: "Relax and prepare for your adventure." },
+                        { day: "Day 2", title: "Serengeti Safari", description: "Explore the Serengeti's wildlife." },
+                        { day: "Day 3", title: "Ngorongoro Crater", description: "Safari in Ngorongoro Crater." },
+                    ],
+                    images: {
+                        overview: "wildlife.jpg",
+                        itinerary: "wildlife-itinerary.jpg",
+                        rates: "wildlife-rates.jpg",
+                        inclusion: "wildlife-inclusion.jpg",
+                        exclusion: "wildlife-exclusion.jpg",
+                        endOfTours: "wildlife-end-of-tours.jpg",
+                        weather: "wildlife-weather.jpg",
+                        contact: "wildlife-contact.jpg"
+                    }
+                },
+                'package-7': {
+                    overview: "Mikumi National Park Is Tanzania's fourth-biggest national park covering a total land area of 3230 square kilometers. Mikumi National park includes the most famous Uluguru mountains in the Eastern part. The park is surrounded by mountains and hills and this gives a good scenic and fabulous colors and lights around the park",
 
-<!-- Package Card 7 -->
-<div class="package-card" id="package-7">
- <img src="serengeti.jpg" alt="Serengeti & Ngorongoro 6 Days" class="package-image">
- <div class="package-content">
-     <h2 class="package-title">MIKUMI NATIONAL PARK</h2>
-     <div class="package-details">
-         <p><span role="img" aria-label="Location">🌍</span> <strong>Locations:</strong> Serengeti, Ngorongoro</p>
-         <p><span role="img" aria-label="Duration">📅</span> <strong>Duration:</strong> 6 Days</p>
-         <p><span role="img" aria-label="Best Season">🌞</span> <strong>Best Season:</strong> June - October</p>
-     </div>
-     <p class="package-price"><span role="img" aria-label="Price">💰</span> <strong>From:</strong> $2,500 per person</p>
-     <a href="#" class="view-details-btn" data-package="package-7">View Details</a>
- </div>
-</div>
+                    rates: "Starting at $600 per person.",
+                    inclusion: "All meals, park fees, accommodation, and safari guides.",
+                    exclusion: "Flights, personal expenses, and travel insurance.",
+                    endOfTours: "The tour ends with a drop-off at your accommodation or the airport.",
+                    weather: "The best time to visit is during the dry season, from June to October.",
+                    itinerary: [
+                        { day: "Day 1", title: "Arrival in Zanzibar", description: "Relax and explore Zanzibar's beaches." },
+                        { day: "Day 2", title: "Safari in Serengeti", description: "Experience a thrilling safari in Serengeti." },
+                        { day: "Day 3", title: "Ngorongoro Crater", description: "Visit Ngorongoro Crater for wildlife viewing." },
+                    ],
+                    images: {
+                        overview: "crator.jpg",
+                        itinerary: "beach-safari-itinerary.jpg",
+                        rates: "beach-safari-rates.jpg",
+                        inclusion: "beach-safari-inclusion.jpg",
+                        exclusion: "beach-safari-exclusion.jpg",
+                        endOfTours: "beach-safari-end-of-tours.jpg",
+                        weather: "beach-safari-weather.jpg",
+                        contact: "beach-safari-contact.jpg"
+                    }
+                },
+                'package-8': {
+                    overview: "Nyerere National Park, formerly known as Matambwe, is now the largest national park in Africa. It was established in 2019 and is located adjacent to the renowned Selous Game Reserve. The park is named in honor of Mwalimu Julius Kambarage Nyerere, the founding father of Tanzania. Nyerere National Park is a wildlife paradise, characterized by its woodlands and the meandering Great Rufiji River, which forms numerous streams and channels. Unlike other parks with open savannahs, this park is dominated by Miombo woodlands. Visitors will traverse narrow, marshy, and bumpy tracks that lead to pods of hippos, flowering trees, and concentrations of crocodiles, elephants, antelopes, wild dogs, and lions. The park is home to over 400 species of multi-colored birds, mammals, and insects, as visitors move through dense bushes, palms, and hidden paths. The mighty Rufiji River, Tanzania's longest and largest river, flows northeast and east for about 175 miles before entering the Indian Ocean opposite Mafia Island. It is famous for hosting a large population of hippos and crocodiles, making it one of the most remarkable rivers in Africa.",
 
-<!-- Package Card 8 -->
-<div class="package-card" id="package-8">
- <img src="manyara.jpg" alt="Lake Manyara & Tarangire 3 Days" class="package-image">
- <div class="package-content">
-     <h2 class="package-title">NYERERE NATIONAL PARK</h2>
-     <div class="package-details">
-         <p><span role="img" aria-label="Location">🌳</span> <strong>Locations:</strong> Lake Manyara, Tarangire</p>
-         <p><span role="img" aria-label="Duration">📅</span> <strong>Duration:</strong> 3 Days</p>
-         <p><span role="img" aria-label="Best Season">🌞</span> <strong>Best Season:</strong> June - October</p>
-     </div>
-     <p class="package-price"><span role="img" aria-label="Price">💵</span> <strong>From:</strong> $1,300 per person</p>
-     <a href="#" class="view-details-btn" data-package="package-8">View Details</a>
- </div>
-</div>
+                    rates: "Starting at $350 per person.",
+                    inclusion: "Accommodation, guided tours, park fees, and all meals.",
+                    exclusion: "Flights, personal expenses, and travel insurance.",
+                    endOfTours: "The tour ends with a drop-off at your accommodation or the airport.",
+                    weather: "The best time to visit is during the dry season from June to October.",
+                    itinerary: [
+                        { day: "Day 1", title: "Arrival in Arusha", description: "Tour the cultural sites in Arusha." },
+                        { day: "Day 2", title: "Serengeti Safari", description: "Explore Serengeti National Park." },
+                        { day: "Day 3", title: "Ngorongoro Crater", description: "Full-day safari in Ngorongoro Crater." },
+                    ],
+                    images: {
+                        overview: "leopard.jpg",
+                        itinerary: "adventure-tour-itinerary.jpg",
+                        rates: "adventure-tour-rates.jpg",
+                        inclusion: "adventure-tour-inclusion.jpg",
+                        exclusion: "adventure-tour-exclusion.jpg",
+                        endOfTours: "adventure-tour-end-of-tours.jpg",
+                        weather: "adventure-tour-weather.jpg",
+                        contact: "adventure-tour-contact.jpg"
+                    }
+                }
+            };
 
- </div>
- 
-</main>
+            document.querySelectorAll('.view-details-btn').forEach(button => {
+                button.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const packageId = this.getAttribute('data-package');
+                    const modal = document.getElementById('package-modal');
+                    const packageData = packageDetails[packageId];
 
-<!-- Package Details Modal -->
-<div class="modal" id="package-modal">
- <div class="modal-content">
-     <div class="modal-header">
-         <h2 class="modal-title">Package Details</h2>
-         <button class="close-modal">&times;</button>
-     </div>
-     <div class="modal-body">
-         <div class="modal-sidebar">
-             <ul class="modal-nav">
-                 <li class="modal-nav-item"><a href="#overview" class="modal-nav-link active">Overview</a></li>
-                 <li class="modal-nav-item"><a href="#rates" class="modal-nav-link">Rates</a></li>
-                 <li class="modal-nav-item"><a href="#inclusion" class="modal-nav-link">Inclusion</a></li>
-                 <li class="modal-nav-item"><a href="#exclusion" class="modal-nav-link">Exclusion</a></li>
-                 <li class="modal-nav-item"><a href="#end-of-tours" class="modal-nav-link">End of Tours</a></li>
-                 <li class="modal-nav-item"><a href="#weather" class="modal-nav-link">Weather</a></li>
-                 <li class="modal-nav-item"><a href="#day1" class="modal-nav-link">Day 1</a></li>
-                 <li class="modal-nav-item"><a href="#contact" class="modal-nav-link">Contact</a></li>
-             </ul>
-         </div>
-         <div class="modal-main">
-             <img src="airport.jpg" alt="Safari Image" class="tab-image" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 1.5rem;">
-             <div id="overview" class="tab-content active">
-                 <h3>Overview</h3>
-                 <p id="overview-text">Details will be shown here based on the selected package.</p>
-             </div>
-             <div id="rates" class="tab-content">
-                 <h3>Rates</h3>
-                 <p id="rates-text">Rates will be shown here.</p>
-             </div>
-             <div id="inclusion" class="tab-content">
-                 <h3>Inclusion</h3>
-                 <p id="inclusion-text">Inclusion details will be shown here.</p>
-             </div>
-             <div id="exclusion" class="tab-content">
-                 <h3>Exclusion</h3>
-                 <p id="exclusion-text">Exclusion details will be shown here.</p>
-             </div>
-             <div id="end-of-tours" class="tab-content">
-                 <h3>End of Tours</h3>
-                 <p id="end-of-tours-text">End of tour details will be shown here.</p>
-             </div>
-             <div id="weather" class="tab-content">
-                 <h3>Weather</h3>
-                 <p id="weather-text">Weather details will be shown here.</p>
-             </div>
-             <div id="day1" class="tab-content">
-                 <h3>Day 1</h3>
-                 <p id="day1-text">Day 1 itinerary details will be shown here.</p>
-             </div>
-             <div id="contact" class="tab-content">
-                 <h3>Contact</h3>
-                 <p>For more details, contact us at <strong>info@example.com</strong>.</p>
-             </div>
-             <a href="#" class="back-to-packages">Back to Packages</a>
-         </div>
-     </div>
- </div>
-</div>
+                    document.querySelector('#overview-text').textContent = packageData.overview;
+                    document.querySelector('#rates-text').textContent = packageData.rates;
+                    document.querySelector('#inclusion-text').textContent = packageData.inclusion;
+                    document.querySelector('#exclusion-text').textContent = packageData.exclusion;
+                    document.querySelector('#end-of-tours-text').textContent = packageData.endOfTours;
+                    document.querySelector('#weather-text').textContent = packageData.weather;
 
-<script>
- document.addEventListener("DOMContentLoaded", function () {
-     // Package details data
-     const packageDetails = {
-         'package-1': {
-             overview: "Zanzibar is a Tanzanian archipelago located on the eastern coast of Tanzania, Africa, in the middle of the Indian Ocean. It is a semi-autonomous region of Tanzania, bursting with culture and history, offering much more than just white sand beaches, clear warm waters, and coral reefs perfect for snorkeling. Zanzibar consists of many small islands and two major islands: Unguja (the main island, informally referred to as Zanzibar) and Pemba. After the union of Zanzibar and Tanganyika, Tanzania was born, with Zanzibar remaining a semi-autonomous region. The Zanzibar archipelago is situated 25-50 km off the coast of mainland Tanzania. The capital, Zanzibar City, is located on Unguja Island, with its historic center, Stone Town, being a UNESCO World Heritage site. Like mainland Tanzania, the official languages are Swahili and English, but many Zanzibaris are also fluent in Arabic. The official currency is the Tanzanian shilling, and Islam is the dominant religion, with over 90% of the population adhering to it. The population is over 1.3 million, according to the 2012 census. The main industries in Zanzibar are spices, raffia, and tourism.",
-             rates: "Starting at $350 per person.",
-             inclusion: "All meals, park fees, transportation, accommodation.",
-             exclusion: "Flights, personal expenses, travel insurance.",
-             endOfTours: "The tour ends with a drop-off at your accommodation or the airport.",
-             weather: "The best time for safari is during the dry season, from June to October.",
-             day1: "Arrive at Ngorongoro and enjoy a full-day safari.",
-         },
-         'package-2': {
-             overview: "Serengeti means endless plains in the Maa language Maasai, referring to the vast grassland plains that dominate the landscape of Serengeti National Park. The park, surrounded by the Maasai people, offers breathtaking views of distant plains, providing an authentic African wilderness experience. Serengeti is an award-winning, top national park for an African safari. Originally a game reserve, a big game hunting ground, it was upgraded to a national park in 1951, becoming the first national park in Tanzania. Located in northern Tanzania, it extends into southwestern Kenya. Serengeti National Park covers an area of 5,700 square miles, 14,763 square kilometers, and is often referred to as the great grassland range of Africa, as well as for its Vachellia woodlands. The park stretches 100 miles, 160 km, southeast from the shores of Lake Victoria and, in its eastern part, extends 100 miles, 160 km, south of the Kenya-Tanzania border. The Serengeti-Mara ecosystem includes several protected areas, such as Serengeti National Park, Mara National Reserve in Kenya, and a number of game reserves and conservation areas, including Ngorongoro, that surround the region.",
-             rates: "Starting at $2,500 per person.",
-             inclusion: "All meals, luxury accommodation, park fees, and transportation.",
-             exclusion: "Flights, personal expenses, travel insurance.",
-             endOfTours: "The tour ends with a luxury drop-off at your accommodation or the airport.",
-             weather: "Best during the dry season, from June to October.",
-             day1: "Begin with a transfer to Serengeti National Park for game drives.",
-         },
-         'package-3': {
-             overview: "Kilimanjaro is a dormant volcano in northern Tanzania that covers a total area of 1,688 square kilometers (652 sq. mi). It stands at 5,896 meters and is the highest peak on the African continent. It is also the highest free-standing mountain in the world and one of the world’s highest volcanoes. The mountain has three volcanic peaks: Kibo, Shira, and Mawenzi. The park was established as a national park in 1977. Mount Kilimanjaro National Park is one of Tanzania’s most visited parks. Unlike the other northern parks, this isn’t a place for wildlife viewing, although it is present. Instead, people visit to trek the amazing snow-capped mountain on the equator and to climb to the top of Africa. Mount Kilimanjaro is more popular than the country it’s in, Tanzania. Nearly every kind of ecological system is found on the mountain, including cultivated land, rain forest, heath, moorland, alpine desert, and an arctic summit (Uhuru). Kilimanjaro is also one of the few places in Africa with permanent snow.Kilimanjaro is a dormant volcano in northern Tanzania that covers a total area of 1,688 square kilometers (652 sq. mi). It stands at 5,896 meters and is the highest peak on the African continent. It is also the highest free-standing mountain in the world and one of the world’s highest volcanoes. The mountain has three volcanic peaks: Kibo, Shira, and Mawenzi. The park was established as a national park in 1977. Mount Kilimanjaro National Park is one of Tanzania’s most visited parks. Unlike the other northern parks, this isn’t a place for wildlife viewing, although it is present. Instead, people visit to trek the amazing snow-capped mountain on the equator and to climb to the top of Africa. Mount Kilimanjaro is more popular than the country it’s in, Tanzania. Nearly every kind of ecological system is found on the mountain, including cultivated land, rain forest, heath, moorland, alpine desert, and an arctic summit (Uhuru). Kilimanjaro is also one of the few places in Africa with permanent snow.n this classic safari tour.",
-             rates: "Starting at $1,800 per person.",
-             inclusion: "All meals, park fees, transport, accommodation.",
-             exclusion: "Flights, personal expenses, travel insurance.",
-             endOfTours: "The tour concludes with a drop-off at your accommodation.",
-             weather: "Ideal travel months: June - October.",
-             day1: "Day 1 starts with a transfer to Serengeti for an afternoon game drive.",
-         },
-         'package-4': {
-             overview: "The Ngorongoro Crater was formed when a large volcano erupted and collapsed on itself, creating a caldera (often mistakenly referred to as a crater) approximately two and a half million years ago. Within the Ngorongoro Conservation Area, there are several stunning attractions, including the shifting sands, Ngorongoro Crater, and the Empakaai Crater. The Ngorongoro Conservation Area covers 8,292 square kilometers. The caldera, or Ngorongoro Crater, measures between 10 and 12 miles (16 and 19 km) across, with the crater walls rising 610 meters above the floor. The crater has an area of 102 square miles (264 square kilometers)..",
-             rates: "Starting at $1,200 per person.",
-             inclusion: "Meals, accommodation, transport, park fees.",
-             exclusion: "Flights, personal expenses, insurance.",
-             endOfTours: "End of tour at your accommodation or airport.",
-             weather: "Best from June to October.",
-             day1: "Begin your safari in Lake Manyara with a game drive.",
-         },
-     'package-5': {
- overview: "Lake Manyara National Park is a protected area in Tanzania's Arusha and Manyara Regions, situated between Lake Manyara and the Great Rift Valley. Administered by the Tanzania National Parks Authority, it covers an area of 325 km², including about 230 km² of the lake's surface. More than 350 bird species have been observed in the park. The park also hosts populations of large migratory mammals, primarily concentrated in Tarangire National Park, but also moving through Lake Manyara. These include wildebeest, zebra, Thomson's gazelle, and Grant's gazelle. Large herds of wildebeest and other plains game from the Mto wa Mbu Game Controlled Area enter the park from the north for short periods.",
- rates: "Starting at $1,500 per person.",
- inclusion: "All meals, park fees, transport, and accommodation.",
- exclusion: "Flights, personal expenses, travel insurance.",
- endOfTours: "Tour ends with a drop-off at your accommodation.",
- weather: "Ideal time to visit is June to October.",
- day1: "Day 1 starts with a transfer to Tarangire for a game drive.",
-},
+                    // Set unique image for the overview section
+                    document.querySelector('.tab-image').src = packageData.images.overview;
 
-'package-6': {
- overview: "Ruaha National Park is the second-largest national park in Tanzania, after Nyerere National Park, covering an area of about 20,000 square kilometers. Located in the heart of southern Tanzania, approximately 130 kilometers from Iringa, the park boasts a broad ecosystem that includes Rungwa Game Reserve, Usangu Game Reserve, and several other protected areas. The name Ruaha is derived from the Great Ruaha River, which flows along the southeastern margin of the park and serves as a focal point for game viewing. Ruaha is famous for being a bird paradise, home to more than 571 species, many of which are migratory birds from both within and outside Africa. The park is also known for its high concentration of elephants, more than any other national park in East Africa. Additionally, it is home to magnificent mammals like kudu, sable, and roan antelopes, and it serves as a habitat for endangered wild dogs. Other animals in the park include lions, leopards, cheetahs, giraffes, zebras, elands, impalas, bat-eared foxes, and jackals. Beyond the large mammals, Ruaha also harbors various reptiles and amphibians, such as crocodiles, poisonous and non-poisonous snakes, monitor lizards, agama lizards, and frogs.",
- rates: "Starting at $2,200 per person.",
- inclusion: "Meals, transport, accommodation, park fees.",
- exclusion: "Flights, personal expenses, travel insurance.",
- endOfTours: "The tour concludes with a drop-off at your accommodation.",
- weather: "Best time to travel is June to October.",
- day1: "Begin your safari with a transfer to Serengeti for a game drive.",
-},
+                    const itineraryContainer = document.getElementById('itinerary-content');
+                    itineraryContainer.innerHTML = "";
+                    packageData.itinerary.forEach(day => {
+                        const dayElement = document.createElement('div');
+                        dayElement.classList.add('itinerary-day');
+                        dayElement.innerHTML = `
+                        <h4>${day.day}: ${day.title}</h4>
+                        <p>${day.description}</p>
+                    `;
+                        itineraryContainer.appendChild(dayElement);
+                    });
 
-'package-7': {
- overview: "Mikumi National Park Is Tanzania's fourth-biggest national park covering a total land area of 3230 square kilometers. Mikumi National park includes the most famous Uluguru mountains in the Eastern part. The park is surrounded by mountains and hills and this gives a good scenic and fabulous colors and lights around the park",
- rates: "Starting at $2,500 per person.",
- inclusion: "Meals, park fees, transport, accommodation, game drives.",
- exclusion: "Flights, personal expenses, travel insurance.",
- endOfTours: "Tour concludes with a drop-off at your accommodation.",
- weather: "Best season is June to October.",
- day1: "Start your journey with a transfer to Serengeti for a game drive.",
-},
+                    modal.style.display = 'block';
+                });
+            });
 
-'package-8': {
- overview: "Nyerere National Park, formerly known as Matambwe, is now the largest national park in Africa. It was established in 2019 and is located adjacent to the renowned Selous Game Reserve. The park is named in honor of Mwalimu Julius Kambarage Nyerere, the founding father of Tanzania. Nyerere National Park is a wildlife paradise, characterized by its woodlands and the meandering Great Rufiji River, which forms numerous streams and channels. Unlike other parks with open savannahs, this park is dominated by Miombo woodlands. Visitors will traverse narrow, marshy, and bumpy tracks that lead to pods of hippos, flowering trees, and concentrations of crocodiles, elephants, antelopes, wild dogs, and lions. The park is home to over 400 species of multi-colored birds, mammals, and insects, as visitors move through dense bushes, palms, and hidden paths. The mighty Rufiji River, Tanzania's longest and largest river, flows northeast and east for about 175 miles before entering the Indian Ocean opposite Mafia Island. It is famous for hosting a large population of hippos and crocodiles, making it one of the most remarkable rivers in Africa.",
- rates: "Starting at $1,300 per person.",
- inclusion: "Meals, park fees, transport, accommodation.",
- exclusion: "Flights, personal expenses, travel insurance.",
- endOfTours: "The tour ends with a drop-off at your accommodation.",
- weather: "Ideal time to visit is June to October.",
- day1: "Begin your tour with a transfer to Lake Manyara for a game drive.",
-},
+            document.querySelector('.close-modal').addEventListener('click', function () {
+                document.getElementById('package-modal').style.display = 'none';
+            });
 
-     };
+            document.querySelector('.back-to-packages').addEventListener('click', function () {
+                document.getElementById('package-modal').style.display = 'none';
+            });
 
-     // Open package modal and populate content
-     document.querySelectorAll('.view-details-btn').forEach(button => {
-         button.addEventListener('click', function (e) {
-             e.preventDefault();
-             const packageId = this.getAttribute('data-package');
-             const modal = document.getElementById('package-modal');
-             const packageData = packageDetails[packageId];
+            document.querySelectorAll('.modal-nav-link').forEach(link => {
+                link.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelectorAll('.modal-nav-link').forEach(navLink => navLink.classList.remove('active'));
+                    this.classList.add('active');
+                    document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+                    document.querySelector(this.getAttribute('href')).classList.add('active');
+                });
+            });
+        });
+    </script>
+    </main>
 
-             // Update modal content
-             document.querySelector('#overview-text').textContent = packageData.overview;
-             document.querySelector('#rates-text').textContent = packageData.rates;
-             document.querySelector('#inclusion-text').textContent = packageData.inclusion;
-             document.querySelector('#exclusion-text').textContent = packageData.exclusion;
-             document.querySelector('#end-of-tours-text').textContent = packageData.endOfTours;
-             document.querySelector('#weather-text').textContent = packageData.weather;
-             document.querySelector('#day1-text').textContent = packageData.day1;
-
-             modal.style.display = 'block';
-         });
-     });
-
-     // Close modal
-     document.querySelector('.close-modal').addEventListener('click', function () {
-         document.getElementById('package-modal').style.display = 'none';
-     });
-
-     // Back to packages button
-     document.querySelector('.back-to-packages').addEventListener('click', function () {
-         document.getElementById('package-modal').style.display = 'none';
-     });
-
-     // Tab navigation inside modal
-     document.querySelectorAll('.modal-nav-link').forEach(link => {
-         link.addEventListener('click', function (e) {
-             e.preventDefault();
-
-             // Remove active class from all links
-             document.querySelectorAll('.modal-nav-link').forEach(navLink => {
-                 navLink.classList.remove('active');
-             });
-
-             // Add active class to clicked link
-             this.classList.add('active');
-
-             // Hide all tab content
-             document.querySelectorAll('.tab-content').forEach(tab => {
-                 tab.classList.remove('active');
-             });
-
-             // Show the selected tab content
-             const targetTab = document.querySelector(this.getAttribute('href'));
-             targetTab.classList.add('active');
-         });
-     });
- });
- 
-</script>
-
+    
 
 <!DOCTYPE html>
 <html lang="en">
@@ -2305,8 +2613,8 @@ body {
         .travel-guide .section {
             padding: 20px;
             background-color: #ffffff; /* Clean white background */
-            border-left: 5px solid #0078d7; /* Vibrant blue border */
-            border-radius: 8px; /* Rounded corners */
+            border-left: 2px solid #0078d7; /* Vibrant blue border */
+            border-radius: px; /* Rounded corners */
             transition: background-color 0.3s ease, box-shadow 0.3s ease;
             margin-right: 10px;
             flex: 1;
@@ -2375,7 +2683,7 @@ body {
         /* Footer styling */
         .travel-guide footer {
             text-align: center;
-            background-color: #0056a3; /* Darker blue footer */
+            background-color: #0088ff; /* Darker blue footer */
             color: white;
             padding: 15px;
             font-size: 0.9rem;
@@ -2471,7 +2779,7 @@ body {
         </main>
 
         <footer>
-            <p>&copy; 2024 Mafoy Africa Safaris. All Rights Reserved.</p>
+          <strong>  <p>&copy;  Mafoy Africa Safaris. All Rights Reserved.</p> </strong>
             <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
         </footer>
     </div>

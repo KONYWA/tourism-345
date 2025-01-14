@@ -490,8 +490,7 @@
             background: #0066CC;
             transform: translateY(-3px);
             box-shadow: 0 6px 12px rgba(0,0,0,0.3);
-        }
-/* Background Slider */
+        }/* Background Image */
 .background-slider {
     position: absolute;
     top: 0;
@@ -499,30 +498,10 @@
     width: 100%;
     height: 100%;
     overflow: hidden;
-    z-index: -1; /* Keeps the slider behind other content */
-    background: url('beach3.jpg') no-repeat center/cover; /* Initial background */
-    animation: backgroundCycle 30s infinite; /* Background cycle animation */
-    
+    z-index: -1; /* Keeps the background behind other content */
+    background: url('mountain22.jpg') no-repeat center/cover; /* Static background image */
 }
 
-/* Keyframes for Background Cycle */
-@keyframes backgroundCycle {
-    0% {
-        background: url('dorphine 2.jpg') no-repeat center/cover;
-    }
-    25% {
-        background: url('tanzania2.jpg') no-repeat center/cover;
-    }
-    50% {
-        background: url('meru2.jpg') no-repeat center/cover;
-    }
-    75% {
-        background: url('beach3.jpg') no-repeat center/cover;
-    }
-    100% {
-        background: url('woow.jpg') no-repeat center/cover;
-    }
-}
 
 /* Moving Clouds Layer */
 .clouds {

@@ -611,9 +611,72 @@
             overflow-y: auto;
         }
 
-        .tab-content {
-            display: none;
-        }
+       .tab-content {
+    display: none; /* Initially hidden */
+    padding: 20px; /* Padding for spacing inside the container */
+    background-color: #ffffff; /* Clean white background for maximum contrast */
+    border: 1px solid #dcdcdc; /* Subtle border for structure */
+    border-radius: 8px; /* Smooth rounded corners */
+    font-size: 18px; /* Larger font size for readability */
+    line-height: 1.8; /* Comfortable line spacing */
+    color: #1a1a1a; /* Very dark gray text for excellent contrast */
+    text-align: justify; /* Ensure text fills the width evenly */
+    word-wrap: break-word; /* Prevent long words from breaking the layout */
+    width: 100%; /* Ensure the content spans the full width of the container */
+    box-sizing: border-box; /* Include padding and border in the element's width */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Display content when active */
+.tab-content.active {
+    display: block; /* Show content */
+    animation: fadeIn 0.3s ease-in-out; /* Smooth fade-in effect */
+}
+
+/* Styling for itinerary headings */
+.itinerary-day h4 {
+    font-size: 1.4rem; /* Professional and legible font size */
+    color: #004080; /* Deep blue color for a clean and modern look */
+    margin-bottom: 0.5rem; /* Space below heading for separation */
+    font-weight: 600; /* Slightly bold for emphasis */
+    text-transform: uppercase; /* Uppercase for a structured appearance */
+}
+
+/* Fade-in animation for smooth transitions */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Adjustments for larger desktop screens */
+@media (min-width: 1024px) {
+    .tab-content {
+        font-size: 20px; /* Slightly larger text for desktop */
+        padding: 25px; /* More padding for a spacious look */
+        line-height: 2; /* Increase line spacing for better readability */
+    }
+    .itinerary-day h4 {
+        font-size: 1.6rem; /* Slightly larger heading size for desktop */
+    }
+}
+
+/* Adjustments for mobile devices */
+@media (max-width: 768px) {
+    .tab-content {
+        font-size: 16px; /* Slightly smaller font for mobile */
+        padding: 15px; /* Compact padding for smaller screens */
+    }
+    .itinerary-day h4 {
+        font-size: 1.2rem; /* Adjust heading size for smaller screens */
+    }
+}
+
 
         .tab-content.active {
             display: block;
@@ -842,7 +905,7 @@
     z-index: 1000;
     left: 0;
     top: 0;
-    width: 100vw;
+    width: 10vw;
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.8); /* Dark overlay */
     overflow: hidden; /* Prevent scrolling */
@@ -1028,21 +1091,22 @@ body.modal-open {
 /* General Style for .tab-image */
 .tab-image {
     border-radius: 5px;
-    margin-bottom: 2rem;
+    margin-bottom: 4rem;
     object-fit: cover;
+    object-position: 0cqmax;
 }
 
 /* Desktop View (Large Screens) */
 @media (min-width: 992px) {
     .tab-image {
-        max-height: 400px; /* Larger image for desktops */
+        max-height: 800px; /* Larger image for desktops */
     }
 }
 
 /* Mobile View (Small Screens) */
 @media (max-width: 768px) {
     .tab-image {
-        max-height: 200px; /* Smaller image for mobile */
+        max-height: 300px; /* Smaller image for mobile */
     }
 }
 
@@ -1079,20 +1143,39 @@ body.modal-open {
         }
 
         /* Adjust Back to Packages Button */
-        .back-to-packages {
-            display: inline-block;
-            margin-top: 2rem;
-            margin-bottom: 2REM;
-            text-decoration: none;
-            color: #074480;
-            font-weight: bold;
-            font-size: 1.5rem;
-            /* Larger font size */
-        }
+.back-to-packages {
+    display: inline-block;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    text-decoration: none;
+    color: #ffffff; /* White text color for better contrast */
+    font-weight: bold;
+    font-size: 1.5rem; /* Larger font size */
+    padding: 0.8rem 2rem; /* Added padding for better clickability */
+    border-radius: 8px; /* Rounded corners for a more modern look */
+    background-color: #007bff; /* Soft blue background color */
+    transition: all 0.3s ease; /* Smooth transition on hover */
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3); /* Subtle shadow for depth */
+}
 
-        .back-to-packages:hover {
-            color: #ced5dc;
-        }
+/* Hover Effects */
+.back-to-packages:hover {
+    color: #ffffff; /* Keep text white on hover */
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .back-to-packages {
+        font-size: 1.2rem; /* Smaller font size on mobile */
+        padding: 0.8rem 1.5rem; /* Adjust padding for mobile */
+        margin-top: 1.5rem; /* Adjust top margin on mobile */
+        margin-bottom: 1.5rem; /* Adjust bottom margin on mobile */
+    }
+}
+
     </style>
     <!-- Main Content -->
     <main class="main-content">

@@ -338,8 +338,7 @@
     </script>
 </body>
 </html>
-
-
+    
 <!DOCTYPE html>
 <html lang="en">
 
@@ -925,6 +924,10 @@
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7); /* Shadow for prominence */
 }
+h1 {
+    font-size: 2rem; /* Adjust for mobile */
+}
+
 
 /* Mobile View (Small Screens) */
 @media (max-width: 768px) {
@@ -1177,685 +1180,309 @@ body.modal-open {
 }
 
     </style>
-    <!-- Main Content -->
-    <main class="main-content">
-        <h1 style="color: hsl(196, 100%, 50%) !important;">POPULAR SAFARIS</h1>
+   <!-- Main Content -->
+<main class="main-content">
+    <h1 style="color: hsl(196, 100%, 50%) !important;">POPULAR SAFARIS</h1>
 
-        <div class="packages-grid">
-            <!-- Package Card 1 -->
-            <div class="package-card" id="package-1">
-                <img src="ho.jpg" alt="Zanzibar" class="package-image">
-                <div class="package-content">
-                    <h2 class="package-title"> SHORT TOUR TO NGORONGORO CRATER </h2>
-                    <div class="package-details">
-                        <p><span role="img" aria-label="Location">🏞️</span> <strong>Location:</strong> Ngorongoro</p>
-                        <p><span role="img" aria-label="Duration">🕒</span> <strong>Duration:</strong> 1 Day</p>
-                        <p><span role="img" aria-label="Best Season">☀️</span> <strong>Best Season:</strong> June -
-                            October</p>
-                    </div>
-                    <p class="package-price"><span role="img" aria-label="Price">💵</span> <strong>From:</strong> $450
-                        per person Private , GROUP $275</p>
-                    <a href="#" class="view-details-btn" data-package="package-1">View Details</a>
+    <div class="packages-grid">
+        <!-- Package Card 1 -->
+        <div class="package-card" id="tour-ngorongoro-1">
+            <img src="ho.jpg" alt="Ngorongoro Crater" class="package-image">
+            <div class="package-content">
+                <h2 class="package-title">SHORT TOUR TO NGORONGORO CRATER</h2>
+                <div class="package-details">
+                    <p><span role="img" aria-label="Location">🏞️</span> <strong>Location:</strong> Ngorongoro</p>
+                    <p><span role="img" aria-label="Duration">🕒</span> <strong>Duration:</strong> 1 Day</p>
+                    <p><span role="img" aria-label="Best Season">☀️</span> <strong>Best Season:</strong> June - October</p>
                 </div>
+                <p class="package-price"><span role="img" aria-label="Price">💵</span> <strong>From:</strong> $450 per person Private, GROUP $275</p>
+                <a href="#" class="view-details-btn" data-package="tour-ngorongoro-1">View Details</a>
             </div>
-
-            <!-- Package Card 2 -->
-            <div class="package-card" id="package-2">
-                <img src="meru.jpg" alt="Serengeti National Park" class="package-image">
-                <div class="package-content">
-                    <h2 class="package-title">SHORT TOUR TO TARANGIRE NATIONAL PARK</h2>
-                    <div class="package-details">
-                        <p><span role="img" aria-label="Location">🦁</span> <strong>Location:</strong> Tarangire
-                            </p>
-                        <p><span role="img" aria-label="Duration">📅</span> <strong>Duration:</strong> 1 Days</p>
-                        <p><span role="img" aria-label="Best Season">🌞</span> <strong>Best Season:</strong> January -
-                            February</p>
-                    </div>
-                    <p class="package-price"><span role="img" aria-label="Price">💰</span> <strong></strong>Group: $230 per person, Private: $330 (min 2 pax)</p>
-                    <a href="#" class="view-details-btn" data-package="package-2">View Details</a>
-                </div>
-            </div>
-
-            <!-- Package Card 3 -->
-            <div class="package-card" id="package-3">
-                <img src="meru4.jpg" alt="Zanzibar Beach" class="package-image">
-                <div class="package-content">
-                    <h2 class="package-title">NOTHERN CIRCUIT MIDRANGE SAFARI</h2>
-                    <div class="package-details">
-                        <p><span role="img" aria-label="Location">🏖️</span> <strong>Location:</strong> Arusha</p>
-                        <p><span role="img" aria-label="Duration">🕒</span> <strong>Duration:</strong> 5 Days</p>
-                        <p><span role="img" aria-label="Best Season">🌞</span> <strong>Best Season:</strong> June -
-                            October</p>
-                    </div>
-                    <p class="package-price"><span role="img" aria-label="Price">💵</span> <strong></strong> Group: $1,750 per person, Private: $2,250 (min 2 pax).</p>
-                    <a href="#" class="view-details-btn" data-package="package-3">View Details</a>
-                </div>
-            </div>
-
-            <!-- Package Card 4 -->
-            <div class="package-card" id="package-4">
-                <img src="mountain.JPG" alt="Serengeti Safari" class="package-image">
-                <div class="package-content">
-                    <h2 class="package-title"> GROUP CAMPING SAFARI 2 NIGHTS IN SERENGETI</h2>
-                    <div class="package-details">
-                        <p><span role="img" aria-label="Location">🦁</span> <strong>Location:</strong> serengeti</p>
-                        <p><span role="img" aria-label="Duration">📅</span> <strong>Duration:</strong> 5 Days</p>
-                        <p><span role="img" aria-label="Best Season">🌞</span> <strong>Best Season:</strong> June -
-                            October</p>
-                    </div>
-                    <p class="package-price"><span role="img" aria-label="Price">💰</span> <strong>From:</strong> $1650
-                        per person</p>
-                    <a href="#" class="view-details-btn" data-package="package-4">View Details</a>
-                </div>
-            </div>
-
-            <!-- Package Card 5 -->
-            <div class="package-card" id="package-5">
-                <img src="mountain 2.jpg" alt="Luxury Safari" class="package-image">
-                <div class="package-content">
-                    <h2 class="package-title"> LUXURY SAFARI TO TARANGIRE AND NGORONGORO CRATER </h2>
-                    <div class="package-details">
-                        <p><span role="img" aria-label="Location">🏞️</span> <strong>Location:</strong> Ngorongoro
-                           </p>
-                        <p><span role="img" aria-label="Duration">🕒</span> <strong>Duration:</strong> 2 Days</p>
-                        <p><span role="img" aria-label="Best Season">🌞</span> <strong>Best Season:</strong> June -
-                            October</p>
-                    </div>
-                    <p class="package-price"><span role="img" aria-label="Price">💵</span> <strong>From:</strong> $ 1,300 Per Person (starting from 2 pax)</p>
-                    <a href="#" class="view-details-btn" data-package="package-5">View Details</a>
-                </div>
-            </div>
-
-            <!-- Package Card 6 -->
-            <div class="package-card" id="package-6">
-                <img src="machame.jpg" alt="Ngorongoro Crater Safari" class="package-image">
-                <div class="package-content">
-                    <h2 class="package-title">7 DAYS KILIMANJARO HIKING </h2>
-                    <div class="package-details">
-                        <p><span role="img" aria-label="Location">🌋</span> <strong>Location:</strong> Ngorongoro Crater
-                        </p>
-                        <p><span role="img" aria-label="Duration">🕒</span> <strong>Duration:</strong> 2 Days</p>
-                        <p><span role="img" aria-label="Best Season">☀️</span> <strong>Best Season:</strong> June -
-                            October</p>
-                    </div>
-                    <p class="package-price"><span role="img" aria-label="Price">💰</span> <strong>From:</strong> $2310
-                        per person</p>
-                    <a href="#" class="view-details-btn" data-package="package-6">View Details</a>
-                </div>
-            </div>
-
-            <!-- Package Card 7 -->
-            <div class="package-card" id="package-7">
-                <img src="kilimanjaro9.jpg" alt="Serengeti Safari" class="package-image">
-                <div class="package-content">
-                    <h2 class="package-title">5 DAYS PREMIUM LUXURY SAFARI </h2>
-                    <div class="package-details">
-                        <p><span role="img" aria-label="Location">🦁</span> <strong>Location:</strong> Kilimanjaro
-                           </p>
-                        <p><span role="img" aria-label="Duration">📅</span> <strong>Duration:</strong> 9 Days</p>
-                        <p><span role="img" aria-label="Best Season">🌞</span> <strong>Best Season:</strong> June -
-                            October</p>
-                    </div>
-                    <p class="package-price"><span role="img" aria-label="Price">💵</span> <strong>From:</strong> $2970
-                        per person</p>
-                    <a href="#" class="view-details-btn" data-package="package-7">View Details</a>
-                </div>
-            </div>
-
-            <!-- Package Card 8 -->
-            <div class="package-card" id="package-8">
-                <img src="dorphine 2.jpg" alt="Luxury Safari Tour" class="package-image">
-                <div class="package-content">
-                    <h2 class="package-title">MOUNT KILIMANJARO HIKE VIA MARANGU ROUTE</h2>
-                    <div class="package-details">
-                        <p><span role="img" aria-label="Location">🏞️</span> <strong>Location:</strong> Serengeti,
-                            Ngorongoro, Tarangire</p>
-                        <p><span role="img" aria-label="Duration">🕒</span> <strong>Duration:</strong> 7 Days</p>
-                        <p><span role="img" aria-label="Best Season">☀️</span> <strong>Best Season:</strong> June -
-                            October</p>
-                    </div>
-                    <p class="package-price"><span role="img" aria-label="Price">💰</span> <strong>From:</strong> $ 330 Per Person (starting from 2 pax)</p>
-                    <a href="#" class="view-details-btn" data-package="package-8">View Details</a>
-                </div>
-            </div>
-
         </div>
-    </main>
-    <!-- Package Details Modal -->
-    <div class="modal" id="package-modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2 class="modal-title">Package Details</h2>
-                <button class="close-modal">&times;</button>
-            </div>
-            <div class="modal-body">
-                <div class="modal-sidebar">
-                    <ul class="modal-nav">
-                        <li class="modal-nav-item"><a href="#overview" class="modal-nav-link active">Overview</a></li>
-                        <li class="modal-nav-item"><a href="#itinerary" class="modal-nav-link">Itinerary</a></li>
-                        <li class="modal-nav-item"><a href="#rates" class="modal-nav-link">Rates</a></li>
-                        <li class="modal-nav-item"><a href="#inclusion" class="modal-nav-link">Inclusion</a></li>
-                        <li class="modal-nav-item"><a href="#exclusion" class="modal-nav-link">Exclusion</a></li>
-                        <li class="modal-nav-item"><a href="#end-of-tours" class="modal-nav-link">End of Tours</a></li>
-                        <li class="modal-nav-item"><a href="#weather" class="modal-nav-link">Weather</a></li>
-                        <li class="modal-nav-item"><a href="#contact" class="modal-nav-link">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="modal-main">
-                    <!-- Image Section -->
-                    <img src="zanzibar-overview.jpg" alt="Zanzibar Overview" class="tab-image"
-                        style="width: 100%; height: 400px; object-fit: cover; border-radius: 8px; margin-bottom: 4rem;">
 
-                    <div id="overview" class="tab-content active">
-                        <h3>Overview</h3>
-                        <p id="overview-text">Details will be shown here based on the selected package.</p>
-                    </div>
-                    <div id="itinerary" class="tab-content">
-                        <h3>Itinerary</h3>
-                        <div id="itinerary-content">
-                            <!-- Itinerary days will be inserted dynamically here -->
-                        </div>
-                    </div>
-                    <div id="rates" class="tab-content">
-                        <h3>Rates</h3>
-                        <p id="rates-text">Rates will be shown here.</p>
-                    </div>
-                    <div id="inclusion" class="tab-content">
-                        <h3>Inclusion</h3>
-                        <p id="inclusion-text">Inclusion details will be shown here.</p>
-                    </div>
-                    <div id="exclusion" class="tab-content">
-                        <h3>Exclusion</h3>
-                        <p id="exclusion-text">Exclusion details will be shown here.</p>
-                    </div>
-                    <div id="end-of-tours" class="tab-content">
-                        <h3>End of Tours</h3>
-                        <p id="end-of-tours-text">End of tour details will be shown here.</p>
-                    </div>
-                    <div id="weather" class="tab-content">
-                        <h3>Weather</h3>
-                        <p id="weather-text">Weather details will be shown here.</p>
-                    </div>
-                    <div id="contact" class="tab-content">
-                        <h3>Contact</h3>
-                        <p>For more details, contact us at <strong>info@example.com</strong>.</p>
-                    </div>
-                    <a href="#" class="back-to-packages">Back to Packages</a>
+        <!-- Package Card 2 -->
+        <div class="package-card" id="tour-tarangire-2">
+            <img src="meru.jpg" alt="Tarangire National Park" class="package-image">
+            <div class="package-content">
+                <h2 class="package-title">SHORT TOUR TO TARANGIRE NATIONAL PARK</h2>
+                <div class="package-details">
+                    <p><span role="img" aria-label="Location">🦁</span> <strong>Location:</strong> Tarangire</p>
+                    <p><span role="img" aria-label="Duration">📅</span> <strong>Duration:</strong> 1 Day</p>
+                    <p><span role="img" aria-label="Best Season">🌞</span> <strong>Best Season:</strong> January - February</p>
                 </div>
+                <p class="package-price"><span role="img" aria-label="Price">💰</span> Group: $230 per person, Private: $330 (min 2 pax)</p>
+                <a href="#" class="view-details-btn" data-package="tour-tarangire-2">View Details</a>
+            </div>
+        </div>
+
+        <!-- Package Card 3 -->
+        <div class="package-card" id="tour-serengeti-3">
+            <img src="serengeti.jpg" alt="Serengeti National Park" class="package-image">
+            <div class="package-content">
+                <h2 class="package-title">5-DAY SERENGETI SAFARI</h2>
+                <div class="package-details">
+                    <p><span role="img" aria-label="Location">🦓</span> <strong>Location:</strong> Serengeti</p>
+                    <p><span role="img" aria-label="Duration">📆</span> <strong>Duration:</strong> 5 Days</p>
+                    <p><span role="img" aria-label="Best Season">🌤️</span> <strong>Best Season:</strong> June - October</p>
+                </div>
+                <p class="package-price"><span role="img" aria-label="Price">💸</span> From $950 per person</p>
+                <a href="#" class="view-details-btn" data-package="tour-serengeti-3">View Details</a>
+            </div>
+        </div>
+
+        <!-- Package Card 4 -->
+        <div class="package-card" id="tour-manyara-4">
+            <img src="manyara.jpg" alt="Lake Manyara" class="package-image">
+            <div class="package-content">
+                <h2 class="package-title">2-DAY LAKE MANYARA TOUR</h2>
+                <div class="package-details">
+                    <p><span role="img" aria-label="Location">🌳</span> <strong>Location:</strong> Lake Manyara</p>
+                    <p><span role="img" aria-label="Duration">🗓️</span> <strong>Duration:</strong> 2 Days</p>
+                    <p><span role="img" aria-label="Best Season">🌦️</span> <strong>Best Season:</strong> November - April</p>
+                </div>
+                <p class="package-price"><span role="img" aria-label="Price">💰</span> From $500 per person</p>
+                <a href="#" class="view-details-btn" data-package="tour-manyara-4">View Details</a>
+            </div>
+        </div>
+
+        <!-- Package Card 5 -->
+        <div class="package-card" id="tour-ruins-5">
+            <img src="ruins.jpg" alt="Historical Ruins" class="package-image">
+            <div class="package-content">
+                <h2 class="package-title">TOUR TO HISTORICAL RUINS</h2>
+                <div class="package-details">
+                    <p><span role="img" aria-label="Location">🏰</span> <strong>Location:</strong> Tanzania Ruins</p>
+                    <p><span role="img" aria-label="Duration">🕑</span> <strong>Duration:</strong> 1 Day</p>
+                    <p><span role="img" aria-label="Best Season">☀️</span> <strong>Best Season:</strong> Year-round</p>
+                </div>
+                <p class="package-price"><span role="img" aria-label="Price">💸</span> $400 per person</p>
+                <a href="#" class="view-details-btn" data-package="tour-ruins-5">View Details</a>
+            </div>
+        </div>
+
+        <!-- Package Card 6 -->
+        <div class="package-card" id="tour-serengeti-ngorongoro-6">
+            <img src="serengeti-ngorongoro.jpg" alt="Serengeti and Ngorongoro" class="package-image">
+            <div class="package-content">
+                <h2 class="package-title">6-DAY SERENGETI & NGORONGORO TOUR</h2>
+                <div class="package-details">
+                    <p><span role="img" aria-label="Location">🌍</span> <strong>Location:</strong> Serengeti & Ngorongoro</p>
+                    <p><span role="img" aria-label="Duration">📅</span> <strong>Duration:</strong> 6 Days</p>
+                    <p><span role="img" aria-label="Best Season">☀️</span> <strong>Best Season:</strong> June - October</p>
+                </div>
+                <p class="package-price"><span role="img" aria-label="Price">💵</span> From $1200 per person</p>
+                <a href="#" class="view-details-btn" data-package="tour-serengeti-ngorongoro-6">View Details</a>
+            </div>
+        </div>
+
+        <!-- Package Card 7 -->
+        <div class="package-card" id="tour-kilimanjaro-7">
+            <img src="kilimanjaro.jpg" alt="Mount Kilimanjaro" class="package-image">
+            <div class="package-content">
+                <h2 class="package-title">7-DAY KILIMANJARO CLIMB</h2>
+                <div class="package-details">
+                    <p><span role="img" aria-label="Location">🏔️</span> <strong>Location:</strong> Mount Kilimanjaro</p>
+                    <p><span role="img" aria-label="Duration">🗓️</span> <strong>Duration:</strong> 7 Days</p>
+                    <p><span role="img" aria-label="Best Season">🌤️</span> <strong>Best Season:</strong> Year-round</p>
+                </div>
+                <p class="package-price"><span role="img" aria-label="Price">💸</span> $1500 per person</p>
+                <a href="#" class="view-details-btn" data-package="tour-kilimanjaro-7">View Details</a>
+            </div>
+        </div>
+
+        <!-- Package Card 8 -->
+        <div class="package-card" id="tour-zanzibar-8">
+            <img src="zanzibar.jpg" alt="Zanzibar Beach" class="package-image">
+            <div class="package-content">
+                <h2 class="package-title">4-DAY ZANZIBAR BEACH HOLIDAY</h2>
+                <div class="package-details">
+                    <p><span role="img" aria-label="Location">🏖️</span> <strong>Location:</strong> Zanzibar</p>
+                    <p><span role="img" aria-label="Duration">🗓️</span> <strong>Duration:</strong> 4 Days</p>
+                    <p><span role="img" aria-label="Best Season">☀️</span> <strong>Best Season:</strong> December - March</p>
+                </div>
+                <p class="package-price"><span role="img" aria-label="Price">💰</span> From $800 per person</p>
+                <a href="#" class="view-details-btn" data-package="tour-zanzibar-8">View Details</a>
             </div>
         </div>
     </div>
+</main>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const packageDetails = {
-                'package-1': {
-                    overview: "The Ngorongoro Crater is a breathtaking natural wonder of the world. This incredible volcanic landscape was formed over 2 million years ago and is home to a diverse array of wildlife i.e. lions, elephants, zebras and hippos. When visiting the Ngorongoro Crater, you'll spend a full day exploring this unique ecosystem, the best place in Africa to spot the Big Five, spending a day in the crater is an experience that will leave you in awe of the natural beauty and wildlife that call this place home.",
+<!-- Package Details Modal -->
+<div class="modal" id="package-modal" style="display: none;">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2 class="modal-title">Package Details</h2>
+            <button class="close-modal">&times;</button>
+        </div>
+        <div class="modal-body">
+            <div class="modal-sidebar">
+                <ul class="modal-nav">
+                    <li class="modal-nav-item"><a href="#overview" class="modal-nav-link active">Overview</a></li>
+                    <li class="modal-nav-item"><a href="#itinerary" class="modal-nav-link">Itinerary</a></li>
+                    <li class="modal-nav-item"><a href="#rates" class="modal-nav-link">Rates</a></li>
+                    <li class="modal-nav-item"><a href="#inclusion" class="modal-nav-link">Inclusion</a></li>
+                    <li class="modal-nav-item"><a href="#exclusion" class="modal-nav-link">Exclusion</a></li>
+                    <li class="modal-nav-item"><a href="#weather" class="modal-nav-link">Weather</a></li>
+                    <li class="modal-nav-item"><a href="#contact" class="modal-nav-link">Contact</a></li>
+                </ul>
+            </div>
+            <div class="modal-main">
+                <img src="" alt="Overview Image" class="tab-image" style="width: 100%; height: 400px; object-fit: cover; border-radius: 8px; margin-bottom: 4rem;">
+                <div id="overview" class="tab-content active">
+                    <h3>Overview</h3>
+                    <p id="overview-text">Details will be shown here based on the selected package.</p>
+                </div>
+                <div id="itinerary" class="tab-content">
+                    <h3>Itinerary</h3>
+                    <div id="itinerary-content"></div>
+                </div>
+                <div id="rates" class="tab-content">
+                    <h3>Rates</h3>
+                    <p id="rates-text"></p>
+                </div>
+                <div id="inclusion" class="tab-content">
+                    <h3>Inclusion</h3>
+                    <p id="inclusion-text"></p>
+                </div>
+                <div id="exclusion" class="tab-content">
+                    <h3>Exclusion</h3>
+                    <p id="exclusion-text"></p>
+                </div>
+                <div id="weather" class="tab-content">
+                    <h3>Weather</h3>
+                    <p id="weather-text"></p>
+                </div>
+                <div id="contact" class="tab-content">
+                    <h3>Contact</h3>
+                    <p>For more details, contact us at <strong>info@example.com</strong>.</p>
+                </div>
+                <a href="#" class="back-to-packages">Back to Packages</a>
+            </div>
+        </div>
+    </div>
+</div>
 
-
-                    rates: "For the group option, the cost is $275 per person. For the private option, the cost is $450 per person, starting from a minimum of two participants.",
-                    inclusion: "The following services are included in the tour package: porterage, rescue fee, park fees (for non-residents), all activities (unless labeled as optional), all accommodation (unless listed as an upgrade), a professional driver/guide, all transportation (unless labeled as optional), all taxes/VAT, roundtrip airport transfer, meals (as specified in the day-by-day section), and drinking water (on all days).",
-                    exclusion: "The package excludes international flights (to and from your home), roundtrip airport transfers, additional accommodation before and after the tour, and tips (with a tipping guideline of US$10.00 per person per day). Personal items such as souvenirs, travel insurance, visa fees, and any government-imposed increases in taxes or park fees are also not included.",
-                    endOfTours: "Additional accommodation can be arranged for an extra cost, and you will be dropped off at the airport at the end of the tour.",
-                    weather: "The best time for safari is during the dry season, from June to October.",
-                    itinerary: [
-                        { day: "Day 1", title: "Day Description", description: "You will be picked up from your hotel in Arusha between 6:00 AM and 7:00 AM to begin your journey to the Ngorongoro Crater. Along the way, you will pass through the crater viewpoint before descending into the crater for an exciting game drive. Often referred to as the Eighth Natural Wonder of the World, the Ngorongoro Crater is the largest intact volcanic crater in the world. It was formed over two million years ago when the Ngorongoro volcano erupted, causing the crater walls to collapse and creating a unique natural enclosure. Spanning over 19 kilometers wide, the crater hosts a variety of habitats, including acacia forests, hippo-filled swamps, and open grasslands. This extraordinary ecosystem is home to more than 30,000 animals, such as elephants, warthogs, flamingos, and the rare black rhinoceros. Additionally, it provides an excellent opportunity to spot a range of bird species and predatory cats, making it a premier destination for wildlife enthusiasts. After the game drive, you will be dropped off at your hotel or the airport. Meals include lunch (breakfast and dinner not included) and non-alcoholic drinks." },
-                     
-                    ],
-                    images: {
-                        overview: "manyara.jpg",
-                        itinerary: "jozani 2.jpg",
-                        rates: "zanzibar-rates.jpg",
-                        inclusion: "The following services are included in the tour package: porterage, rescue fee, park fees (for non-residents), all activities (unless labeled as optional), all accommodation (unless listed as an upgrade), a professional driver/guide, all transportation (unless labeled as optional), all taxes/VAT, roundtrip airport transfer, meals (as specified in the day-by-day section), and drinking water (on all days).",
-
-                        exclusion: "zanzibar-exclusion.jpg",
-                        endOfTours: "zanzibar-end-of-tours.jpg",
-                        weather: "zanzibar-weather.jpg",
-                        contact: "zanzibar-contact.jpg"
-                    }
-                },
-                'package-2': {
-                    overview: "The park’s large elephant population, iconic Baobab trees, and diversity of wildlife make it one of the best parks in the country for taking breathtaking photos or simply basking in the beautiful elephants. Game drives through Tarangire are particularly thrilling during the dry season when the animals of the park must cluster closer and closer to the Tarangire River. This offers a great opportunity to see plenty of animals in one place and to witness the predator-prey relationship in action.",
-
-                    rates: "Group: $230 per person, Private: $330 (min 2 pax).",
-                    inclusion: "The package includes park fees for non-residents, all activities unless labeled as optional, a professional driver/guide, and all transportation unless specified otherwise. It also covers all taxes and VAT, with meals and drinks provided as outlined in the day-by-day section.",
-                    exclusion: "The package excludes international flights (to and from your home), roundtrip airport transfers, additional accommodation before and after the tour, and tips (with a guideline of US$10.00 per person per day). Personal items such as souvenirs, travel insurance, visa fees, and any government-imposed increases in taxes or park fees are also not included.",
-                    endOfTours: "Additional accommodation can be arranged for an extra cost, and you will be dropped off at the airport at the end of the tour.",
-                    weather: "The best time to visit is from December to March and June to October.",
-                    itinerary: [
-                        { day: "Day 1", title: "Description", description: "We will pick you up from your hotel in Arusha and drive to Tarangire National Park, known for having the highest density of elephants, with herds often reaching up to 300 animals. The Tarangire River provides water year-round, attracting a variety of animals, especially during the dry season from July to October. During this time, you can witness an unforgettable natural spectacle as you observe lions, giraffes, buffaloes, wildebeests, zebras, antelopes, and gazelles. The park is also a haven for bird watchers, with over 550 species, including the Masai Ostrich. In the afternoon, you'll stop at a suitable picnic spot for more wildlife watching before returning to your hotel in Arusha before sunset. Meals include lunch (breakfast and dinner not included) and non-alcoholic drinks." },
-                    ],
-                    images: {
-                        overview: "meru2.jpg",
-                        itinerary: "serengeti-itinerary.jpg",
-                        rates: "serengeti-rates.jpg",
-                        inclusion: "serengeti-inclusion.jpg",
-                        exclusion: "serengeti-exclusion.jpg",
-                        endOfTours: "serengeti-end-of-tours.jpg",
-                        weather: "serengeti-weather.jpg",
-                        contact: "serengeti-contact.jpg"
-                    }
-                },
-          'package-3': {
-                    overview: "Tanzania is home to incredible wildlife and game reserves. This tour will take you through Lake Manyara National Park, Serengeti National Park, Tarangire National Park and the Ngorongoro Crater, giving you a chance to see the “Big Five” up close and in person. Let our safari give you memories that will last a lifetime.",
-
-                    rates: "For the Group Option, the price is $1,750 per person. For the Private Option, the price is $2,250 per person, starting from 2 pax.",
-                    inclusion: "The package includes park fees for non-residents, all activities (unless labeled as optional), a professional driver/guide, all transportation (unless labeled as optional), all taxes/VAT, meals (as specified in the day-by-day section), and drinks (as specified in the day-by-day section).",
-                    exclusion: "The package does not include international flights (from/to home), roundtrip airport transfer, additional accommodation before and at the end of the tour, tips (tipping guideline is US$10.00 per person per day), personal items (souvenirs, travel insurance, visa fees, etc.), or any government-imposed increase of taxes and/or park fees.",
-                    endOfTours: "The tour ends with a drop-off at your accommodation or the airport.",
-                    weather: "The best time to visit is from December to March and June to October.",
-                    itinerary: [
-                        { day: "Day 1", title: "Tarangire National Park", description: "After an early breakfast, you will depart for a full-day game drive at Tarangire National Park, including a picnic lunch. The park is home to herds of up to 300 elephants that scrape the waterless riverbed for alternative streams, while nomadic wildebeest, zebras, buffalo, impalas, gazelles, hartebeests, and elands gather at the dwindling lagoons. Tarangire is a key refuge for migratory animals during the dry season and is a welcoming home for elephants. After an exciting day of wildlife viewing, you will head to your accommodation for dinner and an overnight stay. Accommodation options include Marera Valley Lodge, Suricata Boma Lodge, or Marera View Lodge. Your meal plan includes full board, and drinks such as water, non-alcoholic beverages, beer, and wine are available." },
-                        { day: "Day 2", title: "Serengeti Natinal Park", description: "After breakfast, you will make your way to Serengeti National Park for a full-day game drive, including a picnic lunch. Serengeti is famous for the dramatic spectacle of a million wildebeest, each driven by the ancient rhythm of nature, fulfilling their role in the cycle of life. The wildebeest engage in a three-week period of territorial conquests and mating, and undertake a perilous journey, plunging through crocodile-infested waters in 40km-long columns during their annual migration north. After a brief population explosion that results in more than 8,000 calves born daily, the 1,000 km-long pilgrimage begins again. After an extensive game drive, you will head to your accommodation for dinner and an overnight stay. Accommodation options include Angata Serengeti, Matawi Camp, or Kenzan Camp. Your meal plan includes full board, with drinks such as water, non-alcoholic beverages, beer, and wine available." },
-                        { day: "Day 3", title: "Serengeti to Ngorongoro Crater", description: "Awake early in the morning for a game drive in Serengeti National Park, where you may encounter wildebeests, lions, elephants, leopards, impalas, gazelles, cheetahs, and possibly witness the wildebeest migration. After an exciting morning of wildlife viewing, you will enjoy brunch and then pack your luggage to continue your journey to Ngorongoro. Along the way, you will enjoy more game drives en-route through Serengeti as you head towards Ngorongoro. You will arrive at Ngorongoro in the late evening, where the night will be spent on the crater rim. Accommodation options include Angata Ngorongoro or Ngorongoro Wild Camp. Your meal plan includes full board, with drinks such as water, non-alcoholic beverages, beer, and wine available." },
-                        { day: "Day 4", title: "Ngorongoro Crater", description: "After an early breakfast, you will proceed directly to the Crater floor for a 6-hour game drive inside Ngorongoro Crater. This UNESCO World Heritage site offers an incredible opportunity to spot the Big Five, including lions, leopards, elephants, buffaloes, and possibly the elusive black rhinoceros. During the drive, you will enjoy a picnic lunch at Ngoitoktok Spring, where you can also observe other large mammals such as hippopotami, giraffes, warthogs, baboons, and a variety of bird species. After spending about 6 hours exploring the crater, you will ascend back to the crater rim and head to your lodge for dinner and an overnight stay. Accommodation options include Marera Valley Lodge, Suricata Boma Lodge, or Marera View Lodge. Your meal plan includes full board, and drinks such as water, non-alcoholic beverages, beer, and wine are available.." },
-                        { day: "Day 5", title: "Lake Manyara National Park", description: "After breakfast, you will check out and embark on an exciting game drive in Lake Manyara National Park, with a packed lunch. The park, situated along the base of the Great Rift Valley, is home to diverse landscapes, including forests, hot springs to the west, and the vast lake that occupies a significant portion of the park. Known for its famous tree-climbing lions, the park also hosts buffalo, giraffe, hippos, and troops of baboons. You will also have the opportunity to spot majestic pink flamingos, ostriches, Egyptian geese, and many other bird species. After a picnic lunch, you will continue with an afternoon game drive before visiting a Maasai village to learn about the activities and culture of the Maasai people. In the evening, you will drive back to Arusha for dinner and your overnight stay. This marks the end of your safari adventure. Accommodation: No accommodation (End of tour) Meals & Drinks: Breakfast and lunch, Drinking water (Other drinks not included)" },
-
-                    ],
-                    images: {
-                        overview: "spice.jpg",
-                        itinerary: "serengeti-itinerary.jpg",
-                        rates: "serengeti-rates.jpg",
-                        inclusion: "serengeti-inclusion.jpg",
-                        exclusion: "serengeti-exclusion.jpg",
-                        endOfTours: "serengeti-end-of-tours.jpg",
-                        weather: "serengeti-weather.jpg",
-                        contact: "serengeti-contact.jpg"
-                    }
-                }, 
-               'package-4': {
-                    overview: "On this safari, you will visit the best places in Tanzania including the amazing plains of the Serengeti. You will have choice spottings of the amazing tree-climbing lions! The safari includes a visit to the Ngorongoro Crater, known as the “Garden of Eden”. Come explore Africa with us",
-
-                    rates: "Starting at $ 1100  per person",
-                    inclusion: "Luxury accommodation, private guided tours, all meals, and park fees.",
-                    exclusion: "Flights, personal expenses, and travel insurance.",
-                    endOfTours: "The tour ends with a drop-off at your accommodation or the airport.",
-                    weather: "The best time to visit is from June to October.",
-                    itinerary: [
-                        { day: "Day 1", title: "Arusha - Tarangire National Park", description: "After an early morning breakfast, our driver will pick you up at Arusha Tourist Inn Hotel and head to Tarangire National Park. Along the way, you will enjoy a morning game drive and a boxed lunch. Later in the day, you will arrive at the Lilac Campsite, where you will settle in, enjoy dinner, and prepare for the amazing adventure ahead. **Accommodation:** Budget camping, outside Tarangire NP. **Meals & Drinks:** All meals included; drinking water provided (other drinks not included)." },
-                        { day: "Day 2 and 3", title: "Serengeti National Parki", description: "After breakfast, you will drive to Serengeti National Park, passing through the beautiful highland farmland of Karatu and the Ngorongoro Conservation Area. Leaving the highlands behind, you will enter the heart of wild Africa, the Serengeti National Park, with its endless plains stretching as far as the eye can see. You will head to the central area of the park, known as Seronera, one of the richest wildlife habitats in the park. In this area, you will visit the Seronera River, a valuable water source that attracts a variety of wildlife, representing most of the Serengeti's species. You will arrive in time for lunch and, afterward, enjoy an afternoon game drive in Serengeti National Park. You will spend two nights in the Serengeti, with dinner and your overnight stay at the Seronera Campsite. **Accommodation:** Budget camping, inside Serengeti NP. **Meals & Drinks:** All meals included; drinking water provided (other drinks not included)." },
-                        { day: "Day 4", title: "Serengeti National Park - Ngorongoro Highlands", description: "Today, you will wake up early, have a cup of coffee, and set off for a sunrise morning game drive that will last until late morning. Afterward, you will return to the campsite for brunch. Once you've enjoyed your meal, you will check out and embark on an exciting game drive through the Serengeti before heading to the Ngorongoro Crater. Upon arrival, you will check in and enjoy dinner, followed by an overnight stay at the Ngorongoro Simba Campsite. **Accommodation:** Budget camping, inside Ngorongoro Highlands. **Meals & Drinks:** All meals included; drinking water provided (other drinks not included)." },
-                        { day: "Day 5", title: "Ngorongoro Crater", description: "After breakfast, you will drive to the Ngorongoro Crater for an exciting crater tour. Your expert guide will lead you in search of big game, with opportunities to get up close for fantastic photo opportunities. The crater is one of Tanzania’s top parks for wildlife numbers, and you're likely to see most of the Big Five, including lion, buffalo, and elephant. Rhino sightings are relatively common, while leopard is a bit more elusive. You'll also encounter large numbers of zebra, wildebeest, and spotted hyena. Later in the day, you will ascend back up the crater and drive towards Arusha. **Accommodation:** No accommodation. **Meals & Drinks:** Breakfast and lunch; drinking water provided (other drinks not included)." },
-
-                    ],
-                    images: {
-                        overview: "lion.jpg",
-                        itinerary: "luxury-safari-itinerary.jpg",
-                        rates: "luxury-safari-rates.jpg",
-                        inclusion: "luxury-safari-inclusion.jpg",
-                        exclusion: "luxury-safari-exclusion.jpg",
-                        endOfTours: "luxury-safari-end-of-tours.jpg",
-                        weather: "luxury-safari-weather.jpg",
-                        contact: "luxury-safari-contact.jpg"
-                    }
-                },
-                'package-5': {
-                    overview: "This 2-day Tanzanian luxury safari enables you to experience the two major parks on the northern circuit of Tanzania. You will visit Tarangire National Park, famous for its giant baobab trees as well as the largest African elephants and you will also visit Ngorongoro Crater, a World Heritage Site as well as a geo-park. You will stay at luxury lodges..",
-
-
-                    rates: "Starting at $1300 per person.",
-                    inclusion: "The tour includes essential services such as park fees for non-residents, all specified activities (unless marked as optional), and the expertise of a professional driver/guide. Transportation is provided throughout the journey, except for optional services. All taxes and VAT are covered, ensuring no hidden costs. Meals are included as outlined in the day-by-day itinerary, and drinks are provided as specified, ensuring a smooth and comfortable experience throughout the adventure.",
-                    exclusion: "The tour does not cover international flights (from/to home), roundtrip airport transfers, or any additional accommodation before or after the tour. Tips are not included, with a guideline of US$10.00 per person per day. Personal expenses such as souvenirs, travel insurance, and visa fees are the responsibility of the traveler. Additionally, any government-imposed increases in taxes or park fees will be an extra cost, which may arise during the course of the trip.",
-                    endOfTours: "The tour ends with a drop-off at your accommodation or the airport.",
-                    weather: "The best time for safari is during the dry season, from June to October.",
-                    itinerary: [
-                        { day: "Day 1", title: "Tarangire national park", description: "After breakfast at the hotel, depart for Tarangire National Park, Tanzania's third-largest park and a sanctuary for a large elephant population. The park is famous for its majestic baobab trees, which dwarf the animals feeding beneath them. Wildlife, including lion, leopard, cheetah, and up to 6,000 elephants, concentrate around the Tarangire River, the area's only permanent water source. Enjoy a game drive with a picnic lunch, followed by another game drive before heading to your accommodation in Karatu for dinner and overnight stay at Lake Manyara Kilimamoja Lodge. Meals & Drinks: • All meals included • All drinks (except for spirits/liquor)" },
-                        { day: "Day 2", title: "Ngorongoro Crater to Arusha", description: "After breakfast, drive to the Ngorongoro Conservation Area and descend into the Ngorongoro Crater for game viewing. The Ngorongoro Crater, one of the largest unbroken calderas on the planet, is home to over 25,000 wild creatures. It has the highest concentration of prides per capita and is considered the best place in East Africa to see the Big Five: lion, leopard, black rhino, elephant, and buffalo. The crater is a breathtakingly beautiful setting and one of the world's most astonishing places, often regarded as the 8th wonder of the world. The conservation area covers mountain forests, woodlands, grasslands, lakes, swamps, and two major rivers. A packed lunch will be served at a picnic site. In the late afternoon, ascend the crater and drive back to Arusha, marking the end of your adventure with us. Meals & Drinks: • Breakfast & lunch (Dinner not included) • Non-alcoholic drinks.." },
-                    ],
-                    images: {
-                        overview: "TARANGIRE.jpg",
-                        itinerary: "jozani 2.jpg",
-                        rates: "zanzibar-rates.jpg",
-                        inclusion: "zanzibar-inclusion.jpg",
-                        exclusion: "zanzibar-exclusion.jpg",
-                        endOfTours: "zanzibar-end-of-tours.jpg",
-                        weather: "zanzibar-weather.jpg",
-                        contact: "zanzibar-contact.jpg"
-                    }
-                },
-                'package-6': {
-                    overview: "The Machame Route, known for its diverse landscapes and breathtaking views, offers a unique challenge that will test your willpower, fitness, and mental strength. This route takes you through lush rainforests, where you may encounter colobus monkeys, and continues into heath and moorland, filled with ferns and ericas. Eventually, you will reach the icy caps at the summit of Mount Kilimanjaro. During the trek, you will stay in tents for overnight accommodations. While the climb may seem challenging, it is made easier with the guidance of our professional tour guide. You'll be picked up from your hotel or the airport in Arusha, and accommodation before the tour starts can be arranged for an extra cost.",
-
-                    rates: "Starting at $2310 per person.",
-                    inclusion: "The tour package includes porterage to assist with carrying your gear, a rescue fee for your safety, and park fees for non-residents. It also covers all activities unless specifically labeled as optional, as well as all accommodations unless an upgrade is requested. A professional driver/guide will accompany you throughout the journey, and all necessary transportation is included unless marked as optional. The package also takes care of all applicable taxes and VAT, roundtrip airport transfers, meals as specified in the itinerary, and drinking water for every day of the tour.",
-                    exclusion: "The tour package excludes climbing gear, which participants need to bring or rent. International flights to and from your home are not included. Additional accommodation before and after the tour can be arranged at an extra cost. Tips are also excluded, with a guideline of US$10.00 per person per day. Personal items such as souvenirs, travel insurance, visa fees, and other essentials are the responsibility of the traveler. Any government-imposed increases in taxes or park fees are also not covered in the package.",
-                    endOfTours: "The tour ends with a drop-off at your accommodation or the airport.",
-                    weather: "The best time to visit is from June to October.",
-                    itinerary: [
-                        { day: "Day 1", title: "Machame Gate to Machame Camp", description: "You will be picked up from your hotel by our driver and guide, who will provide a briefing about your journey up Mount Kilimanjaro. After the briefing, you will be driven to Machame Gate to register and sign the necessary documents before starting your trek. From the gate, you will walk through the rainforest along a winding trail that ascends a ridge. The lower section of the trail can be muddy and slippery, so gaiters and trekking poles are recommended. After a short distance, you will reach Machame Camp, where you will spend the night. The trek covers a distance of 11 km, taking 5 to 6 hours, with an elevation gain from 1790m to 3010m. The habitat is primarily rainforest. Your accommodation will be budget camping on Mount Kilimanjaro. Meals for the day include lunch and dinner, with drinking water provided; other drinks are not included." },
-                        { day: "Day 2", title: "Machame Camp to Shira Campi", description: "After breakfast, you will leave the lush rainforest behind and continue along an ascending path. You will cross a small valley and then follow a steep rocky ridge covered with heather until you reach the end of the ridge. The route then turns west into a river gorge. Your overnight stay will be at the Shira Hut campsite, located at an elevation of 3845m. The trek covers a distance of 5 km, taking 4 to 6 hours, with an elevation gain from 3010m to 3845m. The habitat transitions into moorland. Accommodation will be budget camping on Mount Kilimanjaro. All meals are included, with drinking water provided; other drinks are not included." },
-                        { day: "Day 3", title: "Shira Camp to Lava Tower to Barranco Camp", description: "On this day, your trek begins with an ascent above the Shira Plateau toward the Lava Tower. As you climb, the surrounding vegetation becomes more sparse, and the landscape transitions into an alpine desert. You will continue through the expansive Barranco Valley, home to lobelia and giant senecio plants. After approximately 6 to 7 hours of hiking, you will arrive at Barranco Camp, which is renowned for being the most beautiful camp on the mountain. The trek covers a distance of 8 km, taking 5 to 6 hours, with an elevation gain from 3845m to 3986m. The habitat is semi-desert. Accommodation will be budget camping on Mount Kilimanjaro. All meals are included, with drinking water provided; other drinks are not included." },
-                        { day: "Day 4", title: "Barranco Camp to Karanga Camp", description: "After breakfast, we will leave Barranco and continue along a steep ridge, passing the Barranco Wall, and make our way to the Karanga Valley campsite. This is a shorter day, designed specifically for acclimatization. The trek covers a distance of 5 km, taking 3 to 4 hours, with an elevation gain from 3986m to 4034m. The habitat is alpine desert. Accommodation will be budget camping on Mount Kilimanjaro. All meals are included, with drinking water provided; other drinks are not included." },
-                        { day: "Day 5", title: "Karanga Camp to Barafu Camp", description: "After breakfast, we leave Karanga and proceed to the junction that connects with the Mweka Trail. From here, we continue ascending to the Barafu Hut. At this point, you will have completed the South Circuit, which provides stunning views of the summit from various angles. From this position, the two peaks of Mawenzi and Kibo are clearly visible. The trek covers a distance of 3 km, taking 2 to 3 hours, with an elevation gain from 4034m to 4662m. The habitat is alpine desert. Accommodation will be budget camping on Mount Kilimanjaro. All meals are included, with drinking water provided; other drinks are not included." },
-                        { day: "Day 6", title: "Barafu Camp to Summit to Mweka Camp", description: "Very early in the morning, between midnight and 2 a.m., you will begin your ascent to the summit, passing between the Rebmann and Ratzel glaciers. Heading in a northwesterly direction, you will climb through heavy scree towards Stella Point on the crater rim. At Stella Point, you will pause for a short rest and enjoy the most magnificent sunrise, weather permitting. From Stella Point, snow may accompany you on the final 1-hour ascent to the summit. Reaching Uhuru Peak, the highest point on Mount Kilimanjaro and the entire African continent, will be a moment of triumph and awe as you take in the breathtaking views. After spending some time at the summit, you will begin your descent back to Barafu, where a warm meal and rest await. Following this, you will continue your journey down to Mweka Camp, where you will have dinner and spend the night. The day's trek is both physically and mentally challenging, transitioning from the arctic conditions at the summit to the alpine desert on the descent." },
-                        { day: "Day 7", title: "Mweka Camp to Mweka Gate", description: "After breakfast, you will continue your descent down to the Mweka Park Gate, where you will receive your well-earned summit certificates. As you descend to lower elevations, the terrain may become wet and muddy, so gaiters and trekking poles are highly recommended. The warmer climate at this altitude means shorts and t-shirts will likely suffice, though it's wise to keep rain gear and warmer clothing on hand. Once all formalities at the gate are completed, you will be driven back to your respective accommodation to rest and celebrate your incredible achievement." },
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const packageDetails = {
+            'tour-ngorongoro-1': {
+                overview: "Explore the Ngorongoro Crater, a breathtaking natural wonder... innocen",
+                rates: "$450 Private, $275 Group",
+                inclusion: "Park fees, transportation, meals...",
+                exclusion: "International flights, visa fees...",
+                weather: "Best time: June to October",
+                itinerary: [{ day: "Day 1", title: "Arrival", description: "Explore Ngorongoro Crater." }],
+                images: { overview: "ho.jpg" }
+            },
+            'tour-tarangire-2': {
+                overview: "Discover Tarangire's iconic wildlife and baobab trees... khadija",
+                rates: "$330 Private, $230 Group",
+                inclusion: "Park fees, guide, transportation...",
+                exclusion: "Tips, personal items...",
+                weather: "Best time: January to February",
+                itinerary: [{ day: "Day 1", title: "Game Drive", description: "Enjoy a thrilling safari." }],
+                images: { overview: "meru.jpg" }
+            },
+            'tour-serengeti-3': {
+                overview: "Embark on a 5-day adventure in the Serengeti...",
+                rates: "$950 per person",
+                inclusion: "Accommodation, meals, game drives...",
+                exclusion: "Alcoholic drinks, souvenirs...",
+                weather: "Best time: June to October",
+                itinerary: [{ day: "Day 1", title: "Serengeti Game Drive", description: "Explore Serengeti's vast plains." }],
+                images: { overview: "serengeti.jpg" }
+            },
+            'tour-manyara-4': {
+                overview: "Experience the beauty of Lake Manyara...",
+                rates: "$500 per person",
+                inclusion: "Park fees, guide, meals...",
+                exclusion: "Personal expenses...",
+                weather: "Best time: November to April",
+                itinerary: [{ day: "Day 1", title: "Lake Manyara Game Drive", description: "Spot flamingos and other wildlife." }],
+                images: { overview: "manyara.jpg" }
+            },
+            'tour-ruins-5': {
+                overview: "Explore the rich history of Tanzania's ruins...",
+                rates: "$400 per person",
+                inclusion: "Transportation, entrance fees...",
+                exclusion: "Meals, tips...",
+                weather: "Year-round destination",
+                itinerary: [{ day: "Day 1", title: "Historical Ruins Tour", description: "Visit ancient ruins and learn their history." }],
+                images: { overview: "ruins.jpg" }
+            },
+            'tour-serengeti-ngorongoro-6': {
+                overview: "A 6-day safari through Serengeti and Ngorongoro Crater...",
+                rates: "$1200 per person",
+                inclusion: "Accommodation, park fees, guide...",
+                exclusion: "Flights, visa fees...",
+                weather: "Best time: June to October",
+                itinerary: [{ day: "Day 1", title: "Arrival", description: "Begin your adventure in Serengeti." }],
+                images: { overview: "serengeti-ngorongoro.jpg" }
+            },
+            'tour-kilimanjaro-7': {
+                overview: "Conquer the majestic Mount Kilimanjaro on this 7-day climb...",
+                rates: "$1500 per person",
+                inclusion: "Climbing permits, guides, accommodation...",
+                exclusion: "Tips, personal items...",
+                weather: "Year-round destination",
+                itinerary: [{ day: "Day 1", title: "Kilimanjaro Climb", description: "Begin your ascent to the summit." }],
+                images: { overview: "kilimanjaro.jpg" }
+            },
+            'tour-zanzibar-8': {
+                overview: "Relax on the pristine beaches of Zanzibar...",
+                rates: "$800 per person",
+                inclusion: "Accommodation, meals, beach activities...",
+                exclusion: "Flights, personal expenses...",
+                weather: "Best time: December to March",
+                itinerary: [
+                        { day: "Day 1", title: "Zanzibar to serengeti", description: "After breakfast at your hotel, you will be picked up and driven to Zanzibar airport to board a small plane heading to the Serengeti airstrip. The flight may transit in Arusha before continuing to Serengeti, where you will arrive in the late morning. Upon arrival, you'll begin your game drives through the Serengeti, experiencing the rich wildlife of the park. After a picnic lunch at your camp, you will head out again for an evening game drive, enjoying the spectacular views and the serene sunset. In the evening, you'll return to your accommodation, Four Seasons Safari Lodge, for a delicious dinner and a relaxing overnight stay. All meals and drinks (excluding premium wines and liquors) are included during your stay." },
+                        { day: "Day 2", title: "Serengeti National Park", description: "After breakfast, you will continue with your game drive in the Serengeti. On this day, you have the option to choose between a full-day game drive or dividing the day into two sessions: an early morning game drive followed by an afternoon relaxation, and then an evening game drive. For those wishing to see more of the Serengeti's wildlife and landscapes, we recommend opting for the full-day game drive. After an exciting day of exploration, you'll return to the Four Seasons Safari Lodge for a restful evening, with all meals and drinks (excluding premium wines and liquors) included." },
+                        { day: "Day 3", title: "Serengeti National Park", description: "On this day, you’ll have the freedom to enjoy a fully customized experience in the Serengeti National Park. Your guide will work with you to create the ideal schedule, based on your preferences. You can opt for a morning game drive, return to the camp for lunch and some relaxation, and then head out for an afternoon game drive. Alternatively, you may prefer to embark on a full-day game drive with a picnic lunch. Whatever you choose, this day will be organized to match your desired pace, ensuring an unforgettable safari experience. At the end of the day, you’ll return to the Four Seasons Safari Lodge for dinner and a restful night. All meals and drinks (except premium wines and liquors) are included.." },
+                        { day: "Day 4", title: "Flying Out of the Serengeti", description: "On this final day, we recommend an early wake-up to embark on an early morning game drive, as this is when the animals are most active, and you’ll be treated to one of the most stunning sunrises you’ll ever witness. It’s a truly magical experience. After the game drive, you’ll return to the camp for a delicious brunch. Following this, we’ll proceed to the airstrip for your flight back to Zanzibar. If you prefer a more relaxed morning, you have the option to skip the early game drive and stay at the camp to enjoy some downtime. Meals are provided on a half-board basis, and all drinks are included, excluding premium wines and liquors. This marks the end of your unforgettable safari experience.." },
 
                     ],
-                    images: {
-                        overview: "barranco.jpg",
-                        itinerary: "wildlife-itinerary.jpg",
-                        rates: "wildlife-rates.jpg",
-                        inclusion: "wildlife-inclusion.jpg",
-                        exclusion: "wildlife-exclusion.jpg",
-                        endOfTours: "wildlife-end-of-tours.jpg",
-                        weather: "wildlife-weather.jpg",
-                        contact: "wildlife-contact.jpg"
-                    }
-                },
-                'package-7': {
-                    overview: " This 5-day Tanzania luxury + premium safari allows you to experience the highlights of the Northern Safari Circuit. You will experience breathtaking wildlife in the midst of some of the most diverse landscapes. See monkeys in the forest, lions in trees, elephants amongst acacias and a huge variety of animals inside a collapsed volcano. You will also visit the world-famous Serengeti. The landscapes are breathtaking and the variety and volume of wildlife you will see are unforgettable.",
+                
+                images: { overview: "zanzibar.jpg" }
+            }
+        };
 
-                    rates: "Starting at $500 per person.",
-                    inclusion: "The package includes park fees for non-residents, all activities unless labeled as optional, a professional driver/guide, and all transportation unless specified otherwise. It also covers all taxes and VAT, with meals and drinks provided as outlined in the day-by-day section.",
-                    exclusion: "The package excludes international flights (to and from your home), roundtrip airport transfers, additional accommodation before and after the tour, and tips (with a guideline of US$10.00 per person per day). Personal items such as souvenirs, travel insurance, visa fees, and any government-imposed increases in taxes or park fees are also not included.",
-                    endOfTours: "The tour ends with a drop-off at your accommodation or the airport.",
-                    weather: "The best time to visit is from June to October.",
-                    itinerary: [
-                        { day: "Day 1", title: "Tarangire National Park", description: "In the morning, you will be collected from your lodgings in Arusha by our personal safari guide. We will set out for Tarangire National Park, traveling along a good tarmac road that crosses the gently rolling Maasai plains, dotted with acacia trees. As we drive, we will pass many Maasais in their colorful dresses, walking along the roadside, riding bicycles, herding cattle, and driving donkey carts. Tarangire, famous for its large elephant herds, is also home to a variety of other animals. From the open roof of our state-of-the-art safari jeep, we will experience the seasonal swamps, savanna, and the life-giving Tarangire River. We will have the opportunity to encounter a range of creatures, from zebras and wildebeests to buffalo, elephants, and giraffes. It is also possible to catch a glimpse of lions stalking prey or leopards relaxing in the trees above. Afterward, you will drive to one of our carefully selected luxury partner lodges for dinner in a tasteful restaurant, with a pool to relax by and a spacious room to enjoy. Accommodation: Lake Manyara Kilimamoja Lodge. Meals & Drinks: All meals included, all drinks (except spirits/liquor)." },
-                        { day: "Day 2", title: "Serengeti National Park", description: "After breakfast, you will continue towards the fertile highlands where wheat and corn are grown by the Iraqw people. Along the way, we'll pass through the mist-shrouded rainforests of the Ngorongoro Conservation Area, where you might be lucky enough to see baboons, leopards, or even elephants in the dense undergrowth. As we pass through the Ngorongoro Conservation Area, you will be able to see the breathtaking Ngorongoro Crater before traveling onwards to Serengeti National Park, which you will reach by midday. The Serengeti is the largest park in Tanzania, offering diverse landscapes and habitats such as grassy plains, swamps, lakes, savannah, and mountains. After an extensive game drive, you will head to your accommodation for dinner and an overnight stay. Accommodation: Four Seasons Safari Lodge. Meals & Drinks: All meals included, all drinks (except spirits/liquor).." },
-                        { day: "Day 3", title: "Serengeti National Park", description: "You will spend a full day in this incredible place, exploring the park, its animals, and stunning landscapes. The Serengeti is home to an abundance of wildlife, including impalas, buffalo, crocodiles, and hippos, but it is most famous for the great migrating herds of zebras and wildebeest. The animals’ trek is determined by the rainfall and varies each year. In addition to the migrating herds, you may also encounter predators like leopards, cheetahs, and lions. Main Destination: Serengeti National Park. Accommodation: Four Seasons Safari Lodge. Meals & Drinks: All meals included, all drinks (premium wines and liquors might be excluded)." },
-                        { day: "Day 4", title: "Serengeti to ngorongoro Highlands", description: "After breakfast, you will embark on a final game drive in the Serengeti before traveling to the Ngorongoro Crater. Arriving at the edge of the crater in the afternoon, you will have your first glimpse of what awaits you the following day—glistening streams, open grasslands, and an infinite number of animals. You will spend the night at a nearby lodge on the Crater rim. Main Destination: Ngorongoro Highlands. Accommodation: Ngorongoro Lodge, Member of Melia Collection. Meals & Drinks: All meals included, all drinks (premium wines and liquors might be excluded)." },
-                        { day: "Day 5", title: "Ngorongoro Crater To Arusha", description: "After breakfast, you will drive to the Ngorongoro Crater, the world’s largest volcanic caldera. It is nearly 20 km wide, approximately 610 meters deep, and is renowned for its diverse wildlife. In addition to the Big Five, various springs attract animals such as wildebeest, gazelles, reedbucks, and more than 500 bird species. At a picnic site, you will enjoy lunch before continuing with more game viewing in the crater. After an extensive game drive, you will head back to Arusha, marking the end of your safari. Main Destination: Ngorongoro Crater. Accommodation: No accommodation (End of tour). Meals & Drinks: Breakfast and lunch (dinner not included), non-alcoholic drinks." },
+        const modal = document.getElementById('package-modal');
+        const closeModalButton = modal.querySelector('.close-modal');
+        const backToPackagesButton = modal.querySelector('.back-to-packages');
 
-                    ],
-                    images: {
-                        overview: "ho.jpg",
-                        itinerary: "serengeti-safari.jpg",
-                        rates: "serengeti-rates.jpg",
-                        inclusion: "serengeti-inclusion.jpg",
-                        exclusion: "serengeti-exclusion.jpg",
-                        endOfTours: "serengeti-end-of-tours.jpg",
-                        weather: "serengeti-weather.jpg",
-                        contact: "serengeti-contact.jpg"
-                    }
-                },
-                'package-8': {
-                             overview: "This day hike is perfect for those who wish to experience the magic of Mount Kilimanjaro without committing to a full summit climb. Starting from Marangu Gate (1,800m/5,905ft), you will trek to Mandara Hut (2,743m/9,000ft), the first hut on the mountain. This hike offers a wonderful opportunity to experience the stunning landscapes and atmosphere of the world's highest freestanding mountain, without the challenge of reaching the summit. The day hike is suitable for children as well, allowing families to enjoy the beauty of Kilimanjaro together without the strenuous ascent to the top.",
+        document.querySelectorAll('.view-details-btn').forEach(button => {
+            button.addEventListener('click', function () {
+                const packageId = this.dataset.package;
+                const package = packageDetails[packageId];
 
-                    rates: "The rate is: $ 330 Per Person (starting from 2 pax)",
-                    inclusion: "The package includes park fees for non-residents, ensuring access to the designated areas. All activities are covered unless labeled as optional, offering a full and enriching experience. A professional driver/guide will accompany you throughout the journey, providing expertise and assistance. All transportation is included, unless otherwise specified as optional, ensuring comfortable and hassle-free travel. Additionally, all applicable taxes and VAT are covered, with no hidden charges. Meals and drinks, as outlined in the day-by-day itinerary, are also included, ensuring you are well-catered for during your adventure.",
-                    exclusion: "The package does not include international flights to and from your home country, nor roundtrip airport transfers, although these can be arranged for an additional cost. Additional accommodation before or after the tour is not included but can be organized separately. Tips for guides and staff are not part of the package, with a recommended tipping guideline of $10.00 per person per day. Personal expenses such as souvenirs, travel insurance, and visa fees are not covered. Any government-imposed increases in taxes or park fees after booking may incur extra charges. Additionally, climbing gear is not provided and should be arranged separately..",
-                    endOfTours: "Additional accommodation can be arranged for an extra cost if you wish to extend your stay before or after the tour. Additionally, a transfer back to the airport can also be arranged for an extra cost, ensuring a smooth and convenient end to your trip.",
-                    weather: "The best time to visit arusha is during the dry season from June to October.",
-                    itinerary: [
-                        { day: "Day 1", title: "description ", description: "After breakfast at your hotel in Arusha, your driver and guide will meet you for a trip briefing. You will then be driven to Marangu Gate (1,800m) for registration before starting your 4-5 hour hike. The trail takes you through the foothills of Mount Kilimanjaro, passing through beautiful rainforests and offering a glimpse into the unique ecosystem of the mountain. After a scenic hike, you'll reach Mandara Hut at 2,700m above sea level, where you will enjoy a picnic lunch. Following lunch, you will begin your descent back to the gate, and then drive back to Arusha, where you'll be dropped off at your chosen location." },
-                    ],
-                    images: {
-                        overview: "marangu5.jpg",
-                        itinerary: "zanzibar-culture.jpg",
-                        rates: "zanzibar-rates.jpg",
-                        inclusion: "zanzibar-inclusion.jpg",
-                        exclusion: "zanzibar-exclusion.jpg",
-                        endOfTours: "zanzibar-end-of-tours.jpg",
-                        weather: "zanzibar-weather.jpg",
-                        contact: "zanzibar-contact.jpg"
-                    }
-                },
-            };
+                if (package) {
+                    modal.querySelector('.tab-image').src = package.images.overview;
+                    modal.querySelector('#overview-text').textContent = package.overview;
+                    modal.querySelector('#rates-text').textContent = package.rates;
+                    modal.querySelector('#inclusion-text').textContent = package.inclusion;
+                    modal.querySelector('#exclusion-text').textContent = package.exclusion;
+                    modal.querySelector('#weather-text').textContent = package.weather;
 
-            document.querySelectorAll('.view-details-btn').forEach(button => {
-                button.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const packageId = this.getAttribute('data-package');
-                    const modal = document.getElementById('package-modal');
-                    const packageData = packageDetails[packageId];
-
-                    document.querySelector('#overview-text').textContent = packageData.overview;
-                    document.querySelector('#rates-text').textContent = packageData.rates;
-                    document.querySelector('#inclusion-text').textContent = packageData.inclusion;
-                    document.querySelector('#exclusion-text').textContent = packageData.exclusion;
-                    document.querySelector('#end-of-tours-text').textContent = packageData.endOfTours;
-                    document.querySelector('#weather-text').textContent = packageData.weather;
-
-                    // Set unique image for the overview section
-                    document.querySelector('.tab-image').src = packageData.images.overview;
-
-                    const itineraryContainer = document.getElementById('itinerary-content');
-                    itineraryContainer.innerHTML = "";
-                    packageData.itinerary.forEach(day => {
-                        const dayElement = document.createElement('div');
-                        dayElement.classList.add('itinerary-day');
-                        dayElement.innerHTML = `
-                        <h4>${day.day}: ${day.title}</h4>
-                        <p>${day.description}</p>
-                    `;
-                        itineraryContainer.appendChild(dayElement);
+                    let itineraryHtml = '';
+                    package.itinerary.forEach(item => {
+                        itineraryHtml += `<h4>${item.day}: ${item.title}</h4><p>${item.description}</p>`;
                     });
+                    modal.querySelector('#itinerary-content').innerHTML = itineraryHtml;
 
                     modal.style.display = 'block';
-                });
-            });
-
-            document.querySelector('.close-modal').addEventListener('click', function () {
-                document.getElementById('package-modal').style.display = 'none';
-            });
-
-            document.querySelector('.back-to-packages').addEventListener('click', function () {
-                document.getElementById('package-modal').style.display = 'none';
-            });
-
-            document.querySelectorAll('.modal-nav-link').forEach(link => {
-                link.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    document.querySelectorAll('.modal-nav-link').forEach(navLink => navLink.classList.remove('active'));
-                    this.classList.add('active');
-                    document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
-                    document.querySelector(this.getAttribute('href')).classList.add('active');
-                });
+                }
             });
         });
-    </script>
-    </main>
+
+        closeModalButton.addEventListener('click', function () {
+            modal.style.display = 'none';
+        });
+
+        backToPackagesButton.addEventListener('click', function () {
+            modal.style.display = 'none';
+        });
+    });
+</script>
 
     
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Travel Information and Guide</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    <style>
-        /* General reset for all elements */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        /* Scoped styles for the main content area */
-        .travel-guide {
-            font-family: 'Roboto', sans-serif;
-            background-color: #f1f7fc; /* Softer background color for better contrast */
-            color: #333;
-            line-height: 1.6;
-            display: flex;
-            flex-direction: column;
-            min-height: 50vh;
-        }
-
-        .travel-guide main {
-            display: flex;
-            justify-content: space-between;
-            width: 100%;
-            flex: 1;
-            padding: 20px;
-        }
-
-        /* Section styling */
-        .travel-guide .section {
-            padding: 20px;
-            background-color: #ffffff; /* Clean white background */
-            border-left: 5px solid #0078d7; /* Vibrant blue border */
-            border-radius: 8px; /* Rounded corners */
-            transition: background-color 0.3s ease, box-shadow 0.3s ease;
-            margin-right: 10px;
-            flex: 1;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-        }
-
-        .travel-guide .section:nth-child(even) {
-            background-color: #f4faff; /* Light blue background for alternating sections */
-        }
-
-        .travel-guide .section:hover {
-            background-color: #e0f3ff; /* Slightly brighter hover effect */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* More pronounced shadow on hover */
-        }
-
-        .travel-guide .section h2 {
-            font-size: 1.2rem; /* Smaller heading size */
-            margin-bottom: 10px; /* Reduced margin */
-            color: #0078d7; /* Vibrant blue for headings */
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            border-bottom: 2px solid #0078d7; /* Consistent with section border */
-            padding-bottom: 5px;
-        }
-
-        .travel-guide .section ul {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        .travel-guide .section ul li {
-            margin-bottom: 8px; /* Reduced margin */
-            font-size: 1rem;
-            cursor: pointer;
-            transition: color 0.3s ease;
-        }
-
-        .travel-guide .section ul li:hover {
-            color: #0056a3; /* Darker blue on hover */
-        }
-
-        /* View More button styling */
-        .view-more {
-            text-align: center;
-            margin-top: 15px;
-            width: 100%; /* Ensure it covers the full width */
-        }
-
-        .view-more a {
-            display: block; /* Makes the link behave like a block element */
-            text-decoration: none;
-            color: #fff;
-            background-color: #3498db;
-            font-size: 1.1rem;
-            padding: 12px 0; /* Added padding for vertical spacing */
-            border-radius: 5px;
-            transition: all 0.3s;
-            width: 100%; /* Make the button span the full width */
-            text-align: center; /* Center the text inside the button */
-        }
-
-        .view-more a:hover {
-            background-color: #2980b9;
-        }
-
-        /* Footer styling */
-        .travel-guide footer {
-            text-align: center;
-            background-color: #0056a3; /* Darker blue footer */
-            color: white;
-            padding: 15px;
-            font-size: 0.9rem;
-            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        .travel-guide footer p {
-            margin: 5px 0;
-        }
-
-        .travel-guide footer a {
-            color: #bcdcff; /* Softer link color for footer */
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .travel-guide footer a:hover {
-            color: #ffffff; /* Pure white on hover */
-        }
-
-        /* Mobile Layout */
-        @media (max-width: 768px) {
-            .travel-guide main {
-                flex-direction: column;
-            }
-
-            .travel-guide .section {
-                margin-right: 0;
-                margin-bottom: 15px;
-            }
-
-            .travel-guide .section:last-child {
-                margin-bottom: 0;
-            }
-
-            .travel-guide .section h2 {
-                font-size: 1.2rem;
-            }
-
-            .travel-guide .section ul li {
-                font-size: 0.9rem;
-            }
-
-            .view-more a {
-                font-size: 1rem; /* Adjusted font size */
-                padding: 8px 0; /* Adjusted padding */
-            }
-        }
-    </style>
-</head>
-<body>
-    <div class="travel-guide">
-        <main>
-            <section class="section">
-                <h2>About Us</h2>
-                <ul>
-                    <li>Terms and Conditions</li>
-                    <li>Privacy</li>
-                </ul>
-            </section>
-
-            <section class="section">
-                <h2>Travel Information</h2>
-                <ul>
-                    <li>Tanzania Weather</li>
-                    <li>Yellow Fever Requirement</li>
-                    <li>When to Visit</li>
-                    <li>Travel Resources</li>
-                </ul>
-            </section>
-
-            <section class="section">
-                <h2>Travel Guide</h2>
-                <ul>
-                    <li>Frequently Asked Questions</li>
-                    <li>Mountain Packing List</li>
-                    <li>Packing List for Safaris</li>
-                    <li>Safari Coding</li>
-                    <li>Things to Do</li>
-                </ul>
-            </section>
-
-            <section class="section">
-                <h2>Contact Us</h2>
-                <ul>
-                    <li>Call and WhatsApp: +255 692 208 654</li>
-                    <li>Email: info@mafoyafricasafaris.com</li>
-                    <li>Address: Arusha, Tanzania</li>
-                    <li><a href="#">Facebook</a></li>
-                    <li><a href="#">Instagram</a></li>
-                </ul>
-            </section>
-        </main>
-
-        <footer>
-            <p>&copy; 2024 Mafoy Africa Safaris. All Rights Reserved.</p>
-            <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
-        </footer>
-    </div>
-</body>
-</html>
+   

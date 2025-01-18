@@ -1281,7 +1281,7 @@ body.modal-open {
         <title>Package Details</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
         <style>
-           /* Base Modal Styles */
+/* Base Modal Styles */
 .modal {
     display: none;
     position: fixed;
@@ -1408,21 +1408,68 @@ body.modal-open {
 /* Itinerary Styles */
 .itinerary-day {
     background: #f8fafc;
-    padding: 1.5rem;
-    border-radius: 0.75rem;
-    margin-bottom: 1rem;
+    padding: 1rem; /* Reduced padding for less frame */
+    border-radius: 0.5rem; /* Reduced border radius for a sharper, more professional look */
+    margin-bottom: 0.75rem; /* Reduced bottom margin for compactness */
     border: 1px solid #e2e8f0;
+    width: 100%; /* Full width */
+    box-sizing: border-box; /* Prevent padding from affecting width */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 
 .itinerary-day h4 {
     color: #1e40af;
-    margin-bottom: 0.75rem;
-    font-size: 1.25rem;
+    margin-bottom: 0.5rem; /* Reduced margin for a tighter layout */
+    font-size: 1.125rem; /* Smaller font size for a more balanced look */
     font-weight: 600;
+    line-height: 1.4;
+    text-align: left;
 }
 
-/* Mobile-Specific Styles with Scrollbars and Arrows */
+/* Itinerary Day Content */
+.itinerary-day .day-content {
+    font-size: 0.95rem; /* Smaller font size for better readability */
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 0.75rem; /* Reduced margin for more compact layout */
+    text-align: left;
+}
+
+/* Tab Image Styles */
+.tab-image {
+    height: 200px;
+    margin-bottom: 5px; /* Reduced margin to bring the content closer */
+}
+
+/* Tab Content */
+.tab-content {
+    margin-top: 0; /* Remove or reduce the margin between the image and content */
+    padding-top: 5px; /* Reduce padding for a tighter layout */
+}
+
+/* Mobile-Specific Styles */
 @media screen and (max-width: 768px) {
+    .itinerary-day {
+        padding: 0.75rem; /* Further reduced padding for mobile */
+        margin-bottom: 0.5rem; /* Further reduced bottom margin */
+        width: 100%; /* Ensure full width */
+    }
+
+    .itinerary-day h4 {
+        font-size: 1rem; /* Smaller font size for mobile */
+        margin-bottom: 0.25rem; /* Smaller margin on mobile */
+        font-weight: 600;
+        text-align: left;
+    }
+
+    .itinerary-day .day-content {
+        font-size: 0.875rem; /* Adjust font size for mobile */
+        line-height: 1.5;
+        margin-bottom: 0.5rem; /* Adjust margin for mobile */
+    }
+
     .modal-content {
         margin: 0;
         padding: 10px;
@@ -1527,7 +1574,12 @@ body.modal-open {
 
     .tab-image {
         height: 200px;
-        margin-bottom: 10px;
+        margin-bottom: 5px; /* Reduced margin to bring the content closer */
+    }
+
+    .tab-content {
+        margin-top: 0; /* Reduced margin for a tighter layout */
+        padding-top: 5px; /* Reduced padding */
     }
 
     /* Arrows for Navigation (Visible for Scrollable Nav) */
@@ -1557,6 +1609,7 @@ body.modal-open {
         background-repeat: no-repeat;
     }
 }
+
 
         </style>
     </head>
@@ -1957,4 +2010,3 @@ body.modal-open {
     </div>
 </body>
 </html>
-

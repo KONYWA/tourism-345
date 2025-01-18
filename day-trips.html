@@ -6,262 +6,264 @@
     <title>Mafoy africa Safaris | Luxury Safari Experience</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        /* Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+      /* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        body {
-            font-family: 'Roboto', sans-serif;
-            background-color: #f8f8f8;
-            color: #333;
-            line-height: 1.6;
-        }
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f8f8f8;
+    color: #333;
+    line-height: 1.6;
+}
 
-        /* Header Section */
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 20px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            color: #ffffff; /* White text */
-            background-color: #007bff; /* Blue background for the header */
-            width: 100%; /* Ensure the blue color covers the entire width */
-            position: relative; /* Positioning for menu button inside header */
-        }
+/* Header Section */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    color: #ffffff; /* White text */
+    background-color: #d99d42; /* Golden orange background for the header */
+    width: 100%; /* Ensure the golden orange color covers the entire width */
+    position: relative; /* Positioning for menu button inside header */
+}
 
-        /* Logo */
-        .logo {
-            display: flex;
-            align-items: center;
-            color: #333; /* Black color for logo text */
-            background-color: #ffffff; /* White background for logo in mobile view */
-            padding: 10px 20px;
-            border-radius: 5px;
-        }
+/* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+    color: #ffffff; /* White text for logo */
+    background-color: #d99d42; /* Golden orange background for logo */
+    padding: 10px 20px;
+    border-radius: 5px;
+}
 
-        .logo img {
-            width: 50px;
-            margin-right: 10px;
-        }
+.logo img {
+    width: 50px;
+    margin-right: 10px;
+}
 
-        .logo span {
-            font-size: 1.4rem;
-            font-weight: bold;
-        }
+.logo span {
+    font-size: 1.4rem;
+    font-weight: bold;
+}
 
-        /* Mobile Menu Button */
-        .menu-btn {
-            display: flex;
-            cursor: pointer;
-            flex-direction: column;
-            gap: 5px;
-            position: absolute; /* Position absolutely inside the header */
-            right: 20px; /* Align the button to the right inside the header */
-            background-color: transparent; /* No background for the button itself */
-            padding: 10px; /* Add padding to make button area clickable */
-        }
+/* Mobile Menu Button */
+.menu-btn {
+    display: flex;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+    position: absolute; /* Position absolutely inside the header */
+    right: 20px; /* Align the button to the right inside the header */
+    background-color: transparent; /* No background for the button itself */
+    padding: 10px; /* Add padding to make button area clickable */
+}
 
-        .menu-btn div {
-            width: 30px;
-            height: 4px;
-            background-color: #ffffff; /* White color for mobile menu lines */
-        }
+.menu-btn div {
+    width: 30px;
+    height: 4px;
+    background-color: #ffffff; /* White color for mobile menu lines */
+}
 
-        /* Mobile Navigation */
-        .mobile-nav {
-            display: none;
-            flex-direction: column;
-            background-color: #fff;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            width: 100%;
-        }
+/* Mobile Navigation */
+.mobile-nav {
+    display: none;
+    flex-direction: column;
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
 
-        .mobile-nav.active {
-            display: flex;
-        }
+.mobile-nav.active {
+    display: flex;
+}
 
-        .mobile-nav ul {
-            list-style: none;
-            width: 100%;
-            padding: 0;
-        }
+.mobile-nav ul {
+    list-style: none;
+    width: 100%;
+    padding: 0;
+}
 
-        .mobile-nav ul li {
-            width: 100%;
-        }
+.mobile-nav ul li {
+    width: 100%;
+}
 
-        .mobile-nav ul li a {
-            display: block;
-            text-align: center;
-            text-decoration: none;
-            font-size: 1.1rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            color: #333;
-            padding: 15px;
-            border-bottom: 1px solid #ddd;
-            transition: background-color 0.3s, color 0.3s;
-        }
+.mobile-nav ul li a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #333; /* Dark text color */
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+    transition: background-color 0.3s, color 0.3s;
+}
 
-        .mobile-nav ul li a:hover {
-            background-color: #f4f4f4;
-            color: #007bff; /* Blue color on hover */
-        }
+.mobile-nav ul li a:hover {
+    background-color: #f4f4f4;
+    color: #b96329; /* Burnt orange color on hover */
+}
 
-        /* Desktop View */
-        @media (min-width: 769px) {
-            header {
-                padding: 10px 5%;
-                display: flex;
-                justify-content: space-between; /* Align logo and menu at opposite ends */
-                align-items: center;
-            }
+/* Desktop View */
+@media (min-width: 769px) {
+    header {
+        padding: 10px 5%;
+        display: flex;
+        justify-content: space-between; /* Align logo and menu at opposite ends */
+        align-items: center;
+    }
 
-            .menu-btn {
-                display: none;
-            }
+    .menu-btn {
+        display: none;
+    }
 
-            /* Hide Menu Text in desktop view */
-            .menu-text {
-                display: none;
-            }
+    /* Hide Menu Text in desktop view */
+    .menu-text {
+        display: none;
+    }
 
-            /* Align the navigation to the right */
-            header nav {
-                margin-left: auto; /* Push navigation to the right */
-            }
+    /* Align the navigation to the right */
+    header nav {
+        margin-left: auto; /* Push navigation to the right */
+    }
 
-            header nav ul {
-                display: flex;
-                list-style: none;
-                gap: 20px;
-            }
+    header nav ul {
+        display: flex;
+        list-style: none;
+        gap: 20px;
+    }
 
-            header nav ul li {
-                position: relative;
-            }
+    header nav ul li {
+        position: relative;
+    }
 
-            header nav ul li a {
-                text-decoration: none;
-                color: #ffffff; /* White text for navigation items */
-                font-weight: 600;
-                transition: color 0.3s;
-            }
+    header nav ul li a {
+        text-decoration: none;
+        color: #ffffff; /* White text for navigation items */
+        font-weight: 600;
+        transition: color 0.3s;
+    }
 
-            header nav ul li a:hover {
-                color: #e6a400; /* Gold color on hover */
-            }
+    header nav ul li a:hover {
+        color: #b96329; /* Burnt orange color on hover */
+    }
 
-            /* Dropdown Styling */
-            .dropdown {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                background-color: white;
-                min-width: 200px;
-                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-                z-index: 1000;
-            }
+    /* Dropdown Styling */
+    .dropdown {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: white;
+        min-width: 200px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+    }
 
-            /* Show the dropdown when hovering over the parent */
-            header nav ul li:hover .dropdown {
-                display: block;
-            }
+    /* Show the dropdown when hovering over the parent */
+    header nav ul li:hover .dropdown {
+        display: block;
+    }
 
-            .dropdown li {
-                width: 100%;
-            }
+    .dropdown li {
+        width: 100%;
+    }
 
-            .dropdown a {
-                display: block;
-                padding: 10px 15px;
-                color: #333;
-            }
+    .dropdown a {
+        display: block;
+        padding: 10px 15px;
+        color: #333;
+    }
 
-            .dropdown a:hover {
-                background-color: #f4f4f4;
-            }
+    .dropdown a:hover {
+        background-color: #f4f4f4;
+    }
 
-            /* Update logo background to blue for desktop view */
-            .logo {
-                background-color: #007bff; /* Blue background for logo on desktop */
-                color: white; /* White text color for logo text */
-            }
+    /* Update logo background to golden orange for desktop view */
+    .logo {
+        background-color: #d99d42; /* Golden orange background for logo on desktop */
+        color: white; /* White text color for logo text */
+    }
 
-            .logo img {
-                width: 50px; /* Adjust logo size */
-                margin-right: 10px;
-            }
+    .logo img {
+        width: 50px; /* Adjust logo size */
+        margin-right: 10px;
+    }
 
-            .logo span {
-                font-size: 1.6rem; /* Increase font size for better visibility */
-                font-weight: bold;
-            }
-        }
+    .logo span {
+        font-size: 1.6rem; /* Increase font size for better visibility */
+        font-weight: bold;
+    }
+}
 
-        /* Mobile Specific Adjustments */
-        @media (max-width: 768px) {
-            /* Make the entire header section blue on mobile */
-            header {
-                display: block;
-                padding: 0; /* Remove default padding */
-                background-color: #007bff; /* Blue background for the entire header */
-                width: 100%; /* Make the blue background cover the entire width */
-            }
+/* Mobile Specific Adjustments */
+@media (max-width: 768px) {
+    /* Make the entire header section golden orange on mobile */
+    header {
+        display: block;
+        padding: 0; /* Remove default padding */
+        background-color: #d99d42; /* Golden orange background for the entire header */
+        width: 100%; /* Make the golden orange background cover the entire width */
+    }
 
-            /* Logo on top of the header in mobile view with full-width blue background */
-            .logo {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                width: 100%; /* Full-width */
-                background-color: #ffffff; /* White background for logo part */
-                padding: 30px 0; /* Increased padding for larger header */
-                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow */
-            }
+    /* Logo on top of the header in mobile view with full-width golden orange background */
+    .logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%; /* Full-width */
+        background-color: #ffffff; /* White background for logo part */
+        padding: 30px 0; /* Increased padding for larger header */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow */
+    }
 
-            .logo img {
-                width: 60px; /* Adjust logo size */
-                margin-right: 10px;
-            }
+    .logo img {
+        width: 60px; /* Adjust logo size */
+        margin-right: 10px;
+    }
 
-            .logo span {
-                font-size: 1.6rem; /* Increase font size for better visibility */
-                font-weight: bold;
-            }
+    .logo span {
+        font-size: 1.6rem; /* Increase font size for better visibility */
+        font-weight: bold;
+        color: #333; /* Dark text color for logo in mobile view */
+    }
 
-            /* Header section with mobile menu icon */
-            header nav {
-                display: none; /* Hidden by default */
-            }
+    /* Header section with mobile menu icon */
+    header nav {
+        display: none; /* Hidden by default */
+    }
 
-            /* Mobile Navigation visible when active */
-            .mobile-nav.active {
-                display: flex;
-            }
+    /* Mobile Navigation visible when active */
+    .mobile-nav.active {
+        display: flex;
+    }
 
-            /* "Menu" Text */
-            .menu-text {
-                color: white;
-                font-size: 1.4rem;
-                font-weight: bold;
-                margin-left: 20px;
-            }
+    /* "Menu" Text */
+    .menu-text {
+        color: white;
+        font-size: 1.4rem;
+        font-weight: bold;
+        margin-left: 20px;
+    }
 
-            /* Dropdown menu visibility when "Tours" is clicked */
-            .mobile-nav ul li .dropdown {
-                display: none;
-            }
+    /* Dropdown menu visibility when "Tours" is clicked */
+    .mobile-nav ul li .dropdown {
+        display: none;
+    }
 
-            .mobile-nav ul li.active .dropdown {
-                display: block;
-            }
-        }
+    .mobile-nav ul li.active .dropdown {
+        display: block;
+    }
+}
+
     </style>
 </head>
 <body>
@@ -319,7 +321,7 @@
                     <li><a href="zanzibar-holidays.html">Zanzibar Holidays Packages</a></li>
                 </ul>
             </li>
-            <li><a href="about us.html">Testimonials</a></li>
+            <li><a href="about us.html">About us</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
@@ -339,6 +341,7 @@
     </script>
 </body>
 </html>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -483,27 +486,27 @@
         }
 
         .view-details-btn {
-            display: inline-block;
-            padding: 0.8rem 1.5rem;
-            /* Adjusted padding */
-            background-color: #0099ff;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 6px;
-            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-            font-weight: 500;
-            text-align: center;
-            width: 100%;
-            box-sizing: border-box;
-            margin-top: 1rem;
-            font-size: 1.1rem;
-        }
+    display: inline-block;
+    padding: 0.8rem 1.5rem; /* Adjusted padding */
+    background-color: #d99d42; /* Golden orange */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    font-weight: 500;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 1rem;
+    font-size: 1.1rem;
+}
 
-        .view-details-btn:hover {
-            background-color: #2980b9;
-            transform: scale(1.05);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-        }
+.view-details-btn:hover {
+    background-color: #b96329; /* Slightly darker golden orange for hover */
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
 
         /* Modal Styles */
         .modal {
@@ -1093,7 +1096,7 @@ body.modal-open {
 /* General Style for .tab-image */
 .tab-image {
     border-radius: 5px;
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
     object-fit: cover;
     object-position: 0cqmax;
 }
@@ -1270,314 +1273,447 @@ body.modal-open {
 
         </div>
     </main>
-    <!-- Package Details Modal -->
-    <div class="modal" id="package-modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2 class="modal-title">Package Details</h2>
-                <button class="close-modal">&times;</button>
-            </div>
-            <div class="modal-body">
-                <div class="modal-sidebar">
-                    <ul class="modal-nav">
-                        <li class="modal-nav-item"><a href="#overview" class="modal-nav-link active">Overview</a></li>
-                        <li class="modal-nav-item"><a href="#itinerary" class="modal-nav-link">Itinerary</a></li>
-                        <li class="modal-nav-item"><a href="#rates" class="modal-nav-link">Rates</a></li>
-                        <li class="modal-nav-item"><a href="#inclusion" class="modal-nav-link">Inclusion</a></li>
-                        <li class="modal-nav-item"><a href="#exclusion" class="modal-nav-link">Exclusion</a></li>
-                        <li class="modal-nav-item"><a href="#end-of-tours" class="modal-nav-link">End of Tours</a></li>
-                        <li class="modal-nav-item"><a href="#weather" class="modal-nav-link">Weather</a></li>
-                        <li class="modal-nav-item"><a href="#contact" class="modal-nav-link">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="modal-main">
-                    <!-- Image Section -->
-                    <img src="zanzibar-overview.jpg" alt="Zanzibar Overview" class="tab-image"
-                        style="width: 100%; height: 400px; object-fit: cover; border-radius: 8px; margin-bottom: 4rem;">
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Package Details</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <style>
+            .modal {
+                display: none;
+                position: fixed;
+                margin-top: auto;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.95);
+                z-index: 1000;
+            }
+    
+            .modal-content {
+                position: relative;
+                background-color: #fff;
+                margin: 0.2% auto;
+                padding: 50px;
+                width: 99%;
+                max-width: 1800px;
+                max-height: 99vh;
+                overflow-y: auto;
+                border-radius: 12px;
+            }
+    
+            .modal-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 30px;
+            }
+    
+            .modal-title {
+                margin: 0;
+                font-size: 36px;
+                font-weight: bold;
+            }
+    
+            .home-link {
+                font-size: 16px;
+                text-decoration: none;
+                color: #ffffff;
+                font-weight: 600;
+                padding: 12px 24px;
+                background-color: #007BFF;
+                border-radius: 8px;
+                border: 2px solid #0056b3;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                transition: all 0.3s ease;
+                display: inline-block;
+                text-align: center;
+                cursor: pointer;
+            }
+    
+            .home-link:hover {
+                background-color: #0056b3;
+                color: #e6e6e6;
+                transform: translateY(-2px);
+                box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+                text-decoration: underline;
+            }
+    
+            .modal-body {
+                display: flex;
+                gap: 40px;
+            }
+    
+            .modal-sidebar {
+                flex: 0 0 300px;
+            }
+    
+            .modal-main {
+                flex: 1;
+            }
+    
+            .modal-nav-item {
+                margin-bottom: 20px;
+            }
+    
+            .modal-nav-link {
+                display: block;
+                padding: 15px 25px;
+                font-size: 18px;
+            }
+    
+            /* List Styles */
+.list-container {
+    display: grid;
+    gap: 1rem;
+}
 
-                    <div id="overview" class="tab-content active">
-                        <h3>Overview</h3>
-                        <p id="overview-text">Details will be shown here based on the selected package.</p>
+.list-item {
+    background: #f8fafc;
+    padding: 1.25rem;
+    border-radius: 0.75rem;
+    border: 1px solid #e2e8f0;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: all 0.2s;
+}
+
+.list-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.list-icon {
+    font-size: 1.25rem;
+}
+
+.inclusion-icon {
+    color: #22c55e;
+}
+
+.exclusion-icon {
+    color: #ef4444;
+}
+
+/* Itinerary Styles */
+.itinerary-day {
+    background: #f8fafc;
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #e2e8f0;
+}
+
+.itinerary-day h4 {
+    color: #1e40af;
+    margin-bottom: 0.75rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+            @media screen and (max-width: 768px) {
+                .modal-content {
+                    margin: 0;
+                    padding: 20px;
+                    width: 100%;
+                    height: 100%;
+                    max-height: 100%;
+                    border-radius: 0;
+                }
+    
+                .modal-body {
+                    flex-direction: column;
+                    gap: 20px;
+                }
+    
+                .modal-sidebar {
+                    flex: none;
+                    width: 100%;
+                }
+    
+                .modal-title {
+                    font-size: 28px;
+                }
+    
+                .modal-nav-link {
+                    padding: 20px;
+                    font-size: 20px;
+                }
+    
+                .list-item {
+                    font-size: 16px;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    padding: 12px;
+                }
+    
+                .list-icon {
+                    margin-bottom: 10px;
+                }
+            }
+    
+            @media screen and (min-width: 1920px) {
+                .modal-content {
+                    max-width: 2000px;
+                }
+    
+                .modal-sidebar {
+                    flex: 0 0 400px;
+                }
+            }
+            /* Responsive Design */
+@media screen and (max-width: 768px) {
+    .modal-body {
+        flex-direction: column;
+    }
+
+    .modal-header {
+        padding: 1rem;
+    }
+
+    .modal-title {
+        font-size: 1.25rem;
+    }
+
+    .modal-sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #e2e8f0;
+        padding: 1rem;
+    }
+
+    .modal-nav {
+        display: flex;
+        overflow-x: auto;
+        padding: 0.5rem 0;
+        gap: 0.5rem;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+
+    .modal-nav::-webkit-scrollbar {
+        display: none;
+    }
+
+    .modal-nav-item {
+        flex-shrink: 0;
+        margin-bottom: 0;
+    }
+
+    .modal-nav-link {
+        padding: 0.75rem 1rem;
+        font-size: 0.875rem;
+        white-space: nowrap;
+    }
+
+    .modal-main {
+        padding: 1rem;
+    }
+
+    .tab-image {
+        height: 250px;
+        margin-bottom: 1.5rem;
+    }
+
+    .list-item {
+        padding: 1rem;
+    }
+
+    .home-link {
+        padding: 0.5rem 1rem;
+        font-size: 0.875rem;
+    }
+}
+        </style>
+    </head>
+    <body>
+        <div class="modal" id="package-modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title">Package Details</h2>
+                    <a href="index.html" class="home-link">Home</a>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-sidebar">
+                        <ul class="modal-nav">
+                            <li class="modal-nav-item"><a href="#overview" class="modal-nav-link active">Overview</a></li>
+                            <li class="modal-nav-item"><a href="#itinerary" class="modal-nav-link">Itinerary</a></li>
+                            <li class="modal-nav-item"><a href="#rates" class="modal-nav-link">Rates</a></li>
+                            <li class="modal-nav-item"><a href="#inclusion" class="modal-nav-link">Inclusion</a></li>
+                            <li class="modal-nav-item"><a href="#exclusion" class="modal-nav-link">Exclusion</a></li>
+                            <li class="modal-nav-item"><a href="#end-of-tours" class="modal-nav-link">End of Tours</a></li>
+                            <li class="modal-nav-item"><a href="#weather" class="modal-nav-link">Weather</a></li>
+                            <li class="modal-nav-item"><a href="#contact" class="modal-nav-link">Contact</a></li>
+                        </ul>
                     </div>
-                    <div id="itinerary" class="tab-content">
-                        <h3>Itinerary</h3>
-                        <div id="itinerary-content">
-                            <!-- Itinerary days will be inserted dynamically here -->
+                    <div class="modal-main">
+                        <img src="zanzibar-overview.jpg" alt="Package Overview" class="tab-image"
+                            style="width: 100%; height: 400px; object-fit: cover; border-radius: 8px; margin-bottom: 4rem;">
+    
+                        <div id="overview" class="tab-content active">
+                            <h3>Overview</h3>
+                            <p id="overview-text"></p>
+                        </div>
+    
+                        <div id="itinerary" class="tab-content">
+                            <h3>Itinerary</h3>
+                            <div id="itinerary-content"></div>
+                        </div>
+    
+                        <div id="rates" class="tab-content">
+                            <h3>Rates</h3>
+                            <p id="rates-text"></p>
+                        </div>
+    
+                        <div id="inclusion" class="tab-content">
+                            <h3>Inclusion</h3>
+                            <div id="inclusion-text" class="list-container"></div>
+                        </div>
+    
+                        <div id="exclusion" class="tab-content">
+                            <h3>Exclusion</h3>
+                            <div id="exclusion-text" class="list-container"></div>
+                        </div>
+    
+                        <div id="end-of-tours" class="tab-content">
+                            <h3>End of Tours</h3>
+                            <p id="end-of-tours-text"></p>
+                        </div>
+    
+                        <div id="weather" class="tab-content">
+                            <h3>Weather</h3>
+                            <p id="weather-text"></p>
+                        </div>
+    
+                        <div id="contact" class="tab-content">
+                            <h3>Contact</h3>
+                            <p>For more details, contact us at <strong>innocentmgaleh@gmail.com</strong>.</p>
                         </div>
                     </div>
-                    <div id="rates" class="tab-content">
-                        <h3>Rates</h3>
-                        <p id="rates-text">Rates will be shown here.</p>
-                    </div>
-                    <div id="inclusion" class="tab-content">
-                        <h3>Inclusion</h3>
-                        <p id="inclusion-text">Inclusion details will be shown here.</p>
-                    </div>
-                    <div id="exclusion" class="tab-content">
-                        <h3>Exclusion</h3>
-                        <p id="exclusion-text">Exclusion details will be shown here.</p>
-                    </div>
-                    <div id="end-of-tours" class="tab-content">
-                        <h3>End of Tours</h3>
-                        <p id="end-of-tours-text">End of tour details will be shown here.</p>
-                    </div>
-                    <div id="weather" class="tab-content">
-                        <h3>Weather</h3>
-                        <p id="weather-text">Weather details will be shown here.</p>
-                    </div>
-                    <div id="contact" class="tab-content">
-                        <h3>Contact</h3>
-                        <p>For more details, contact us at <strong>innocentmgaleh@gmail.com</strong>.</p>
-                    </div>
-                    <a href="#" class="back-to-packages">Back to Packages</a>
                 </div>
             </div>
         </div>
-    </div>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const packageDetails = {
-                'package-1': {
-                    overview: "Despite its small size, Arusha National Park is home to a variety of wildlife, including giraffes, buffaloes, zebras, warthogs, black-and-white colobus monkeys, blue monkeys, flamingos, and more. While African elephants and leopards inhabit the park, they are rarely spotted. Nestled at the base of Mount Meru, the park offers excellent opportunities for climbing enthusiasts. The forest within the park is teeming with birdlife, making it an ideal spot for birdwatchers to observe a diverse range of forest species. Additionally, airport transfers can be arranged at an extra cost for added convenience.",
-
-
-                    rates: "RATES: $ 495 Per person",
-                    inclusion: "The package includes park fees for non-residents, ensuring seamless access to the attractions. All activities, unless labeled as optional, are covered, providing a comprehensive experience. A professional driver/guide will accompany you throughout the journey, offering expert insights and assistance. Transportation is included, except for any optional services, ensuring comfortable and hassle-free travel. All applicable taxes and VAT are taken care of, so there are no hidden charges. Meals are provided as specified in the day-by-day itinerary, ensuring a well-rounded and enjoyable experience.",
-                    exclusion: "The package does not include international flights to and from your home country or roundtrip airport transfers. Additional accommodation before or after the tour is also excluded but can be arranged at an extra cost. Tips for guides and staff are not included, with a recommended tipping guideline of $10.00 per person per day. Personal items such as souvenirs, travel insurance, visa fees, and other incidental expenses are the responsibility of the traveler. Any government-imposed increases in taxes or park fees after booking are not covered and may incur additional charges.",
-                    endOfTours: "A transfer back to the airport can be arranged for an extra cost.",
-                    weather: "The best time for safari is during the dry season, from June to October.",
-                    itinerary: [
-                        { day: "Day 1", title: "description ", description: "After breakfast, our driver will pick you up from your hotel and take you to Arusha National Park for an exciting game drive. Despite its small size, the park is home to a wide variety of wildlife, including giraffes, buffaloes, zebras, warthogs, black-and-white colobus monkeys, blue monkeys, and flamingos, among others. While African elephants and leopards are present, sightings are rare. Located at the base of Mount Meru, the park offers not only breathtaking views but also opportunities for climbing and walking safaris. The forest within the park is teeming with birdlife, making it a haven for birdwatchers, as many forest species are easily observed here. Although Arusha National Park is very accessible, it is often overlooked on safari itineraries due to the absence of the Big Five. However, its diverse habitats and excellent birding opportunities make it a unique and rewarding destination. After a full day of exploration and game viewing, we will drive you back to your accommodation in Arusha, concluding a memorable experience." },
-                    ],
-                    images: {
-                        overview: "karatu.jpg",
-                        itinerary: "jozani 2.jpg",
-                        rates: "zanzibar-rates.jpg",
-                        inclusion: "zanzibar-inclusion.jpg",
-                        exclusion: "zanzibar-exclusion.jpg",
-                        endOfTours: "zanzibar-end-of-tours.jpg",
-                        weather: "zanzibar-weather.jpg",
-                        contact: "zanzibar-contact.jpg"
-                    }
-                },
-                'package-2': {
-                    overview: "This one-day tour is tailored to provide visitors with an enriching experience in the Arusha area, making it an ideal activity for those who have recently hiked Mount Kilimanjaro, are awaiting the start of their planned safari, or are in transit before their next flight. It offers a perfect opportunity to immerse yourself in the natural beauty of Tanzania, featuring an unforgettable African hike with stunning views of Mount Kilimanjaro, the world’s highest free-standing mountain. For added convenience, airport transfers can be arranged at an extra cost.",
-
-                    rates: "Starting at $150 per person.",
-                    inclusion: "The package includes porterage services and rescue fees for your safety and convenience. Park fees for non-residents are covered, ensuring access to the designated areas. All activities, unless labeled as optional, are included to provide a comprehensive experience. A professional driver/guide will accompany you, offering expertise and insights throughout the journey. All transportation is provided unless otherwise specified as optional. Additionally, all applicable taxes and VAT are included, so there are no hidden charges. Meals and drinks, as specified in the day-by-day itinerary, are also part of the package to ensure a seamless and enjoyable experience..",
-                    exclusion: "The package does not include climbing gear, so participants are expected to bring their own or rent equipment as needed. International flights to and from your home country are not covered, nor are roundtrip airport transfers, although they can be arranged for an additional cost. Additional accommodation before or after the tour is not included but can be organized separately. Tips for guides and staff are not part of the package, with a suggested tipping guideline of $10.00 per person per day. Personal expenses such as souvenirs, travel insurance, and visa fees are also not covered. Any government-imposed increases in taxes or park fees after booking may incur additional charges.",
-                    endOfTours: "•	A transfer back to the airport can be arranged for an extra cost.",
-                    weather: "The best time to visit is from December to March and June to October.",
-                    itinerary: [
-                        { day: "Day 1", title: "description ", description: "Early in the morning, our English-speaking guide will pick you up from your hotel and drive you to Materuni Village, the home of the Chagga tribe. Along the way, the guide will share fascinating details about Chagga culture, village life, and the local environment. Upon arrival, you will register at the village office and enjoy stunning views of Mount Kilimanjaro’s summit. The tour begins with a visit to the 80-meter-high Materuni Waterfall, where you can marvel at its breathtaking beauty. Afterward, you’ll return to the village for a traditional Chagga lunch and a taste of locally brewed banana beer. The experience continues with a coffee tour, where you’ll learn about the entire coffee-making process, from cultivation to roasting. You’ll also have the chance to grind coffee beans alongside the Chagga people, accompanied by their traditional songs and dances—a delightful and interactive cultural experience. After this full-day adventure, we will drive you back to your hotel." },
-                    ],
-                    images: {
-                        overview: "ho5.jpg",
-                        itinerary: "serengeti-itinerary.jpg",
-                        rates: "serengeti-rates.jpg",
-                        inclusion: "serengeti-inclusion.jpg",
-                        exclusion: "serengeti-exclusion.jpg",
-                        endOfTours: "serengeti-end-of-tours.jpg",
-                        weather: "serengeti-weather.jpg",
-                        contact: "serengeti-contact.jpg"
-                    }
-                },
-                'package-3': {
-                             overview: "This day hike is perfect for those who wish to experience the magic of Mount Kilimanjaro without committing to a full summit climb. Starting from Marangu Gate (1,800m/5,905ft), you will trek to Mandara Hut (2,743m/9,000ft), the first hut on the mountain. This hike offers a wonderful opportunity to experience the stunning landscapes and atmosphere of the world's highest freestanding mountain, without the challenge of reaching the summit. The day hike is suitable for children as well, allowing families to enjoy the beauty of Kilimanjaro together without the strenuous ascent to the top.",
-
-                    rates: "The rate is: $ 330 Per Person (starting from 2 pax)",
-                    inclusion: "The package includes park fees for non-residents, ensuring access to the designated areas. All activities are covered unless labeled as optional, offering a full and enriching experience. A professional driver/guide will accompany you throughout the journey, providing expertise and assistance. All transportation is included, unless otherwise specified as optional, ensuring comfortable and hassle-free travel. Additionally, all applicable taxes and VAT are covered, with no hidden charges. Meals and drinks, as outlined in the day-by-day itinerary, are also included, ensuring you are well-catered for during your adventure.",
-                    exclusion: "The package does not include international flights to and from your home country, nor roundtrip airport transfers, although these can be arranged for an additional cost. Additional accommodation before or after the tour is not included but can be organized separately. Tips for guides and staff are not part of the package, with a recommended tipping guideline of $10.00 per person per day. Personal expenses such as souvenirs, travel insurance, and visa fees are not covered. Any government-imposed increases in taxes or park fees after booking may incur extra charges. Additionally, climbing gear is not provided and should be arranged separately..",
-                    endOfTours: "Additional accommodation can be arranged for an extra cost if you wish to extend your stay before or after the tour. Additionally, a transfer back to the airport can also be arranged for an extra cost, ensuring a smooth and convenient end to your trip.",
-                    weather: "The best time to visit arusha is during the dry season from June to October.",
-                    itinerary: [
-                        { day: "Day 1", title: "description ", description: "After breakfast at your hotel in Arusha, your driver and guide will meet you for a trip briefing. You will then be driven to Marangu Gate (1,800m) for registration before starting your 4-5 hour hike. The trail takes you through the foothills of Mount Kilimanjaro, passing through beautiful rainforests and offering a glimpse into the unique ecosystem of the mountain. After a scenic hike, you'll reach Mandara Hut at 2,700m above sea level, where you will enjoy a picnic lunch. Following lunch, you will begin your descent back to the gate, and then drive back to Arusha, where you'll be dropped off at your chosen location." },
-                    ],
-                    images: {
-                        overview: "marangu5.jpg",
-                        itinerary: "zanzibar-culture.jpg",
-                        rates: "zanzibar-rates.jpg",
-                        inclusion: "zanzibar-inclusion.jpg",
-                        exclusion: "zanzibar-exclusion.jpg",
-                        endOfTours: "zanzibar-end-of-tours.jpg",
-                        weather: "zanzibar-weather.jpg",
-                        contact: "zanzibar-contact.jpg"
-                    }
-                },
-                'package-4': {
-                    overview: " The Ngorongoro Crater is a breathtaking natural wonder of the world. This incredible volcanic landscape was formed over 2 million years ago and is home to a diverse array of wildlife i.e. lions, elephants, zebras and hippos. When visiting the Ngorongoro Crater, you'll spend a full day exploring this unique ecosystem, the best place in Africa to spot the Big Five, spending a day in the crater is an experience that will leave you in awe of the natural beauty and wildlife that call this place home.",
-
-                    rates: "For Group Option: $ 275 Per Person ,For Private Option: $ 450 Per Person (starting from 2 pax)",
-                    inclusion: "The package includes park fees for non-residents, ensuring access to all designated areas. All activities are included unless labeled as optional, providing a full and engaging experience. A professional driver/guide will accompany you throughout the trip, offering expert insights and guidance. All transportation is provided, except for any optional services, ensuring smooth and comfortable travel. Additionally, all applicable taxes and VAT are covered, with no hidden charges. Meals and drinks, as specified in the day-by-day itinerary, are included, ensuring you are well-catered for during your adventure.",
-                    exclusion: "The package does not include international flights to and from your home country, nor roundtrip airport transfers, though these can be arranged at an additional cost. Additional accommodation before or after the tour is not included but can be arranged separately. Tips for guides and staff are not part of the package, with a suggested tipping guideline of $10.00 per person per day. Personal items such as souvenirs, travel insurance, and visa fees are also not covered. Any government-imposed increases in taxes or park fees after booking may result in additional charges.",
-                    endOfTours: "The tour ends with a drop-off at your accommodation or the airport.",
-                    weather: "The best time to visit is from June to October.",
-                    itinerary: [
-                        { day: "Day 1", title: "description ", description: "You will be picked up from your hotel in Arusha between 6:00 AM and 7:00 AM and begin your drive to Ngorongoro Crater. On the way, you will stop at the crater viewpoint before descending into the crater for a thrilling game drive. Ngorongoro Crater, often referred to as the Eighth Natural Wonder of the World, is the largest intact volcanic crater on Earth, formed over 2 million years ago when the Ngorongoro volcano erupted, causing the crater walls to collapse and create a natural enclosure. The crater spans over 19 kilometers in diameter and is home to a diverse range of habitats, including acacia forests, hippo-filled swamps, and expansive grasslands. With over 30,000 animals, including elephants, warthogs, flamingos, and the rare black rhinoceros, along with various bird species and predatory cats, the crater offers a rich and exciting wildlife viewing experience. After the game drive, you will be dropped off at your hotel or the airport. Meals provided include lunch, with breakfast and dinner not included, and non-alcoholic drinks are available throughout the day." },
-                    ],
-                    images: {
-                        overview: "nakupenda.jpg",
-                        itinerary: "serengeti-safari.jpg",
-                        rates: "serengeti-rates.jpg",
-                        inclusion: "serengeti-inclusion.jpg",
-                        exclusion: "serengeti-exclusion.jpg",
-                        endOfTours: "serengeti-end-of-tours.jpg",
-                        weather: "serengeti-weather.jpg",
-                        contact: "serengeti-contact.jpg"
-                    }
-                },
-                'package-5': {
-                    overview: "The park’s large elephant population, iconic Baobab trees, and diversity of wildlife make it one of the best parks in the country for taking breathtaking photos or simply basking in the beautiful elephants. Game drives through Tarangire are particularly thrilling during the dry season when the animals of the park must cluster closer and closer to the Tarangire River. This offers a great opportunity to see plenty of animals in one place and to witness the predator-prey relationship in action.",
-
-                    rates: "For Group Option: $ 230 Per Person ,For Private Option: $ 330 Per Person (starting from 2 pax)",
-                    inclusion: "The package includes park fees for non-residents, ensuring access to the park's designated areas. All activities are covered, unless specified as optional, providing a comprehensive experience. A professional driver/guide will accompany you throughout the journey, offering expert insights and assistance. All transportation is provided, unless otherwise labeled as optional, ensuring smooth and convenient travel. Additionally, all taxes and VAT are included, with no hidden charges. Meals and drinks, as outlined in the day-by-day itinerary, are also covered, ensuring you are well-catered for during your adventure.",
-                    exclusion: "The package does not include international flights to and from your home country, nor roundtrip airport transfers, although these can be arranged for an additional cost. Additional accommodation before or after the tour is not included but can be organized separately. Tips for guides and staff are not part of the package, with a suggested tipping guideline of $10.00 per person per day. Personal items such as souvenirs, travel insurance, and visa fees are not covered. Any government-imposed increases in taxes or park fees after booking may result in additional charges.",
-                    endOfTours: "The tour ends with a drop-off at your accommodation or the airport.",
-                    weather: "The best time to visit is from June to October.",
-                    itinerary: [
-                        { day: "Day 1", title: "description ", description: "We will pick you up from your hotel in Arusha and drive you to Tarangire National Park, which is renowned for its high elephant population. The park is home to herds that can reach up to 300 elephants, offering an incredible opportunity for wildlife viewing year-round. The Tarangire River, which remains full of water throughout the year, attracts animals, especially during the dry season from July to October, when wildlife from surrounding areas come to drink. During this time, you will have the chance to witness a variety of animals, including lions, giraffes, buffaloes, wildebeests, zebras, antelopes, and gazelles. The park is also a haven for bird watchers, with over 550 species, including the Masai Ostrich. In the afternoon, you will stop at a scenic picnic spot for more wildlife viewing, and before sunset, you will be driven back to your hotel in Arusha." },
-                    ],
-                    images: {
-                        overview: "beach4.jpg",
-                        itinerary: "luxury-safari-itinerary.jpg",
-                        rates: "luxury-safari-rates.jpg",
-                        inclusion: "luxury-safari-inclusion.jpg",
-                        exclusion: "luxury-safari-exclusion.jpg",
-                        endOfTours: "luxury-safari-end-of-tours.jpg",
-                        weather: "luxury-safari-weather.jpg",
-                        contact: "luxury-safari-contact.jpg"
-                    }
-                },
-                'package-6': {
-                    overview: "Jozani Forest, located on the island of Zanzibar, is a lush, biodiverse sanctuary that offers visitors a unique glimpse into the island’s natural beauty. This tropical forest is home to the famous Zanzibar red colobus monkeys, a species endemic to the island and critically endangered. As visitors explore the forest's walking trails, they can witness these playful primates in their natural habitat, along with a variety of other wildlife, including exotic birds and butterflies. The forest is also known for its diverse plant life, with towering trees, mangroves, and medicinal plants that have been used by locals for centuries. In addition to the wildlife and plant life, Jozani is a great place to immerse oneself in the tranquility of nature, surrounded by the sounds of chirping birds and rustling leaves. With its rich biodiversity and serene environment, Jozani Forest is a must-visit for nature lovers and those seeking to experience the authentic wilderness of Zanzibar.",
-
-                    rates: "Starting at $400 per person.",
-                    inclusion: "Accommodation, meals, park fees, and guided tours.",
-                    exclusion: "Flights, personal expenses, and travel insurance.",
-                    endOfTours: "The tour ends with a drop-off at your accommodation or the airport.",
-                    weather: "The best time to visit is from June to October.",
-                    itinerary: [
-                        { day: "Day 1", title: "Arrival in Arusha", description: "Relax and prepare for your adventure." },
-                        { day: "Day 2", title: "Serengeti Safari", description: "Explore the Serengeti's wildlife." },
-                        { day: "Day 3", title: "Ngorongoro Crater", description: "Safari in Ngorongoro Crater." },
-                    ],
-                    images: {
-                        overview: "jozani 2.jpg",
-                        itinerary: "wildlife-itinerary.jpg",
-                        rates: "wildlife-rates.jpg",
-                        inclusion: "wildlife-inclusion.jpg",
-                        exclusion: "wildlife-exclusion.jpg",
-                        endOfTours: "wildlife-end-of-tours.jpg",
-                        weather: "wildlife-weather.jpg",
-                        contact: "wildlife-contact.jpg"
-                    }
-                },
-                'package-7': {
-                    overview: "Escape to the northern shores of Zanzibar to experience two of the island’s most stunning beaches. Nungwi Beach is a lively destination, offering a mix of relaxation and activities such as snorkeling, diving, and traditional dhow sailing. Visit the nearby Mnarani Natural Aquarium, a turtle sanctuary dedicated to rescuing and rehabilitating sea turtles. Kendwa Beach, known for its calm, crystal-clear waters and powdery white sand, is perfect for unwinding. Stay for the breathtaking sunset, where the sky transforms into shades of orange and pink, creating a picture-perfect ending to your day.",
-
-                    rates: "Starting at $600 per person.",
-                    inclusion: "All meals, park fees, accommodation, and safari guides.",
-                    exclusion: "Flights, personal expenses, and travel insurance.",
-                    endOfTours: "The tour ends with a drop-off at your accommodation or the airport.",
-                    weather: "The best time to visit is during the dry season, from June to October.",
-                    itinerary: [
-                        { day: "Day 1", title: "Arrival in Zanzibar", description: "Relax and explore Zanzibar's beaches." },
-                        { day: "Day 2", title: "Safari in Serengeti", description: "Experience a thrilling safari in Serengeti." },
-                        { day: "Day 3", title: "Ngorongoro Crater", description: "Visit Ngorongoro Crater for wildlife viewing." },
-                    ],
-                    images: {
-                        overview: "beach.jpg",
-                        itinerary: "beach-safari-itinerary.jpg",
-                        rates: "beach-safari-rates.jpg",
-                        inclusion: "beach-safari-inclusion.jpg",
-                        exclusion: "beach-safari-exclusion.jpg",
-                        endOfTours: "beach-safari-end-of-tours.jpg",
-                        weather: "beach-safari-weather.jpg",
-                        contact: "beach-safari-contact.jpg"
-                    }
-                },
-                'package-8': {
-                    overview: "Travel to the southern village of Kizimkazi, renowned for its dolphin populations. This early morning tour offers the best chance to spot and swim with bottlenose and humpback dolphins in their natural habitat. While the opportunity to swim with dolphins is thrilling, guides emphasize responsible tourism to avoid disturbing the animals. After your dolphin encounter, explore the nearby coral reefs through snorkeling, where you can see vibrant marine life. This tour also includes a visit to the historic Kizimkazi Mosque, one of the oldest Islamic buildings in East Africa.",
-
-                    rates: "Starting at $350 per person.",
-                    inclusion: "Accommodation, guided tours, park fees, and all meals.",
-                    exclusion: "Flights, personal expenses, and travel insurance.",
-                    endOfTours: "The tour ends with a drop-off at your accommodation or the airport.",
-                    weather: "The best time to visit is during the dry season from June to October.",
-                    itinerary: [
-                        { day: "Day 1", title: "Arrival in Arusha", description: "Tour the cultural sites in Arusha." },
-                        { day: "Day 2", title: "Serengeti Safari", description: "Explore Serengeti National Park." },
-                        { day: "Day 3", title: "Ngorongoro Crater", description: "Full-day safari in Ngorongoro Crater." },
-                    ],
-                    images: {
-                        overview: "dorphine 2.jpg",
-                        itinerary: "adventure-tour-itinerary.jpg",
-                        rates: "adventure-tour-rates.jpg",
-                        inclusion: "adventure-tour-inclusion.jpg",
-                        exclusion: "adventure-tour-exclusion.jpg",
-                        endOfTours: "adventure-tour-end-of-tours.jpg",
-                        weather: "adventure-tour-weather.jpg",
-                        contact: "adventure-tour-contact.jpg"
-                    }
-                }
-            };
-
-            document.querySelectorAll('.view-details-btn').forEach(button => {
-                button.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const packageId = this.getAttribute('data-package');
-                    const modal = document.getElementById('package-modal');
-                    const packageData = packageDetails[packageId];
-
-                    document.querySelector('#overview-text').textContent = packageData.overview;
-                    document.querySelector('#rates-text').textContent = packageData.rates;
-                    document.querySelector('#inclusion-text').textContent = packageData.inclusion;
-                    document.querySelector('#exclusion-text').textContent = packageData.exclusion;
-                    document.querySelector('#end-of-tours-text').textContent = packageData.endOfTours;
-                    document.querySelector('#weather-text').textContent = packageData.weather;
-
-                    // Set unique image for the overview section
-                    document.querySelector('.tab-image').src = packageData.images.overview;
-
-                    const itineraryContainer = document.getElementById('itinerary-content');
-                    itineraryContainer.innerHTML = "";
-                    packageData.itinerary.forEach(day => {
-                        const dayElement = document.createElement('div');
-                        dayElement.classList.add('itinerary-day');
-                        dayElement.innerHTML = `
-                        <h4>${day.day}: ${day.title}</h4>
-                        <p>${day.description}</p>
-                    `;
-                        itineraryContainer.appendChild(dayElement);
-                    });
-
-                    modal.style.display = 'block';
-                });
-            });
-
-            document.querySelector('.close-modal').addEventListener('click', function () {
-                document.getElementById('package-modal').style.display = 'none';
-            });
-
-            document.querySelector('.back-to-packages').addEventListener('click', function () {
-                document.getElementById('package-modal').style.display = 'none';
-            });
-
-            document.querySelectorAll('.modal-nav-link').forEach(link => {
-                link.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    document.querySelectorAll('.modal-nav-link').forEach(navLink => navLink.classList.remove('active'));
-                    this.classList.add('active');
-                    document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
-                    document.querySelector(this.getAttribute('href')).classList.add('active');
-                });
-            });
-        });
-    </script>
-    </main>
-
     
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const packageDetails = {
+                    'package-1': {
+                        overview: "Despite its small size, Arusha National Park is home to a variety of wildlife, including giraffes, buffaloes, zebras, warthogs, black-and-white colobus monkeys, blue monkeys, flamingos, and more. While African elephants and leopards inhabit the park, they are rarely spotted. Nestled at the base of Mount Meru, the park offers excellent opportunities for climbing enthusiasts. The forest within the park is teeming with birdlife, making it an ideal spot for birdwatchers to observe a diverse range of forest species. Additionally, airport transfers can be arranged at an extra cost for added convenience.",
+                        rates: "RATES: $ 495 Per person",
+                        inclusion: [
+                            "Park fees for non-residents, ensuring seamless access to the attractions",
+                            "All activities (unless labeled as optional)",
+                            "Professional driver/guide throughout the journey",
+                            "Transportation (except for optional services)",
+                            "All applicable taxes and VAT",
+                            "Meals as specified in the day-by-day itinerary"
+                        ],
+                        exclusion: [
+                            "International flights to and from your home country",
+                            "Roundtrip airport transfers",
+                            "Additional accommodation before or after the tour",
+                            "Tips for guides and staff (recommended $10.00 per person per day)",
+                            "Personal items (souvenirs, travel insurance, visa fees)",
+                            "Government-imposed increases in taxes or park fees after booking"
+                        ],
+                        endOfTours: "A transfer back to the airport can be arranged for an extra cost.",
+                        weather: "The best time for safari is during the dry season, from June to October.",
+                        itinerary: [
+                            {
+                                day: "Day 1",
+                                title: "Arusha National Park Safari",
+                                description: "After breakfast, our driver will pick you up from your hotel and take you to Arusha National Park for an exciting game drive. Return to your accommodation in the evening."
+                            },
+                            {
+                                day: "Day 2",
+                                title: "Nature Walk & Canoeing",
+                                description: "Enjoy a guided nature walk followed by a canoeing experience in the Momella Lakes, spotting aquatic birds and hippos."
+                            },
+                            {
+                                day: "Day 3",
+                                title: "Mount Meru Exploration",
+                                description: "Climb the base of Mount Meru, experiencing the scenic beauty and spotting wildlife along the trails. Return to your hotel by late afternoon."
+                            }
+                        ],
+                        images: {
+                            overview: "karatu.jpg"
+                        }
+                    }
+                };
+    
+                document.querySelectorAll('.view-details-btn').forEach(button => {
+                    button.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        const packageId = this.getAttribute('data-package');
+                        const modal = document.getElementById('package-modal');
+                        const packageData = packageDetails[packageId];
+    
+                        document.querySelector('#overview-text').textContent = packageData.overview;
+                        document.querySelector('#rates-text').textContent = packageData.rates;
+                        document.querySelector('#end-of-tours-text').textContent = packageData.endOfTours;
+                        document.querySelector('#weather-text').textContent = packageData.weather;
+    
+                        const inclusionContent = document.querySelector('#inclusion-text');
+                        inclusionContent.innerHTML = `
+                            <ul class="custom-list">
+                                ${packageData.inclusion.map(item => `
+                                    <li class="list-item">
+                                        <span class="list-icon inclusion-icon">✓</span>
+                                        <span>${item}</span>
+                                    </li>
+                                `).join('')}
+                            </ul>
+                        `;
+    
+                        const exclusionContent = document.querySelector('#exclusion-text');
+                        exclusionContent.innerHTML = `
+                            <ul class="custom-list">
+                                ${packageData.exclusion.map(item => `
+                                    <li class="list-item">
+                                        <span class="list-icon exclusion-icon">✗</span>
+                                        <span>${item}</span>
+                                    </li>
+                                `).join('')}
+                            </ul>
+                        `;
+    
+                        document.querySelector('.tab-image').src = packageData.images.overview;
+    
+                        const itineraryContainer = document.getElementById('itinerary-content');
+                        itineraryContainer.innerHTML = "";
+                        packageData.itinerary.forEach(day => {
+                            const dayElement = document.createElement('div');
+                            dayElement.classList.add('itinerary-day');
+                            dayElement.innerHTML = `
+                                <h4>${day.day}: ${day.title}</h4>
+                                <p>${day.description}</p>
+                            `;
+                            itineraryContainer.appendChild(dayElement);
+                        });
+    
+                        modal.style.display = 'block';
+                    });
+                });
+    
+                document.querySelector('.home-link').addEventListener('click', function () {
+                    document.getElementById('package-modal').style.display = 'none';
+                });
+    
+                document.querySelectorAll('.modal-nav-link').forEach(link => {
+                    link.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        document.querySelectorAll('.modal-nav-link').forEach(navLink => navLink.classList.remove('active'));
+                        this.classList.add('active');
+                        document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+                        document.querySelector(this.getAttribute('href')).classList.add('active');
+                    });
+                });
+            });
+        </script>
+    </body>
+    </html>
 
 <!DOCTYPE html>
 <html lang="en">

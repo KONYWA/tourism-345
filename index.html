@@ -2209,219 +2209,228 @@ header {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Why Book With Us</title>
     <style>
-        /* Global Styles */
-        body {
-            font-family: 'Poppins', 'Segoe UI', sans-serif;
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(135deg, #e8f1f8 0%, #dce4ec 100%);
-            color: #2d3748;
-            min-height: 100vh;
-        }
+  /* Global Styles */
+body {
+    font-family: 'Poppins', 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #e8f1f8 0%, #dce4ec 100%);
+    color: #2d3748;
+    min-height: 100vh;
+}
 
-        /* Section: Why Book With Us */
-      
-        .why-book h2 {
-    font-size: 3.5rem;
+/* Section: Why Book With Us */
+.why-book h2 {
+    font-size: 3rem; /* Modern header size */
     margin-bottom: 40px;
     color: #d99d42; /* Golden Orange */
     text-align: center;
-    font-family: 'Montserrat', sans-serif; /* Change to a more modern font */
-    font-weight: 700; /* Bold font weight */
-    letter-spacing: 2px;
-    text-transform: uppercase; /* Makes the text uppercase for a stronger presence */
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
-    animation: fadeIn 1s ease-out; /* Smooth fade-in animation */
+    font-family: 'Montserrat', sans-serif; /* Modern font */
+    font-weight: 700;
+    letter-spacing: 1px; /* Slight letter spacing for elegance */
+    text-transform: uppercase;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    animation: fadeIn 1s ease-out;
+    line-height: 1.2;
+    white-space: nowrap; /* Ensure the heading stays in one line */
+    overflow: hidden;
+    text-overflow: ellipsis; /* Add ellipsis if text overflows */
 }
 
-        .why-book h2::after {
-            content: '';
-            position: absolute;
-            bottom: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 120px;
-            height: 6px;
-            background: linear-gradient(90deg, #d99d42, #FF9400); /* Golden Orange */
-            border-radius: 3px;
-        }
+.why-book h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 4px;
+    background: linear-gradient(90deg, #d99d42, #FF9400); /* Golden Orange */
+    border-radius: 2px;
+}
 
-        /* Row Styling */
-        .row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 40px;
-            gap: 20px;
-            background: rgba(255, 255, 255, 0.97);
-            border: 1px solid #d1d5db;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-            padding: 20px;
-            width: 100%;
-        }
 
-        .row:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 25px 40px rgba(0, 0, 0, 0.15);
-        }
+/* Row Styling */
+.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    gap: 20px;
+    background: rgba(255, 255, 255, 0.97);
+    border: 1px solid #d1d5db;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    padding: 20px;
+    width: 100%;
+}
 
-        /* Image Container */
-        .image-container {
-            width: 20%;
-            position: relative;
-            overflow: hidden;
-            height: 300px;
-            border-radius: 10px;
-        }
+.row:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 25px 40px rgba(0, 0, 0, 0.15);
+}
 
-        .image-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-            border-radius: 10px;
-        }
+/* Image Container */
+.image-container {
+    width: 25%;
+    position: relative;
+    overflow: hidden;
+    height: 300px;
+    border-radius: 10px;
+}
 
-        .row:hover .image-container img {
-            transform: scale(1.1);
-        }
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+    border-radius: 10px;
+}
 
-        /* Descriptions and Content */
-        .descriptions-container {
-            flex: 1;
-            display: flex;
-            justify-content: space-between;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
+.row:hover .image-container img {
+    transform: scale(1.1);
+}
 
-        .content {
-            flex: 1;
-            padding: 25px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            border-radius: 15px;
-            background: rgba(255, 255, 255, 0.9);
-            border: 1px solid #d1d5db;
-            transition: all 0.3s ease;
-            text-align: center;
-        }
+/* Descriptions and Content */
+.descriptions-container {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
 
-        .content:hover {
-            background: rgba(255, 255, 255, 1);
-            transform: translateY(-3px);
-            border-color: #d99d42; /* Golden Orange */
-        }
+.content {
+    flex: 1;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid #d1d5db;
+    transition: all 0.3s ease;
+    text-align: center;
+}
 
-        .content h3 {
-            font-size: 2rem;
-            color: #1a202c;
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            justify-content: center;
-            font-weight: 700;
-        }
+.content:hover {
+    background: rgba(255, 255, 255, 1);
+    transform: translateY(-3px);
+    border-color: #d99d42;
+}
 
-        .emoji {
-            width: 60px;
-            height: 60px;
-            background: #d99d42; /* Golden Orange Circle */
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: black; /* Black Ticks */
-            font-size: 1.8rem;
-            box-shadow: 0 6px 18px rgba(217, 157, 66, 0.3);
-            transition: transform 0.3s ease;
-        }
+.content h3 {
+    font-size: 1.8rem;
+    color: #1a202c;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    justify-content: center;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
 
-        .content:hover .emoji {
-            transform: rotate(360deg);
-        }
+.emoji {
+    width: 50px;
+    height: 50px;
+    background: #d99d42;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    font-size: 1.4rem;
+    box-shadow: 0 6px 18px rgba(217, 157, 66, 0.3);
+    transition: transform 0.3s ease;
+}
 
-        .content p {
-            font-size: 1.2rem;
-            line-height: 1.8;
-            color: #4a5568;
-            margin: 0;
-        }
+.content:hover .emoji {
+    transform: rotate(360deg);
+}
 
-        /* View Destinations Button */
-        .view-destinations {
-            text-align: center;
-            margin-top: 10px;
-        }
+.content p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #4a5568;
+    margin: 0;
+}
 
-        .view-destinations a {
-            display: inline-block;
-            font-size: 1.5rem;
-            color: #fff;
-            background: #d99d42; /* Golden Orange */
-            padding: 20px 50px;
-            text-decoration: none;
-            border-radius: 8px; /* Rectangle Shape */
-            font-weight: 700;
-            letter-spacing: 1px;
-            box-shadow: 0 10px 20px rgba(217, 157, 66, 0.3); /* Golden Orange shadow */
-            transition: all 0.3s ease;
-        }
+/* View Destinations Button */
+.view-destinations {
+    text-align: center;
+    margin-top: 20px;
+}
 
-        .view-destinations a:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 25px rgba(217, 157, 66, 0.4);
-        }
+.view-destinations a {
+    display: inline-block;
+    font-size: 1.4rem;
+    color: #fff;
+    background: #d99d42;
+    padding: 18px 40px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    box-shadow: 0 10px 20px rgba(217, 157, 66, 0.3);
+    transition: all 0.3s ease;
+}
 
-        /* Remove Underline and Add Hover Effects */
-        .view-destinations a:focus,
-        .view-destinations a:active {
-            text-decoration: none;
-        }
+.view-destinations a:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 25px rgba(217, 157, 66, 0.4);
+}
 
-        /* Responsive Design */
-        @media (max-width: 1024px) {
-            .why-book h2 {
-                font-size: 2.5rem; /* Smaller font size for mobile */
-            }
+.view-destinations a:focus,
+.view-destinations a:active {
+    text-decoration: none;
+}
 
-            .row {
-                flex-direction: column;
-                gap: 20px;
-            }
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .why-book h2 {
+        font-size: 2.5rem; /* Slightly smaller font for tablet screens */
+    }
 
-            .image-container {
-                width: 100%;
-                height: 200px;
-            }
+    .row {
+        flex-direction: column;
+        gap: 20px;
+    }
 
-            .content h3 {
-                font-size: 1.7rem;
-            }
+    .image-container {
+        width: 100%;
+        height: 250px;
+    }
 
-            .emoji {
-                width: 50px;
-                height: 50px;
-                font-size: 1.5rem;
-            }
+    .content h3 {
+        font-size: 1.6rem;
+    }
 
-            .view-destinations a {
-                font-size: 1.3rem;
-                padding: 15px 40px;
-            }
-        }
+    .emoji {
+        width: 45px;
+        height: 45px;
+        font-size: 1.3rem;
+    }
 
-        @media (max-width: 600px) {
-            .view-destinations a {
-                font-size: 1.2rem;
-                padding: 15px 30px;
-            }
-        }
+    .view-destinations a {
+        font-size: 1.3rem;
+        padding: 15px 30px;
+    }
+}
+
+@media (max-width: 600px) {
+    .why-book h2 {
+        font-size: 1.8rem; /* Further reduced font size for smaller screens */
+    }
+
+    .view-destinations a {
+        font-size: 1.2rem;
+        padding: 15px 30px;
+    }
+}
+
     </style>
 </head>
 <body>

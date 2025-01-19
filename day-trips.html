@@ -1450,7 +1450,122 @@ body.modal-open {
             .exclusion-icon {
                 color: #ef4444;
             }
-            
+            /* Dining Section Styles */
+.dining-icon {
+    color: #7c2d12;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    margin-right: 10px;
+    border-radius: 50%;
+    background: #fff7ed;
+    padding: 15px;
+    transition: all 0.3s ease;
+}
+
+#dining-text .list-container {
+    display: grid;
+    gap: 1.5rem;
+    padding: 1rem 0;
+}
+
+#dining-text .list-item {
+    background: #ffffff;
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    border: 1px solid #e2e8f0;
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+#dining-text .list-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-color: #c2410c;
+}
+
+#dining-text .list-item strong {
+    color: #7c2d12;
+    font-size: 1.1rem;
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+#dining-text .list-item span:last-child {
+    flex: 1;
+    line-height: 1.5;
+    color: #4a5568;
+}
+
+/* Icon-specific colors */
+#dining-text .fa-utensils {
+    color: #c2410c;  /* Restaurant */
+}
+
+#dining-text .fa-wine-glass {
+    color: #9a3412;  /* Fine dining */
+}
+
+#dining-text .fa-mug-hot {
+    color: #854d0e;  /* Cafe */
+}
+
+#dining-text .fa-ice-cream {
+    color: #b45309;  /* Dessert */
+}
+
+/* Responsive styles for dining section */
+@media screen and (max-width: 768px) {
+    #dining-text .list-item {
+        padding: 1rem;
+        flex-direction: column;
+        text-align: center;
+        gap: 0.75rem;
+    }
+    
+    .dining-icon {
+        margin: 0 auto;
+    }
+    
+    #dining-text .list-item strong {
+        font-size: 1rem;
+    }
+    
+    #dining-text .list-item span:last-child {
+        font-size: 0.9rem;
+    }
+}
+
+/* Active state for dining tab */
+.modal-nav-link[href="#dining"].active {
+    background-color: #c2410c;
+    color: #ffffff;
+}
+
+/* Hover state for dining items */
+#dining-text .list-item:hover .dining-icon {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+/* Additional spacing for dining section */
+#dining.tab-content {
+    padding: 1rem 0;
+}
+
+#dining h3 {
+    margin-bottom: 1.5rem;
+    color: #7c2d12;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
             /* Itinerary Styles */
             .itinerary-day {
                 background: #f8fafc;
@@ -1592,7 +1707,7 @@ body.modal-open {
                             <li class="modal-nav-item"><a href="#inclusion" class="modal-nav-link">Inclusion</a></li>
                             <li class="modal-nav-item"><a href="#exclusion" class="modal-nav-link">Exclusion</a></li>
                             <li class="modal-nav-item"><a href="#end-of-tours" class="modal-nav-link">End of Tours</a></li>
-                            <li class="modal-nav-item"><a href="#weather" class="modal-nav-link">Weather</a></li>
+                            <li class="modal-nav-item"><a href="#accommodation" class="modal-nav-link">Accommodation</a></li>
                             <li class="modal-nav-item"><a href="#contact" class="modal-nav-link">Contact</a></li>
                         </ul>
                     </div>
@@ -1630,9 +1745,9 @@ body.modal-open {
                             <p id="end-of-tours-text"></p>
                         </div>
     
-                        <div id="weather" class="tab-content">
-                            <h3>Weather</h3>
-                            <p id="weather-text"></p>
+                        <div id="accommodation" class="tab-content">
+                            <h3>Accommodation</h3>
+                            <div id="accommodation-text" class="list-container"></div>
                         </div>
     
                         <div id="contact" class="tab-content">
@@ -1645,153 +1760,303 @@ body.modal-open {
         </div>
     
         <script>
-            document.addEventListener("DOMContentLoaded", function () {
-                const packageDetails = {
-                    'package-1': {
-                        overview: "Despite its small size, Arusha National Park is home to a variety of wildlife, including giraffes, buffaloes, zebras, warthogs, black-and-white colobus monkeys, blue monkeys, flamingos, and more. While African elephants and leopards inhabit the park, they are rarely spotted. Nestled at the base of Mount Meru, the park offers excellent opportunities for climbing enthusiasts. The forest within the park is teeming with birdlife, making it an ideal spot for birdwatchers to observe a diverse range of forest species. Additionally, airport transfers can be arranged at an extra cost for added convenience.",
-                        rates: "RATES: $495 Per person",
-                        inclusion: [
-                            "Park fees for non-residents, ensuring seamless access to the attractions",
-                            "All activities (unless labeled as optional)",
-                            "Professional driver/guide throughout the journey",
-                            "Transportation (except for optional services)",
-                            "All applicable taxes and VAT",
-                            "Meals as specified in the day-by-day itinerary"
-                        ],
-                        exclusion: [
-                            "International flights to and from your home country",
-                            "Roundtrip airport transfers",
-                            "Additional accommodation before or after the tour",
-                            "Tips for guides and staff (recommended $10.00 per person per day)",
-                            "Personal items (souvenirs, travel insurance, visa fees)",
-                            "Government-imposed increases in taxes or park fees after booking"
-                        ],
-                        endOfTours: "A transfer back to the airport can be arranged for an extra cost.",
-                        weather: "The best time for safari is during the dry season, from June to October.",
-                        itinerary: [
-                            {
-                                day: "Day 1",
-                                title: "Arusha National Park Safari",
-                                description: "After breakfast, our driver will pick you up from your hotel and take you to Arusha National Park for an exciting game drive. Return to your accommodation in the evening."
-                            },
-                            {
-                                day: "Day 2",
-                                title: "Nature Walk & Canoeing",
-                                description: "Enjoy a guided nature walk followed by a canoeing experience in the Momella Lakes, spotting aquatic birds and hippos."
-                            },
-                            {
-                                day: "Day 3",
-                                title: "Mount Meru Exploration",
-                                description: "Climb the base of Mount Meru, experiencing the scenic beauty and spotting wildlife along the trails. Return to your hotel by late afternoon."
-                            }
-                        ],
-                        images: {
-                            overview: "karatu.jpg"
-                        }
-                    },
-                    'package-2': {
-                        overview: "Explore the stunning Ngorongoro Crater, home to diverse wildlife, including the 'Big Five.' The crater is one of the most famous safari destinations in Tanzania, offering unique wildlife viewing opportunities in a natural amphitheater.",
-                        rates: "RATES: $675 Per person",
-                        inclusion: [
-                            "Park entry fees and conservation fees",
-                            "All scheduled game drives with a professional guide",
-                            "Transportation in a 4x4 safari vehicle",
-                            "Meals as specified in the itinerary",
-                            "Accommodation in a comfortable lodge"
-                        ],
-                        exclusion: [
-                            "International flights",
-                            "Tips for guides and staff",
-                            "Travel insurance",
-                            "Personal expenses"
-                        ],
-                        endOfTours: "Your safari concludes with a drop-off at the airport or your hotel.",
-                        weather: "The best time to visit is during the dry season (June to October).",
-                        itinerary: [
-                            {
-                                day: "Day 1",
-                                title: "Arrival and Game Drive in Ngorongoro Crater",
-                                description: "Arrive at Ngorongoro and enjoy a game drive in the crater, spotting elephants, lions, rhinos, and more."
-                            },
-                            {
-                                day: "Day 2",
-                                title: "Full Day in Ngorongoro Crater",
-                                description: "Explore the crater floor, enjoy a picnic lunch, and continue game drives. Return to the lodge for an evening of relaxation."
-                            }
-                        ],
-                        images: {
-                            overview: "ngorongoro.jpg"
-                        }
-                    },
-                    'package-3': {
-                        overview: "This safari takes you to Serengeti National Park, famous for its annual migration of wildebeest and zebras. Experience incredible wildlife viewing, from lions to cheetahs, and witness the raw beauty of nature.",
-                        rates: "RATES: $895 Per person",
-                        inclusion: [
-                            "Park entry fees",
-                            "Game drives with a professional guide",
-                            "Accommodation in tented camps",
-                            "Meals as per itinerary",
-                            "Transportation in a safari vehicle"
-                        ],
-                        exclusion: [
-                            "International flights",
-                            "Personal items",
-                            "Travel insurance",
-                            "Tips for guides"
-                        ],
-                        endOfTours: "A transfer back to the airport or your hotel can be arranged upon request.",
-                        weather: "The best time to visit is during the migration season (June to October).",
-                        itinerary: [
-                            {
-                                day: "Day 1",
-                                title: "Serengeti Safari Day 1",
-                                description: "Arrive in Serengeti and begin your game drive. Stay in a tented camp for the night."
-                            },
-                            {
-                                day: "Day 2",
-                                title: "Serengeti Safari Day 2",
-                                description: "Continue your game drive, visiting different parts of the park to spot a variety of wildlife."
-                            }
-                        ],
-                        images: {
-                            overview: "serengeti.jpg"
-                        }
-                    },
-                    'package-4': {
-                        overview: "Visit the beautiful Lake Manyara National Park, known for its tree-climbing lions and stunning birdlife. This park is perfect for those seeking a peaceful and scenic safari experience.",
-                        rates: "RATES: $545 Per person",
-                        inclusion: [
-                            "Park entry fees",
-                            "Game drives with a guide",
-                            "Meals as specified in the itinerary",
-                            "Accommodation in a lodge"
-                        ],
-                        exclusion: [
-                            "International flights",
-                            "Tips for guides",
-                            "Personal expenses",
-                            "Travel insurance"
-                        ],
-                        endOfTours: "Transfer to the airport or your hotel can be arranged.",
-                        weather: "The best time to visit is during the dry season, from June to October.",
-                        itinerary: [
-                            {
-                                day: "Day 1",
-                                title: "Lake Manyara Safari",
-                                description: "Arrive at Lake Manyara and enjoy a game drive in the park, known for its unique wildlife and bird species."
-                            },
-                            {
-                                day: "Day 2",
-                                title: "Explore Lake Manyara",
-                                description: "Continue exploring the park and enjoy a visit to the lake shore, spotting flamingos and other birdlife."
-                            }
-                        ],
-                        images: {
-                            overview: "manyara.jpg"
-                        }
-                    }
-                };
-    
+         document.addEventListener("DOMContentLoaded", function () {
+    const packageDetails = {
+        'package-1': {
+            overview: "Despite its small size, Arusha National Park is home to a variety of wildlife, including giraffes, buffaloes, zebras, warthogs, black-and-white colobus monkeys, blue monkeys, flamingos, and more. While African elephants and leopards inhabit the park, they are rarely spotted. Nestled at the base of Mount Meru, the park offers excellent opportunities for climbing enthusiasts. The forest within the park is teeming with birdlife, making it an ideal spot for birdwatchers to observe a diverse range of forest species. Additionally, airport transfers can be arranged at an extra cost for added convenience.",
+            rates: "RATES: $495 Per person",
+            inclusion: [
+                "Park fees for non-residents, ensuring seamless access to the attractions",
+                "All activities (unless labeled as optional)",
+                "Professional driver/guide throughout the journey",
+                "Transportation (except for optional services)",
+                "All applicable taxes and VAT",
+                "Meals as specified in the day-by-day itinerary"
+            ],
+            exclusion: [
+                "International flights to and from your home country",
+                "Roundtrip airport transfers",
+                "Additional accommodation before or after the tour",
+                "Tips for guides and staff (recommended $10.00 per person per day)",
+                "Personal items (souvenirs, travel insurance, visa fees)",
+                "Government-imposed increases in taxes or park fees after booking"
+            ],
+            endOfTours: "A transfer back to the airport can be arranged for an extra cost.",
+            accommodation: [
+                {
+                    type: "meals",
+                    description: "5-star accommodation with premium amenities and stunning views",
+                    icon: "fa-star"
+                },
+                {
+                    type: "Mid-Range Lodge",
+                    description: "Comfortable rooms with essential amenities and good service",
+                    icon: "fa-house"
+                },
+                {
+                    type: "Budget Camping",
+                    description: "Basic camping facilities with shared amenities",
+                    icon: "fa-campground"
+                }
+            ],
+            itinerary: [
+                {
+                    day: "Day 1",
+                    title: "Arusha National Park Safari",
+                    description: "The morning after breakfast, our driver will pick you up from your hotel and drive to Arusha National Park to begin the game drive. Despite its small size, the park is home to a variety of wildlife, including giraffes, buffalo, zebra, warthogs, the black-and-white colobus monkey, blue monkey, flamingos, and more. While African elephants and leopards are present, they are rarely seen. Nestled at the base of Mount Meru, the park offers opportunities for climbing, and walking safaris are possible. The forest within the park is rich in birdlife, with many forest species easily observed. Although very accessible, Arusha National Park isn't featured on many safari itineraries, primarily because it doesn't provide an opportunity to see the Big 5. However, the park boasts a range of habitats, including forests that are home to the black-and-white colobus monkey, and is an excellent destination for birdwatching. After a full day of game driving, we will drive you back to your accommodation in Arusha."
+                },
+              
+              
+            ],
+            images: {
+                overview: "karatu.jpg"
+            }
+        },
+
+        'package-2': {
+            overview: "This 1-day tour is designed to provide visitors with an additional day of activities in the Arusha area. It’s the perfect filler activity for those who have recently hiked Mount Kilimanjaro, are waiting for their planned safari to begin, or those with a layover before their next flight. Join us for an unforgettable African hike with breathtaking views of the world’s highest free-standing mountain. A transfer from the airport can be arranged at an extra cost for added convenience.",
+
+            rates: "Starting at $150 per person.",
+            inclusion: [
+    "Porterage",
+    "Rescue fee",
+    "Park fees (For non-residents)",
+    "All activities (Unless labeled as optional)",
+    "A professional driver/guide",
+    "All transportation (Unless labeled as optional)",
+    "All Taxes/VAT",
+    "Meals (As specified in the day-by-day section)",
+    "Drinks (As specified in the day-by-day section)"
+]
+,
+exclusion: [
+    "Climbing gear",
+    "International flights (From/to home)",
+    "Roundtrip airport transfer",
+    "Additional accommodation before and at the end of the tour",
+    "Tips (Tipping guideline US$10.00 pp per day)",
+    "Personal items (Souvenirs, travel insurance, visa fees, etc.)",
+    "Government-imposed increase of taxes and/or park fees"
+]
+,
+            endOfTours: "Return to your hotel or transfer to the airport can be arranged.",
+            accommodation: [
+                {
+                    type: "Luxury Lodge",
+                    description: "Exclusive lodges with top-notch amenities and views of the Serengeti plains",
+                    icon: "fa-bed"
+                },
+                {
+                    type: "Safari Camp",
+                    description: "Comfortable tented camps in the heart of the Serengeti",
+                    icon: "fa-campground"
+                }
+            ],
+            itinerary: [
+                {
+                    day: "Day 1",
+                    title: "description",
+                    description: "Our English-speaking guide will pick you up from the hotel early in the morning and drive you to Materuni Village, home of the Chagga tribe. Along the way, the guide will share insights about Chagga culture, village life, and the environment in which they live. Upon arrival, you will register at the village office, and from here, you can enjoy a view of the summit of Mount Kilimanjaro. After soaking in the stunning scenery of the 80-meter-high Materuni Waterfall, you will slowly return to the village with your guide, where a traditional Chagga lunch awaits you. During your meal, you’ll also have the opportunity to taste locally brewed banana beer. The next part of your tour is a coffee journey, where you will learn about the entire coffee process—from cultivation and drying to roasting and processing. As part of the experience, the Chagga people will invite you to help grind the coffee beans, all while enjoying Chagga songs and dances—a fun and immersive way to learn both the craft and their culture. After this full-day adventure, we will drive you back to your hotel."
+                },
+             
+            ],
+            images: {
+                overview: "serengeti.jpg"
+            }
+        },
+
+        'package-3': {
+            overview: "This day hike is designed for those who may not wish to climb Mount Kilimanjaro to the summit but still want to experience the magic of the mountain. The hike starts from Marangu Gate (1,800m/5,905ft) and takes you to the first hut, Mandara Hut (2,743m/9,000ft). This trek offers a wonderful opportunity to feel the essence of the mountain for a day, without the challenge of reaching the peak. Children are also welcome to join this Kilimanjaro day hike, allowing families to experience the world’s highest free-standing mountain together without the need to summit.",
+            rates: "The rate is: $ 330 Per Person (starting from 2 pax)",
+            inclusion: [
+    "Park fees (For non-residents)",
+    "All activities (Unless labeled as optional)",
+    "A professional driver/guide",
+    "All transportation (Unless labeled as optional)",
+    "All Taxes/VAT",
+    "Meals (As specified in the day-by-day section)",
+    "Drinks (As specified in the day-by-day section)"
+]
+,
+exclusion: [
+    "International flights (From/to home)",
+    "Roundtrip airport transfer",
+    "Additional accommodation before and at the end of the tour",
+    "Tips (Tipping guideline US$10.00 pp per day)",
+    "Personal items (Souvenirs, travel insurance, visa fees, etc.)",
+    "Government-imposed increase of taxes and/or park fees",
+    "Climbing gear"
+]
+,
+            endOfTours: "Transfer to the airport or your hotel can be arranged.",
+            accommodation: [
+                {
+                    type: "Crater View Lodge",
+                    description: "Lodges with panoramic views of the Ngorongoro Crater",
+                    icon: "fa-eye"
+                },
+                {
+                    type: "Safari Camp",
+                    description: "Tented camp accommodation with excellent wildlife viewing opportunities",
+                    icon: "fa-campground"
+                }
+            ],
+            itinerary: [
+                {
+                    day: "Day 1",
+                    title: " MOUNT KILIMANJARO HIKE VIA MARANGU ROUTE",
+                    description: "This day hike is designed for those who may not wish to climb Mount Kilimanjaro to the summit but still want to experience the magic of the mountain. The hike starts from Marangu Gate (1,800m/5,905ft) and takes you to the first hut, Mandara Hut (2,743m/9,000ft). This trek offers a wonderful opportunity to feel the essence of the mountain for a day, without the challenge of reaching the peak. Children are also welcome to join this Kilimanjaro day hike, allowing families to experience the world’s highest free-standing mountain together without the need to summit."
+                },
+               
+            ],
+            images: {
+                overview: "ngorongoro.jpg"
+            }
+        },
+
+        'package-4': {
+            overview: "The Ngorongoro Crater is a breathtaking natural wonder of the world. This incredible volcanic landscape was formed over 2 million years ago and is home to a diverse array of wildlife, including lions, elephants, zebras, and hippos. When visiting the Ngorongoro Crater, you'll spend a full day exploring this unique ecosystem, which is the best place in Africa to spot the Big Five. Spending a day in the crater is an experience that will leave you in awe of the natural beauty and wildlife that call this place home.",
+            rates: "The group option is $275 per person, and the private option is $450 per person (minimum 2 pax).",
+            inclusion: [
+    "Park fees (For non-residents)",
+    "All activities (Unless labeled as optional)",
+    "A professional driver/guide",
+    "All transportation (Unless labeled as optional)",
+    "All Taxes/VAT",
+    "Meals (As specified in the day-by-day section)",
+    "Drinks (As specified in the day-by-day section)"
+]
+,
+exclusion: [
+    "International flights (From/to home)",
+    "Roundtrip airport transfer",
+    "Additional accommodation before and at the end of the tour",
+    "Tips (Tipping guideline US$10.00 pp per day)",
+    "Personal items (Souvenirs, travel insurance, visa fees, etc.)",
+    "Government-imposed increase of taxes and/or park fees"
+]
+,
+            endOfTours: "Transfer to the airport or your hotel can be arranged.",
+            accommodation: [
+                {
+                    type: "Lake View Lodge",
+                    description: "Premium rooms overlooking Lake Manyara",
+                    icon: "fa-water"
+                },
+                {
+                    type: "Safari Lodge",
+                    description: "Traditional safari-style accommodation with modern amenities",
+                    icon: "fa-house"
+                },
+                {
+                    type: "Tented Camp",
+                    description: "Luxury tented experience in the wilderness",
+                    icon: "fa-campground"
+                }
+            ],
+            itinerary: [
+                {
+                    day: "Day 1",
+                    title: "Ngorongoro Crater",
+                    description: "You will be picked up from your hotel in Arusha between 6 AM and 7 AM and begin the drive to Ngorongoro Crater, passing through the crater viewpoint before descending into the crater for a game drive. The Ngorongoro Crater is often referred to as the Eighth Natural Wonder of the World and is the largest intact crater in the world. Formed over 2 million years ago when the Ngorongoro volcano erupted, the crater walls collapsed to create a natural enclosure. The crater, now over 19 kilometers wide, is home to a diverse range of habitats, including acacia forests, swamps filled with hippos, and open grasslands. With over 30,000 animals, including elephants, warthogs, flamingos, and the rare black rhinoceros, as well as a variety of birdlife and predatory cats, the crater offers a rich wildlife viewing experience. After the game drive, you will be dropped off at your hotel or airport."
+                },
+            
+            ],
+            images: {
+                overview: "manyara.jpg"
+            }
+        },
+
+        'package-5': {
+            overview: "The park’s large elephant population, iconic Baobab trees, and diversity of wildlife make it one of the best parks in the country for capturing breathtaking photos or simply enjoying the sight of these majestic creatures. Game drives through Tarangire are especially thrilling during the dry season when animals are drawn closer to the Tarangire River. This creates an excellent opportunity to observe a variety of animals in one location and witness the predator-prey relationship in action.",
+            rates: "Group Option: $230 per person, Private Option: $330 per person (min 2 pax).",
+            inclusion: [
+                "Park entry fees",
+                "Game drives with a guide",
+                "Meals as specified in the itinerary",
+                "Accommodation in a lodge"
+            ],
+            exclusion: [
+                "International flights",
+                "Tips for guides",
+                "Personal expenses",
+                "Travel insurance"
+            ],
+            endOfTours: "Transfer to the airport or your hotel can be arranged.",
+            accommodation: [
+                {
+                    type: "Baobab Lodge",
+                    description: "Comfortable accommodation with views of the baobab trees",
+                    icon: "fa-tree"
+                },
+                {
+                    type: "Safari Lodge",
+                    description: "Traditional safari-style lodge with excellent service",
+                    icon: "fa-house"
+                }
+            ],
+            itinerary: [
+                {
+                    day: "Day 1",
+                    title: " Description",
+                    description: "We will pick you up from your hotel in Arusha and drive you to Tarangire National Park, which boasts the highest density of elephants. These magnificent animals can be viewed year-round, with herds often reaching impressive numbers of up to 300. The Tarangire River provides water throughout the year, and during the dry season, from July to October, many animals from surrounding areas gather here to drink. During this time, you will have the chance to witness an unforgettable natural spectacle, observing creatures such as lions, giraffes, buffaloes, wildebeests, zebras, antelopes, and gazelles. The park is also a haven for birdwatchers, with over 550 species, including the Masai Ostrich. In the afternoon, you will stop at a scenic picnic spot for more wildlife watching. Before sunset, we will take you back to your hotel in Arusha."
+                },
+                {
+                    day: "Day 2",
+                    title: "Baobab Trees and Wildlife Viewing",
+                    description: "Continue exploring the park, focusing on the unique baobab trees and abundant wildlife."
+                }
+            ],
+            images: {
+                overview: "tarangire.jpg"
+            }
+        },
+
+        'package-6': {
+            overview: "Experience the wonders of the Selous Game Reserve, one of the largest and most remote wildlife areas in Africa. The reserve is home to a variety of species, including wild dogs, elephants, and hippos, and offers a unique safari experience with boat safaris and walking safaris.",
+            rates: "RATES: $700 Per person",
+            inclusion: [
+                "Park entry fees",
+                "Boat safaris and walking safaris",
+                "Meals as specified in the itinerary",
+                "Accommodation in a lodge"
+            ],
+            exclusion: [
+                "International flights",
+                "Tips for guides",
+                "Personal expenses",
+                "Travel insurance"
+            ],
+            endOfTours: "Transfer to the airport or your hotel can be arranged.",
+            accommodation: [
+                {
+                    type: "Luxury Lodge",
+                    description: "Exclusive accommodation with stunning views of the Selous Reserve",
+                    icon: "fa-bed"
+                },
+                {
+                    type: "Tented Camp",
+                    description: "Tented accommodation with a unique wilderness experience",
+                    icon: "fa-campground"
+                }
+            ],
+            itinerary: [
+                {
+                    day: "Day 1",
+                    title: "Selous Boat Safari",
+                    description: "Arrive at Selous Game Reserve and embark on a boat safari, spotting hippos and crocodiles along the river."
+                },
+                {
+                    day: "Day 2",
+                    title: "Walking Safari and Wildlife Viewing",
+                    description: "Enjoy a guided walking safari, followed by a game drive to see the diverse wildlife."
+                }
+            ],
+            images: {
+                overview: "selous.jpg"
+            }
+        }
+    };
                 document.querySelectorAll('.view-details-btn').forEach(button => {
                     button.addEventListener('click', function (e) {
                         e.preventDefault();
@@ -1802,7 +2067,6 @@ body.modal-open {
                         document.querySelector('#overview-text').textContent = packageData.overview;
                         document.querySelector('#rates-text').textContent = packageData.rates;
                         document.querySelector('#end-of-tours-text').textContent = packageData.endOfTours;
-                        document.querySelector('#weather-text').textContent = packageData.weather;
     
                         const inclusionContent = document.querySelector('#inclusion-text');
                         inclusionContent.innerHTML = `
@@ -1823,6 +2087,22 @@ body.modal-open {
                                     <li class="list-item">
                                         <span class="list-icon exclusion-icon">✗</span>
                                         <span>${item}</span>
+                                    </li>
+                                `).join('')}
+                            </ul>
+                        `;
+    
+                        const accommodationContent = document.querySelector('#accommodation-text');
+                        accommodationContent.innerHTML = `
+                            <ul class="custom-list">
+                                ${packageData.accommodation.map(item => `
+                                    <li class="list-item">
+                                        <span class="list-icon accommodation-icon">
+                                            <i class="fas ${item.icon}"></i>
+                                        </span>
+                                        <span>
+                                            <strong>${item.type}</strong>: ${item.description}
+                                        </span>
                                     </li>
                                 `).join('')}
                             </ul>
@@ -1863,7 +2143,6 @@ body.modal-open {
         </script>
     </body>
     </html>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>

@@ -6,262 +6,264 @@
     <title>Mafoy africa Safaris | Luxury Safari Experience</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        /* Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+      /* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        body {
-            font-family: 'Roboto', sans-serif;
-            background-color: #f8f8f8;
-            color: #333;
-            line-height: 1.6;
-        }
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f8f8f8;
+    color: #333;
+    line-height: 1.6;
+}
 
-        /* Header Section */
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 20px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            color: #ffffff; /* White text */
-            background-color: #007bff; /* Blue background for the header */
-            width: 100%; /* Ensure the blue color covers the entire width */
-            position: relative; /* Positioning for menu button inside header */
-        }
+/* Header Section */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    color: #ffffff; /* White text */
+    background-color: #d99d42; /* Golden orange background for the header */
+    width: 100%; /* Ensure the golden orange color covers the entire width */
+    position: relative; /* Positioning for menu button inside header */
+}
 
-        /* Logo */
-        .logo {
-            display: flex;
-            align-items: center;
-            color: #333; /* Black color for logo text */
-            background-color: #ffffff; /* White background for logo in mobile view */
-            padding: 10px 20px;
-            border-radius: 5px;
-        }
+/* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+    color: #ffffff; /* White text for logo */
+    background-color: #d99d42; /* Golden orange background for logo */
+    padding: 10px 20px;
+    border-radius: 5px;
+}
 
-        .logo img {
-            width: 50px;
-            margin-right: 10px;
-        }
+.logo img {
+    width: 50px;
+    margin-right: 10px;
+}
 
-        .logo span {
-            font-size: 1.4rem;
-            font-weight: bold;
-        }
+.logo span {
+    font-size: 1.4rem;
+    font-weight: bold;
+}
 
-        /* Mobile Menu Button */
-        .menu-btn {
-            display: flex;
-            cursor: pointer;
-            flex-direction: column;
-            gap: 5px;
-            position: absolute; /* Position absolutely inside the header */
-            right: 20px; /* Align the button to the right inside the header */
-            background-color: transparent; /* No background for the button itself */
-            padding: 10px; /* Add padding to make button area clickable */
-        }
+/* Mobile Menu Button */
+.menu-btn {
+    display: flex;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+    position: absolute; /* Position absolutely inside the header */
+    right: 20px; /* Align the button to the right inside the header */
+    background-color: transparent; /* No background for the button itself */
+    padding: 10px; /* Add padding to make button area clickable */
+}
 
-        .menu-btn div {
-            width: 30px;
-            height: 4px;
-            background-color: #ffffff; /* White color for mobile menu lines */
-        }
+.menu-btn div {
+    width: 30px;
+    height: 4px;
+    background-color: #ffffff; /* White color for mobile menu lines */
+}
 
-        /* Mobile Navigation */
-        .mobile-nav {
-            display: none;
-            flex-direction: column;
-            background-color: #fff;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            width: 100%;
-        }
+/* Mobile Navigation */
+.mobile-nav {
+    display: none;
+    flex-direction: column;
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
 
-        .mobile-nav.active {
-            display: flex;
-        }
+.mobile-nav.active {
+    display: flex;
+}
 
-        .mobile-nav ul {
-            list-style: none;
-            width: 100%;
-            padding: 0;
-        }
+.mobile-nav ul {
+    list-style: none;
+    width: 100%;
+    padding: 0;
+}
 
-        .mobile-nav ul li {
-            width: 100%;
-        }
+.mobile-nav ul li {
+    width: 100%;
+}
 
-        .mobile-nav ul li a {
-            display: block;
-            text-align: center;
-            text-decoration: none;
-            font-size: 1.1rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            color: #333;
-            padding: 15px;
-            border-bottom: 1px solid #ddd;
-            transition: background-color 0.3s, color 0.3s;
-        }
+.mobile-nav ul li a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #333; /* Dark text color */
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+    transition: background-color 0.3s, color 0.3s;
+}
 
-        .mobile-nav ul li a:hover {
-            background-color: #f4f4f4;
-            color: #007bff; /* Blue color on hover */
-        }
+.mobile-nav ul li a:hover {
+    background-color: #f4f4f4;
+    color: #b96329; /* Burnt orange color on hover */
+}
 
-        /* Desktop View */
-        @media (min-width: 769px) {
-            header {
-                padding: 10px 5%;
-                display: flex;
-                justify-content: space-between; /* Align logo and menu at opposite ends */
-                align-items: center;
-            }
+/* Desktop View */
+@media (min-width: 769px) {
+    header {
+        padding: 10px 5%;
+        display: flex;
+        justify-content: space-between; /* Align logo and menu at opposite ends */
+        align-items: center;
+    }
 
-            .menu-btn {
-                display: none;
-            }
+    .menu-btn {
+        display: none;
+    }
 
-            /* Hide Menu Text in desktop view */
-            .menu-text {
-                display: none;
-            }
+    /* Hide Menu Text in desktop view */
+    .menu-text {
+        display: none;
+    }
 
-            /* Align the navigation to the right */
-            header nav {
-                margin-left: auto; /* Push navigation to the right */
-            }
+    /* Align the navigation to the right */
+    header nav {
+        margin-left: auto; /* Push navigation to the right */
+    }
 
-            header nav ul {
-                display: flex;
-                list-style: none;
-                gap: 20px;
-            }
+    header nav ul {
+        display: flex;
+        list-style: none;
+        gap: 20px;
+    }
 
-            header nav ul li {
-                position: relative;
-            }
+    header nav ul li {
+        position: relative;
+    }
 
-            header nav ul li a {
-                text-decoration: none;
-                color: #ffffff; /* White text for navigation items */
-                font-weight: 600;
-                transition: color 0.3s;
-            }
+    header nav ul li a {
+        text-decoration: none;
+        color: #ffffff; /* White text for navigation items */
+        font-weight: 600;
+        transition: color 0.3s;
+    }
 
-            header nav ul li a:hover {
-                color: #e6a400; /* Gold color on hover */
-            }
+    header nav ul li a:hover {
+        color: #b96329; /* Burnt orange color on hover */
+    }
 
-            /* Dropdown Styling */
-            .dropdown {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                background-color: white;
-                min-width: 200px;
-                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-                z-index: 1000;
-            }
+    /* Dropdown Styling */
+    .dropdown {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: white;
+        min-width: 200px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+    }
 
-            /* Show the dropdown when hovering over the parent */
-            header nav ul li:hover .dropdown {
-                display: block;
-            }
+    /* Show the dropdown when hovering over the parent */
+    header nav ul li:hover .dropdown {
+        display: block;
+    }
 
-            .dropdown li {
-                width: 100%;
-            }
+    .dropdown li {
+        width: 100%;
+    }
 
-            .dropdown a {
-                display: block;
-                padding: 10px 15px;
-                color: #333;
-            }
+    .dropdown a {
+        display: block;
+        padding: 10px 15px;
+        color: #333;
+    }
 
-            .dropdown a:hover {
-                background-color: #f4f4f4;
-            }
+    .dropdown a:hover {
+        background-color: #f4f4f4;
+    }
 
-            /* Update logo background to blue for desktop view */
-            .logo {
-                background-color: #007bff; /* Blue background for logo on desktop */
-                color: white; /* White text color for logo text */
-            }
+    /* Update logo background to golden orange for desktop view */
+    .logo {
+        background-color: #d99d42; /* Golden orange background for logo on desktop */
+        color: white; /* White text color for logo text */
+    }
 
-            .logo img {
-                width: 50px; /* Adjust logo size */
-                margin-right: 10px;
-            }
+    .logo img {
+        width: 50px; /* Adjust logo size */
+        margin-right: 10px;
+    }
 
-            .logo span {
-                font-size: 1.6rem; /* Increase font size for better visibility */
-                font-weight: bold;
-            }
-        }
+    .logo span {
+        font-size: 1.6rem; /* Increase font size for better visibility */
+        font-weight: bold;
+    }
+}
 
-        /* Mobile Specific Adjustments */
-        @media (max-width: 768px) {
-            /* Make the entire header section blue on mobile */
-            header {
-                display: block;
-                padding: 0; /* Remove default padding */
-                background-color: #007bff; /* Blue background for the entire header */
-                width: 100%; /* Make the blue background cover the entire width */
-            }
+/* Mobile Specific Adjustments */
+@media (max-width: 768px) {
+    /* Make the entire header section golden orange on mobile */
+    header {
+        display: block;
+        padding: 0; /* Remove default padding */
+        background-color: #d99d42; /* Golden orange background for the entire header */
+        width: 100%; /* Make the golden orange background cover the entire width */
+    }
 
-            /* Logo on top of the header in mobile view with full-width blue background */
-            .logo {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                width: 100%; /* Full-width */
-                background-color: #ffffff; /* White background for logo part */
-                padding: 30px 0; /* Increased padding for larger header */
-                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow */
-            }
+    /* Logo on top of the header in mobile view with full-width golden orange background */
+    .logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%; /* Full-width */
+        background-color: #ffffff; /* White background for logo part */
+        padding: 30px 0; /* Increased padding for larger header */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow */
+    }
 
-            .logo img {
-                width: 60px; /* Adjust logo size */
-                margin-right: 10px;
-            }
+    .logo img {
+        width: 60px; /* Adjust logo size */
+        margin-right: 10px;
+    }
 
-            .logo span {
-                font-size: 1.6rem; /* Increase font size for better visibility */
-                font-weight: bold;
-            }
+    .logo span {
+        font-size: 1.6rem; /* Increase font size for better visibility */
+        font-weight: bold;
+        color: #333; /* Dark text color for logo in mobile view */
+    }
 
-            /* Header section with mobile menu icon */
-            header nav {
-                display: none; /* Hidden by default */
-            }
+    /* Header section with mobile menu icon */
+    header nav {
+        display: none; /* Hidden by default */
+    }
 
-            /* Mobile Navigation visible when active */
-            .mobile-nav.active {
-                display: flex;
-            }
+    /* Mobile Navigation visible when active */
+    .mobile-nav.active {
+        display: flex;
+    }
 
-            /* "Menu" Text */
-            .menu-text {
-                color: white;
-                font-size: 1.4rem;
-                font-weight: bold;
-                margin-left: 20px;
-            }
+    /* "Menu" Text */
+    .menu-text {
+        color: white;
+        font-size: 1.4rem;
+        font-weight: bold;
+        margin-left: 20px;
+    }
 
-            /* Dropdown menu visibility when "Tours" is clicked */
-            .mobile-nav ul li .dropdown {
-                display: none;
-            }
+    /* Dropdown menu visibility when "Tours" is clicked */
+    .mobile-nav ul li .dropdown {
+        display: none;
+    }
 
-            .mobile-nav ul li.active .dropdown {
-                display: block;
-            }
-        }
+    .mobile-nav ul li.active .dropdown {
+        display: block;
+    }
+}
+
     </style>
 </head>
 <body>
@@ -433,50 +435,114 @@
         .whatsapp-container span {
             font-size: 0.9rem;
         }
-
-        /* Hero Section */
         .hero {
-            height: 60vh;
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-            position: relative;
-            padding-top: 10px;
-            padding-bottom: 10px;
-            overflow: hidden;
-            animation: fadeInHero 1.5s ease-out; /* Hero section fade-in */
-        }
+        height: 70vh;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: white;
+        position: relative;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        overflow: hidden;
+        animation: fadeInHero 1.5s ease-out; /* Hero section fade-in */
+    }
 
+    /* Background Fade-in Animation */
+    @keyframes fadeInHero {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    /* Hero Content Styling */
+    .hero-content {
+        position: relative;
+        z-index: 10;
+        background: rgba(0, 0, 0, 0.5); /* Semi-transparent black background for content */
+        padding: 3rem 2rem;
+        border-radius: 20px;
+        max-width: 850px;
+        width: 90%;
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+        animation: slideInUp 1s ease-out;
+    }
+
+    /* Hero Content Heading */
+    .hero-content h1 {
+        font-size: 3rem;
+        margin-bottom: 20px;
+        font-weight: bold;
+        letter-spacing: 2px;
+        animation: slideInUp 1s ease-out;
+    }
+
+    /* Hero Content Paragraph */
+    .hero-content p {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+        color: #FFD700; /* Golden orange color for emphasis */
+        animation: slideInUp 1s ease-out 0.5s; /* Delayed */
+    }
+
+    /* Button Styling */
+    .cta-button {
+        padding: 1.2rem 2.5rem;
+        background-color: #FFD700; /* Golden orange button */
+        color: #fff;
+        font-size: 1.2rem;
+        font-weight: bold;
+        border-radius: 50px;
+        text-decoration: none;
+        display: inline-block;
+        transition: all 0.3s ease;
+        border: 2px solid #FFD700;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .cta-button:hover {
+        background-color: #FF6347; /* Slightly darker orange */
+        color: #fff;
+        transform: scale(1.05);
+    }
+
+    /* Slide-in Animation */
+    @keyframes slideInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
         .hero-content h1 {
             font-size: 2.5rem;
-            margin-bottom: 10px;
-            animation: slideInUp 1s ease-out;
         }
 
         .hero-content p {
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-            animation: slideInUp 1s ease-out 0.5s; /* Delayed */
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 10;
-            background: rgba(0,0,139,0.7);
-            padding: 2rem;
-            border-radius: 15px;
-            max-width: 800px;
-            width: 90%;
-            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+            font-size: 1rem;
         }
 
         .cta-button {
+            font-size: 1rem;
+            padding: 0.8rem 1.5rem;
+        }
+    }
+        .cta-button {
             display: inline-block;
-            background: #1E90FF;
+            background: #ffad1e;
             color: white;
             padding: 12px 25px;
             text-decoration: none;
@@ -487,7 +553,7 @@
         }
 
         .cta-button:hover {
-            background: #0066CC;
+            background: #cc9200;
             transform: translateY(-3px);
             box-shadow: 0 6px 12px rgba(0,0,0,0.3);
         }/* Background Image */
@@ -496,10 +562,10 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 120%;
     overflow: hidden;
     z-index: -1; /* Keeps the background behind other content */
-    background: url('mountain 2.jpg') no-repeat center/cover; /* Static background image */
+    background: url('back.jpg') no-repeat center/cover; /* Static background image */
 }
 
 
@@ -679,7 +745,7 @@
            <div class="hero-content">
                <h1>Discover Tanzania's Wild Beauty</h1>
                <p style="color: #FFD700;">Choose, Compare, and Customize Your Perfect Safari</p>
-               <a href="#Popular Safari Packages" class="cta-button">Popular Safari Packages</a>
+               <a href="destinations.html" class="cta-button">Popular Safari Packages</a>
            </div>
        </section>
    
@@ -688,35 +754,121 @@
            <span>Book on WhatsApp</span>
            <i class="fab fa-whatsapp whatsapp-icon"></i>
        </a>
-   
-       <!-- Our Excellence Section -->
-       <section class="section">
-        <h2 class="section-title" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 32px; color: #003366; text-align: center; text-transform: uppercase; font-weight: 600; letter-spacing: 1.5px; margin-bottom: 20px; border-bottom: 2px solid #003366; padding-bottom: 10px;">Our Excellence</h2>
+<!-- Our Excellence Section -->
+<section class="section">
+    <div class="grid-container">
+        <div class="grid-item">
+            <div class="grid-item-icon">💰</div>
+            <h3>Price Guarantee</h3>
+            <p>Competitive pricing with 100% satisfaction guarantee</p>
+        </div>
+        <div class="grid-item">
+            <div class="grid-item-icon">🌍</div>
+            <h3>100% Customization</h3>
+            <p>Personalized safari experiences tailored to your preferences</p>
+        </div>
+        <div class="grid-item">
+            <div class="grid-item-icon">🤝</div>
+            <h3>Expert Assistance</h3>
+            <p>Professional guidance at every step of your journey</p>
+        </div>
+        <div class="grid-item">
+            <div class="grid-item-icon">🛡️</div>
+            <h3>Safety Guarantee</h3>
+            <p>Comprehensive safety measures and travel support</p>
+        </div>
+    </div>
 
-           <div class="grid-container">
-               <div class="grid-item">
-                   <div class="grid-item-icon">💰</div>
-                   <h3>Price Guarantee</h3>
-                   <p>Competitive pricing with 100% satisfaction guarantee</p>
-               </div>
-               <div class="grid-item">
-                   <div class="grid-item-icon">🌍</div>
-                   <h3>100% Customization</h3>
-                   <p>Personalized safari experiences tailored to your preferences</p>
-               </div>
-               <div class="grid-item">
-                   <div class="grid-item-icon">🤝</div>
-                   <h3>Expert Assistance</h3>
-                   <p>Professional guidance at every step of your journey</p>
-               </div>
-               <div class="grid-item">
-                   <div class="grid-item-icon">🛡️</div>
-                   <h3>Safety Guarantee</h3>
-                   <p>Comprehensive safety measures and travel support</p>
-               </div>
-           </div>
-       </section>
-   
+    <!-- View Destinations Button -->
+    <div class="section-footer">
+        <a href="destinations.html" class="view-destinations-btn">View Our Destinations</a>
+    </div>
+</section>
+
+<style>
+    .section {
+        padding: 20px 20px; /* Reduced padding to lift up the section */
+        background-color: #f9f9f9;
+        border-radius: 15px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+        margin-top: 20px; /* Reduced margin to bring it higher */
+        text-align: center;
+    }
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .grid-item {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .grid-item:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .grid-item-icon {
+        font-size: 50px;
+        color: #4CAF50;
+        margin-bottom: 15px;
+    }
+
+    .grid-item h3 {
+        font-size: 22px;
+        color: #333;
+        margin-bottom: 10px;
+    }
+
+    .grid-item p {
+        font-size: 15px;
+        color: #666;
+        line-height: 1.5;
+    }
+
+    .section-footer {
+        margin-top: 30px; /* Reduced space between section content and footer */
+    }
+
+    .view-destinations-btn {
+        background-color: #FFA500; /* Golden Orange */
+        color: #fff;
+        padding: 14px 30px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-size: 18px;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+        display: inline-block;
+    }
+
+    .view-destinations-btn:hover {
+        background-color: #e69500; /* Darker Golden Orange on hover */
+    }
+
+    /* Responsive Design */
+    @media (max-width: 1024px) {
+        .grid-container {
+            grid-template-columns: repeat(2, 1fr); /* Two items per row on medium screens */
+        }
+    }
+
+    @media (max-width: 768px) {
+        .grid-container {
+            grid-template-columns: 1fr; /* One item per row on small screens */
+        }
+    }
+</style>
+
    
 
    </body>
@@ -865,27 +1017,27 @@
            }
    
            .view-details-btn {
-               display: inline-block;
-               padding: 0.8rem 1.5rem;
-               /* Adjusted padding */
-               background-color: #0099ff;
-               color: #fff;
-               text-decoration: none;
-               border-radius: 6px;
-               transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-               font-weight: 500;
-               text-align: center;
-               width: 100%;
-               box-sizing: border-box;
-               margin-top: 1rem;
-               font-size: 1.1rem;
-           }
-   
-           .view-details-btn:hover {
-               background-color: #2980b9;
-               transform: scale(1.05);
-               box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-           }
+    display: inline-block;
+    padding: 0.8rem 1.5rem; /* Adjusted padding */
+    background-color: #d99d42; /* Golden orange */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    font-weight: 500;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 1rem;
+    font-size: 1.1rem;
+}
+
+.view-details-btn:hover {
+    background-color: #b96329; /* Slightly darker golden orange for hover */
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
    
            /* Modal Styles */
            .modal {
@@ -2048,6 +2200,276 @@
        </script>
        </main>
    
+
+       
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why Book With Us</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Poppins', 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #e8f1f8 0%, #dce4ec 100%);
+            color: #2d3748;
+            min-height: 100vh;
+        }
+
+        /* Section: Why Book With Us */
+      
+        .why-book h2 {
+    font-size: 3.5rem;
+    margin-bottom: 40px;
+    color: #d99d42; /* Golden Orange */
+    text-align: center;
+    font-family: 'Montserrat', sans-serif; /* Change to a more modern font */
+    font-weight: 700; /* Bold font weight */
+    letter-spacing: 2px;
+    text-transform: uppercase; /* Makes the text uppercase for a stronger presence */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+    animation: fadeIn 1s ease-out; /* Smooth fade-in animation */
+}
+
+        .why-book h2::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 6px;
+            background: linear-gradient(90deg, #d99d42, #FF9400); /* Golden Orange */
+            border-radius: 3px;
+        }
+
+        /* Row Styling */
+        .row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+            gap: 20px;
+            background: rgba(255, 255, 255, 0.97);
+            border: 1px solid #d1d5db;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            padding: 20px;
+            width: 100%;
+        }
+
+        .row:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Image Container */
+        .image-container {
+            width: 20%;
+            position: relative;
+            overflow: hidden;
+            height: 300px;
+            border-radius: 10px;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+            border-radius: 10px;
+        }
+
+        .row:hover .image-container img {
+            transform: scale(1.1);
+        }
+
+        /* Descriptions and Content */
+        .descriptions-container {
+            flex: 1;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .content {
+            flex: 1;
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid #d1d5db;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .content:hover {
+            background: rgba(255, 255, 255, 1);
+            transform: translateY(-3px);
+            border-color: #d99d42; /* Golden Orange */
+        }
+
+        .content h3 {
+            font-size: 2rem;
+            color: #1a202c;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            justify-content: center;
+            font-weight: 700;
+        }
+
+        .emoji {
+            width: 60px;
+            height: 60px;
+            background: #d99d42; /* Golden Orange Circle */
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: black; /* Black Ticks */
+            font-size: 1.8rem;
+            box-shadow: 0 6px 18px rgba(217, 157, 66, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .content:hover .emoji {
+            transform: rotate(360deg);
+        }
+
+        .content p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #4a5568;
+            margin: 0;
+        }
+
+        /* View Destinations Button */
+        .view-destinations {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .view-destinations a {
+            display: inline-block;
+            font-size: 1.5rem;
+            color: #fff;
+            background: #d99d42; /* Golden Orange */
+            padding: 20px 50px;
+            text-decoration: none;
+            border-radius: 8px; /* Rectangle Shape */
+            font-weight: 700;
+            letter-spacing: 1px;
+            box-shadow: 0 10px 20px rgba(217, 157, 66, 0.3); /* Golden Orange shadow */
+            transition: all 0.3s ease;
+        }
+
+        .view-destinations a:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 25px rgba(217, 157, 66, 0.4);
+        }
+
+        /* Remove Underline and Add Hover Effects */
+        .view-destinations a:focus,
+        .view-destinations a:active {
+            text-decoration: none;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .why-book h2 {
+                font-size: 2.5rem; /* Smaller font size for mobile */
+            }
+
+            .row {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .image-container {
+                width: 100%;
+                height: 200px;
+            }
+
+            .content h3 {
+                font-size: 1.7rem;
+            }
+
+            .emoji {
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+            }
+
+            .view-destinations a {
+                font-size: 1.3rem;
+                padding: 15px 40px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .view-destinations a {
+                font-size: 1.2rem;
+                padding: 15px 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="why-book">
+        <h2>Why Book With Us</h2>
+
+        <div class="row">
+            <div class="image-container">
+                <img src="lion.jpg" alt="Excellence">
+            </div>
+            <div class="descriptions-container">
+                <div class="content">
+                    <h3><span class="emoji">✔️</span> Great Value Deals</h3>
+                    <p>We ensure our clients get full value for the price paid and the best deals during their stay.</p>
+                </div>
+                <div class="content">
+                    <h3><span class="emoji">✔️</span> 100% Customizable</h3>
+                    <p>Tell us your trip requirements, and we’ll tailor your trip to meet your exact needs.</p>
+                </div>
+            </div>
+            <div class="image-container">
+                <img src="moun.jpg" alt="Local Expertise">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="descriptions-container">
+                <div class="content">
+                    <h3><span class="emoji">✔️</span> Quick Support</h3>
+                    <p>We provide assistance from planning through your entire stay in the country.</p>
+                </div>
+                <div class="image-container">
+                    <img src="karatu.jpg" alt="Safety">
+                </div>
+                <div class="content">
+                    <h3><span class="emoji">✔️</span> Flexible Payments</h3>
+                    <p>We accept all payment methods, including credit cards, bank transfers, and cash.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="view-destinations">
+            <a href="destinations.html">View Our Destinations</a>
+        </div>
+    </div>
+</body>
+</html>
+
        
 <!DOCTYPE html>
 <html lang="en">
@@ -2192,39 +2614,40 @@
         }
 
         .view-details-btn {
-            display: inline-block;
-            padding: 0.8rem 1.5rem;
-            /* Adjusted padding */
-            background-color: #0099ff;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 6px;
-            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-            font-weight: 500;
-            text-align: center;
-            width: 100%;
-            box-sizing: border-box;
-            margin-top: 1rem;
-            font-size: 1.1rem;
-        }
+    display: inline-block;
+    padding: 0.8rem 1.5rem; /* Adjusted padding */
+    background-color: #d99d42; /* Golden orange */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    font-weight: 500;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 1rem;
+    font-size: 1.1rem;
+}
 
-        .view-details-btn:hover {
-            background-color: #2980b9;
-            transform: scale(1.05);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-        }
+.view-details-btn:hover {
+    background-color: #b96329; /* Slightly darker golden orange for hover */
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
 
-        /* Modal Styles */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
-            z-index: 2000;
-        }
+       .modal {
+    display: flex;
+    justify-content: center; /* Center horizontally (X-axis) */
+    align-items: center;    /* Center vertically (Y-axis) */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Dark overlay */
+    overflow: hidden; /* Prevent scrolling */
+}
 
         .modal.active {
             display: block;
@@ -3082,22 +3505,48 @@ h1 {
     document.addEventListener("DOMContentLoaded", function () {
         const packageDetails = {
             'tour-ngorongoro-1': {
-                overview: "Explore the Ngorongoro Crater, a breathtaking natural wonder... innocen",
-                rates: "$450 Private, $275 Group",
-                inclusion: "Park fees, transportation, meals...",
-                exclusion: "International flights, visa fees...",
-                weather: "Best time: June to October",
-                itinerary: [{ day: "Day 1", title: "Arrival", description: "Explore Ngorongoro Crater." }],
-                images: { overview: "NGORONGORO.jpg" }
-            },
+                    overview: " The Ngorongoro Crater is a breathtaking natural wonder of the world. This incredible volcanic landscape was formed over 2 million years ago and is home to a diverse array of wildlife i.e. lions, elephants, zebras and hippos. When visiting the Ngorongoro Crater, you'll spend a full day exploring this unique ecosystem, the best place in Africa to spot the Big Five, spending a day in the crater is an experience that will leave you in awe of the natural beauty and wildlife that call this place home.",
+
+                    rates: "For Group Option: $ 275 Per Person ,For Private Option: $ 450 Per Person (starting from 2 pax)",
+                    inclusion: "The package includes park fees for non-residents, ensuring access to all designated areas. All activities are included unless labeled as optional, providing a full and engaging experience. A professional driver/guide will accompany you throughout the trip, offering expert insights and guidance. All transportation is provided, except for any optional services, ensuring smooth and comfortable travel. Additionally, all applicable taxes and VAT are covered, with no hidden charges. Meals and drinks, as specified in the day-by-day itinerary, are included, ensuring you are well-catered for during your adventure.",
+                    exclusion: "The package does not include international flights to and from your home country, nor roundtrip airport transfers, though these can be arranged at an additional cost. Additional accommodation before or after the tour is not included but can be arranged separately. Tips for guides and staff are not part of the package, with a suggested tipping guideline of $10.00 per person per day. Personal items such as souvenirs, travel insurance, and visa fees are also not covered. Any government-imposed increases in taxes or park fees after booking may result in additional charges.",
+                    endOfTours: "The tour ends with a drop-off at your accommodation or the airport.",
+                    weather: "The best time to visit is from June to October.",
+                    itinerary: [
+                        { day: "Day 1", title: "description ", description: "You will be picked up from your hotel in Arusha between 6:00 AM and 7:00 AM and begin your drive to Ngorongoro Crater. On the way, you will stop at the crater viewpoint before descending into the crater for a thrilling game drive. Ngorongoro Crater, often referred to as the Eighth Natural Wonder of the World, is the largest intact volcanic crater on Earth, formed over 2 million years ago when the Ngorongoro volcano erupted, causing the crater walls to collapse and create a natural enclosure. The crater spans over 19 kilometers in diameter and is home to a diverse range of habitats, including acacia forests, hippo-filled swamps, and expansive grasslands. With over 30,000 animals, including elephants, warthogs, flamingos, and the rare black rhinoceros, along with various bird species and predatory cats, the crater offers a rich and exciting wildlife viewing experience. After the game drive, you will be dropped off at your hotel or the airport. Meals provided include lunch, with breakfast and dinner not included, and non-alcoholic drinks are available throughout the day." },
+                    ],
+                    images: {
+                        overview: "nakupenda.jpg",
+                        itinerary: "serengeti-safari.jpg",
+                        rates: "serengeti-rates.jpg",
+                        inclusion: "serengeti-inclusion.jpg",
+                        exclusion: "serengeti-exclusion.jpg",
+                        endOfTours: "serengeti-end-of-tours.jpg",
+                        weather: "serengeti-weather.jpg",
+                        contact: "serengeti-contact.jpg"
+                    }
+                },
             'tour-tarangire-2': {
-                overview: "Discover Tarangire's iconic wildlife and baobab trees... khadija",
-                rates: "$330 Private, $230 Group",
-                inclusion: "Park fees, guide, transportation...",
-                exclusion: "Tips, personal items...",
-                weather: "Best time: January to February",
-                itinerary: [{ day: "Day 1", title: "Game Drive", description: "Enjoy a thrilling safari." }],
-                images: { overview: "meru.jpg" }
+                    overview: "The park’s large elephant population, iconic Baobab trees, and diversity of wildlife make it one of the best parks in the country for taking breathtaking photos or simply basking in the beautiful elephants. Game drives through Tarangire are particularly thrilling during the dry season when the animals of the park must cluster closer and closer to the Tarangire River. This offers a great opportunity to see plenty of animals in one place and to witness the predator-prey relationship in action.",
+
+                    rates: "For Group Option: $ 230 Per Person ,For Private Option: $ 330 Per Person (starting from 2 pax)",
+                    inclusion: "The package includes park fees for non-residents, ensuring access to the park's designated areas. All activities are covered, unless specified as optional, providing a comprehensive experience. A professional driver/guide will accompany you throughout the journey, offering expert insights and assistance. All transportation is provided, unless otherwise labeled as optional, ensuring smooth and convenient travel. Additionally, all taxes and VAT are included, with no hidden charges. Meals and drinks, as outlined in the day-by-day itinerary, are also covered, ensuring you are well-catered for during your adventure.",
+                    exclusion: "The package does not include international flights to and from your home country, nor roundtrip airport transfers, although these can be arranged for an additional cost. Additional accommodation before or after the tour is not included but can be organized separately. Tips for guides and staff are not part of the package, with a suggested tipping guideline of $10.00 per person per day. Personal items such as souvenirs, travel insurance, and visa fees are not covered. Any government-imposed increases in taxes or park fees after booking may result in additional charges.",
+                    endOfTours: "The tour ends with a drop-off at your accommodation or the airport.",
+                    weather: "The best time to visit is from June to October.",
+                    itinerary: [
+                        { day: "Day 1", title: "description ", description: "We will pick you up from your hotel in Arusha and drive you to Tarangire National Park, which is renowned for its high elephant population. The park is home to herds that can reach up to 300 elephants, offering an incredible opportunity for wildlife viewing year-round. The Tarangire River, which remains full of water throughout the year, attracts animals, especially during the dry season from July to October, when wildlife from surrounding areas come to drink. During this time, you will have the chance to witness a variety of animals, including lions, giraffes, buffaloes, wildebeests, zebras, antelopes, and gazelles. The park is also a haven for bird watchers, with over 550 species, including the Masai Ostrich. In the afternoon, you will stop at a scenic picnic spot for more wildlife viewing, and before sunset, you will be driven back to your hotel in Arusha." },
+                    ],
+                    images: {
+                        overview: "beach4.jpg",
+                        itinerary: "luxury-safari-itinerary.jpg",
+                        rates: "luxury-safari-rates.jpg",
+                        inclusion: "luxury-safari-inclusion.jpg",
+                        exclusion: "luxury-safari-exclusion.jpg",
+                        endOfTours: "luxury-safari-end-of-tours.jpg",
+                        weather: "luxury-safari-weather.jpg",
+                        contact: "luxury-safari-contact.jpg"
+                    }
             },
             'tour-serengeti-3': {
                 overview: "Embark on a 5-day adventure in the Serengeti...",
@@ -3118,47 +3567,72 @@ h1 {
                 images: { overview: "manyara.jpg" }
             },
             'tour-ruins-5': {
-                overview: "Explore the rich history of Tanzania's ruins...",
+                overview: "Mikumi National Park, located in southern Tanzania, is a treasure trove of wildlife and scenic beauty. Known as the gateway to the southern safari circuit, it is Tanzania's fourth-largest national park, covering over 3,230 square kilometers. The park’s open savannah plains resemble the Serengeti, offering excellent game-viewing opportunities. Mikumi is home to an array of wildlife, including elephants, lions, zebras, giraffes, hippos, and a variety of antelope species. The park also boasts over 400 bird species, making it a haven for birdwatchers. Its accessibility and diverse attractions make Mikumi a perfect destination for both first-time visitors and seasoned travelers.",
                 rates: "$400 per person",
                 inclusion: "Transportation, entrance fees...",
                 exclusion: "Meals, tips...",
                 weather: "Year-round destination",
-                itinerary: [{ day: "Day 1", title: "Historical Ruins Tour", description: "Visit ancient ruins and learn their history." }],
+                itinerary: [{ day: "Day 1", title: "Historical Ruins Tour", description: "Mikumi National Park offers a thrilling wildlife experience, and a typical 3-day itinerary includes a mix of game drives and relaxation. On day one, you arrive at your lodge, with an optional evening game drive to catch a glimpse of the park's diverse wildlife. Day two is dedicated to full-day game drives, where you'll encounter elephants, lions, giraffes, and more, with a break for lunch at your lodge. On day three, enjoy a final morning game drive before heading back to Dar es Salaam or Morogoro. The park’s diverse fauna, combined with its scenic landscapes, makes it a perfect destination for nature lovers and wildlife enthusiasts." }],
                 images: { overview: "ruins.jpg" }
             },
             'tour-serengeti-ngorongoro-6': {
-                overview: "A 6-day safari through Serengeti and Ngorongoro Crater...",
-                rates: "$1200 per person",
-                inclusion: "Accommodation, park fees, guide...",
-                exclusion: "Flights, visa fees...",
-                weather: "Best time: June to October",
-                itinerary: [{ day: "Day 1", title: "Arrival", description: "Begin your adventure in Serengeti." }],
+                overview: "Ruaha National Park, located in central Tanzania, is the largest national park in the country, covering over 20,000 square kilometers. Known for its rugged landscapes, diverse ecosystems, and abundant wildlife, Ruaha offers an authentic and remote safari experience. The park is home to large populations of elephants, lions, and rare species like wild dogs and sable antelopes. Visitors can enjoy stunning views of the Great Ruaha River, which sustains the park’s wildlife, especially during the dry season. Ruaha is a paradise for bird watchers, boasting over 570 bird species.",
+                
+                rates: "Starting at $1300 per person.",
+                    inclusion: "The tour includes essential services such as park fees for non-residents, all specified activities (unless marked as optional), and the expertise of a professional driver/guide. Transportation is provided throughout the journey, except for optional services. All taxes and VAT are covered, ensuring no hidden costs. Meals are included as outlined in the day-by-day itinerary, and drinks are provided as specified, ensuring a smooth and comfortable experience throughout the adventure.",
+                    exclusion: "The tour does not cover international flights (from/to home), roundtrip airport transfers, or any additional accommodation before or after the tour. Tips are not included, with a guideline of US$10.00 per person per day. Personal expenses such as souvenirs, travel insurance, and visa fees are the responsibility of the traveler. Additionally, any government-imposed increases in taxes or park fees will be an extra cost, which may arise during the course of the trip.",
+                    endOfTours: "The tour ends with a drop-off at your accommodation or the airport.",
+                    weather: "The best time for safari is during the dry season, from June to October.",
+                itinerary: [{ day: "Day 1", title: "Arrival", description: "A Ruaha safari typically begins with your arrival and an introductory game drive, offering a glimpse of the park’s beauty and wildlife. On the second day, you’ll explore deeper into the park with morning and afternoon game drives, covering diverse terrains and maximizing wildlife encounters. A guided bush walk is often the highlight of the final day, providing an intimate perspective of the flora and fauna before your departure. Itineraries can be customized based on the duration of your visit and specific interests, ensuring a personalized and unforgettable experience." }],
                 images: { overview: "LEOPARD.jpg" }
             },
-            'tour-kilimanjaro-7': {
-                overview: "Conquer the majestic Mount Kilimanjaro on this 7-day climb...",
-                rates: "$1500 per person",
-                inclusion: "Climbing permits, guides, accommodation...",
-                exclusion: "Tips, personal items...",
-                weather: "Year-round destination",
-                itinerary: [{ day: "Day 1", title: "Kilimanjaro Climb", description: "Begin your ascent to the summit." }],
-                images: { overview: "kilimanjaro.jpg" }
+            'tour-kilimanjaro-7':  {
+                             overview: "This day hike is perfect for those who wish to experience the magic of Mount Kilimanjaro without committing to a full summit climb. Starting from Marangu Gate (1,800m/5,905ft), you will trek to Mandara Hut (2,743m/9,000ft), the first hut on the mountain. This hike offers a wonderful opportunity to experience the stunning landscapes and atmosphere of the world's highest freestanding mountain, without the challenge of reaching the summit. The day hike is suitable for children as well, allowing families to enjoy the beauty of Kilimanjaro together without the strenuous ascent to the top.",
+
+                    rates: "The rate is: $ 330 Per Person (starting from 2 pax)",
+                    inclusion: "The package includes park fees for non-residents, ensuring access to the designated areas. All activities are covered unless labeled as optional, offering a full and enriching experience. A professional driver/guide will accompany you throughout the journey, providing expertise and assistance. All transportation is included, unless otherwise specified as optional, ensuring comfortable and hassle-free travel. Additionally, all applicable taxes and VAT are covered, with no hidden charges. Meals and drinks, as outlined in the day-by-day itinerary, are also included, ensuring you are well-catered for during your adventure.",
+                    exclusion: "The package does not include international flights to and from your home country, nor roundtrip airport transfers, although these can be arranged for an additional cost. Additional accommodation before or after the tour is not included but can be organized separately. Tips for guides and staff are not part of the package, with a recommended tipping guideline of $10.00 per person per day. Personal expenses such as souvenirs, travel insurance, and visa fees are not covered. Any government-imposed increases in taxes or park fees after booking may incur extra charges. Additionally, climbing gear is not provided and should be arranged separately..",
+                    endOfTours: "Additional accommodation can be arranged for an extra cost if you wish to extend your stay before or after the tour. Additionally, a transfer back to the airport can also be arranged for an extra cost, ensuring a smooth and convenient end to your trip.",
+                    weather: "The best time to visit arusha is during the dry season from June to October.",
+                    itinerary: [
+                        { day: "Day 1", title: "description ", description: "After breakfast at your hotel in Arusha, your driver and guide will meet you for a trip briefing. You will then be driven to Marangu Gate (1,800m) for registration before starting your 4-5 hour hike. The trail takes you through the foothills of Mount Kilimanjaro, passing through beautiful rainforests and offering a glimpse into the unique ecosystem of the mountain. After a scenic hike, you'll reach Mandara Hut at 2,700m above sea level, where you will enjoy a picnic lunch. Following lunch, you will begin your descent back to the gate, and then drive back to Arusha, where you'll be dropped off at your chosen location." },
+                    ],
+                    images: {
+                        overview: "marangu5.jpg",
+                        itinerary: "zanzibar-culture.jpg",
+                        rates: "zanzibar-rates.jpg",
+                        inclusion: "zanzibar-inclusion.jpg",
+                        exclusion: "zanzibar-exclusion.jpg",
+                        endOfTours: "zanzibar-end-of-tours.jpg",
+                        weather: "zanzibar-weather.jpg",
+                        contact: "zanzibar-contact.jpg"
+                    }
             },
             'tour-zanzibar-8': {
-                overview: "Relax on the pristine beaches of Zanzibar...",
-                rates: "$800 per person",
-                inclusion: "Accommodation, meals, beach activities...",
-                exclusion: "Flights, personal expenses...",
-                weather: "Best time: December to March",
-                itinerary: [
-                        { day: "Day 1", title: "Zanzibar to serengeti", description: "After breakfast at your hotel, you will be picked up and driven to Zanzibar airport to board a small plane heading to the Serengeti airstrip. The flight may transit in Arusha before continuing to Serengeti, where you will arrive in the late morning. Upon arrival, you'll begin your game drives through the Serengeti, experiencing the rich wildlife of the park. After a picnic lunch at your camp, you will head out again for an evening game drive, enjoying the spectacular views and the serene sunset. In the evening, you'll return to your accommodation, Four Seasons Safari Lodge, for a delicious dinner and a relaxing overnight stay. All meals and drinks (excluding premium wines and liquors) are included during your stay." },
-                        { day: "Day 2", title: "Serengeti National Park", description: "After breakfast, you will continue with your game drive in the Serengeti. On this day, you have the option to choose between a full-day game drive or dividing the day into two sessions: an early morning game drive followed by an afternoon relaxation, and then an evening game drive. For those wishing to see more of the Serengeti's wildlife and landscapes, we recommend opting for the full-day game drive. After an exciting day of exploration, you'll return to the Four Seasons Safari Lodge for a restful evening, with all meals and drinks (excluding premium wines and liquors) included." },
-                        { day: "Day 3", title: "Serengeti National Park", description: "On this day, you’ll have the freedom to enjoy a fully customized experience in the Serengeti National Park. Your guide will work with you to create the ideal schedule, based on your preferences. You can opt for a morning game drive, return to the camp for lunch and some relaxation, and then head out for an afternoon game drive. Alternatively, you may prefer to embark on a full-day game drive with a picnic lunch. Whatever you choose, this day will be organized to match your desired pace, ensuring an unforgettable safari experience. At the end of the day, you’ll return to the Four Seasons Safari Lodge for dinner and a restful night. All meals and drinks (except premium wines and liquors) are included.." },
-                        { day: "Day 4", title: "Flying Out of the Serengeti", description: "On this final day, we recommend an early wake-up to embark on an early morning game drive, as this is when the animals are most active, and you’ll be treated to one of the most stunning sunrises you’ll ever witness. It’s a truly magical experience. After the game drive, you’ll return to the camp for a delicious brunch. Following this, we’ll proceed to the airstrip for your flight back to Zanzibar. If you prefer a more relaxed morning, you have the option to skip the early game drive and stay at the camp to enjoy some downtime. Meals are provided on a half-board basis, and all drinks are included, excluding premium wines and liquors. This marks the end of your unforgettable safari experience.." },
+                    overview: "Explore the heart of Zanzibar’s cultural and historical legacy in Stone Town, a UNESCO World Heritage Site. This tour takes you through narrow, winding streets filled with a blend of Arab, Persian, Indian, and European influences. Key attractions include the Old Fort, an ancient structure that served as a defense post, and the House of Wonders, an architectural marvel that was once a sultan’s palace. Visit the Anglican Cathedral, built on the site of the former slave market, where you’ll learn about the island’s role in the slave trade. Along the way, you’ll find bustling markets like Darajani, offering fresh produce, spices, and unique handicrafts. End your journey with a visit to Freddie Mercury’s childhood home, honoring the Queen frontman’s Zanzibari roots.",
 
+
+                    rates: "Starting at $350 per person.",
+                    inclusion: "All meals, park fees, transportation, accommodation.",
+                    exclusion: "Flights, personal expenses, travel insurance.",
+                    endOfTours: "The tour ends with a drop-off at your accommodation or the airport.",
+                    weather: "The best time for safari is during the dry season, from June to October.",
+                    itinerary: [
+                        { day: "Day 1", title: "Arrival in Zanzibar", description: "Explore Stone Town and learn about its history." },
+                        { day: "Day 2", title: "Beach and Culture", description: "Enjoy the serene beaches and local markets." },
+                        { day: "Day 2", title: "Beach and Culture", description: "Enjoy the serene beaches and local markets." },
+                        { day: "Day 2", title: "Beach and Culture", description: "Enjoy the serene beaches and local markets." },
                     ],
-                
-                images: { overview: "BEACH4.jpg" }
+                    images: {
+                        overview: "beach.jpg",
+                        itinerary: "jozani 2.jpg",
+                        rates: "zanzibar-rates.jpg",
+                        inclusion: "zanzibar-inclusion.jpg",
+                        exclusion: "zanzibar-exclusion.jpg",
+                        endOfTours: "zanzibar-end-of-tours.jpg",
+                        weather: "zanzibar-weather.jpg",
+                        contact: "zanzibar-contact.jpg"
+                    }
             }
         };
 
@@ -3199,9 +3673,6 @@ h1 {
         });
     });
 </script>
-
-    
-   
 
     
 

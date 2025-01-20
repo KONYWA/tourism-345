@@ -1179,85 +1179,242 @@ body.modal-open {
 }
 
     </style>
-    <!-- Main Content -->
-    <main class="main-content">
-        <h1 style="color: hsl(196, 100%, 50%) !important;">MIDRANGE TOURS</h1>
-
-        <div class="packages-grid">
-            <!-- Package Card 1 -->
-            <div class="package-card" id="package-1">
-                <img src="crator.jpg" alt="Zanzibar" class="package-image">
-                <div class="package-content">
-                    <h2 class="package-title"> 4 DAYS CLASSIC MIDRANGE TANZANIA SAFARI</h2>
-                    <div class="package-details">
-                        <p><span role="img" aria-label="Location">🏞️</span> <strong>Location:</strong> serengeti, ngorongoro</p>
-                        <p><span role="img" aria-label="Duration">🕒</span> <strong>Duration:</strong> 4 Day</p>
-                        <p><span role="img" aria-label="Best Season">☀️</span> <strong>Best Season:</strong> June -
-                            October</p>
-                    </div>
-                    <p class="package-price"><span role="img" aria-label="Price">💵</span> <strong>From:</strong> $1,400
-                        per person</p>
-                    <a href="#" class="view-details-btn" data-package="package-1">View Details</a>
-                </div>
-            </div>
-
-            <!-- Package Card 2 -->
-            <div class="package-card" id="package-2">
-                <img src="spice.jpg" alt="Serengeti National Park" class="package-image">
-                <div class="package-content">
-                    <h2 class="package-title">
-                        5 DAYS NOTHERN CIRCUIT MIDRANGE SAFARI
-                        </h2>
-                    <div class="package-details">
-                        <p><span role="img" aria-label="Location">🦁</span> <strong>Location:</strong> Serengeti,
-                            Ngorongoro, Lake Manyara</p>
-                        <p><span role="img" aria-label="Duration">📅</span> <strong>Duration:</strong> 5 Days</p>
-                        <p><span role="img" aria-label="Best Season">🌞</span> <strong>Best Season:</strong> January -
-                            February</p>
-                    </div>
-                    <p class="package-price"><span role="img" aria-label="Price">💰</span> <strong>From:</strong> $1750
-                        per person</p>
-                    <a href="#" class="view-details-btn" data-package="package-2">View Details</a>
-                </div>
-            </div>
-
-            <!-- Package Card 3 -->
-            <div class="package-card" id="package-3">
-                <img src="elephant - Copy.jpg" alt="Zanzibar Beach" class="package-image">
-                <div class="package-content">
-                    <h2 class="package-title">6-DAY MIDRANGE NORTHEN CIRCUIT TANZANIA SAFARI</h2>
-                    <div class="package-details">
-                        <p><span role="img" aria-label="Location">🏖️</span> <strong>Location:</strong> Ngorongoro, </p>
-                        <p><span role="img" aria-label="Duration">🕒</span> <strong>Duration:</strong> 6 Days</p>
-                        <p><span role="img" aria-label="Best Season">🌞</span> <strong>Best Season:</strong> June -
-                            October</p>
-                    </div>
-                    <p class="package-price"><span role="img" aria-label="Price">💵</span> <strong>From:</strong> $1850
-                        per person</p>
-                    <a href="#" class="view-details-btn" data-package="package-3">View Details</a>
-                </div>
-            </div>
-
-            <!-- Package Card 4 -->
-            <div class="package-card" id="package-4">
-                <img src="lion.jpg" alt="Serengeti Safari" class="package-image">
-                <div class="package-content">
-                    <h2 class="package-title">7-DAY MEMORABLE ADVENTURE IN TANZANIA – MID-RANGE STYLE</h2>
-                    <div class="package-details">
-                        <p><span role="img" aria-label="Location">🦁</span> <strong>Location:</strong> Serengeti</p>
-                        <p><span role="img" aria-label="Duration">📅</span> <strong>Duration:</strong> 7 Days</p>
-                        <p><span role="img" aria-label="Best Season">🌞</span> <strong>Best Season:</strong> June -
-                            October</p>
-                    </div>
-                    <p class="package-price"><span role="img" aria-label="Price">💰</span> <strong>From:</strong> $2300
-                        per person</p>
-                    <a href="#" class="view-details-btn" data-package="package-4">View Details</a>
-                </div>
-            </div>
-
-
-        </div>
-    </main>
+   <!DOCTYPE html>
+   <html lang="en">
+   <head>
+       <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <title>Safari Packages | Tanzania Adventures</title>
+       <style>
+           * {
+               margin: 0;
+               padding: 0;
+               box-sizing: border-box;
+           }
+   
+           body {
+               font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+               line-height: 1.6;
+               color: #333;
+               background-color: #f4f4f9;
+           }
+   
+           .main-content {
+               width: 100%;
+               max-width: 100%;
+               padding: 2rem;
+           }
+   
+           h1 {
+               color: #d99d42 !important;
+               text-align: center;
+               margin-bottom: 1rem; /* Reduced margin to bring header closer to content */
+               font-size: 2.5rem;
+           }
+   
+           .packages-grid {
+               display: grid;
+               grid-template-columns: repeat(4, 1fr);
+               gap: 1.5rem;
+               width: 100%;
+               padding: 0 2rem;
+           }
+   
+           .package-card {
+               background: #fff;
+               border-radius: 12px;
+               overflow: hidden;
+               box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15); /* Increased shadow for lift effect */
+               transition: transform 0.3s ease, box-shadow 0.3s ease;
+               position: relative;
+               height: 500px; /* Increased card height */
+               display: flex;
+               flex-direction: column;
+               margin-bottom: 1rem;
+           }
+   
+           .package-card:hover {
+               transform: translateY(-8px); /* Lift the card more */
+               box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25); /* Stronger shadow on hover */
+           }
+   
+           .package-image-container {
+               position: relative;
+               width: 100%;
+               height: 320px;
+               overflow: hidden;
+           }
+   
+           .package-image {
+               width: 100%;
+               height: 100%;
+               object-fit: cover;
+               transition: transform 0.3s ease;
+           }
+   
+           .package-card:hover .package-image {
+               transform: scale(1.05);
+           }
+   
+           .package-overlay {
+               padding: 10px 20px; /* Reduced padding to bring title closer */
+               background: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0.4), transparent);
+               color: white;
+               flex-grow: 1;
+               margin-top: -10px; /* Reduced margin between title and content */
+           }
+   
+           .package-title {
+               font-size: 1.4rem; /* Increased font size */
+               margin-bottom: 0.2rem; /* Reduced bottom margin to bring it closer */
+               color: #1a2a3b; /* Deep navy blue color */
+               font-weight: 600;
+               text-align: center;
+               text-transform: uppercase;
+               letter-spacing: 1px;
+           }
+   
+           .package-price {
+               position: absolute;
+               top: 15px;
+               right: 15px;
+               background: rgba(255, 255, 255, 0.9);
+               padding: 8px 12px;
+               border-radius: 8px;
+               font-weight: bold;
+               color: #1a2a3b; /* Deep navy blue color */
+               font-size: 0.9rem;
+               box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+           }
+   
+           .view-details-btn {
+               display: inline-block;
+               padding: 0.8rem 1.5rem;
+               background-color: #d99d42; /* Golden orange background */
+               color: #fff;
+               text-decoration: none;
+               border-radius: 6px;
+               transition: all 0.3s ease;
+               font-weight: 500;
+               margin-top: 1rem;
+               text-align: center;
+               width: 100%;
+               margin-top: 15px;
+           }
+   
+           .view-details-btn:hover {
+               background-color: #b96329; /* Darker shade of golden orange */
+               transform: scale(1.05);
+           }
+   
+           /* Keep all existing modal styles */
+           .modal {
+               display: none;
+               position: fixed;
+               z-index: 1000;
+               left: 0;
+               top: 0;
+               width: 100%;
+               height: 100%;
+               background-color: rgba(0, 0, 0, 0.8);
+               overflow: auto;
+           }
+   
+           .modal-content {
+               background-color: #fff;
+               margin: 2rem auto;
+               width: 90%;
+               max-width: 1200px;
+               border-radius: 12px;
+               position: relative;
+           }
+   
+           /* Responsive Design */
+           @media (max-width: 1400px) {
+               .packages-grid {
+                   grid-template-columns: repeat(3, 1fr);
+               }
+           }
+   
+           @media (max-width: 992px) {
+               .packages-grid {
+                   grid-template-columns: repeat(2, 1fr);
+               }
+               .package-card {
+                   height: 450px;
+               }
+           }
+   
+           @media (max-width: 576px) {
+               .packages-grid {
+                   grid-template-columns: 1fr;
+                   padding: 0 1rem;
+               }
+               .main-content {
+                   padding: 1rem;
+               }
+               .package-card {
+                   height: 400px;
+               }
+           }
+       </style>
+   </head>
+   <body>
+       <main class="main-content">
+           <h1>MIDRANGE TOURS</h1>
+           <div class="packages-grid">
+               <!-- Package Card 1 -->
+               <div class="package-card">
+                   <div class="package-image-container">
+                       <img src="hyena.jpg" alt="Safari Tour" class="package-image">
+                       <div class="package-price">From $1,400</div>
+                   </div>
+                   <div class="package-overlay">
+                       <h2 class="package-title">4 DAYS CLASSIC MIDRANGE TANZANIA SAFARI</h2>
+                       <a href="#" class="view-details-btn" data-package="package-1">View Details</a>
+                   </div>
+               </div>
+   
+               <!-- Package Card 2 -->
+               <div class="package-card">
+                   <div class="package-image-container">
+                       <img src="lion.jpg" alt="Northern Circuit" class="package-image">
+                       <div class="package-price">From $1,750</div>
+                   </div>
+                   <div class="package-overlay">
+                       <h2 class="package-title">5 DAYS NORTHERN CIRCUIT MIDRANGE SAFARI</h2>
+                       <a href="#" class="view-details-btn" data-package="package-2">View Details</a>
+                   </div>
+               </div>
+   
+               <!-- Package Card 3 -->
+               <div class="package-card">
+                   <div class="package-image-container">
+                       <img src="zebra2.jpg" alt="Tanzania Safari" class="package-image">
+                       <div class="package-price">From $1,850</div>
+                   </div>
+                   <div class="package-overlay">
+                       <h2 class="package-title">6-DAY MIDRANGE NORTHERN CIRCUIT TANZANIA SAFARI</h2>
+                       <a href="#" class="view-details-btn" data-package="package-3">View Details</a>
+                   </div>
+               </div>
+   
+               <!-- Package Card 4 -->
+               <div class="package-card">
+                   <div class="package-image-container">
+                       <img src="leopard.jpg" alt="Adventure Safari" class="package-image">
+                       <div class="package-price">From $2,300</div>
+                   </div>
+                   <div class="package-overlay">
+                       <h2 class="package-title">7-DAY MEMORABLE ADVENTURE IN TANZANIA</h2>
+                       <a href="#" class="view-details-btn" data-package="package-4">View Details</a>
+                   </div>
+               </div>
+           </div>
+       </main>
+   </body>
+   </html>
+   
     <!DOCTYPE html>
     <html lang="en">
     <head>

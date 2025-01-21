@@ -6,262 +6,264 @@
     <title>Mafoy africa Safaris | Luxury Safari Experience</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        /* Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+      /* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        body {
-            font-family: 'Roboto', sans-serif;
-            background-color: #f8f8f8;
-            color: #333;
-            line-height: 1.6;
-        }
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f8f8f8;
+    color: #333;
+    line-height: 1.6;
+}
 
-        /* Header Section */
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 20px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            color: #ffffff; /* White text */
-            background-color: #007bff; /* Blue background for the header */
-            width: 100%; /* Ensure the blue color covers the entire width */
-            position: relative; /* Positioning for menu button inside header */
-        }
+/* Header Section */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    color: #ffffff; /* White text */
+    background-color: #d99d42; /* Golden orange background for the header */
+    width: 100%; /* Ensure the golden orange color covers the entire width */
+    position: relative; /* Positioning for menu button inside header */
+}
 
-        /* Logo */
-        .logo {
-            display: flex;
-            align-items: center;
-            color: #333; /* Black color for logo text */
-            background-color: #ffffff; /* White background for logo in mobile view */
-            padding: 10px 20px;
-            border-radius: 5px;
-        }
+/* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+    color: #ffffff; /* White text for logo */
+    background-color: #d99d42; /* Golden orange background for logo */
+    padding: 10px 20px;
+    border-radius: 5px;
+}
 
-        .logo img {
-            width: 50px;
-            margin-right: 10px;
-        }
+.logo img {
+    width: 50px;
+    margin-right: 10px;
+}
 
-        .logo span {
-            font-size: 1.4rem;
-            font-weight: bold;
-        }
+.logo span {
+    font-size: 1.4rem;
+    font-weight: bold;
+}
 
-        /* Mobile Menu Button */
-        .menu-btn {
-            display: flex;
-            cursor: pointer;
-            flex-direction: column;
-            gap: 5px;
-            position: absolute; /* Position absolutely inside the header */
-            right: 20px; /* Align the button to the right inside the header */
-            background-color: transparent; /* No background for the button itself */
-            padding: 10px; /* Add padding to make button area clickable */
-        }
+/* Mobile Menu Button */
+.menu-btn {
+    display: flex;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+    position: absolute; /* Position absolutely inside the header */
+    right: 20px; /* Align the button to the right inside the header */
+    background-color: transparent; /* No background for the button itself */
+    padding: 10px; /* Add padding to make button area clickable */
+}
 
-        .menu-btn div {
-            width: 30px;
-            height: 4px;
-            background-color: #ffffff; /* White color for mobile menu lines */
-        }
+.menu-btn div {
+    width: 30px;
+    height: 4px;
+    background-color: #ffffff; /* White color for mobile menu lines */
+}
 
-        /* Mobile Navigation */
-        .mobile-nav {
-            display: none;
-            flex-direction: column;
-            background-color: #fff;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            width: 100%;
-        }
+/* Mobile Navigation */
+.mobile-nav {
+    display: none;
+    flex-direction: column;
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
 
-        .mobile-nav.active {
-            display: flex;
-        }
+.mobile-nav.active {
+    display: flex;
+}
 
-        .mobile-nav ul {
-            list-style: none;
-            width: 100%;
-            padding: 0;
-        }
+.mobile-nav ul {
+    list-style: none;
+    width: 100%;
+    padding: 0;
+}
 
-        .mobile-nav ul li {
-            width: 100%;
-        }
+.mobile-nav ul li {
+    width: 100%;
+}
 
-        .mobile-nav ul li a {
-            display: block;
-            text-align: center;
-            text-decoration: none;
-            font-size: 1.1rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            color: #333;
-            padding: 15px;
-            border-bottom: 1px solid #ddd;
-            transition: background-color 0.3s, color 0.3s;
-        }
+.mobile-nav ul li a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #333; /* Dark text color */
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+    transition: background-color 0.3s, color 0.3s;
+}
 
-        .mobile-nav ul li a:hover {
-            background-color: #f4f4f4;
-            color: #007bff; /* Blue color on hover */
-        }
+.mobile-nav ul li a:hover {
+    background-color: #f4f4f4;
+    color: #b96329; /* Burnt orange color on hover */
+}
 
-        /* Desktop View */
-        @media (min-width: 769px) {
-            header {
-                padding: 10px 5%;
-                display: flex;
-                justify-content: space-between; /* Align logo and menu at opposite ends */
-                align-items: center;
-            }
+/* Desktop View */
+@media (min-width: 769px) {
+    header {
+        padding: 10px 5%;
+        display: flex;
+        justify-content: space-between; /* Align logo and menu at opposite ends */
+        align-items: center;
+    }
 
-            .menu-btn {
-                display: none;
-            }
+    .menu-btn {
+        display: none;
+    }
 
-            /* Hide Menu Text in desktop view */
-            .menu-text {
-                display: none;
-            }
+    /* Hide Menu Text in desktop view */
+    .menu-text {
+        display: none;
+    }
 
-            /* Align the navigation to the right */
-            header nav {
-                margin-left: auto; /* Push navigation to the right */
-            }
+    /* Align the navigation to the right */
+    header nav {
+        margin-left: auto; /* Push navigation to the right */
+    }
 
-            header nav ul {
-                display: flex;
-                list-style: none;
-                gap: 20px;
-            }
+    header nav ul {
+        display: flex;
+        list-style: none;
+        gap: 20px;
+    }
 
-            header nav ul li {
-                position: relative;
-            }
+    header nav ul li {
+        position: relative;
+    }
 
-            header nav ul li a {
-                text-decoration: none;
-                color: #ffffff; /* White text for navigation items */
-                font-weight: 600;
-                transition: color 0.3s;
-            }
+    header nav ul li a {
+        text-decoration: none;
+        color: #ffffff; /* White text for navigation items */
+        font-weight: 600;
+        transition: color 0.3s;
+    }
 
-            header nav ul li a:hover {
-                color: #e6a400; /* Gold color on hover */
-            }
+    header nav ul li a:hover {
+        color: #b96329; /* Burnt orange color on hover */
+    }
 
-            /* Dropdown Styling */
-            .dropdown {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                background-color: white;
-                min-width: 200px;
-                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-                z-index: 1000;
-            }
+    /* Dropdown Styling */
+    .dropdown {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: white;
+        min-width: 200px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+    }
 
-            /* Show the dropdown when hovering over the parent */
-            header nav ul li:hover .dropdown {
-                display: block;
-            }
+    /* Show the dropdown when hovering over the parent */
+    header nav ul li:hover .dropdown {
+        display: block;
+    }
 
-            .dropdown li {
-                width: 100%;
-            }
+    .dropdown li {
+        width: 100%;
+    }
 
-            .dropdown a {
-                display: block;
-                padding: 10px 15px;
-                color: #333;
-            }
+    .dropdown a {
+        display: block;
+        padding: 10px 15px;
+        color: #333;
+    }
 
-            .dropdown a:hover {
-                background-color: #f4f4f4;
-            }
+    .dropdown a:hover {
+        background-color: #f4f4f4;
+    }
 
-            /* Update logo background to blue for desktop view */
-            .logo {
-                background-color: #007bff; /* Blue background for logo on desktop */
-                color: white; /* White text color for logo text */
-            }
+    /* Update logo background to golden orange for desktop view */
+    .logo {
+        background-color: #d99d42; /* Golden orange background for logo on desktop */
+        color: white; /* White text color for logo text */
+    }
 
-            .logo img {
-                width: 50px; /* Adjust logo size */
-                margin-right: 10px;
-            }
+    .logo img {
+        width: 50px; /* Adjust logo size */
+        margin-right: 10px;
+    }
 
-            .logo span {
-                font-size: 1.6rem; /* Increase font size for better visibility */
-                font-weight: bold;
-            }
-        }
+    .logo span {
+        font-size: 1.6rem; /* Increase font size for better visibility */
+        font-weight: bold;
+    }
+}
 
-        /* Mobile Specific Adjustments */
-        @media (max-width: 768px) {
-            /* Make the entire header section blue on mobile */
-            header {
-                display: block;
-                padding: 0; /* Remove default padding */
-                background-color: #007bff; /* Blue background for the entire header */
-                width: 100%; /* Make the blue background cover the entire width */
-            }
+/* Mobile Specific Adjustments */
+@media (max-width: 768px) {
+    /* Make the entire header section golden orange on mobile */
+    header {
+        display: block;
+        padding: 0; /* Remove default padding */
+        background-color: #d99d42; /* Golden orange background for the entire header */
+        width: 100%; /* Make the golden orange background cover the entire width */
+    }
 
-            /* Logo on top of the header in mobile view with full-width blue background */
-            .logo {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                width: 100%; /* Full-width */
-                background-color: #ffffff; /* White background for logo part */
-                padding: 30px 0; /* Increased padding for larger header */
-                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow */
-            }
+    /* Logo on top of the header in mobile view with full-width golden orange background */
+    .logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%; /* Full-width */
+        background-color: #ffffff; /* White background for logo part */
+        padding: 30px 0; /* Increased padding for larger header */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow */
+    }
 
-            .logo img {
-                width: 60px; /* Adjust logo size */
-                margin-right: 10px;
-            }
+    .logo img {
+        width: 60px; /* Adjust logo size */
+        margin-right: 10px;
+    }
 
-            .logo span {
-                font-size: 1.6rem; /* Increase font size for better visibility */
-                font-weight: bold;
-            }
+    .logo span {
+        font-size: 1.6rem; /* Increase font size for better visibility */
+        font-weight: bold;
+        color: #333; /* Dark text color for logo in mobile view */
+    }
 
-            /* Header section with mobile menu icon */
-            header nav {
-                display: none; /* Hidden by default */
-            }
+    /* Header section with mobile menu icon */
+    header nav {
+        display: none; /* Hidden by default */
+    }
 
-            /* Mobile Navigation visible when active */
-            .mobile-nav.active {
-                display: flex;
-            }
+    /* Mobile Navigation visible when active */
+    .mobile-nav.active {
+        display: flex;
+    }
 
-            /* "Menu" Text */
-            .menu-text {
-                color: white;
-                font-size: 1.4rem;
-                font-weight: bold;
-                margin-left: 20px;
-            }
+    /* "Menu" Text */
+    .menu-text {
+        color: white;
+        font-size: 1.4rem;
+        font-weight: bold;
+        margin-left: 20px;
+    }
 
-            /* Dropdown menu visibility when "Tours" is clicked */
-            .mobile-nav ul li .dropdown {
-                display: none;
-            }
+    /* Dropdown menu visibility when "Tours" is clicked */
+    .mobile-nav ul li .dropdown {
+        display: none;
+    }
 
-            .mobile-nav ul li.active .dropdown {
-                display: block;
-            }
-        }
+    .mobile-nav ul li.active .dropdown {
+        display: block;
+    }
+}
+
     </style>
 </head>
 <body>
@@ -297,7 +299,7 @@
                         <li><a href="zanzibar-holidays.html">Zanzibar Holidays Packages</a></li>
                     </ul>
                 </li>
-                <li><a href="about us.html">Testimonials</a></li>
+                <li><a href="about us.html">About us</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
@@ -339,6 +341,9 @@
     </script>
 </body>
 </html>
+
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -483,27 +488,27 @@
         }
 
         .view-details-btn {
-            display: inline-block;
-            padding: 0.8rem 1.5rem;
-            /* Adjusted padding */
-            background-color: #0099ff;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 6px;
-            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-            font-weight: 500;
-            text-align: center;
-            width: 100%;
-            box-sizing: border-box;
-            margin-top: 1rem;
-            font-size: 1.1rem;
-        }
+    display: inline-block;
+    padding: 0.8rem 1.5rem; /* Adjusted padding */
+    background-color: #d99d42; /* Golden orange */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    font-weight: 500;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 1rem;
+    font-size: 1.1rem;
+}
 
-        .view-details-btn:hover {
-            background-color: #2980b9;
-            transform: scale(1.05);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-        }
+.view-details-btn:hover {
+    background-color: #b96329; /* Slightly darker golden orange for hover */
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
 
         /* Modal Styles */
         .modal {
@@ -511,7 +516,7 @@
             position: fixed;
             top: 0;
             left: 0;
-            width: 10%;
+            width: 100%;
             height: 100%;
             background-color: rgba(0, 0, 0, 0.8);
             z-index: 2000;
@@ -526,7 +531,7 @@
             position: relative;
             background-color: #fff;
             width: 100%;
-            max-width: 10000px;
+            max-width: 1000px;
             margin: 2rem auto;
             border-radius: 12px;
             max-height: 90vh;
@@ -579,7 +584,6 @@
             border-right: 1px solid #dee2e6;
             padding: 1rem;
             overflow-y: auto;
-            overflow-x: auto;
         }
 
         .modal-nav {
@@ -807,7 +811,6 @@
                 padding-bottom: 0.5rem;
                 gap: 0rem;
                 min-height: fit-content;
-                overflow-y: auto;
             }
 
             .modal-nav-item {
@@ -851,9 +854,14 @@
                 font-size: 0.0rem;
             }
         }
+        h1 {
+    font-size: 2rem; /* Adjust for mobile */
+}
+
 
         /* Modal Full-Screen View */
         .modal {
+            
             display: none;
             position: fixed;
             z-index: 1000;
@@ -872,10 +880,11 @@
             margin: auto;
             background-color: #fff;
             border-radius: 10px;
-            width: 100%;
-            max-width: 1600px;
+            width: 160%;
+            width: max-content;
+           width: auto;
             /* Larger maximum width */
-            height: 100%;
+            height: 50%;
             /* Take up more screen height */
             display: flex;
             flex-direction: column;
@@ -961,7 +970,6 @@ body.modal-open {
     font-family: 'Inter', sans-serif; /* Clean and modern font */
     font-size: 0.95rem; /* Comfortable font size */
     transition: all 0.3s ease-in-out; /* Smooth transition for hover effects */
-    overflow-x: auto;
 }
 
 /* Sidebar Navigation Styles */
@@ -974,34 +982,33 @@ body.modal-open {
 .modal-nav-item {
     margin-bottom: 0.8rem; /* Clean spacing between items */
 }
-
 .modal-nav-link {
     display: block;
     padding: 0.8rem 1rem; /* Balanced padding for a clean look */
     text-decoration: none;
-    color: #4a4a4a; /* Subtle dark gray for links */
-    background-color: #fdfdfd; /* Crisp white background */
-    border: 1px solid #e5e5e5; /* Subtle border for structure */
+    color: #ffffff; /* White text for contrast */
+    background-color: hsl(42, 100%, 50%); /* Golden yellow background */
+    border: 1px solid hsl(42, 100%, 40%); /* Slightly darker golden yellow border */
     border-radius: 8px; /* Modern rounded corners */
     font-weight: 500; /* Medium font weight for clarity */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Light shadow for depth */
+    box-shadow: 0 2px 4px rgba(255, 195, 77, 0.2); /* Subtle golden yellow shadow */
     transition: all 0.3s ease; /* Smooth transitions for hover effects */
     font-size: 0.9rem; /* Sleek, slightly smaller text */
 }
 
 .modal-nav-link:hover {
-    background: linear-gradient(135deg, #007bff, #0056b3); /* Gradient hover effect */
-    color: #ffffff; /* White text on hover */
-    border-color: #0056b3; /* Accent border */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Enhanced shadow on hover */
+    background: linear-gradient(135deg, hsl(42, 100%, 40%), hsl(42, 100%, 50%)); /* Gradient golden yellow hover effect */
+    color: #FFFFFF; /* Keep text white on hover */
+    border-color: hsl(42, 100%, 30%); /* Slightly deeper golden yellow border for hover */
+    box-shadow: 0 4px 8px rgba(255, 180, 0, 0.3); /* Enhanced shadow on hover */
     transform: translateY(-3px); /* Lift effect */
 }
 
 .modal-nav-link.active {
-    background: linear-gradient(135deg, #0056b3, #003c80); /* Deep gradient for active link */
-    color: #ffffff; /* White text for active state */
+    background: linear-gradient(135deg, hsl(42, 100%, 30%), hsl(42, 100%, 40%)); /* Deep gradient for active link */
+    color: #FFFFFF; /* White text for active state */
     font-weight: 600; /* Slightly bolder for emphasis */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Prominent shadow for active state */
+    box-shadow: 0 6px 12px rgba(255, 160, 0, 0.4); /* Prominent golden yellow shadow for active state */
 }
 
 /* Responsive Design */
@@ -1033,7 +1040,6 @@ body.modal-open {
             padding: 0.5rem;
             overflow-y: auto;
             font-size: 1.2rem;
-            overflow-x: auto;
             /* Slightly larger text for better readability */
         }
 
@@ -1076,7 +1082,7 @@ body.modal-open {
 }
 
         .modal-nav-link.active {
-            background-color: #0e7eef;
+            background-color: #a19725;
             color: #fff;
         }
 
@@ -1092,7 +1098,6 @@ body.modal-open {
         .tab-content.active {
             display: block;
         }
-        
 /* General Style for .tab-image */
 .tab-image {
     border-radius: 5px;
@@ -1100,10 +1105,6 @@ body.modal-open {
     object-fit: cover;
     object-position: 0cqmax;
 }
-h1 {
-    font-size: 2rem; /* Adjust for mobile */
-}
-
 
 /* Desktop View (Large Screens) */
 @media (min-width: 992px) {
@@ -1151,30 +1152,7 @@ h1 {
             border-radius: 10px;
         }
 
-        /* Adjust Back to Packages Button */
-.back-to-packages {
-    display: inline-block;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    text-decoration: none;
-    color: #ffffff; /* White text color for better contrast */
-    font-weight: bold;
-    font-size: 1.5rem; /* Larger font size */
-    padding: 0.8rem 2rem; /* Added padding for better clickability */
-    border-radius: 8px; /* Rounded corners for a more modern look */
-    background-color: #007bff; /* Soft blue background color */
-    transition: all 0.3s ease; /* Smooth transition on hover */
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3); /* Subtle shadow for depth */
-}
-
-/* Hover Effects */
-.back-to-packages:hover {
-    color: #ffffff; /* Keep text white on hover */
-    background-color: #0056b3; /* Darker blue on hover */
-    transform: scale(1.05); /* Slight zoom effect on hover */
-}
-
+ 
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
     .back-to-packages {
@@ -1184,308 +1162,962 @@ h1 {
         margin-bottom: 1.5rem; /* Adjust bottom margin on mobile */
     }
 }
+h1 {
+  font-size: 2rem; /* Default size */
+}
 
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.5rem; /* Smaller size for mobile */
+  }
+}
+</style>   
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safari Packages | Tanzania Adventures</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f9;
+        }
+
+        .main-content {
+            width: 100%;
+            max-width: 100%;
+            padding: 1rem;
+        }
+
+        h1 {
+            color: #d99d42 !important;
+            text-align: center;
+            margin-bottom: 1rem;
+            font-size: 2rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            width: 100%;
+            padding: 0 2rem;
+        }
+
+        .package-card {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            height: 500px;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 1rem;
+            width: 100%;
+        }
+
+        .package-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+        }
+
+        .package-image-container {
+            position: relative;
+            width: 100%;
+            height: 320px;
+            overflow: hidden;
+        }
+
+        .package-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .package-card:hover .package-image {
+            transform: scale(1.05);
+        }
+
+        .package-overlay {
+            padding: 10px 20px;
+            background: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0.4), transparent);
+            color: white;
+            flex-grow: 1;
+            margin-top: -10px;
+        }
+
+        .package-title {
+            font-size: 1.4rem;
+            margin-bottom: 0.2rem;
+            color: #1a2a3b;
+            font-weight: 600;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .package-price {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-weight: bold;
+            color: #1a2a3b;
+            font-size: 0.9rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .view-details-btn {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background-color: #d99d42;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            margin-top: 1rem;
+            text-align: center;
+            width: 100%;
+            margin-top: 15px;
+        }
+
+        .view-details-btn:hover {
+            background-color: #b96329;
+            transform: scale(1.05);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 576px) {
+            .packages-grid {
+                grid-template-columns: 1fr; /* Full width for each card */
+                gap: 1.2rem; /* Reduce gap between cards */
+                padding: 0; /* Remove padding for full width */
+            }
+
+            .main-content {
+                padding: 14px; /* Remove main-content padding for full-width effect */
+                border-radius: 10px;
+            }
+
+            .package-card {
+                height: auto;
+                width: 100%; /* Full width for cards */
+                margin: 0; /* Remove extra margins */
+                border-radius: 15px; /* Remove border-radius for seamless edges */
+            }
+
+            .package-title {
+                font-size: 1.2rem; /* Adjust title size */
+            }
+
+            .package-price {
+                font-size: 0.8rem; /* Adjust price size */
+            }
+
+            .view-details-btn {
+                font-size: 0.9rem; /* Adjust button font size */
+            }
+        }
     </style>
-    <!-- Main Content -->
-    <main class="main-content">
-        <h1 style="color: hsl(196, 100%, 50%) !important;">HIKING PACKAGES</h1>
-
-        <div class="packages-grid">
-            <!-- Package Card 1 -->
-            <div class="package-card" id="package-1">
-                <img src="ho.jpg" alt="Zanzibar" class="package-image">
-                <div class="package-content">
-                    <h2 class="package-title"> 2 DAYS KILIMANJARO SHORT TREKKING </h2>
-                    <div class="package-details">
-                        <p><span role="img" aria-label="Location">🏞️</span> <strong>Location:</strong> Kilimanjaro</p>
-                        <p><span role="img" aria-label="Duration">🕒</span> <strong>Duration:</strong> 2 Day</p>
-                        <p><span role="img" aria-label="Best Season">☀️</span> <strong>Best Season:</strong> June -
-                            October</p>
-                    </div>
-                    <p class="package-price"><span role="img" aria-label="Price">💵</span> <strong>From:</strong> $660
-                        per person</p>
-                    <a href="#" class="view-details-btn" data-package="package-1">View Details</a>
-                </div>
-            </div>
-
-            <!-- Package Card 2 -->
-            <div class="package-card" id="package-2">
-                <img src="meru.jpg" alt="Serengeti National Park" class="package-image">
-                <div class="package-content">
-                    <h2 class="package-title">3 DAYS MOUNT MERU TRECKING</h2>
-                    <div class="package-details">
-                        <p><span role="img" aria-label="Location">🦁</span> <strong>Location:</strong> Arusha,
-                            </p>
-                        <p><span role="img" aria-label="Duration">📅</span> <strong>Duration:</strong> 5 Days</p>
-                        <p><span role="img" aria-label="Best Season">🌞</span> <strong>Best Season:</strong> January -
-                            February</p>
-                    </div>
-                    <p class="package-price"><span role="img" aria-label="Price">💰</span> <strong>From:</strong> $830
-                        per person</p>
-                    <a href="#" class="view-details-btn" data-package="package-2">View Details</a>
-                </div>
-            </div>
-
-            <!-- Package Card 3 -->
-            <div class="package-card" id="package-3">
-                <img src="meru4.jpg" alt="Zanzibar Beach" class="package-image">
-                <div class="package-content">
-                    <h2 class="package-title">4 DAYS MOUNT MERU TREKKING</h2>
-                    <div class="package-details">
-                        <p><span role="img" aria-label="Location">🏖️</span> <strong>Location:</strong> Arusha</p>
-                        <p><span role="img" aria-label="Duration">🕒</span> <strong>Duration:</strong> 4 Days</p>
-                        <p><span role="img" aria-label="Best Season">🌞</span> <strong>Best Season:</strong> June -
-                            October</p>
-                    </div>
-                    <p class="package-price"><span role="img" aria-label="Price">💵</span> <strong>From:</strong> $990
-                        per person</p>
-                    <a href="#" class="view-details-btn" data-package="package-3">View Details</a>
-                </div>
-            </div>
-
+  </head>
+  <body>
+      <main class="main-content">
+          <h1>HIKING PACKAGES </h1>
+          <div class="packages-grid">
+              <!-- Package Card 1 -->
+              <div class="package-card">
+                  <div class="package-image-container">
+                      <img src="hyena.jpg" alt="Safari Tour" class="package-image">
+                      <div class="package-price">From $1,400</div>
+                  </div>
+                  <div class="package-overlay">
+                      <h2 class="package-title">2 DAYS KILIMANJARO SHORT TREKKING </h2>
+                      <a href="#" class="view-details-btn" data-package="package-1">View Details</a>
+                  </div>
+              </div>
+  
+              <!-- Package Card 2 -->
+              <div class="package-card">
+                  <div class="package-image-container">
+                      <img src="lion.jpg" alt="Northern Circuit" class="package-image">
+                      <div class="package-price">From $1,750 </div>
+                  </div>
+                  <div class="package-overlay">
+                      <h2 class="package-title">3 DAYS MOUNT MERU TRECKING IN TANZANIA</h2>
+                      <a href="#" class="view-details-btn" data-package="package-2">View Details</a>
+                  </div>
+              </div>
+  
+              <!-- Package Card 3 -->
+              <div class="package-card">
+                  <div class="package-image-container">
+                      <img src="zebra2.jpg" alt="Tanzania Safari" class="package-image">
+                      <div class="package-price">From $1,850</div>
+                  </div>
+                  <div class="package-overlay">
+                      <h2 class="package-title">4 DAYS MOUNT MERU TREKKING IN TANZANIA</h2>
+                      <a href="#" class="view-details-btn" data-package="package-3">View Details</a>
+                  </div>
+              </div>
+  
             <!-- Package Card 4 -->
-            <div class="package-card" id="package-4">
-                <img src="mountain.JPG" alt="Serengeti Safari" class="package-image">
-                <div class="package-content">
-                    <h2 class="package-title">5 DAYS KILIMANJARO HIKING VIA MARANGU ROUTE</h2>
-                    <div class="package-details">
-                        <p><span role="img" aria-label="Location">🦁</span> <strong>Location:</strong> Arusha</p>
-                        <p><span role="img" aria-label="Duration">📅</span> <strong>Duration:</strong> 5 Days</p>
-                        <p><span role="img" aria-label="Best Season">🌞</span> <strong>Best Season:</strong> June -
-                            October</p>
-                    </div>
-                    <p class="package-price"><span role="img" aria-label="Price">💰</span> <strong>From:</strong> $1650
-                        per person</p>
+            <div class="package-card">
+                <div class="package-image-container">
+                    <img src="leopard.jpg" alt="Adventure Safari" class="package-image">
+                    <div class="package-price">From $2,300</div>
+                </div>
+                <div class="package-overlay">
+                    <h2 class="package-title">5 DAYS KILIMANJARO HIKING VIA MARANGU ROUTE </h2>
                     <a href="#" class="view-details-btn" data-package="package-4">View Details</a>
                 </div>
             </div>
 
             <!-- Package Card 5 -->
-            <div class="package-card" id="package-5">
-                <img src="mountain 2.jpg" alt="Luxury Safari" class="package-image">
-                <div class="package-content">
-                    <h2 class="package-title"> 6 DAYS KILIMANJARO HIKING </h2>
-                    <div class="package-details">
-                        <p><span role="img" aria-label="Location">🏞️</span> <strong>Location:</strong> Kilimanjaro
-                           </p>
-                        <p><span role="img" aria-label="Duration">🕒</span> <strong>Duration:</strong> 6 Days</p>
-                        <p><span role="img" aria-label="Best Season">🌞</span> <strong>Best Season:</strong> June -
-                            October</p>
-                    </div>
-                    <p class="package-price"><span role="img" aria-label="Price">💵</span> <strong>From:</strong> $1980
-                        per person</p>
+            <div class="package-card">
+                <div class="package-image-container">
+                    <img src="elephant.jpg" alt="Safari Tour" class="package-image">
+                    <div class="package-price">From $2,100</div>
+                </div>
+                <div class="package-overlay">
+                    <h2 class="package-title">6 DAYS KILIMANJARO HIKING IN TANZANIA </h2>
                     <a href="#" class="view-details-btn" data-package="package-5">View Details</a>
                 </div>
             </div>
 
             <!-- Package Card 6 -->
-            <div class="package-card" id="package-6">
-                <img src="machame.jpg" alt="Ngorongoro Crater Safari" class="package-image">
-                <div class="package-content">
-                    <h2 class="package-title">7 DAYS KILIMANJARO HIKING </h2>
-                    <div class="package-details">
-                        <p><span role="img" aria-label="Location">🌋</span> <strong>Location:</strong> Ngorongoro Crater
-                        </p>
-                        <p><span role="img" aria-label="Duration">🕒</span> <strong>Duration:</strong> 2 Days</p>
-                        <p><span role="img" aria-label="Best Season">☀️</span> <strong>Best Season:</strong> June -
-                            October</p>
-                    </div>
-                    <p class="package-price"><span role="img" aria-label="Price">💰</span> <strong>From:</strong> $2310
-                        per person</p>
+            <div class="package-card">
+                <div class="package-image-container">
+                    <img src="cheeter.jpg" alt="Luxury Safari" class="package-image">
+                    <div class="package-price">From $3,000</div>
+                </div>
+                <div class="package-overlay">
+                    <h2 class="package-title">7 DAYS KILIMANJARO HIKING IN TANZANIA</h2>
                     <a href="#" class="view-details-btn" data-package="package-6">View Details</a>
                 </div>
             </div>
 
             <!-- Package Card 7 -->
-            <div class="package-card" id="package-7">
-                <img src="kilimanjaro9.jpg" alt="Serengeti Safari" class="package-image">
-                <div class="package-content">
+            <div class="package-card">
+                <div class="package-image-container">
+                    <img src="nungwi.jpg" alt="Exclusive Safari" class="package-image">
+                    <div class="package-price">From $3,500</div>
+                </div>
+                <div class="package-overlay">
                     <h2 class="package-title">9 DAY KILIMANJARO HIKING VIA NOTHERN ROUTE</h2>
-                    <div class="package-details">
-                        <p><span role="img" aria-label="Location">🦁</span> <strong>Location:</strong> Kilimanjaro
-                           </p>
-                        <p><span role="img" aria-label="Duration">📅</span> <strong>Duration:</strong> 9 Days</p>
-                        <p><span role="img" aria-label="Best Season">🌞</span> <strong>Best Season:</strong> June -
-                            October</p>
-                    </div>
-                    <p class="package-price"><span role="img" aria-label="Price">💵</span> <strong>From:</strong> $2970
-                        per person</p>
                     <a href="#" class="view-details-btn" data-package="package-7">View Details</a>
                 </div>
             </div>
 
             <!-- Package Card 8 -->
-            <div class="package-card" id="package-8">
-                <img src="dorphine 2.jpg" alt="Luxury Safari Tour" class="package-image">
-                <div class="package-content">
+            <div class="package-card">
+                <div class="package-image-container">
+                    <img src="beach3.jpg" alt="Adventure Safari" class="package-image">
+                    <div class="package-price">From $4,200</div>
+                </div>
+                <div class="package-overlay">
                     <h2 class="package-title">DOLPHIN WATCHING TOUR</h2>
-                    <div class="package-details">
-                        <p><span role="img" aria-label="Location">🏞️</span> <strong>Location:</strong> Serengeti,
-                            Ngorongoro, Tarangire</p>
-                        <p><span role="img" aria-label="Duration">🕒</span> <strong>Duration:</strong> 7 Days</p>
-                        <p><span role="img" aria-label="Best Season">☀️</span> <strong>Best Season:</strong> June -
-                            October</p>
-                    </div>
-                    <p class="package-price"><span role="img" aria-label="Price">💰</span> <strong>From:</strong> $3,500
-                        per person</p>
                     <a href="#" class="view-details-btn" data-package="package-8">View Details</a>
                 </div>
             </div>
-
         </div>
     </main>
-    <!-- Package Details Modal -->
-    <div class="modal" id="package-modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2 class="modal-title">Package Details</h2>
-                <button class="close-modal">&times;</button>
-            </div>
-            <div class="modal-body">
-                <div class="modal-sidebar">
-                    <ul class="modal-nav">
-                        <li class="modal-nav-item"><a href="#overview" class="modal-nav-link active">Overview</a></li>
-                        <li class="modal-nav-item"><a href="#itinerary" class="modal-nav-link">Itinerary</a></li>
-                        <li class="modal-nav-item"><a href="#rates" class="modal-nav-link">Rates</a></li>
-                        <li class="modal-nav-item"><a href="#inclusion" class="modal-nav-link">Inclusion</a></li>
-                        <li class="modal-nav-item"><a href="#exclusion" class="modal-nav-link">Exclusion</a></li>
-                        <li class="modal-nav-item"><a href="#end-of-tours" class="modal-nav-link">End of Tours</a></li>
-                        <li class="modal-nav-item"><a href="#weather" class="modal-nav-link">Weather</a></li>
-                        <li class="modal-nav-item"><a href="#contact" class="modal-nav-link">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="modal-main">
-                    <!-- Image Section -->
-                    <img src="zanzibar-overview.jpg" alt="Zanzibar Overview" class="tab-image"
-                        style="width: 100%; height: 400px; object-fit: cover; border-radius: 8px; margin-bottom: 4rem;">
+</body>
+</html>
+   
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Package Details</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <style>/* Base Modal Styles */
+            .modal {
+                display: none;
+                position: fixed;
+                margin-top: auto;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(197, 184, 141, 0.838);
+                z-index: 1000;
+            }
+            
+            .modal-content {
+                position: relative;
+                background-color: #fff;
+                margin: 0.2% auto;
+                padding: 50px;
+                width: 99%;
+                max-width: 1800px;
+                max-height: 99vh;
+                overflow-y: auto;
+                border-radius: 12px;
+            }
+            
+            /* Header Styles */
+            .modal-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 30px;
+                padding: 10px 20px;
+                background-color: #FFA500; /* Orange header */
+                border-radius: 8px;
+            }
+            
+            .modal-title {
+                margin: 0;
+                font-size: 36px;
+                font-weight: bold;
+                color: #ffffff;
+            }
+            
+            /* Home Link Button */
+            .home-link {
+                font-size: 16px;
+                text-decoration: none;
+                color: #ffffff;
+                font-weight: 600;
+                padding: 12px 24px;
+                background-color: #DAA520; /* Golden orange */
+                border-radius: 8px;
+                border: 2px solid #B8860B;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                transition: all 0.3s ease;
+                display: inline-block;
+                text-align: center;
+                cursor: pointer;
+            }
+            
+            .home-link:hover {
+                background-color: #b8860b;
+                color: #ffffff;
+                transform: translateY(-2px);
+                box-shadow: 0 6px 10px #002b36(0, 0, 0, 0.2);
+                text-decoration: underline;
+            }
+            
+            /* Modal Body */
+            .modal-body {
+                display: flex;
+                gap: 40px;
+                overflow: auto;
+            }
+            
+            .modal-sidebar {
+                flex: 0 0 300px;
+            }
+            
+            .modal-main {
+                flex: 1;
+            }
+            
+            /* Navigation Items */
+            .modal-nav-item {
+                margin-bottom: 20px;
+                background-color: #d8cfc0; /* Light golden background */
+                border-radius: 6px;
+                transition: all 0.3s ease;
+            }
+            
+            .modal-nav-link {
+                display: block;
+                padding: 15px 25px;
+                font-size: 18px;
+                color:#002b36;
+                text-decoration: none;
+                transition: all 0.3s ease;
+                background-color:  #f4f0e8; 
+                
+            }
+            /* Active State */
+.modal-nav-item.active {
+    background-color: #f4eede; /* Golden orange for active item */
+    padding: 15px 25px;
+    border-radius: 6px;
+}
 
-                    <div id="overview" class="tab-content active">
-                        <h3>Overview</h3>
-                        <p id="overview-text">Details will be shown here based on the selected package.</p>
+.modal-nav-link.active {
+    background-color: #e1dcce; /* Golden orange for active link */
+    color: #ffffff; /* White text */
+    font-weight: 600;
+    border-radius: 6px;
+}
+.modal-nav-link.active {
+    background-color: #DAA520; /* Golden orange for active link */
+    color: #ffffff; /* White text */
+    font-weight: 600;
+    border-radius: 6px;
+}
+            
+            /* Hover Effect */
+            .modal-nav-link:hover {
+                background-color: #e4dfd2; /* Golden orange on hover */
+                color: #ffffff;
+                border-radius: 6px;
+                font-weight: 600;
+            }
+            
+            /* Active State */
+            .modal-nav-item.active,
+            .modal-nav-link.active {
+                background-color: #DAA520; /* Golden orange for active state */
+                color: #ffffff;
+                font-weight: 600;
+                border-radius: 6px;
+            }
+            
+            /* List Styles */
+            .list-container {
+                display: grid;
+                gap: 1rem;
+            }
+            
+            .list-item {
+                background: #f8fafc;
+                padding: 1.25rem;
+                border-radius: 0.75rem;
+                border: 1px solid #e2e8f0;
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+                transition: all 0.2s;
+            }
+            
+            .list-item:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            }
+            
+            .list-icon {
+                font-size: 1.25rem;
+            }
+            
+            .inclusion-icon {
+                color: #22c55e;
+            }
+            
+            .exclusion-icon {
+                color: #ef4444;
+            }
+            /* Dining Section Styles */
+.dining-icon {
+    color: #7c2d12;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    margin-right: 10px;
+    border-radius: 50%;
+    background: #fff7ed;
+    padding: 15px;
+    transition: all 0.3s ease;
+}
+
+#dining-text .list-container {
+    display: grid;
+    gap: 1.5rem;
+    padding: 1rem 0;
+}
+
+#dining-text .list-item {
+    background: #ffffff;
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    border: 1px solid #e2e8f0;
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+#dining-text .list-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-color: #c2410c;
+}
+
+#dining-text .list-item strong {
+    color: #7c2d12;
+    font-size: 1.1rem;
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+#dining-text .list-item span:last-child {
+    flex: 1;
+    line-height: 1.5;
+    color: #4a5568;
+}
+
+/* Icon-specific colors */
+#dining-text .fa-utensils {
+    color: #c2410c;  /* Restaurant */
+}
+
+#dining-text .fa-wine-glass {
+    color: #9a3412;  /* Fine dining */
+}
+
+#dining-text .fa-mug-hot {
+    color: #854d0e;  /* Cafe */
+}
+
+#dining-text .fa-ice-cream {
+    color: #b45309;  /* Dessert */
+}
+
+/* Responsive styles for dining section */
+@media screen and (max-width: 768px) {
+    #dining-text .list-item {
+        padding: 1rem;
+        flex-direction: column;
+        text-align: center;
+        gap: 0.75rem;
+    }
+    
+    .dining-icon {
+        margin: 0 auto;
+    }
+    
+    #dining-text .list-item strong {
+        font-size: 1rem;
+    }
+    
+    #dining-text .list-item span:last-child {
+        font-size: 0.9rem;
+    }
+}
+
+/* Active state for dining tab */
+.modal-nav-link[href="#dining"].active {
+    background-color: #c2410c;
+    color: #ffffff;
+}
+
+/* Hover state for dining items */
+#dining-text .list-item:hover .dining-icon {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+/* Additional spacing for dining section */
+#dining.tab-content {
+    padding: 1rem 0;
+}
+
+#dining h3 {
+    margin-bottom: 1.5rem;
+    color: #7c2d12;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+            /* Itinerary Styles */
+            .itinerary-day {
+                background: #f8fafc;
+                padding: 1rem;
+                border-radius: 0.5rem;
+                margin-bottom: 0.75rem;
+                border: 1px solid #e2e8f0;
+                width: 100%;
+                box-sizing: border-box;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+            }
+            
+            .itinerary-day h4 {
+                color: #1e40af;
+                margin-bottom: 0.5rem;
+                font-size: 1.125rem;
+                font-weight: 600;
+                line-height: 1.4;
+                text-align: left;
+            }
+            
+            /* Itinerary Day Content */
+            .itinerary-day .day-content {
+                font-size: 0.95rem;
+                color: #333;
+                line-height: 1.6;
+                margin-bottom: 0.75rem;
+                text-align: left;
+            }
+            
+            /* Tab Image Styles */
+            .tab-image {
+                height: 200px;
+                margin-bottom: 5px;
+            }
+            
+            /* Tab Content */
+            .tab-content {
+                margin-top: 0;
+                padding-top: 0px;
+            }
+            
+            /* Mobile-Specific Styles */
+            @media screen and (max-width: 768px) {
+                .itinerary-day {
+                    padding: 0.75rem;
+                    margin-bottom: 0.5rem;
+                    width: 100%;
+                }
+            
+                .itinerary-day h4 {
+                    font-size: 1rem;
+                    margin-bottom: 0.25rem;
+                    font-weight: 600;
+                    text-align: left;
+                }
+            
+                .itinerary-day .day-content {
+                    font-size: 0.875rem;
+                    line-height: 1.5;
+                    margin-bottom: 0.5rem;
+                }
+            
+                .modal-content {
+                    margin: 0;
+                    padding: 10px;
+                    width: 100%;
+                    height: 100%;
+                    overflow: auto;
+                    scrollbar-width: thin;
+                    -ms-overflow-style: scrollbar;
+                }
+            
+                .modal-header {
+                    padding: 5px 10px;
+                    margin-bottom: 10px;
+                    background-color: #FFA500;
+                }
+            
+                .modal-title {
+                    font-size: 20px;
+                    margin: 0;
+                }
+            
+                .home-link {
+                    font-size: 14px;
+                    padding: 8px 16px;
+                }
+            
+                .modal-body {
+                    flex-direction: column;
+                    gap: 15px;
+                    overflow: auto;
+                }
+            
+                .modal-sidebar {
+                    flex: none;
+                    width: 100%;
+                    padding: 5px;
+                    margin-bottom: 10px;
+                    overflow-x: auto;
+                }
+            
+                .modal-nav {
+                    display: flex;
+                    overflow-x: auto;
+                    padding: 5px 0;
+                    gap: 5px;
+                    scrollbar-width: thin;
+                    -ms-overflow-style: scrollbar;
+                    position: relative;
+                    overflow-y: auto;
+                }
+            
+                .modal-nav-link {
+                    padding: 0.75rem 1rem;
+                    font-size: 0.875rem;
+                    white-space: nowrap;
+                }
+            }
+            
+        </style>
+    </head>
+    <body>
+        <div class="modal" id="package-modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title">Package Details</h2>
+                    <a href="hiking.html" class="home-link">Home</a>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-sidebar">
+                        <ul class="modal-nav">
+                            <li class="modal-nav-item"><a href="#overview" class="modal-nav-link active">Overview</a></li>
+                            <li class="modal-nav-item"><a href="#itinerary" class="modal-nav-link">Itinerary</a></li>
+                            <li class="modal-nav-item"><a href="#rates" class="modal-nav-link">Rates</a></li>
+                            <li class="modal-nav-item"><a href="#inclusion" class="modal-nav-link">Inclusion</a></li>
+                            <li class="modal-nav-item"><a href="#exclusion" class="modal-nav-link">Exclusion</a></li>
+                            <li class="modal-nav-item"><a href="#end-of-tours" class="modal-nav-link">End of Tours</a></li>
+                            <li class="modal-nav-item"><a href="#accommodation" class="modal-nav-link">Accommodation</a></li>
+                            <li class="modal-nav-item"><a href="#contact" class="modal-nav-link">Contact</a></li>
+                        </ul>
                     </div>
-                    <div id="itinerary" class="tab-content">
-                        <h3>Itinerary</h3>
-                        <div id="itinerary-content">
-                            <!-- Itinerary days will be inserted dynamically here -->
+                    <div class="modal-main">
+                        <img src="zanzibar-overview.jpg" alt="Package Overview" class="tab-image"
+                            style="width: 100%; height: 400px; object-fit: cover; border-radius: 8px; margin-bottom: 4rem;">
+    
+                        <div id="overview" class="tab-content active">
+                            <h3>Overview</h3>
+                            <p id="overview-text"></p>
+                        </div>
+    
+                        <div id="itinerary" class="tab-content">
+                            <h3>Itinerary</h3>
+                            <div id="itinerary-content"></div>
+                        </div>
+    
+                        <div id="rates" class="tab-content">
+                            <h3>Rates</h3>
+                            <p id="rates-text"></p>
+                        </div>
+    
+                        <div id="inclusion" class="tab-content">
+                            <h3>Inclusion</h3>
+                            <div id="inclusion-text" class="list-container"></div>
+                        </div>
+    
+                        <div id="exclusion" class="tab-content">
+                            <h3>Exclusion</h3>
+                            <div id="exclusion-text" class="list-container"></div>
+                        </div>
+    
+                        <div id="end-of-tours" class="tab-content">
+                            <h3>End of Tours</h3>
+                            <p id="end-of-tours-text"></p>
+                        </div>
+    
+                        <div id="accommodation" class="tab-content">
+                            <h3>Accommodation</h3>
+                            <div id="accommodation-text" class="list-container"></div>
+                        </div>
+    
+                        <div id="contact" class="tab-content">
+                            <h3>Contact</h3>
+                            <p>For more details, contact us at <strong>innocentmgaleh@gmail.com</strong>.</p>
                         </div>
                     </div>
-                    <div id="rates" class="tab-content">
-                        <h3>Rates</h3>
-                        <p id="rates-text">Rates will be shown here.</p>
-                    </div>
-                    <div id="inclusion" class="tab-content">
-                        <h3>Inclusion</h3>
-                        <p id="inclusion-text">Inclusion details will be shown here.</p>
-                    </div>
-                    <div id="exclusion" class="tab-content">
-                        <h3>Exclusion</h3>
-                        <p id="exclusion-text">Exclusion details will be shown here.</p>
-                    </div>
-                    <div id="end-of-tours" class="tab-content">
-                        <h3>End of Tours</h3>
-                        <p id="end-of-tours-text">End of tour details will be shown here.</p>
-                    </div>
-                    <div id="weather" class="tab-content">
-                        <h3>Weather</h3>
-                        <p id="weather-text">Weather details will be shown here.</p>
-                    </div>
-                    <div id="contact" class="tab-content">
-                        <h3>Contact</h3>
-                        <p>For more details, contact us at <strong>info@example.com</strong>.</p>
-                    </div>
-                    <a href="#" class="back-to-packages">Back to Packages</a>
                 </div>
             </div>
         </div>
-    </div>
+    
+        <script>
+         document.addEventListener("DOMContentLoaded", function () {
+    const packageDetails = {
+        'package-1': {
+            overview: "On this trip, you will hike on the Marangu Route with one overnight at Mandara Hut. You will climb through the attractive tropical rain forest, and see different species of birds, impatiens Kilimanjaro, Colobus Monkey, Blue Monkey, and many other interesting things. After a short tour at Mandara, you will have to go to the special hut for an evening meal and overnight. After breakfast, we will begin hiking to Maundi Crater for good views of Kenya and Northern Tanzania.",
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const packageDetails = {
-                'package-1': {
-                    overview: "On this trip, you will hike on the Marangu Route with one overnight at Mandara Hut. You will climb through the attractive tropical rain forest, and see different species of birds, impatiens Kilimanjaro, Colobus Monkey, Blue Monkey, and many other interesting things. After a short tour at Mandara, you will have to go to the special hut for an evening meal and overnight. After breakfast, we will begin hiking to Maundi Crater for good views of Kenya and Northern Tanzania.",
-
-
-                    rates: "Starting at $660 per person.",
-                    inclusion: "The following services are included in the tour package:  <li>International flights</li> porterage, rescue fee, park fees (for non-residents), all activities (unless labeled as optional), all accommodation (unless listed as an upgrade), a professional driver/guide, all transportation (unless labeled as optional), all taxes/VAT, roundtrip airport transfer, meals (as specified in the day-by-day section), and drinking water (on all days).",
-                    exclusion: "The following items and services are not included in the tour package: climbing gear, international flights (from/to home), additional accommodation before or after the tour, tips (tipping guideline is US$10.00 per person per day), personal items (such as souvenirs, travel insurance, visa fees, etc.), and any government-imposed increase in taxes and/or park fees.",
-                    endOfTours: "Additional accommodation can be arranged for an extra cost, and you will be dropped off at the airport at the end of the tour.",
-                    weather: "The best time for safari is during the dry season, from June to October.",
-                    itinerary: [
+            rates: "Starting at $ 425 per person sharing ",
+            inclusion: [
+            "Park fees (For non-residents)",
+    "All activities (Unless labeled as optional)",
+    "A professional driver/guide",
+    "All transportation (Unless labeled as optional)",
+    "All Taxes/VAT",
+    "Meals (As specified in the day-by-day section)",
+    "Drinks (As specified in the day-by-day section)"
+            ],
+            exclusion: [
+            "International flights (From/to home)",
+    "Roundtrip airport transfer",
+    "Additional accommodation before and at the end of the tour",
+    "Tips (Tipping guideline US$10.00 pp per day)",
+    "Personal items (Souvenirs, travel insurance, visa fees, etc.)",
+    "Government imposed increase of taxes and/or park fees"
+            ],
+            endOfTours: "A transfer back to the airport can be arranged for an extra cost.",
+            accommodation: [
+                {
+                    type: "meals",
+                    description: "5-star accommodation with premium amenities and stunning views",
+                    icon: "fa-star"
+                },
+                {
+                    type: "Mid-Range Lodge",
+                    description: "Comfortable rooms with essential amenities and good service",
+                    icon: "fa-house"
+                },
+                {
+                    type: "Budget Camping",
+                    description: "Basic camping facilities with shared amenities",
+                    icon: "fa-campground"
+                }
+            ],
+            itinerary: [
                         { day: "Day 1", title: "Marangu Gate to Mandara Hut", description: "After breakfast at the hotel, you'll receive a briefing from one of the guides before heading to Marangu Gate for registration. From there, you'll begin your trek through the rainforest to the Mandara Hut encampment. Along the way, you can take a side trip to Maundi Crater for a panoramic view of the surrounding areas, including Northern Tanzania and Kenya. As you hike through the lush rainforest, you'll encounter towering Eucalyptus trees, vibrant birdlife, and playful colobus monkeys. The trek covers a distance of 7 km and takes about 4-5 hours, with an elevation gain from 1700m to 2720m. The habitat along the route is a montane forest, and the Mandara Hut offers basic accommodation on Mount Kilimanjaro. Lunch and dinner are provided, with drinking water available, but breakfast and other drinks are not included" },
                         { day: "Day 2", title: "Horombo Hut to Marangu Gate", description: "On the final day of the trek, you will leave the glades of the rainforest and ascend onto the open moorlands towards the Horombo Hut, where you'll enjoy breathtaking views of Kibo and Mawenzi peaks. After lunch at Mandara Hut, you’ll continue your descent back to Marangu Gate. The hike covers 11 km, with an elevation change from 2720m to 3700m. The ascent takes about 3-4 hours, while the descent takes approximately 2 hours. The route passes through heathland habitat. Once you reach the gate, you will be driven back to Arusha and to your respective accommodation. Breakfast and lunch are included, along with drinking water, but dinner and other drinks are not provided." },
                      
                     ],
-                    images: {
-                        overview: "manyara.jpg",
-                        itinerary: "jozani 2.jpg",
-                        rates: "zanzibar-rates.jpg",
-                        inclusion: "The following services are included in the tour package: porterage, rescue fee, park fees (for non-residents), all activities (unless labeled as optional), all accommodation (unless listed as an upgrade), a professional driver/guide, all transportation (unless labeled as optional), all taxes/VAT, roundtrip airport transfer, meals (as specified in the day-by-day section), and drinking water (on all days).",
+            images: {
+                overview: "karatu.jpg"
+            }
+        },
 
-                        exclusion: "zanzibar-exclusion.jpg",
-                        endOfTours: "zanzibar-end-of-tours.jpg",
-                        weather: "zanzibar-weather.jpg",
-                        contact: "zanzibar-contact.jpg"
-                    }
+        'package-2': {
+            overview: "Mount Meru, located in Arusha National Park, is a popular climbing destination, offering a stunning variety of natural environments with diverse flora and fauna. The full ascent typically takes at least three days, although a four-day itinerary is highly recommended for better acclimatization. Many climbers use Meru as a preparatory climb before attempting Mount Kilimanjaro. The route to the summit is the only one available, and it takes you through a blend of nature and culture. You will be picked up from your hotel or the airport in Arusha, and accommodation before the tour starts can be arranged for an extra cost.",
+
+
+            rates: "• The rate is: $ 4,700 Per Person (starting from 2 pax)",
+            inclusion: [
+    "Park fees (For non-residents)",
+  "All activities (Unless labeled as optional)",
+  "A professional driver/guide",
+  "All transportation (Unless labeled as optional)",
+  "All Taxes/VAT",
+  "Meals (As specified in the day-by-day section)",
+  "Drinks (As specified in the day-by-day section)",
+  "Domestic flights",
+  "Roundtrip airport transfer"
+]
+,
+exclusion: [
+"International flights (From/to home)",
+  "Additional accommodation before and at the end of the tour",
+  "Tips (Tipping guideline US$10.00 pp per day)",
+  "Personal items (Souvenirs, travel insurance, visa fees, etc.)",
+  "Government imposed increase of taxes and/or park fees",
+  "Climbing gears"
+]
+,
+            endOfTours: "Return to your hotel or transfer to the airport can be arranged.",
+            accommodation: [
+                {
+                    type: "Luxury Lodge",
+                    description: "Exclusive lodges with top-notch amenities and views of the Serengeti plains",
+                    icon: "fa-bed"
                 },
-                'package-2': {
-                    overview: "Mount Meru, located in Arusha National Park, is a popular climbing destination, offering a stunning variety of natural environments with diverse flora and fauna. The full ascent typically takes at least three days, although a four-day itinerary is highly recommended for better acclimatization. Many climbers use Meru as a preparatory climb before attempting Mount Kilimanjaro. The route to the summit is the only one available, and it takes you through a blend of nature and culture. You will be picked up from your hotel or the airport in Arusha, and accommodation before the tour starts can be arranged for an extra cost.",
-
-                    rates: ": $ 830 per person",
-                    inclusion: "he following services are included in the tour package: porterage, rescue fee, park fees (for non-residents), all activities (unless labeled as optional), all accommodation (unless listed as an upgrade), a professional driver/guide, all transportation (unless labeled as optional), all taxes/VAT, roundtrip airport transfer, meals (as specified in the day-by-day section), and drinking water (on all days).",
-                    exclusion: "he following items and services are not included in the tour package: climbing gear, international flights (from/to home), additional accommodation before or after the tour, tips (with a tipping guideline of US$10.00 per person per day), personal items (such as souvenirs, travel insurance, visa fees, etc.), and any government-imposed increase in taxes and/or park fees.",
-                    endOfTours: "Additional accommodation can be arranged for an extra cost, and you will be dropped off at the airport at the end of the tour.",
-                    weather: "The best time to visit is from December to March and June to October.",
-                    itinerary: [
+                {
+                    type: "Safari Camp",
+                    description: "Comfortable tented camps in the heart of the Serengeti",
+                    icon: "fa-campground"
+                }
+            ],
+            itinerary: [
                         { day: "Day 1", title: "Arusha (1400m) – Miriakamba Hut (2500m)", description: "After an early breakfast in Arusha (1400m), you'll be picked up from your hotel and driven to the Momella Gate in Arusha National Park. At the gate, the porters will pack your belongings while you and your guide complete the registration with Tanzania National Park. The hike begins with a walking safari experience, where you’ll have the chance to spot giraffes, zebras, antelopes, buffalos, and possibly elephants along the trail. Due to the high likelihood of encountering wildlife, an armed ranger will accompany you for safety. As you continue, you’ll pass the Ngarenanyuki River and a stunning waterfall at the base of Mt. Meru. Upon reaching Miriakamba Hut (2500m), your chef will prepare a hot dinner and provide washing water. Enjoy the breathtaking sunset before an overnight stay at the hut. Meals provided include lunch and dinner, with drinking water available, but breakfast and other drinks are not included" },
                         { day: "Day 2", title: "Miriakamba Hut (2500m) – Saddle Hut", description: "After breakfast, you’ll begin ascending the steep trail along the ridge of the saddle, with the opportunity to spot various wildlife along the way. The trail offers stunning views of the Mt. Meru Crater and the Ash Tray. Upon arrival at Saddle Hut, you can further acclimate by hiking to Little Mt. Meru (3820m) with your guide. Afterward, you will be served an early dinner to ensure ample rest before your midnight summit attempt. All meals are included, and drinking water will be provided, though other drinks are not included. Accommodation is at Saddle Hut, a budget mountain hut located on Mt. Meru." },
                         { day: "Day 3", title: "Saddle Hut (3500m) – Summit Attempt (4566m) – Miriakamba Hut (2500m)", description: "Your summit day begins with a wake-up call at 12:30 am for tea and biscuits, followed by the start of your summit attempt at 1:30 am. The trail begins with a steep ascent from Rhino Point (3800m) to Cobra Point (4350m), and in the final hour, you'll scramble on a rocky ridge between the crater and the inner cliffs of Meru. You'll reach the summit of Mount Meru (4565m) just in time for sunrise, offering spectacular views of the Mt. Meru Ash Tray and Mt. Kilimanjaro. After taking in the breathtaking views, you'll descend to Saddle Hut for a short break and brunch. Following this, you’ll continue your descent to the Momella Gate, where your transfer vehicle will be waiting to take you back to your hotel in Arusha. Meals provided include breakfast and lunch, with drinking water available, but dinner and other drinks are not included. This marks the end of the tour, though additional accommodation can be arranged for an extra cost, and you'll be dropped off at the airport." },
                     ],
-                    images: {
-                        overview: "meru2.jpg",
-                        itinerary: "serengeti-itinerary.jpg",
-                        rates: "serengeti-rates.jpg",
-                        inclusion: "serengeti-inclusion.jpg",
-                        exclusion: "serengeti-exclusion.jpg",
-                        endOfTours: "serengeti-end-of-tours.jpg",
-                        weather: "serengeti-weather.jpg",
-                        contact: "serengeti-contact.jpg"
-                    }
-                },
-                'package-3': {
-                             overview: "Mount Meru, an active (but dormant) volcano located north of Arusha in Tanzania, stands at 4562 meters, making it Tanzania's second-highest mountain and the fourth-highest in Africa. It has become a popular warm-up trek for climbers heading to Kilimanjaro. On this 4-day hike, you'll start with a walking safari, spotting buffalo, giraffes, and baboons, before embarking on a challenging yet beautiful trail, all while enjoying breathtaking views of Kilimanjaro. You'll be picked up from the airport or your hotel in Arusha, and accommodation before the tour starts can be arranged for an extra cost.",
+            images: {
+                overview: "serengeti.jpg"
+            }
+        },
 
-                    rates: "Starting at $300 per person.",
-                    inclusion: "The following are included in the tour package: porterage, rescue fee, park fees (for non-residents), all activities (unless labeled as optional), all accommodation (unless listed as an upgrade), a professional driver/guide, all transportation (unless labeled as optional), all taxes/VAT, roundtrip airport transfer, meals (as specified in the day-by-day section), and drinking water (on all days).",
-                    exclusion: "The following are not included in the tour package: climbing gear, international flights (from/to home), additional accommodation before or after the tour, tips (tipping guideline of US$10.00 per person per day), personal items (such as souvenirs, travel insurance, visa fees, etc.), and any government-imposed increase in taxes and/or park fees.",
-                    endOfTours: "The tour ends with a drop-off at your accommodation or the airport.",
-                    weather: "The best time to visit Zanzibar is during the dry season from June to October.",
-                    itinerary: [
+        'package-3': {
+            overview: "Mount Meru, an active (but dormant) volcano located north of Arusha in Tanzania, stands at 4562 meters, making it Tanzania's second-highest mountain and the fourth-highest in Africa. It has become a popular warm-up trek for climbers heading to Kilimanjaro. On this 4-day hike, you'll start with a walking safari, spotting buffalo, giraffes, and baboons, before embarking on a challenging yet beautiful trail, all while enjoying breathtaking views of Kilimanjaro. You'll be picked up from the airport or your hotel in Arusha, and accommodation before the tour starts can be arranged for an extra cost.",
+
+            rates: "T$ 3500 per person (starting from 2 pax)",
+            inclusion: [
+    "Park fees (For non-residents)",
+    "All activities (Unless labeled as optional)",
+    "A professional driver/guide",
+    "All transportation (Unless labeled as optional)",
+    "All Taxes/VAT",
+    "Meals (As specified in the day-by-day section)",
+    "Drinks (As specified in the day-by-day section)"
+]
+,
+exclusion: [
+    "International flights (From/to home)",
+    "Roundtrip airport transfer",
+    "Additional accommodation before and at the end of the tour",
+    "Tips (Tipping guideline US$10.00 pp per day)",
+    "Personal items (Souvenirs, travel insurance, visa fees, etc.)",
+    "Government-imposed increase of taxes and/or park fees",
+    "Climbing gear"
+]
+,
+            endOfTours: "Transfer to the airport or your hotel can be arranged.",
+            accommodation: [
+                {
+                    type: "Crater View Lodge",
+                    description: "Lodges with panoramic views of the Ngorongoro Crater",
+                    icon: "fa-eye"
+                },
+                {
+                    type: "Safari Camp",
+                    description: "Tented camp accommodation with excellent wildlife viewing opportunities",
+                    icon: "fa-campground"
+                }
+            ],
+            itinerary: [
                         { day: "Day 1", title: "Arusha to the Ngongongare gate, then Trek to Miriakamba Huts", description: "You will be picked up from your accommodation at 08:00 am and transferred to the main gate of Arusha National Park, Ngongongare. After completing the necessary paperwork, your hike will begin with a walking safari, escorted by a park ranger, leading you to Momela Gate where your trek to the first hut starts. The hike to Miriakamba Hut covers a distance of 10 km, with an elevation change from 4,921 ft to 8,250 ft. It will take approximately 4-6 hours through the lush rainforest habitat. Upon reaching Miriakamba Hut, a budget mountain hut located on Mount Meru, you will enjoy all meals, with drinking water provided, although other drinks are not included." },
                         { day: "Day 2", title: "Trek to Saddle Huts", description: "After breakfast, the steep ascent continues as you climb higher, with dramatic changes in vegetation and weather. Along the way, you'll be rewarded with breathtaking views, including a glimpse of Mount Kilimanjaro's peak to the east. The trail leads to Saddle Hut, located near the summit, where you will stay overnight. The hike from Miriakamba Hut to Saddle Hut covers 8 km, with an elevation gain from 8,250 ft to 11,712 ft, taking approximately 3-5 hours through heathland habitat. At Saddle Hut, a budget mountain hut on Mount Meru, all meals are included, along with drinking water, though other drinks are not provided" },
                         { day: "Day 3", title: "Summit attempt, later descend back to the Hut", description: "Today is dedicated to the summit attempt of Mount Meru. The trail ascends along a steep ridge, requiring a slow and steady pace to reach the peak. Upon reaching the summit at 14,977 ft, you'll be rewarded with a breathtaking sunrise, perfect for photos and celebration. After taking in the views, you'll descend back to Miriakamba Hut for an overnight stay. The ascent from Saddle Hut to the summit covers 5 km, with an elevation gain from 11,712 ft to 14,977 ft, taking approximately 4-6 hours through alpine desert terrain. The descent from the summit to Miriakamba Hut spans 13 km, with an elevation loss from 14,977 ft to 8,250 ft, taking another 4-6 hours through heathland habitat. All meals are included, and drinking water is provided, though other drinks are not included. Accommodation is at Miriakamba Hut, a budget mountain hut located on Mount Meru." },
                         { day: "Day 4", title: "Descend to the main gate and drive back to Arusha", description: "This final day on Mount Meru involves a short and quick descent through open grassland and mixed forest, offering a chance to spot wildlife before reaching Momella Gate in the late morning. Climbers who reached the summit will be awarded a certificate. At Momella Gate, our drivers will be waiting to transfer you back to your hotel in Arusha or Moshi. The descent from Miriakamba Hut to Momella Gate covers 10 km, with an elevation loss from 11,712 ft to 4,921 ft, taking approximately 2-4 hours through rainforest habitat. Meals include breakfast and lunch, with drinking water provided, though dinner and other drinks are not included. This marks the end of the tour, but additional accommodation can be arranged for an extra cost, and you will be dropped off at the airport if needed." },
                     ],
-                    images: {
-                        overview: "mbogo.jpg",
-                        itinerary: "zanzibar-culture.jpg",
-                        rates: "zanzibar-rates.jpg",
-                        inclusion: "zanzibar-inclusion.jpg",
-                        exclusion: "zanzibar-exclusion.jpg",
-                        endOfTours: "zanzibar-end-of-tours.jpg",
-                        weather: "zanzibar-weather.jpg",
-                        contact: "zanzibar-contact.jpg"
-                    }
-                },
-                'package-4': {
-                    overview: " Compared to other mountains, Mount Kilimanjaro is relatively easier to climb, making it accessible even to those without expert mountaineering skills. All you need is determination and a good level of fitness. Remarkably, climbers ranging in age from 7 to 89 years have successfully reached its summit. With the help of our experienced guides, we can take you to the Roof of Africa,where you’ll be rewarded with breathtaking views of the continent’s stunning landscapes. To make your adventure seamless, we offer airport pickups, and pre-tour accommodation can be arranged at an additional cost.",
+            images: {
+                overview: "ngorongoro.jpg"
+            }
+        },
 
-                    rates: "Starting at $1650 per person.",
-                    inclusion: "The package includes porterage, rescue fees, park fees (for non-residents), and all activities (unless labeled as optional). All accommodation is included unless an upgrade is specified. You will have a professional driver/guide throughout the journey, with all transportation provided (unless labeled as optional). All taxes and VAT are covered, and roundtrip airport transfers are included. Meals are provided as specified in the day-by-day section, and drinking water is available on all days.",
-                    exclusion: "The package does not include climbing gear, international flights (from/to home), or additional accommodation before and after the tour. Tips are not included, with a guideline of US$10.00 per person per day. Personal items such as souvenirs, travel insurance, visa fees, and other personal expenses are not covered. Additionally, any government-imposed increases in taxes and/or park fees are not included in the package.",
-                    endOfTours: "The tour ends with a drop-off at your accommodation or the airport.",
-                    weather: "The best time to visit is from June to October.",
-                    itinerary: [
+        'package-4': {
+            overview: "This 5-day Tanzania luxury + premium safari allows you to experience the highlights of the Northern Safari Circuit. You will experience breathtaking wildlife in the midst of some of the most diverse landscapes. See monkeys in the forest, lions in trees, elephants amongst acacias and a huge variety of animals inside a collapsed volcano. You will also visit the world-famous Serengeti. The landscapes are breathtaking and the variety and volume of wildlife you will see are unforgettable.",
+            rates: "The rate is: $ 4,500 Per Person (starting from 2 pax)",
+            inclusion: [
+            "Park fees (For non-residents)",
+    "All activities (Unless labeled as optional)",
+    "A professional driver/guide",
+    "All transportation (Unless labeled as optional)",
+    "All Taxes/VAT",
+    "Meals (As specified in the day-by-day section)",
+    "Drinks (As specified in the day-by-day section)"
+]
+,
+exclusion: [
+    "International flights (From/to home)",
+    "Roundtrip airport transfer",
+    "Additional accommodation before and at the end of the tour",
+    "Tips (Tipping guideline US$10.00 pp per day)",
+    "Personal items (Souvenirs, travel insurance, visa fees, etc.)",
+    "Government-imposed increase of taxes and/or park fees"
+]
+,
+            endOfTours: "Transfer to the airport or your hotel can be arranged.",
+            accommodation: [
+                {
+                    type: "Lake View Lodge",
+                    description: "Premium rooms overlooking Lake Manyara",
+                    icon: "fa-water"
+                },
+                {
+                    type: "Safari Lodge",
+                    description: "Traditional safari-style accommodation with modern amenities",
+                    icon: "fa-house"
+                },
+                {
+                    type: "Tented Camp",
+                    description: "Luxury tented experience in the wilderness",
+                    icon: "fa-campground"
+                }
+            ],
+            itinerary: [
                         { day: "Day 1", title: "Arusha -Marangu gate to Mandara hut", description: "The journey begins with a departure from Arusha to the Marangu Gate, where all formalities are completed before embarking on a trek through the lush rainforest that covers the lower slopes of Mount Kilimanjaro. The 4 to 5-hour hike offers an opportunity to spot wildlife, including blue colobus monkeys and various bird species. At the end of the day, you will arrive at Mandara Hut, a budget mountain hut equipped with solar lighting and flush latrines for added comfort. Nearby, the Maundi Crater provides breathtaking views of Northern Tanzania and Kenya, making it a rewarding detour. Along the way, our professional guide, John, will enhance your experience by sharing fascinating information about Kilimanjaro’s history, vegetation, and other intriguing details. The trek covers an elevation of 1860m to 2700m over a distance of 8 kilometers, gaining 818 meters in altitude. Meals include lunch and dinner, while drinking water is provided; other drinks are available at your own cost." },
                         { day: "Day 2", title: "Mandara Hut to Horombo hut", description: "You will wake up early to prepare for an exciting and challenging day of trekking. The journey begins through the forest before the trail opens into the alpine zone, offering stunning views of the changing landscape. If the weather is clear, you’ll catch a glimpse of Kibo and Mawenzi, two of the three volcanic peaks that form the summit of Mount Kilimanjaro. After a 5 to 6-hour hike covering a distance of 12 kilometers, you will arrive at Horombo Hut, where dinner and overnight accommodation await. At this altitude, you may begin to feel the effects of the thinner air, but our team will ensure your safety and comfort. The trek takes you from an elevation of 2700m (8875ft) to 3700m (12,200ft), gaining 998 meters in altitude. The habitat transitions into heathland, offering a unique and picturesque environment. Meals for the day include breakfast, lunch, and dinner, with drinking water provided. Horombo Hut, a budget mountain hut on Kilimanjaro, provides a comfortable resting spot for the night." },
                         { day: "Day 3", title: "Horombo hut to Kibo hut", description: "It’s another big day of trekking as you make your way to Kibo Hut, where you will rest in preparation for your summit attempt to the Roof of Africa. The journey involves climbing almost 4,130 meters, reaching Kibo Hut by evening. Along the way, you’ll traverse the striking alpine desert landscape, which offers a stark and beautiful contrast to the lower zones. Upon arrival, you’ll enjoy dinner and be advised to drink plenty of water to stay hydrated for the challenging ascent ahead. After dinner, you’ll rest and prepare for the early start to your summit climb. The trek takes you from an elevation of 3700m (12,200ft) to 4700m (15,500ft), covering a distance of 9 kilometers over 5 to 6 hours and gaining 993 meters in altitude. Meals for the day include breakfast, lunch, and dinner, with drinking water provided. Kibo Hut, a budget mountain hut on Mount Kilimanjaro, will serve as your accommodation for the night." },
@@ -1493,26 +2125,48 @@ h1 {
                         { day: "Day 5", title: "Horombo hut to Marangu gate to Arusha", description: "Just after midnight, our professional guides will wake you up with a cup of tea and a light meal to give you energy as you dress and prepare for the adventure ahead. You will be hiking in pitch darkness for 5 to 6 hours, so take it easy and you will reach Stella Point a few hours before sunrise. From there, there will be an additional two hours of intense hiking before you reach your ultimate goal: Uhuru Peak. Standing at 5985 meters, you will experience an amazing sunrise and take in a spectacular panoramic view. Congratulations, you have made it to the Roof of Africa! After celebrating your achievement, you will descend back to Horombo Hut via Kibo Hut. This will be one of the longest and most tiring days of your life, but it will be an unforgettable experience. The trek covers a distance of 6 kilometers (4 miles) up and 15 kilometers (9 miles) down. The elevation changes from 4700m (15,500ft) to 5895m (19,340ft) at the summit and then down to 3700m (12,200ft). Meals for the day include breakfast, lunch, and dinner, with drinking water provided. You will spend the night at Horombo Hut, a budget mountain hut located on Mount Kilimanjaro." },
 
                     ],
-                    images: {
-                        overview: "mountain.jpg",
-                        itinerary: "serengeti-safari.jpg",
-                        rates: "serengeti-rates.jpg",
-                        inclusion: "serengeti-inclusion.jpg",
-                        exclusion: "serengeti-exclusion.jpg",
-                        endOfTours: "serengeti-end-of-tours.jpg",
-                        weather: "serengeti-weather.jpg",
-                        contact: "serengeti-contact.jpg"
-                    }
-                },
-                'package-5': {
-                    overview: "The Marangu Route, also known as the Coca-Cola Route, approaches Kilimanjaro from the southeast and is favored by many for being considered the easiest route on the mountain. The minimum duration for this route is five days, though the chances of successfully reaching the summit in that time are somewhat low. It is highly recommended to spend an extra acclimatization day to increase your chances of success. Marangu is unique in that it is the only route that offers sleeping huts in dormitory-style accommodations, providing more comfort than camping. You'll be picked up from the airport or your hotel in Arusha, and accommodation before the tour starts can be arranged for an additional cost.",
+            images: {
+                overview: "manyara.jpg"
+            }
+        },
 
-                    rates: "Starting at $1980 per person.",
-                    inclusion: "The package includes porterage, rescue fees, park fees (for non-residents), and all activities (unless labeled as optional). All accommodation is included, unless an upgrade is specified. A professional driver/guide will accompany you throughout the journey, and all transportation is provided (unless labeled as optional). All taxes and VAT are covered, along with roundtrip airport transfers. Meals are included as specified in the day-by-day section, and drinking water is provided on all days.",
-                    exclusion: "The package does not include climbing gear, international flights (from/to home), or additional accommodation before and after the tour. Tips are not included, with a recommended guideline of US$10.00 per person per day. Personal items such as souvenirs, travel insurance, visa fees, and other personal expenses are not covered. Any government-imposed increases in taxes and/or park fees are also not included.",
-                    endOfTours: "The tour ends with a drop-off at your accommodation or the airport.",
-                    weather: "The best time to visit is from June to October.",
-                    itinerary: [
+        'package-5': {
+            overview: "The Marangu Route, also known as the Coca-Cola Route, approaches Kilimanjaro from the southeast and is favored by many for being considered the easiest route on the mountain. The minimum duration for this route is five days, though the chances of successfully reaching the summit in that time are somewhat low. It is highly recommended to spend an extra acclimatization day to increase your chances of success. Marangu is unique in that it is the only route that offers sleeping huts in dormitory-style accommodations, providing more comfort than camping. You'll be picked up from the airport or your hotel in Arusha, and accommodation before the tour starts can be arranged for an additional cost.",
+
+            rates: "RATES: $ 4400 per person (start from two pax)",
+            inclusion: [
+            "Park fees (For non-residents)",
+    "All activities (Unless labeled as optional)",
+    "All accommodation (Unless listed as upgrade)",
+    "A professional driver/guide",
+    "All transportation (Unless labeled as optional)",
+    "All Taxes/VAT",
+    "Roundtrip airport transfer",
+    "Meals (As specified in the day-by-day section)",
+    "Drinks (As specified in the day-by-day section)"
+            ],
+            exclusion: [
+            "International flights (From/to home)",
+    "Additional accommodation before and at the end of the tour",
+    "Tips (Tipping guideline US$15.00 pp per day)",
+    "Personal items (Souvenirs, travel insurance, visa fees, etc.)",
+    "Government imposed increase of taxes and/or park fees",
+    "Some meals (As specified in the day-by-day section)"
+            ],
+            endOfTours: "Transfer to the airport or your hotel can be arranged.",
+            accommodation: [
+                {
+                    type: "Baobab Lodge",
+                    description: "Comfortable accommodation with views of the baobab trees",
+                    icon: "fa-tree"
+                },
+                {
+                    type: "Safari Lodge",
+                    description: "Traditional safari-style lodge with excellent service",
+                    icon: "fa-house"
+                }
+            ],
+            itinerary: [
                         { day: "Day 1", title: "Marangu Gate to Mandara Hut", description: "After arriving at Marangu Gate, you will wait for your permits, and once they are ready, you will officially begin your ascent to the first hut, Mandara Hut. As you hike through the montane forest, you may encounter blue and colobus monkeys and hear the sounds of various bird species. The trail takes you to an elevation of 1905m to 2723m, covering a distance of 8.3 km over 4 to 5 hours. The habitat transitions into moorland, offering a unique landscape. You will spend the night at Mandara Hut, a budget mountain hut located on Mount Kilimanjaro. Meals for the day include lunch and dinner, with drinking water provided; other drinks are not included." },
                         { day: "Day 2", title: "Mandara Hut to Horombo Camp", description: "As you continue your ascent, you will encounter small shrubs as well as fairy-tale giants like the groundsel and giant lobelias. Along the way, you'll also catch your first glimpse of Mawenzi, one of the volcanic peaks of Mount Kilimanjaro. The trek takes you from an elevation of 2723m to 3721m, covering a distance of 12.5 km over 6 to 8 hours, with the habitat remaining in the moorland zone. Upon reaching Horombo Hut, you will enjoy a well-deserved dinner and rest for the night. Horombo Hut, a budget mountain hut located on Mount Kilimanjaro, provides basic yet comfortable accommodation. All meals are included, and drinking water is provided, though other drinks are not included." },
                         { day: "Day 3", title: "Horombo Hut", description: "On this day, you have the option to rest at the huts or take a short stroll up to the Mawenzi base camp and then return to Horombo Hut. This extra day is crucial for acclimatization, allowing your body to adjust to the altitude and providing a better understanding of the mountain's weather conditions. After this break, you will continue your journey upwards to Kibo Hut, where you will rest in preparation for the midnight start to the summit. Horombo Hut, a budget mountain hut located on Mount Kilimanjaro, will serve as your accommodation for the night. All meals are included, with drinking water provided; other drinks are not included." },
@@ -1521,26 +2175,46 @@ h1 {
                         { day: "Day 6", title: "Horombo to Marangu Gate", description: "After a restful sleep, you will be awakened for breakfast, pack your belongings, and continue your descent through the moorland to Mandara Hut. There, you will enjoy lunch before proceeding further down through the lush forest to the Marangu Park gate. After signing out at the gate, a vehicle will transport you back to your hotel in Arusha, where you will receive your certificate of achievement and celebrate your success! The descent covers 18 km and takes 5 to 7 hours, starting from an elevation of 3721m down to 1905m. Meals provided include breakfast and lunch, with drinking water available; other drinks are not included. Afterward, you'll be dropped off at the airport, or if you wish, additional accommodation can be arranged for an extra cost. This marks the end of your tour." },
 
                     ],
-                    images: {
-                        overview: "marangu.jpg",
-                        itinerary: "luxury-safari-itinerary.jpg",
-                        rates: "luxury-safari-rates.jpg",
-                        inclusion: "luxury-safari-inclusion.jpg",
-                        exclusion: "luxury-safari-exclusion.jpg",
-                        endOfTours: "luxury-safari-end-of-tours.jpg",
-                        weather: "luxury-safari-weather.jpg",
-                        contact: "luxury-safari-contact.jpg"
-                    }
-                },
-                'package-6': {
-                    overview: "The Machame Route, known for its diverse landscapes and breathtaking views, offers a unique challenge that will test your willpower, fitness, and mental strength. This route takes you through lush rainforests, where you may encounter colobus monkeys, and continues into heath and moorland, filled with ferns and ericas. Eventually, you will reach the icy caps at the summit of Mount Kilimanjaro. During the trek, you will stay in tents for overnight accommodations. While the climb may seem challenging, it is made easier with the guidance of our professional tour guide. You'll be picked up from your hotel or the airport in Arusha, and accommodation before the tour starts can be arranged for an extra cost.",
+            images: {
+                overview: "tarangire.jpg"
+            }
+        },
 
-                    rates: "Starting at $2310 per person.",
-                    inclusion: "The tour package includes porterage to assist with carrying your gear, a rescue fee for your safety, and park fees for non-residents. It also covers all activities unless specifically labeled as optional, as well as all accommodations unless an upgrade is requested. A professional driver/guide will accompany you throughout the journey, and all necessary transportation is included unless marked as optional. The package also takes care of all applicable taxes and VAT, roundtrip airport transfers, meals as specified in the itinerary, and drinking water for every day of the tour.",
-                    exclusion: "The tour package excludes climbing gear, which participants need to bring or rent. International flights to and from your home are not included. Additional accommodation before and after the tour can be arranged at an extra cost. Tips are also excluded, with a guideline of US$10.00 per person per day. Personal items such as souvenirs, travel insurance, visa fees, and other essentials are the responsibility of the traveler. Any government-imposed increases in taxes or park fees are also not covered in the package.",
-                    endOfTours: "The tour ends with a drop-off at your accommodation or the airport.",
-                    weather: "The best time to visit is from June to October.",
-                    itinerary: [
+        'package-6': {
+            overview: "The Machame Route offers a thrilling adventure with its diverse landscape and stunning views, providing a unique experience that challenges both your physical and mental strength. As you trek through lush rainforests where colobus monkeys roam, and then move into heath and moorland, you'll encounter a variety of ferns and ericas. The journey culminates at the icy caps of the mountain top, a breathtaking sight. Although the climb may seem daunting, it is not overly difficult, especially with the support and expertise of our professional tour guide. Accommodations during the trek will be in tents, providing an authentic and immersive experience. You will be picked up from your airport or hotel in Arusha, and we can also arrange accommodation before the tour starts for an additional cost.",
+            rates: "RATES: $ 6800 per person (starting from two pax)",
+            inclusion: [
+            "Park fees (For non-residents)",
+    "All activities (Unless labeled as optional)",
+    "All accommodation (Unless listed as upgrade)",
+    "A professional driver/guide",
+    "All transportation (Unless labeled as optional)",
+    "All Taxes/VAT",
+    "Roundtrip airport transfer",
+    "Meals (As specified in the day-by-day section)",
+    "Drinks (As specified in the day-by-day section)"
+            ],
+            exclusion: [
+            "International flights (From/to home)",
+    "Additional accommodation before and at the end of the tour",
+    "Tips (Tipping guideline US$10.00 pp per day)",
+    "Personal items (Souvenirs, travel insurance, visa fees, etc.)",
+    "Government imposed increase of taxes and/or park fees"
+            ],
+            endOfTours: "Transfer to the airport or your hotel can be arranged.",
+            accommodation: [
+                {
+                    type: "Luxury Lodge",
+                    description: "Exclusive accommodation with stunning views of the Selous Reserve",
+                    icon: "fa-bed"
+                },
+                {
+                    type: "Tented Camp",
+                    description: "Tented accommodation with a unique wilderness experience",
+                    icon: "fa-campground"
+                }
+            ],
+            itinerary: [
                         { day: "Day 1", title: "Machame Gate to Machame Camp", description: "You will be picked up from your hotel by our driver and guide, who will provide a briefing about your journey up Mount Kilimanjaro. After the briefing, you will be driven to Machame Gate to register and sign the necessary documents before starting your trek. From the gate, you will walk through the rainforest along a winding trail that ascends a ridge. The lower section of the trail can be muddy and slippery, so gaiters and trekking poles are recommended. After a short distance, you will reach Machame Camp, where you will spend the night. The trek covers a distance of 11 km, taking 5 to 6 hours, with an elevation gain from 1790m to 3010m. The habitat is primarily rainforest. Your accommodation will be budget camping on Mount Kilimanjaro. Meals for the day include lunch and dinner, with drinking water provided; other drinks are not included." },
                         { day: "Day 2", title: "Machame Camp to Shira Campi", description: "After breakfast, you will leave the lush rainforest behind and continue along an ascending path. You will cross a small valley and then follow a steep rocky ridge covered with heather until you reach the end of the ridge. The route then turns west into a river gorge. Your overnight stay will be at the Shira Hut campsite, located at an elevation of 3845m. The trek covers a distance of 5 km, taking 4 to 6 hours, with an elevation gain from 3010m to 3845m. The habitat transitions into moorland. Accommodation will be budget camping on Mount Kilimanjaro. All meals are included, with drinking water provided; other drinks are not included." },
                         { day: "Day 3", title: "Shira Camp to Lava Tower to Barranco Camp", description: "On this day, your trek begins with an ascent above the Shira Plateau toward the Lava Tower. As you climb, the surrounding vegetation becomes more sparse, and the landscape transitions into an alpine desert. You will continue through the expansive Barranco Valley, home to lobelia and giant senecio plants. After approximately 6 to 7 hours of hiking, you will arrive at Barranco Camp, which is renowned for being the most beautiful camp on the mountain. The trek covers a distance of 8 km, taking 5 to 6 hours, with an elevation gain from 3845m to 3986m. The habitat is semi-desert. Accommodation will be budget camping on Mount Kilimanjaro. All meals are included, with drinking water provided; other drinks are not included." },
@@ -1550,26 +2224,39 @@ h1 {
                         { day: "Day 7", title: "Mweka Camp to Mweka Gate", description: "After breakfast, you will continue your descent down to the Mweka Park Gate, where you will receive your well-earned summit certificates. As you descend to lower elevations, the terrain may become wet and muddy, so gaiters and trekking poles are highly recommended. The warmer climate at this altitude means shorts and t-shirts will likely suffice, though it's wise to keep rain gear and warmer clothing on hand. Once all formalities at the gate are completed, you will be driven back to your respective accommodation to rest and celebrate your incredible achievement." },
 
                     ],
-                    images: {
-                        overview: "barranco.jpg",
-                        itinerary: "wildlife-itinerary.jpg",
-                        rates: "wildlife-rates.jpg",
-                        inclusion: "wildlife-inclusion.jpg",
-                        exclusion: "wildlife-exclusion.jpg",
-                        endOfTours: "wildlife-end-of-tours.jpg",
-                        weather: "wildlife-weather.jpg",
-                        contact: "wildlife-contact.jpg"
-                    }
-                },
-                'package-7': {
-                    overview: "The Northern Route is an excellent choice for climbing Mount Kilimanjaro, offering ample time for acclimatization and showcasing the mountain's diverse landscapes. This route traverses the mountain from west to east, providing a unique and comprehensive experience. It is known for its higher success rate, making it a preferred option for climbers. You will be collected from the airport upon arrival, and additional accommodation before the tour starts can be arranged at an extra cost to suit your needs.",
-
-                    rates: "Starting at $2970 per person.",
-                    inclusion: "All meals, park fees, accommodation, and safari guides.",
-                    exclusion: "Flights, personal expenses, and travel insurance.",
-                    endOfTours: "The tour ends with a drop-off at your accommodation or the airport.",
-                    weather: "The best time to visit is during the dry season, from June to October.",
-                    itinerary: [
+            images: {
+                overview: "beach.jpg"
+            }
+        },
+        'package-7': {
+    overview: "On this safari, you will visit the best places in Tanzania including the amazing plains of the Serengeti. You will have choice spottings of the amazing tree-climbing lions! The safari includes a visit to the Ngorongoro Crater, known as the “Garden of Eden”. Come explore Africa with us",
+    rates: "RATES: $1,200 Per person",
+    inclusion: [
+        "Park entry fees",
+        "Game drives with an experienced guide",
+        "Meals as specified in the itinerary",
+        "Accommodation in a luxury camp"
+    ],
+    exclusion: [
+        "International flights",
+        "Tips for guides",
+        "Personal expenses",
+        "Travel insurance"
+    ],
+    endOfTours: "Transfer to the airport or your hotel can be arranged.",
+    accommodation: [
+        {
+            type: "Luxury Tented Camp",
+            description: "Stylish tented accommodation blending luxury with nature",
+            icon: "fa-tent"
+        },
+        {
+            type: "Bush Lodge",
+            description: "Secluded lodge offering comfort and exceptional wildlife views",
+            icon: "fa-hut"
+        }
+    ],
+    itinerary: [
                         { day: "Day 1", title: "Arusha to Londorosi Gate to Mti Mkubwa Camp", description: "After breakfast at your hotel, your guide will provide a detailed briefing about the trek. At 9 am, you will be picked up by our team and driven to the western side of Mount Kilimanjaro, heading to Londrossi Gate. Here, the guides and porters will prepare and pack the equipment and supplies. After registration at the Kilimanjaro Park office, you will be given a packed lunch. The journey continues with a 45-minute drive to Lemosho Glades, where the trek officially begins. You will ascend for about three hours through dense rainforest, which may be wet and muddy, so it’s advisable to use gaiters and trekking poles. By late afternoon, you will arrive at Mti Mkubwa Camp, also called Big Tree Camp. Upon arrival, you’ll find your tent already set up by the porters who went ahead. You will be greeted with boiled drinking water and hot washing water to refresh yourself. Once settled in, a hot dinner will be served in your tent." },
                         { day: "Day 2", title: "Mt Mkubwa Camp to Shira 1 camp", description: "From the forested slopes of Lemosho, you ascend through a podocarpus and juniper forest before emerging into a stunning zone of heather and volcanic rock draped with lichen. This path leads to the Shira Plateau, which was once Kilimanjaro’s third peak before its collapse. Along the way, you will pause for lunch on the trail, taking in the natural beauty surrounding you. By mid-afternoon, you will reach Shira 1 Camp, where you can relax and enjoy the breathtaking view of Kibo, the majestic peak of Kilimanjaro. Overnight will be spent at the camp, offering a serene end to an incredible day of trekking." },
                         { day: "Day 3", title: "Shira 1 Camp to Shira 2 Camp", description: "After breakfast, the journey continues across the expansive Shira Plateau, gradually ascending to Shira Camp 2 at an altitude of 3,850 meters. Along the way, you’ll be treated to breathtaking views of the valley below and the towering Western Breach of Kilimanjaro above. At Shira Camp 2, you’ll join trekkers from the Machame Route, sharing stories and camaraderie under the open sky. The plateau is exposed, so prepare for a cold night as temperatures can drop below zero. It’s an unforgettable experience amidst the raw beauty of Kilimanjaro." },
@@ -1581,96 +2268,144 @@ h1 {
                         { day: "Day 9", title: "Mweka Camp to Mweka Gate", description: "After your final celebratory breakfast, where the team will thank and congratulate you in their unique, special way, you'll begin the final 3-hour scenic descent to Mweka Gate. Once you reach the gate, you'll sign out and enjoy a well-deserved lunch. Afterward, you'll be dropped off at your hotel, where you can relax and enjoy a long, hot shower to celebrate the successful completion of your Kilimanjaro adventure. This marks the end of your tour." },
 
                     ],
-                    images: {
-                        overview: "mountain5.jpg",
-                        itinerary: "beach-safari-itinerary.jpg",
-                        rates: "beach-safari-rates.jpg",
-                        inclusion: "beach-safari-inclusion.jpg",
-                        exclusion: "beach-safari-exclusion.jpg",
-                        endOfTours: "beach-safari-end-of-tours.jpg",
-                        weather: "beach-safari-weather.jpg",
-                        contact: "beach-safari-contact.jpg"
-                    }
-                },
-                'package-8': {
-                    overview: "Travel to the southern village of Kizimkazi, renowned for its dolphin populations. This early morning tour offers the best chance to spot and swim with bottlenose and humpback dolphins in their natural habitat. While the opportunity to swim with dolphins is thrilling, guides emphasize responsible tourism to avoid disturbing the animals. After your dolphin encounter, explore the nearby coral reefs through snorkeling, where you can see vibrant marine life. This tour also includes a visit to the historic Kizimkazi Mosque, one of the oldest Islamic buildings in East Africa.",
+    images: {
+        overview: "ruaha.jpg"
+    }
+},
 
-                    rates: "Starting at $350 per person.",
-                    inclusion: "Accommodation, guided tours, park fees, and all meals.",
-                    exclusion: "Flights, personal expenses, and travel insurance.",
-                    endOfTours: "The tour ends with a drop-off at your accommodation or the airport.",
-                    weather: "The best time to visit is during the dry season from June to October.",
-                    itinerary: [
-                        { day: "Day 1", title: "Arrival in Arusha", description: "Tour the cultural sites in Arusha." },
-                        { day: "Day 2", title: "Serengeti Safari", description: "Explore Serengeti National Park." },
-                        { day: "Day 3", title: "Ngorongoro Crater", description: "Full-day safari in Ngorongoro Crater." },
-                    ],
-                    images: {
-                        overview: "dorphine 2.jpg",
-                        itinerary: "adventure-tour-itinerary.jpg",
-                        rates: "adventure-tour-rates.jpg",
-                        inclusion: "adventure-tour-inclusion.jpg",
-                        exclusion: "adventure-tour-exclusion.jpg",
-                        endOfTours: "adventure-tour-end-of-tours.jpg",
-                        weather: "adventure-tour-weather.jpg",
-                        contact: "adventure-tour-contact.jpg"
-                    }
-                }
-            };
+'package-8': {
+    overview: "Explore the untouched beauty of Katavi National Park, one of Tanzania's most remote parks. Known for its vast herds of buffalo and hippos, Katavi offers a truly off-the-beaten-path experience for adventurous travelers.",
+    rates: "RATES: $1,500 Per person",
+    inclusion: [
+        "Park entry fees",
+        "Guided game drives",
+        "Meals as specified in the itinerary",
+        "Accommodation in a wilderness camp"
+    ],
+    exclusion: [
+        "International flights",
+        "Tips for guides",
+        "Personal expenses",
+        "Travel insurance"
+    ],
+    endOfTours: "Transfer to the airport or your hotel can be arranged.",
+    accommodation: [
+        {
+            type: "Wilderness Camp",
+            description: "Remote and eco-friendly camp providing an authentic bush experience",
+            icon: "fa-leaf"
+        },
+        {
+            type: "Katavi Lodge",
+            description: "Comfortable lodge offering stunning views of the plains",
+            icon: "fa-house"
+        }
+    ],
+    itinerary: [
+        {
+            day: "Day 1",
+            title: "Arrival and Evening Safari",
+            description: "Arrive at Katavi National Park and enjoy an evening safari, focusing on the park's unique wildlife and landscapes."
+        },
+        {
+            day: "Day 2",
+            title: "Full-Day Game Drive",
+            description: "Spend the day exploring Katavi's untouched wilderness, with opportunities to see large herds of buffalo, hippos, and crocodiles."
+        }
+    ],
+    images: {
+        overview: "katavi.jpg"
+    }
+}
 
-            document.querySelectorAll('.view-details-btn').forEach(button => {
-                button.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const packageId = this.getAttribute('data-package');
-                    const modal = document.getElementById('package-modal');
-                    const packageData = packageDetails[packageId];
-
-                    document.querySelector('#overview-text').textContent = packageData.overview;
-                    document.querySelector('#rates-text').textContent = packageData.rates;
-                    document.querySelector('#inclusion-text').textContent = packageData.inclusion;
-                    document.querySelector('#exclusion-text').textContent = packageData.exclusion;
-                    document.querySelector('#end-of-tours-text').textContent = packageData.endOfTours;
-                    document.querySelector('#weather-text').textContent = packageData.weather;
-
-                    // Set unique image for the overview section
-                    document.querySelector('.tab-image').src = packageData.images.overview;
-
-                    const itineraryContainer = document.getElementById('itinerary-content');
-                    itineraryContainer.innerHTML = "";
-                    packageData.itinerary.forEach(day => {
-                        const dayElement = document.createElement('div');
-                        dayElement.classList.add('itinerary-day');
-                        dayElement.innerHTML = `
-                        <h4>${day.day}: ${day.title}</h4>
-                        <p>${day.description}</p>
-                    `;
-                        itineraryContainer.appendChild(dayElement);
+    };
+                document.querySelectorAll('.view-details-btn').forEach(button => {
+                    button.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        const packageId = this.getAttribute('data-package');
+                        const modal = document.getElementById('package-modal');
+                        const packageData = packageDetails[packageId];
+    
+                        document.querySelector('#overview-text').textContent = packageData.overview;
+                        document.querySelector('#rates-text').textContent = packageData.rates;
+                        document.querySelector('#end-of-tours-text').textContent = packageData.endOfTours;
+    
+                        const inclusionContent = document.querySelector('#inclusion-text');
+                        inclusionContent.innerHTML = `
+                            <ul class="custom-list">
+                                ${packageData.inclusion.map(item => `
+                                    <li class="list-item">
+                                        <span class="list-icon inclusion-icon">✓</span>
+                                        <span>${item}</span>
+                                    </li>
+                                `).join('')}
+                            </ul>
+                        `;
+    
+                        const exclusionContent = document.querySelector('#exclusion-text');
+                        exclusionContent.innerHTML = `
+                            <ul class="custom-list">
+                                ${packageData.exclusion.map(item => `
+                                    <li class="list-item">
+                                        <span class="list-icon exclusion-icon">✗</span>
+                                        <span>${item}</span>
+                                    </li>
+                                `).join('')}
+                            </ul>
+                        `;
+    
+                        const accommodationContent = document.querySelector('#accommodation-text');
+                        accommodationContent.innerHTML = `
+                            <ul class="custom-list">
+                                ${packageData.accommodation.map(item => `
+                                    <li class="list-item">
+                                        <span class="list-icon accommodation-icon">
+                                            <i class="fas ${item.icon}"></i>
+                                        </span>
+                                        <span>
+                                            <strong>${item.type}</strong>: ${item.description}
+                                        </span>
+                                    </li>
+                                `).join('')}
+                            </ul>
+                        `;
+    
+                        document.querySelector('.tab-image').src = packageData.images.overview;
+    
+                        const itineraryContainer = document.getElementById('itinerary-content');
+                        itineraryContainer.innerHTML = "";
+                        packageData.itinerary.forEach(day => {
+                            const dayElement = document.createElement('div');
+                            dayElement.classList.add('itinerary-day');
+                            dayElement.innerHTML = `
+                                <h4>${day.day}: ${day.title}</h4>
+                                <p>${day.description}</p>
+                            `;
+                            itineraryContainer.appendChild(dayElement);
+                        });
+    
+                        modal.style.display = 'block';
                     });
-
-                    modal.style.display = 'block';
+                });
+    
+                document.querySelector('.home-link').addEventListener('click', function () {
+                    document.getElementById('package-modal').style.display = 'none';
+                });
+    
+                document.querySelectorAll('.modal-nav-link').forEach(link => {
+                    link.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        document.querySelectorAll('.modal-nav-link').forEach(navLink => navLink.classList.remove('active'));
+                        this.classList.add('active');
+                        document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+                        document.querySelector(this.getAttribute('href')).classList.add('active');
+                    });
                 });
             });
-
-            document.querySelector('.close-modal').addEventListener('click', function () {
-                document.getElementById('package-modal').style.display = 'none';
-            });
-
-            document.querySelector('.back-to-packages').addEventListener('click', function () {
-                document.getElementById('package-modal').style.display = 'none';
-            });
-
-            document.querySelectorAll('.modal-nav-link').forEach(link => {
-                link.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    document.querySelectorAll('.modal-nav-link').forEach(navLink => navLink.classList.remove('active'));
-                    this.classList.add('active');
-                    document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
-                    document.querySelector(this.getAttribute('href')).classList.add('active');
-                });
-            });
-        });
-    </script>
-    </main>
+        </script>
+    </body>
+    </html>
+    
 
     
 

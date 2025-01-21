@@ -980,34 +980,33 @@ body.modal-open {
 .modal-nav-item {
     margin-bottom: 0.8rem; /* Clean spacing between items */
 }
-
 .modal-nav-link {
     display: block;
     padding: 0.8rem 1rem; /* Balanced padding for a clean look */
     text-decoration: none;
-    color: #4a4a4a; /* Subtle dark gray for links */
-    background-color: #fdfdfd; /* Crisp white background */
-    border: 1px solid #e5e5e5; /* Subtle border for structure */
+    color: #ffffff; /* White text for contrast */
+    background-color: hsl(42, 100%, 50%); /* Golden yellow background */
+    border: 1px solid hsl(42, 100%, 40%); /* Slightly darker golden yellow border */
     border-radius: 8px; /* Modern rounded corners */
     font-weight: 500; /* Medium font weight for clarity */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Light shadow for depth */
+    box-shadow: 0 2px 4px rgba(255, 195, 77, 0.2); /* Subtle golden yellow shadow */
     transition: all 0.3s ease; /* Smooth transitions for hover effects */
     font-size: 0.9rem; /* Sleek, slightly smaller text */
 }
 
 .modal-nav-link:hover {
-    background: linear-gradient(135deg, #007bff, #0056b3); /* Gradient hover effect */
-    color: #ffffff; /* White text on hover */
-    border-color: #0056b3; /* Accent border */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Enhanced shadow on hover */
+    background: linear-gradient(135deg, hsl(42, 100%, 40%), hsl(42, 100%, 50%)); /* Gradient golden yellow hover effect */
+    color: #FFFFFF; /* Keep text white on hover */
+    border-color: hsl(42, 100%, 30%); /* Slightly deeper golden yellow border for hover */
+    box-shadow: 0 4px 8px rgba(255, 180, 0, 0.3); /* Enhanced shadow on hover */
     transform: translateY(-3px); /* Lift effect */
 }
 
 .modal-nav-link.active {
-    background: linear-gradient(135deg, #0056b3, #003c80); /* Deep gradient for active link */
-    color: #ffffff; /* White text for active state */
+    background: linear-gradient(135deg, hsl(42, 100%, 30%), hsl(42, 100%, 40%)); /* Deep gradient for active link */
+    color: #FFFFFF; /* White text for active state */
     font-weight: 600; /* Slightly bolder for emphasis */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Prominent shadow for active state */
+    box-shadow: 0 6px 12px rgba(255, 160, 0, 0.4); /* Prominent golden yellow shadow for active state */
 }
 
 /* Responsive Design */
@@ -1081,7 +1080,7 @@ body.modal-open {
 }
 
         .modal-nav-link.active {
-            background-color: #0e7eef;
+            background-color: #a19725;
             color: #fff;
         }
 
@@ -1151,30 +1150,7 @@ body.modal-open {
             border-radius: 10px;
         }
 
-        /* Adjust Back to Packages Button */
-.back-to-packages {
-    display: inline-block;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    text-decoration: none;
-    color: #ffffff; /* White text color for better contrast */
-    font-weight: bold;
-    font-size: 1.5rem; /* Larger font size */
-    padding: 0.8rem 2rem; /* Added padding for better clickability */
-    border-radius: 8px; /* Rounded corners for a more modern look */
-    background-color: #007bff; /* Soft blue background color */
-    transition: all 0.3s ease; /* Smooth transition on hover */
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3); /* Subtle shadow for depth */
-}
-
-/* Hover Effects */
-.back-to-packages:hover {
-    color: #ffffff; /* Keep text white on hover */
-    background-color: #0056b3; /* Darker blue on hover */
-    transform: scale(1.05); /* Slight zoom effect on hover */
-}
-
+ 
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
     .back-to-packages {
@@ -1193,160 +1169,278 @@ h1 {
     font-size: 1.5rem; /* Smaller size for mobile */
   }
 }
+</style>    
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safari Packages | Tanzania Adventures</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f9;
+        }
+
+        .main-content {
+            width: 100%;
+            max-width: 100%;
+            padding: 1rem;
+        }
+
+        h1 {
+            color: #d99d42 !important;
+            text-align: center;
+            margin-bottom: 1rem;
+            font-size: 2rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            width: 100%;
+            padding: 0 2rem;
+        }
+
+        .package-card {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            height: 500px;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 1rem;
+            width: 100%;
+        }
+
+        .package-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+        }
+
+        .package-image-container {
+            position: relative;
+            width: 100%;
+            height: 320px;
+            overflow: hidden;
+        }
+
+        .package-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .package-card:hover .package-image {
+            transform: scale(1.05);
+        }
+
+        .package-overlay {
+            padding: 10px 20px;
+            background: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0.4), transparent);
+            color: white;
+            flex-grow: 1;
+            margin-top: -10px;
+        }
+
+        .package-title {
+            font-size: 1.4rem;
+            margin-bottom: 0.2rem;
+            color: #1a2a3b;
+            font-weight: 600;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .package-price {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-weight: bold;
+            color: #1a2a3b;
+            font-size: 0.9rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .view-details-btn {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background-color: #d99d42;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            margin-top: 1rem;
+            text-align: center;
+            width: 100%;
+            margin-top: 15px;
+        }
+
+        .view-details-btn:hover {
+            background-color: #b96329;
+            transform: scale(1.05);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 576px) {
+            .packages-grid {
+                grid-template-columns: 1fr; /* Full width for each card */
+                gap: 1.2rem; /* Reduce gap between cards */
+                padding: 0; /* Remove padding for full width */
+            }
+
+            .main-content {
+                padding: 14px; /* Remove main-content padding for full-width effect */
+                border-radius: 10px;
+            }
+
+            .package-card {
+                height: auto;
+                width: 100%; /* Full width for cards */
+                margin: 0; /* Remove extra margins */
+                border-radius: 15px; /* Remove border-radius for seamless edges */
+            }
+
+            .package-title {
+                font-size: 1.2rem; /* Adjust title size */
+            }
+
+            .package-price {
+                font-size: 0.8rem; /* Adjust price size */
+            }
+
+            .view-details-btn {
+                font-size: 0.9rem; /* Adjust button font size */
+            }
+        }
     </style>
-    <!-- Main Content -->
-    <main class="main-content">
-        <h1 style="color: hsl(196, 100%, 50%) !important;">LUXURY TOUR </h1>
-
-        <div class="packages-grid">
-            <!-- Package Card 1 -->
-            <div class="package-card" id="package-1">
-                <img src="crator.jpg" alt="Zanzibar" class="package-image">
-                <div class="package-content">
-                    <h2 class="package-title"> 
-                        2 DAYS LUXURY SAFARI 
-                        </h2>
-                    <div class="package-details">
-                        <p><span role="img" aria-label="Location">🏞️</span> <strong>Location:</strong> TARANGIRE AND NGORONGORO CRATER</p>
-                        <p><span role="img" aria-label="Duration">🕒</span> <strong>Duration:</strong> 2 Day</p>
-                        <p><span role="img" aria-label="Best Season">☀️</span> <strong>Best Season:</strong> June -
-                            October</p>
-                    </div>
-                    <p class="package-price"><span role="img" aria-label="Price">💵</span> <strong>From:</strong> $1,300
-                        per person</p>
-                    <a href="#" class="view-details-btn" data-package="package-1">View Details</a>
-                </div>
-            </div>
-
-            <!-- Package Card 2 -->
-            <div class="package-card" id="package-2">
-                <img src="Serengeti midrange3.JPG" alt="Serengeti National Park" class="package-image">
-                <div class="package-content">
-                    <h2 class="package-title">4 DAY SERENGETI FLY INN, FLY OUT PREMIUM LUXURY SAFARI</h2>
-                    <div class="package-details">
-                        <p><span role="img" aria-label="Location">🦁</span> <strong>Location:</strong> Serengeti,
-                            Ngorongoro, Lake Manyara</p>
-                        <p><span role="img" aria-label="Duration">📅</span> <strong>Duration:</strong> 4 Days</p>
-                        <p><span role="img" aria-label="Best Season">🌞</span> <strong>Best Season:</strong> January -
-                            February</p>
-                    </div>
-                    <p class="package-price"><span role="img" aria-label="Price">💰</span> <strong>From:</strong> $4,700
-                        per person</p>
-                    <a href="#" class="view-details-btn" data-package="package-2">View Details</a>
-                </div>
-            </div>
-
-            <!-- Package Card 3 -->
-            <div class="package-card" id="package-3">
-                <img src="lion.jpg" alt="Zanzibar Beach" class="package-image">
-                <div class="package-content">
-                    <h2 class="package-title">
-                        5-DAY MID-LUXURY BEST OF TANZANIA
-                        </h2>
-                    <div class="package-details">
-                        <p><span role="img" aria-label="Location">🏖️</span> <strong>Location:</strong> Arusha, serengeti, Manyara,Ngorongoro</p>
-                        <p><span role="img" aria-label="Duration">🕒</span> <strong>Duration:</strong> 5 Days</p>
-                        <p><span role="img" aria-label="Best Season">🌞</span> <strong>Best Season:</strong> June -
-                            October</p>
-                    </div>
-                    <p class="package-price"><span role="img" aria-label="Price">💵</span> <strong>From:</strong> $3,500
-                        per person</p>
-                    <a href="#" class="view-details-btn" data-package="package-3">View Details</a>
-                </div>
-            </div>
-
+  </head>
+  <body>
+      <main class="main-content">
+          <h1>LUXURY TOUR PACKAGES </h1>
+          <div class="packages-grid">
+              <!-- Package Card 1 -->
+              <div class="package-card">
+                  <div class="package-image-container">
+                      <img src="hyena.jpg" alt="Safari Tour" class="package-image">
+                      <div class="package-price">From $1,400</div>
+                  </div>
+                  <div class="package-overlay">
+                      <h2 class="package-title">2 DAYS TARANGIRE AND NGORONGORO CRATER</h2>
+                      <a href="#" class="view-details-btn" data-package="package-1">View Details</a>
+                  </div>
+              </div>
+  
+              <!-- Package Card 2 -->
+              <div class="package-card">
+                  <div class="package-image-container">
+                      <img src="lion.jpg" alt="Northern Circuit" class="package-image">
+                      <div class="package-price">From $1,750 </div>
+                  </div>
+                  <div class="package-overlay">
+                      <h2 class="package-title">4 DAY SERENGETI FLY INN, FLY OUT PREMIUM LUXURY SAFARI</h2>
+                      <a href="#" class="view-details-btn" data-package="package-2">View Details</a>
+                  </div>
+              </div>
+  
+              <!-- Package Card 3 -->
+              <div class="package-card">
+                  <div class="package-image-container">
+                      <img src="zebra2.jpg" alt="Tanzania Safari" class="package-image">
+                      <div class="package-price">From $1,850</div>
+                  </div>
+                  <div class="package-overlay">
+                      <h2 class="package-title"> 5-DAY MID-LUXURY BEST OF TANZANIA</h2>
+                      <a href="#" class="view-details-btn" data-package="package-3">View Details</a>
+                  </div>
+              </div>
+  
             <!-- Package Card 4 -->
-            <div class="package-card" id="package-4">
-                <img src="ho2.jpg" alt="Serengeti Safari" class="package-image">
-                <div class="package-content">
-                    <h2 class="package-title">5 DAYS PREMIUM LUXURY SAFARI</h2>
-                    <div class="package-details">
-                        <p><span role="img" aria-label="Location">🦁</span> <strong>Location:</strong> Serengeti</p>
-                        <p><span role="img" aria-label="Duration">📅</span> <strong>Duration:</strong> 3 Days</p>
-                        <p><span role="img" aria-label="Best Season">🌞</span> <strong>Best Season:</strong> June -
-                            October</p>
-                    </div>
-                    <p class="package-price"><span role="img" aria-label="Price">💰</span> <strong>From:</strong>  $ 4,500 Per Person (starting from 2 pax)</p>
+            <div class="package-card">
+                <div class="package-image-container">
+                    <img src="leopard.jpg" alt="Adventure Safari" class="package-image">
+                    <div class="package-price">From $2,300</div>
+                </div>
+                <div class="package-overlay">
+                    <h2 class="package-title">5 DAYS PREMIUM LUXURY SAFARI IN TANZANIA </h2>
                     <a href="#" class="view-details-btn" data-package="package-4">View Details</a>
                 </div>
             </div>
 
             <!-- Package Card 5 -->
-            <div class="package-card" id="package-5">
-                <img src="ngorongoro crater.jpg" alt="Luxury Safari" class="package-image">
-                <div class="package-content">
-                    <h2 class="package-title">6-DAY LUXURY HIGHLIGHTS OF TANZANIA STAY IN THE CRATER
-                        Overview
-                        </h2>
-                    <div class="package-details">
-                        <p><span role="img" aria-label="Location">🏞️</span> <strong>Location:</strong> Serengeti,
-                            Ngorongoro</p>
-                        <p><span role="img" aria-label="Duration">🕒</span> <strong>Duration:</strong> 5 Days</p>
-                        <p><span role="img" aria-label="Best Season">🌞</span> <strong>Best Season:</strong> June -
-                            October</p>
-                    </div>
-                    <p class="package-price"><span role="img" aria-label="Price">💵</span> <strong>From:</strong> $ 4,400 per person (start from two pax)</p>
+            <div class="package-card">
+                <div class="package-image-container">
+                    <img src="elephant.jpg" alt="Safari Tour" class="package-image">
+                    <div class="package-price">From $2,100</div>
+                </div>
+                <div class="package-overlay">
+                    <h2 class="package-title">6-DAY LUXURY HIGHLIGHTS OF TANZANIA STAY IN THE CRATER</h2>
                     <a href="#" class="view-details-btn" data-package="package-5">View Details</a>
                 </div>
             </div>
 
             <!-- Package Card 6 -->
-            <div class="package-card" id="package-6">
-                <img src="airport.jpg" alt="Ngorongoro Crater Safari" class="package-image">
-                <div class="package-content">
-                    <h2 class="package-title">12-DAY PREMIUM LUXURY SAFARI&BEACH HOLIDAYS ALL INCLUSIVE</h2>
-                    <div class="package-details">
-                        <p><span role="img" aria-label="Location">🌋</span> <strong>Location:</strong>Zanzibar, Ngorongoro Crater, Arusha
-                        </p>
-                        <p><span role="img" aria-label="Duration">🕒</span> <strong>Duration:</strong> 12 Days</p>
-                        <p><span role="img" aria-label="Best Season">☀️</span> <strong>Best Season:</strong> June -
-                            October</p>
-                    </div>
-                    <p class="package-price"><span role="img" aria-label="Price">💰</span> <strong>From:</strong> $ 6800 per person (starting from two pax)</p>
+            <div class="package-card">
+                <div class="package-image-container">
+                    <img src="cheeter.jpg" alt="Luxury Safari" class="package-image">
+                    <div class="package-price">From $3,000</div>
+                </div>
+                <div class="package-overlay">
+                    <h2 class="package-title">12-DAY PREMIUM LUXURY SAFARI&BEACH HOLIDAYS ALL </h2>
                     <a href="#" class="view-details-btn" data-package="package-6">View Details</a>
                 </div>
             </div>
 
             <!-- Package Card 7 -->
-            <div class="package-card" id="package-7">
-                <img src="beach.jpg" alt="Serengeti Safari" class="package-image">
-                <div class="package-content">
-                    <h2 class="package-title">NUNGWI AND KENDWA BEACH TOUR</h2>
-                    <div class="package-details">
-                        <p><span role="img" aria-label="Location">🦁</span> <strong>Location:</strong> Serengeti,
-                            Ngorongoro</p>
-                        <p><span role="img" aria-label="Duration">📅</span> <strong>Duration:</strong> 4 Days</p>
-                        <p><span role="img" aria-label="Best Season">🌞</span> <strong>Best Season:</strong> June -
-                            October</p>
-                    </div>
-                    <p class="package-price"><span role="img" aria-label="Price">💵</span> <strong>From:</strong> $2,200
-                        per person</p>
+            <div class="package-card">
+                <div class="package-image-container">
+                    <img src="nungwi.jpg" alt="Exclusive Safari" class="package-image">
+                    <div class="package-price">From $3,500</div>
+                </div>
+                <div class="package-overlay">
+                    <h2 class="package-title">12-DAY EXCLUSIVE TANZANIA SAFARI</h2>
                     <a href="#" class="view-details-btn" data-package="package-7">View Details</a>
                 </div>
             </div>
 
             <!-- Package Card 8 -->
-            <div class="package-card" id="package-8">
-                <img src="dorphine 2.jpg" alt="Luxury Safari Tour" class="package-image">
-                <div class="package-content">
-                    <h2 class="package-title">DOLPHIN WATCHING TOUR</h2>
-                    <div class="package-details">
-                        <p><span role="img" aria-label="Location">🏞️</span> <strong>Location:</strong> Serengeti,
-                            Ngorongoro, Tarangire</p>
-                        <p><span role="img" aria-label="Duration">🕒</span> <strong>Duration:</strong> 7 Days</p>
-                        <p><span role="img" aria-label="Best Season">☀️</span> <strong>Best Season:</strong> June -
-                            October</p>
-                    </div>
-                    <p class="package-price"><span role="img" aria-label="Price">💰</span> <strong>From:</strong> $3,500
-                        per person</p>
+            <div class="package-card">
+                <div class="package-image-container">
+                    <img src="beach3.jpg" alt="Adventure Safari" class="package-image">
+                    <div class="package-price">From $4,200</div>
+                </div>
+                <div class="package-overlay">
+                    <h2 class="package-title">14-DAY GRAND TANZANIA SAFARI</h2>
                     <a href="#" class="view-details-btn" data-package="package-8">View Details</a>
                 </div>
             </div>
-
         </div>
     </main>
+</body>
+</html>
+  
     <!DOCTYPE html>
     <html lang="en">
     <head>

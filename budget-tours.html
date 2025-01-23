@@ -1172,7 +1172,7 @@ h1 {
   }
 }
 </style>  
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -1195,13 +1195,14 @@ h1 {
         .main-content {
             width: 100%;
             max-width: 100%;
-            padding: 1rem;
+            padding:1rem;
+            margin-top: auto;
         }
 
         h1 {
             color: #d99d42 !important;
             text-align: center;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
             font-size: 2rem;
             white-space: nowrap;
             overflow: hidden;
@@ -1223,11 +1224,11 @@ h1 {
             box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             position: relative;
-            height: 500px;
+            height: 370px;
             display: flex;
             flex-direction: column;
             margin-bottom: 1rem;
-            width: 100%;
+            width: 95%;
         }
 
         .package-card:hover {
@@ -1303,39 +1304,67 @@ h1 {
             background-color: #b96329;
             transform: scale(1.05);
         }
+/* Responsive Design for Small Screens */
+@media (max-width: 576px) {
+    .packages-grid {
+        grid-template-columns: 1fr; /* Single column layout */
+        gap: 10px; /* Slight gap for better separation */
+        padding: 10px; /* Add slight padding for better aesthetics */
+    }
 
-        /* Responsive Design */
-        @media (max-width: 576px) {
-            .packages-grid {
-                grid-template-columns: 1fr; /* Full width for each card */
-                gap: 1.2rem; /* Reduce gap between cards */
-                padding: 0; /* Remove padding for full width */
-            }
+    .main-content {
+        padding: 10px; /* Add consistent padding for main content */
+        border-radius: 0; /* Remove border radius for a clean layout */
+    }
 
-            .main-content {
-                padding: 14px; /* Remove main-content padding for full-width effect */
-                border-radius: 10px;
-            }
+    .package-card {
+        height: 320px; /* Slightly taller for a balanced look */
+        width: 100%; /* Full width for cards */
+        margin: 0 0 10px 0; /* Add bottom margin for better spacing */
+        border-radius: 10px; /* Slightly rounded corners for a modern look */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for an elevated look */
+        overflow: hidden; /* Ensure content fits within the fixed height */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; /* Evenly distribute content */
+    }
 
-            .package-card {
-                height: auto;
-                width: 100%; /* Full width for cards */
-                margin: 0; /* Remove extra margins */
-                border-radius: 15px; /* Remove border-radius for seamless edges */
-            }
+    .package-title {
+        font-size: 1.2rem; /* Optimized title size for readability */
+        font-weight: bold; /* Add emphasis to the title */
+        text-align: center; /* Center-align for better focus */
+        margin: 4px 0; /* Add spacing around the title */
+    }
 
-            .package-title {
-                font-size: 1.2rem; /* Adjust title size */
-            }
+    .package-price {
+        font-size: 1rem; /* Maintain original size for good visibility */
+        text-align: center; /* Align center for consistency */
+        margin-bottom: 10px; /* Add spacing below the price */
+    }
+    .view-details-btn {
+    font-size: 1rem; /* Professional font size */
+    padding: 10px 20px; /* Balanced padding for a better click area */
+    background-color: #FFA500; /* Golden orange background */
+    color: #fff; /* White text for contrast */
+    border: none; /* Clean design without borders */
+    border-radius: 5px; /* Rounded corners for a modern look */
+    text-align: center; /* Center-align text */
+    text-transform: uppercase; /* Use uppercase for a professional touch */
+    font-weight: bold; /* Bold text for emphasis */
+    cursor: pointer; /* Pointer cursor for interactivity */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    display: inline-block; /* Flexible inline display */
+    margin: 0 auto; /* Center-align button */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
 
-            .package-price {
-                font-size: 0.8rem; /* Adjust price size */
-            }
+.view-details-btn:hover {
+    background-color: #FF8C00; /* Darker golden orange on hover */
+    transform: scale(1.05); /* Slightly enlarge for interactivity */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Enhance shadow for hover effect */
+}
 
-            .view-details-btn {
-                font-size: 0.9rem; /* Adjust button font size */
-            }
-        }
+}
     </style>
   </head>
   <body>

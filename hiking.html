@@ -361,12 +361,12 @@ header {
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Montserrat', sans-serif;
             line-height: 1.6;
-            color: #333;
-            background-color: #f4f4f9;
+            color: #2c3e50;
+            animation: fadeInBody 1s ease-out; /* Fade in body */
+            zoom: 0.67; /* Sets the zoom level to 75% */
         }
-
         /* Main Content */
         .main-content {
             margin-top: 0px;
@@ -1490,6 +1490,9 @@ h1 {
                 height: 100%;
                 background-color: rgba(197, 184, 141, 0.838);
                 z-index: 1000;
+                body.zoom-100 {
+            zoom: 100%;
+        }
             }
             
             .modal-content {
@@ -1891,7 +1894,8 @@ h1 {
             
         </style>
     </head>
-    <body>
+    <body class="zoom-100">
+        <div class="zoom-100">
         <div class="modal" id="package-modal">
             <div class="modal-content">
                 <div class="modal-header">
